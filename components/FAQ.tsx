@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, HelpCircle } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 export default function FAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
@@ -17,7 +17,7 @@ export default function FAQ() {
     },
     {
       q: "Can we use EvidenceLog alongside Vanta, Drata, or Secureframe?",
-      a: "Yes! EvidenceLog exports pre-structured JSON, CSV, and formatted PDF packets that plug directly into GRC platforms. Instead of your engineering leads manually gathering 25–40 change samples and taking screenshots during annual audits, you can export a sealed bundle in seconds.",
+      a: "Yes. EvidenceLog exports pre-structured JSON, CSV, and formatted PDF packets that plug directly into GRC platforms. Instead of your engineering leads manually gathering 25–40 change samples and taking screenshots during annual audits, you can export a sealed bundle in seconds.",
     },
     {
       q: "How does Atlassian Marketplace billing work?",
@@ -34,45 +34,45 @@ export default function FAQ() {
   ];
 
   return (
-    <section id="faq" className="relative py-24 sm:py-32 border-t border-slate-900 bg-slate-950/80">
+    <section id="faq" className="relative py-24 border-t border-white/[0.06] bg-[#070a0e]">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <div className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-950/40 px-3 py-1 text-xs font-semibold text-emerald-400">
-            <HelpCircle className="h-3.5 w-3.5" />
-            <span>Got Questions?</span>
+          <div className="inline-flex items-center gap-2 font-mono text-xs tracking-wider text-emerald-400 uppercase">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            <span>Frequently Asked Questions</span>
           </div>
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Frequently Asked Questions
           </h2>
-          <p className="mt-4 text-base text-slate-400">
-            Everything you need to know about EvidenceLog for Jira, security architecture, and auditor workflows.
+          <p className="mt-3 text-sm text-zinc-400">
+            Technical and architectural answers for engineering leads and compliance officers.
           </p>
         </div>
 
-        <div className="mt-12 space-y-4">
+        <div className="mt-12 space-y-3">
           {faqs.map((faq, idx) => {
             const isOpen = openIdx === idx;
             return (
               <div
                 key={idx}
-                className="rounded-2xl border border-slate-800 bg-slate-900/40 transition-colors overflow-hidden"
+                className="rounded-xl border border-white/[0.08] bg-[#0c1017] transition-colors overflow-hidden"
               >
                 <button
                   type="button"
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
-                  className="flex w-full items-center justify-between p-5 sm:p-6 text-left focus:outline-none"
+                  className="flex w-full items-center justify-between p-5 text-left focus:outline-none"
                 >
-                  <span className="text-sm sm:text-base font-semibold text-white">
+                  <span className="text-sm font-semibold text-zinc-200">
                     {faq.q}
                   </span>
                   <ChevronDown
-                    className={`h-4 w-4 text-slate-400 shrink-0 ml-4 transition-transform duration-200 ${
+                    className={`h-4 w-4 text-zinc-500 shrink-0 ml-4 transition-transform duration-200 ${
                       isOpen ? "rotate-180 text-emerald-400" : ""
                     }`}
                   />
                 </button>
                 {isOpen && (
-                  <div className="px-5 pb-5 sm:px-6 sm:pb-6 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
+                  <div className="px-5 pb-5 text-xs text-zinc-400 leading-relaxed border-t border-white/[0.04] pt-3.5">
                     {faq.a}
                   </div>
                 )}

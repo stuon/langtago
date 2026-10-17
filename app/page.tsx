@@ -3,12 +3,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {
   ShieldCheck,
-  Sparkles,
   ArrowRight,
   Lock,
   Layers,
   ExternalLink,
-  CheckCircle2,
+  Check,
   ServerOff,
   Code2,
 } from "lucide-react";
@@ -19,7 +18,7 @@ export default function StudioHomePage() {
       name: "EvidenceLog for Jira",
       status: "Available Now",
       statusColor: "emerald",
-      badge: "Flagship Product",
+      badge: "Flagship App",
       href: "/evidence-log",
       externalHref: "https://marketplace.atlassian.com",
       description:
@@ -36,7 +35,7 @@ export default function StudioHomePage() {
       name: "DriftWatch for Bitbucket",
       status: "In Development",
       statusColor: "cyan",
-      badge: "Coming Q1 2027",
+      badge: "Roadmap Q1",
       href: "#contact",
       description:
         "Real-time drift detection that alerts SecOps whenever code is merged to protected branches without an authorized Jira issue or approved test pass.",
@@ -51,7 +50,7 @@ export default function StudioHomePage() {
       name: "AccessPulse",
       status: "Research Phase",
       statusColor: "slate",
-      badge: "Q2 2027",
+      badge: "Research",
       href: "#contact",
       description:
         "Ephemeral permission tracking and automated privilege revocation auditing for enterprise Jira and Confluence spaces.",
@@ -68,193 +67,181 @@ export default function StudioHomePage() {
     {
       icon: ServerOff,
       title: "Zero External Data Retention",
-      desc: "We believe compliance apps shouldn't introduce new security attack vectors. All compute runs within Atlassian Forge's sandboxed runtime, and all data stays strictly in customer tenant storage.",
+      desc: "Compliance tools shouldn't expand your attack surface. All compute executes within Atlassian Forge's sandboxed runtime, and all data stays strictly in customer tenant storage.",
     },
     {
       icon: Code2,
-      title: "Built for Developer Velocity",
-      desc: "Compliance tools that force engineers into separate web portals fail. Langtago apps live where developers already spend their day: inside Jira issues and Git workflows.",
+      title: "Developer Velocity First",
+      desc: "Tools that force engineers into separate web portals fail to get adopted. Langtago apps live natively where developers already work: inside Jira issues and Git workflows.",
     },
     {
       icon: Lock,
-      title: "Cryptographic Tamper-Proofing",
-      desc: "Instead of relying on easily modified database timestamps, every change record is cryptographically fingerprinted with SHA-256 checksums to provide mathematical proof to auditors.",
+      title: "Mathematical Tamper-Proofing",
+      desc: "Instead of relying on mutable database records, change events are cryptographically fingerprinted with SHA-256 HMAC checksums to provide indisputable proof to auditors.",
     },
   ];
 
   return (
-    <div className="relative min-h-screen bg-slate-950 font-sans selection:bg-emerald-500/30 selection:text-emerald-200">
+    <div className="relative min-h-screen bg-[#080b0f] font-sans selection:bg-emerald-500/20 selection:text-emerald-200">
       {/* Background Subtle Grid */}
-      <div className="pointer-events-none absolute inset-0 grid-pattern opacity-40 radial-mask" />
+      <div className="pointer-events-none absolute inset-0 grid-hairline opacity-40 radial-mask" />
 
       {/* Navigation */}
       <Navbar isProductPage={false} />
 
       <main className="relative">
         {/* Studio Hero Section */}
-        <section className="relative overflow-hidden pt-16 pb-20 md:pt-28 md:pb-32">
-          {/* Ambient Lighting */}
-          <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-            <div className="h-[450px] w-[800px] -translate-y-20 rounded-full bg-emerald-500/10 blur-[140px]" />
-            <div className="h-[350px] w-[500px] translate-x-40 translate-y-24 rounded-full bg-cyan-500/10 blur-[130px]" />
-          </div>
-
+        <section className="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-28">
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-            {/* Pill */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-950/40 px-3.5 py-1 text-xs font-medium text-emerald-300 shadow-sm backdrop-blur-md">
-              <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="font-semibold text-white">Langtago Studio</span>
-              <span className="text-emerald-500">•</span>
-              <span>Developer Tooling & Atlassian Forge Apps</span>
+            {/* Monospace Subhead */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-zinc-900/60 px-3.5 py-1 font-mono text-[11px] text-zinc-300 backdrop-blur-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              <span className="text-zinc-400">Langtago Studio</span>
+              <span className="text-zinc-600">/</span>
+              <span className="text-emerald-400">Atlassian Forge Apps</span>
             </div>
 
             {/* Headline */}
-            <h1 className="mx-auto mt-7 max-w-4xl text-4xl font-extrabold tracking-tight text-white sm:text-6xl sm:leading-[1.14]">
-              Developer Tools That Make{" "}
-              <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
-                Enterprise Compliance Invisible.
-              </span>
+            <h1 className="mx-auto mt-6 max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-6xl sm:leading-[1.12]">
+              Developer tools that make <br className="hidden sm:inline" />
+              enterprise compliance invisible.
             </h1>
 
             {/* Subtitle */}
-            <p className="mx-auto mt-6 max-w-2xl text-base text-slate-300 sm:text-lg sm:leading-relaxed">
-              Langtago designs and engineers zero-egress, Atlassian Forge-native software that bridges the gap between rapid software development and strict SOC 2, ISO 27001, and HIPAA compliance.
+            <p className="mx-auto mt-5 max-w-2xl text-base text-zinc-400 sm:text-lg sm:leading-relaxed">
+              Langtago builds zero-egress, Atlassian Forge-native software that bridges the gap between high-velocity engineering and rigorous SOC 2, ISO 27001, and HIPAA compliance.
             </p>
 
             {/* CTAs */}
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
                 href="/evidence-log"
-                className="group flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 px-6 py-3.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/25 transition-all hover:brightness-110"
+                className="group flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 text-xs font-semibold text-zinc-950 shadow-sm transition-all hover:bg-emerald-400"
               >
-                <Sparkles className="h-4 w-4 text-slate-950" />
                 <span>Explore EvidenceLog for Jira</span>
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
               </Link>
 
               <a
                 href="#products"
-                className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900/90 px-6 py-3.5 text-sm font-semibold text-slate-200 shadow-md hover:border-slate-500 hover:bg-slate-800 hover:text-white transition-all"
+                className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-white/[0.1] bg-zinc-900/80 px-5 py-3 text-xs font-semibold text-zinc-200 transition-all hover:bg-zinc-800 hover:text-white hover:border-white/[0.2]"
               >
-                <Layers className="h-4 w-4 text-cyan-400" />
+                <Layers className="h-3.5 w-3.5 text-zinc-400" />
                 <span>View Product Suite</span>
               </a>
             </div>
 
-            {/* Trust Metatags */}
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs text-slate-400 font-medium">
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+            {/* Trust Specs */}
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-mono text-[11px] text-zinc-400">
+              <span className="flex items-center gap-1.5">
+                <Check className="h-3 w-3 text-emerald-400" />
                 <span>Atlassian Forge Cloud Native</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <Lock className="h-4 w-4 text-cyan-400" />
+              </span>
+              <span className="text-zinc-700">•</span>
+              <span className="flex items-center gap-1.5">
+                <Lock className="h-3 w-3 text-zinc-400" />
                 <span>Zero External Server Egress</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <ShieldCheck className="h-4 w-4 text-emerald-400" />
+              </span>
+              <span className="text-zinc-700">•</span>
+              <span className="flex items-center gap-1.5">
+                <ShieldCheck className="h-3 w-3 text-emerald-400" />
                 <span>Cryptographically Sealed Audits</span>
-              </div>
+              </span>
             </div>
           </div>
         </section>
 
         {/* Flagship App Spotlight Section */}
-        <section id="flagship" className="relative py-20 border-t border-slate-900 bg-slate-950/80">
+        <section id="flagship" className="relative py-20 border-t border-white/[0.06] bg-[#070a0e]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="rounded-3xl border border-emerald-500/40 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 p-8 sm:p-12 shadow-2xl shadow-emerald-500/10">
+            <div className="rounded-2xl border border-white/[0.08] bg-[#0c1017] p-7 sm:p-10 shadow-2xl">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 {/* Left Description */}
-                <div className="lg:col-span-7 space-y-5">
+                <div className="lg:col-span-7 space-y-4">
                   <div className="flex items-center gap-2">
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-bold text-emerald-400 border border-emerald-500/30">
-                      <Sparkles className="h-3.5 w-3.5" />
+                    <span className="rounded bg-emerald-500/10 px-2 py-0.5 font-mono text-[10px] font-bold text-emerald-400 border border-emerald-500/20 uppercase">
                       Studio Flagship
                     </span>
-                    <span className="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">
-                      Available on Atlassian Marketplace
+                    <span className="font-mono text-xs text-zinc-500">
+                      Atlassian Marketplace Verified
                     </span>
                   </div>
 
-                  <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
                     EvidenceLog for Jira Cloud
                   </h2>
 
-                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
                     Eliminate manual screenshotting and endless spreadsheet compilation for SOC 2 and ISO 27001 change management audits. EvidenceLog cryptographically seals peer reviews, CI/CD pipeline runs, and approvals directly into Jira issues.
                   </p>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                    <div className="flex items-start gap-2 text-xs text-slate-300">
-                      <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
-                      <span><strong>Zero Egress:</strong> 100% in-tenant Forge storage</span>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 font-mono text-xs text-zinc-300">
+                    <div className="flex items-center gap-2">
+                      <Check className="h-3.5 w-3.5 text-emerald-400" />
+                      <span>Zero Egress: In-tenant Forge storage</span>
                     </div>
-                    <div className="flex items-start gap-2 text-xs text-slate-300">
-                      <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
-                      <span><strong>SHA-256 Seals:</strong> Mathematically tamper-evident</span>
+                    <div className="flex items-center gap-2">
+                      <Check className="h-3.5 w-3.5 text-emerald-400" />
+                      <span>SHA-256 HMAC cryptographic seals</span>
                     </div>
-                    <div className="flex items-start gap-2 text-xs text-slate-300">
-                      <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
-                      <span><strong>1-Click Packs:</strong> PDF, CSV, and raw JSON export</span>
+                    <div className="flex items-center gap-2">
+                      <Check className="h-3.5 w-3.5 text-emerald-400" />
+                      <span>1-Click export: PDF, CSV, and JSON</span>
                     </div>
-                    <div className="flex items-start gap-2 text-xs text-slate-300">
-                      <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
-                      <span><strong>Separation of Duties:</strong> Automated checks</span>
+                    <div className="flex items-center gap-2">
+                      <Check className="h-3.5 w-3.5 text-emerald-400" />
+                      <span>Separation of duties enforcement</span>
                     </div>
                   </div>
 
-                  <div className="pt-4 flex flex-col sm:flex-row gap-3">
+                  <div className="pt-3 flex flex-col sm:flex-row gap-2.5">
                     <Link
                       href="/evidence-log"
-                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 py-3 text-xs sm:text-sm font-bold text-slate-950 hover:bg-emerald-400 transition-colors shadow-md shadow-emerald-500/20"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-5 py-2.5 text-xs font-semibold text-zinc-950 hover:bg-emerald-400 transition-colors shadow-sm"
                     >
-                      <span>Explore EvidenceLog & Live Demo</span>
-                      <ArrowRight className="h-4 w-4" />
+                      <span>Explore EvidenceLog Tour &amp; Pricing</span>
+                      <ArrowRight className="h-3.5 w-3.5" />
                     </Link>
                     <a
                       href="https://marketplace.atlassian.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900 px-5 py-3 text-xs sm:text-sm font-semibold text-slate-200 hover:bg-slate-800 transition-colors"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/[0.1] bg-zinc-900 px-4 py-2.5 text-xs font-medium text-zinc-200 hover:bg-zinc-800 transition-colors"
                     >
                       <span>Marketplace Page</span>
-                      <ExternalLink className="h-3.5 w-3.5 opacity-70" />
+                      <ExternalLink className="h-3 w-3 opacity-60" />
                     </a>
                   </div>
                 </div>
 
                 {/* Right Visual Card */}
                 <div className="lg:col-span-5">
-                  <div className="rounded-2xl border border-slate-800 bg-slate-950/90 p-5 space-y-4 shadow-xl">
-                    <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-                      <div className="flex items-center gap-2">
-                        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-400">
-                          <ShieldCheck className="h-4 w-4" />
-                        </div>
-                        <span className="text-xs font-bold text-white">PROD-1429 • Sealed</span>
+                  <div className="rounded-xl border border-white/[0.08] bg-black/60 p-5 space-y-3 font-mono text-xs">
+                    <div className="flex items-center justify-between pb-2.5 border-b border-white/[0.06]">
+                      <div className="flex items-center gap-2 text-white font-semibold">
+                        <ShieldCheck className="h-4 w-4 text-emerald-400" />
+                        <span>PROD-1429 (Sealed)</span>
                       </div>
-                      <span className="rounded bg-emerald-500/10 px-2 py-0.5 text-[10px] font-mono text-emerald-400 border border-emerald-500/20">
-                        SOC 2 CC8.1
-                      </span>
+                      <span className="text-[10px] text-emerald-400">SOC 2 CC8.1</span>
                     </div>
 
-                    <div className="space-y-2 text-xs">
-                      <div className="flex justify-between p-2 rounded bg-slate-900 border border-slate-800">
-                        <span className="text-slate-400">Separation of Duties</span>
-                        <span className="text-emerald-400 font-semibold">2 Approvers Verified</span>
+                    <div className="space-y-1.5 text-[11px]">
+                      <div className="flex justify-between p-2 rounded bg-zinc-900/80 border border-white/[0.04]">
+                        <span className="text-zinc-500">Separation of Duties</span>
+                        <span className="text-emerald-400">2 Approvers (Passed)</span>
                       </div>
-                      <div className="flex justify-between p-2 rounded bg-slate-900 border border-slate-800">
-                        <span className="text-slate-400">Automated CI/CD Tests</span>
-                        <span className="text-emerald-400 font-semibold">1,482 Passing (94.2%)</span>
+                      <div className="flex justify-between p-2 rounded bg-zinc-900/80 border border-white/[0.04]">
+                        <span className="text-zinc-500">CI Regression Tests</span>
+                        <span className="text-emerald-400">1,482/1,482 (94.2%)</span>
                       </div>
-                      <div className="flex justify-between p-2 rounded bg-slate-900 border border-slate-800">
-                        <span className="text-slate-400">Vulnerability Scans</span>
-                        <span className="text-emerald-400 font-semibold">0 High / Critical</span>
+                      <div className="flex justify-between p-2 rounded bg-zinc-900/80 border border-white/[0.04]">
+                        <span className="text-zinc-500">Vulnerability Scans</span>
+                        <span className="text-emerald-400">0 Critical / High</span>
                       </div>
                     </div>
 
-                    <div className="pt-2">
-                      <div className="rounded bg-slate-900/60 p-2 text-[10px] font-mono text-slate-400 truncate border border-slate-800">
+                    <div className="pt-1">
+                      <div className="text-[10px] text-zinc-500 truncate">
                         sha256:9f83ac2b7c4d516e8812c32e5f56a312...
                       </div>
                     </div>
@@ -266,71 +253,71 @@ export default function StudioHomePage() {
         </section>
 
         {/* Product Suite Grid */}
-        <section id="products" className="relative py-24 sm:py-32 border-t border-slate-900 bg-slate-950">
+        <section id="products" className="relative py-24 border-t border-white/[0.06] bg-[#080b0f]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
-              <div className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-950/40 px-3 py-1 text-xs font-semibold text-cyan-400">
-                <Layers className="h-3.5 w-3.5" />
-                <span>Our Software Portfolio</span>
+              <div className="inline-flex items-center gap-2 font-mono text-xs tracking-wider text-emerald-400 uppercase">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>Product Suite</span>
               </div>
-              <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-                The Langtago Product Suite
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                The Langtago Software Portfolio
               </h2>
-              <p className="mt-4 text-base text-slate-400">
+              <p className="mt-3 text-sm text-zinc-400">
                 Focused developer utilities and compliance modules built for the Atlassian Cloud ecosystem.
               </p>
             </div>
 
-            <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-5">
               {products.map((p, idx) => (
                 <div
                   key={idx}
-                  className={`rounded-2xl border p-7 flex flex-col justify-between transition-all ${
+                  className={`rounded-2xl border p-6 flex flex-col justify-between transition-all ${
                     p.isFlagship
-                      ? "border-emerald-500/50 bg-gradient-to-b from-slate-900 to-slate-950 shadow-xl shadow-emerald-500/5"
-                      : "border-slate-800 bg-slate-900/40 hover:border-slate-700"
+                      ? "border-emerald-500/40 bg-[#0c1017] shadow-lg"
+                      : "border-white/[0.08] bg-[#090c10] hover:border-white/[0.14]"
                   }`}
                 >
                   <div>
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-emerald-400 bg-emerald-950/60 px-2.5 py-1 rounded-full border border-emerald-800/60">
+                      <span className="font-mono text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 uppercase">
                         {p.badge}
                       </span>
-                      <span className="text-[11px] text-slate-400 font-medium">
+                      <span className="font-mono text-[11px] text-zinc-500">
                         {p.status}
                       </span>
                     </div>
 
-                    <h3 className="mt-5 text-xl font-bold text-white">
+                    <h3 className="mt-4 text-lg font-bold text-white">
                       {p.name}
                     </h3>
 
-                    <p className="mt-3 text-xs text-slate-400 leading-relaxed">
+                    <p className="mt-2 text-xs text-zinc-400 leading-relaxed">
                       {p.description}
                     </p>
 
-                    <ul className="mt-6 space-y-2.5 text-xs text-slate-300">
+                    <ul className="mt-5 space-y-2 text-xs text-zinc-300">
                       {p.highlights.map((h, hIdx) => (
                         <li key={hIdx} className="flex items-start gap-2">
-                          <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                          <Check className="h-3.5 w-3.5 text-emerald-400 shrink-0 mt-0.5" />
                           <span>{h}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="mt-8 pt-4 border-t border-slate-800">
+                  <div className="mt-7 pt-4 border-t border-white/[0.06]">
                     {p.isFlagship ? (
                       <Link
                         href={p.href}
-                        className="flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-500 py-2.5 px-4 text-xs font-bold text-slate-950 hover:bg-emerald-400 transition-colors"
+                        className="flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-500 py-2 px-4 text-xs font-semibold text-zinc-950 hover:bg-emerald-400 transition-colors"
                       >
-                        <span>View EvidenceLog Page</span>
+                        <span>View EvidenceLog</span>
                         <ArrowRight className="h-3.5 w-3.5" />
                       </Link>
                     ) : (
-                      <div className="text-center py-2 text-xs font-mono text-slate-500">
-                        Roadmap Item
+                      <div className="text-center py-1.5 font-mono text-[11px] text-zinc-500">
+                        Roadmap Stage
                       </div>
                     )}
                   </div>
@@ -341,34 +328,34 @@ export default function StudioHomePage() {
         </section>
 
         {/* Philosophy & Architecture Pillars */}
-        <section id="philosophy" className="relative py-24 border-t border-slate-900 bg-slate-950/70">
+        <section id="philosophy" className="relative py-24 border-t border-white/[0.06] bg-[#070a0e]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
-              <div className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-950/40 px-3 py-1 text-xs font-semibold text-emerald-400">
-                <Lock className="h-3.5 w-3.5" />
-                <span>Our Engineering Philosophy</span>
+              <div className="inline-flex items-center gap-2 font-mono text-xs tracking-wider text-emerald-400 uppercase">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>Design Principles</span>
               </div>
-              <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-                Why We Build Forge Native
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                Why we build Forge native.
               </h2>
-              <p className="mt-4 text-base text-slate-400">
-                Traditional Jira plugins export your confidential tickets and commit hashes to their own third-party servers. We engineered a better way.
+              <p className="mt-3 text-sm text-zinc-400">
+                Traditional Jira plugins export confidential tickets and code diffs to their own AWS/GCP servers. We engineered a better way.
               </p>
             </div>
 
-            <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-5">
               {pillars.map((item, idx) => {
                 const Icon = item.icon;
                 return (
                   <div
                     key={idx}
-                    className="rounded-2xl border border-slate-800 bg-slate-900/40 p-7 space-y-4"
+                    className="rounded-2xl border border-white/[0.08] bg-[#0c1017] p-6 space-y-3"
                   >
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-950 border border-slate-800 text-emerald-400">
-                      <Icon className="h-5 w-5" />
+                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-zinc-900 border border-white/[0.06] text-zinc-300">
+                      <Icon className="h-4 w-4 text-emerald-400" />
                     </div>
-                    <h3 className="text-lg font-bold text-white">{item.title}</h3>
-                    <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                    <h3 className="text-base font-bold text-white">{item.title}</h3>
+                    <p className="text-xs text-zinc-400 leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
@@ -379,24 +366,24 @@ export default function StudioHomePage() {
         </section>
 
         {/* Contact & Support Section */}
-        <section id="contact" className="relative py-20 border-t border-slate-900 bg-slate-950">
-          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center space-y-6">
+        <section id="contact" className="relative py-20 border-t border-white/[0.06] bg-[#080b0f]">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center space-y-5">
             <h2 className="text-2xl sm:text-3xl font-bold text-white">
               Connect with Langtago Studio
             </h2>
-            <p className="text-sm text-slate-400 max-w-xl mx-auto">
-              Have questions about our apps, custom compliance mapping, or enterprise Atlassian deployments? Our team is here to help.
+            <p className="text-xs sm:text-sm text-zinc-400 max-w-lg mx-auto">
+              Questions about our apps, custom GRC control mappings, or enterprise Atlassian deployments? Our engineering team is here to assist.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
               <a
                 href="mailto:support@langtago.com"
-                className="inline-flex items-center gap-2 rounded-xl bg-slate-900 border border-slate-700 px-6 py-3 text-xs sm:text-sm font-semibold text-slate-200 hover:border-slate-500 hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 rounded-xl bg-zinc-900 border border-white/[0.1] px-5 py-2.5 text-xs font-medium text-zinc-200 hover:bg-zinc-800 hover:text-white transition-colors"
               >
-                <span>Email Studio Support: support@langtago.com</span>
+                <span>support@langtago.com</span>
               </a>
               <Link
                 href="/evidence-log"
-                className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-6 py-3 text-xs sm:text-sm font-bold text-slate-950 hover:bg-emerald-400 transition-colors"
+                className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-2.5 text-xs font-semibold text-zinc-950 hover:bg-emerald-400 transition-colors"
               >
                 <span>View EvidenceLog for Jira</span>
                 <ArrowRight className="h-3.5 w-3.5" />
