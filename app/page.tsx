@@ -179,19 +179,19 @@ export default function StudioHomePage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 font-mono text-xs text-zinc-300">
                     <div className="flex items-center gap-2">
                       <Check className="h-3.5 w-3.5 text-emerald-400" />
-                      <span>Zero Egress: In-tenant Forge storage</span>
+                      <span>Zero Egress: 100% in-tenant Forge</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Check className="h-3.5 w-3.5 text-emerald-400" />
-                      <span>SHA-256 HMAC cryptographic seals</span>
+                      <span>Release Merkle Tree root integrity</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Check className="h-3.5 w-3.5 text-emerald-400" />
-                      <span>1-Click export: PDF, CSV, and JSON</span>
+                      <span>Preventive workflow gatekeeper</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Check className="h-3.5 w-3.5 text-emerald-400" />
-                      <span>Separation of duties enforcement</span>
+                      <span>Vanta, Drata, &amp; Big 4 CSV export</span>
                     </div>
                   </div>
 

@@ -45,16 +45,16 @@ export default function Navbar({ onOpenAuditModal, isProductPage = false }: Navb
                 Studio
               </Link>
               <a href="#preview" className="hover:text-white transition-colors">
-                Jira Glance
+                Issue Panel
               </a>
               <a href="#features" className="hover:text-white transition-colors">
-                Features
+                6 Pillars
+              </a>
+              <a href="#audit-hub" className="hover:text-white transition-colors">
+                Audit Hub
               </a>
               <a href="#security" className="hover:text-white transition-colors text-emerald-400/90 hover:text-emerald-300">
                 Security &amp; Forge
-              </a>
-              <a href="#how-it-works" className="hover:text-white transition-colors">
-                Workflow
               </a>
               <a href="#pricing" className="hover:text-white transition-colors">
                 Pricing
