@@ -137,7 +137,15 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-14 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-500 font-mono">
-          <p>© 2026 Langtago Studio. All rights reserved.</p>
+          <div className="flex flex-wrap items-center gap-3">
+            <p>© 2026 Langtago Studio. All rights reserved.</p>
+            <span className="text-zinc-700">•</span>
+            <Link href="/privacy" className="text-zinc-400 hover:text-emerald-400 transition-colors">Privacy Policy</Link>
+            <span className="text-zinc-700">•</span>
+            <Link href="/terms" className="text-zinc-400 hover:text-emerald-400 transition-colors">Terms of Service</Link>
+            <span className="text-zinc-700">•</span>
+            <a href="https://github.com/stuon/evidencelog-jira" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">GitHub</a>
+          </div>
           <p className="text-center sm:text-right max-w-xl">
             EvidenceLog is an independent product developed by Langtago. Jira and Atlassian are registered trademarks of Atlassian Pty Ltd.
           </p>
