@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ShieldCheck, ExternalLink, Menu, X, FileText, ArrowRight } from "lucide-react";
+import { ShieldCheck, ExternalLink, Menu, X, FileText } from "lucide-react";
 
 interface NavbarProps {
   onOpenAuditModal?: () => void;
@@ -11,6 +11,7 @@ interface NavbarProps {
 
 export default function Navbar({ onOpenAuditModal, isProductPage = true }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const prefix = isProductPage ? "" : "/";
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-white/[0.08] bg-[#080b0f]/80 backdrop-blur-md transition-all">
@@ -31,28 +32,28 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-6 md:flex text-xs font-medium text-zinc-400">
-          <a href="#preview" className="hover:text-white transition-colors">
+          <a href={`${prefix}#preview`} className="hover:text-white transition-colors">
             Issue Panel
           </a>
-          <a href="#features" className="hover:text-white transition-colors">
+          <a href={`${prefix}#features`} className="hover:text-white transition-colors">
             6 Pillars
           </a>
-          <a href="#audit-hub" className="hover:text-white transition-colors">
+          <a href={`${prefix}#audit-hub`} className="hover:text-white transition-colors">
             Audit Hub
           </a>
-          <a href="#gatekeeper" className="hover:text-white transition-colors">
+          <a href={`${prefix}#gatekeeper`} className="hover:text-white transition-colors">
             Gatekeeper
           </a>
-          <a href="#security" className="hover:text-white transition-colors text-emerald-400/90 hover:text-emerald-300">
+          <a href={`${prefix}#security`} className="hover:text-white transition-colors text-emerald-400/90 hover:text-emerald-300">
             Security &amp; Forge
           </a>
-          <a href="#pricing" className="hover:text-white transition-colors">
+          <a href={`${prefix}#pricing`} className="hover:text-white transition-colors">
             Pricing
           </a>
-          <a href="#studio" className="hover:text-white transition-colors">
+          <a href={`${prefix}#studio`} className="hover:text-white transition-colors">
             Studio
           </a>
-          <a href="#faq" className="hover:text-white transition-colors">
+          <a href={`${prefix}#faq`} className="hover:text-white transition-colors">
             FAQ
           </a>
         </nav>

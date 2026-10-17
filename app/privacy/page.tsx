@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Shield, Lock, Server, EyeOff, CheckCircle2, ArrowLeft } from "lucide-react";
+import { Shield, Lock, Server, ArrowLeft } from "lucide-react";
 
 export const metadata = {
   title: "Privacy Policy | Langtago & EvidenceLog for Jira",

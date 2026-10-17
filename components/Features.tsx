@@ -4,16 +4,13 @@ import {
   Check,
   ShieldCheck,
   GitPullRequest,
-  Lock,
   Layers,
   Bug,
   RefreshCw,
-  FileCheck2,
   Cpu,
   AlertTriangle,
   Clock,
   Sparkles,
-  Users
 } from "lucide-react";
 
 export default function Features() {

@@ -1,14 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  ShieldCheck,
-  Check,
-  FileCheck,
-  ExternalLink,
-  ChevronRight,
-  Sparkles,
-} from "lucide-react";
+import { Check, Sparkles } from "lucide-react";
 
 type FrameworkKey = "SOC2" | "ISO27001" | "HIPAA" | "FEDRAMP" | "NIST" | "PCIDSS";
 

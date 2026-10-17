@@ -5,13 +5,7 @@ import {
   ShieldAlert,
   ShieldCheck,
   ArrowRight,
-  UserX,
-  FileCheck2,
   Lock,
-  RotateCcw,
-  AlertOctagon,
-  CheckCircle,
-  GitPullRequest,
   Check,
 } from "lucide-react";
 

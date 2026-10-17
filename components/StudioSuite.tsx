@@ -1,19 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import {
-  ShieldCheck,
   ArrowRight,
   Lock,
-  Layers,
   ExternalLink,
   Check,
   ServerOff,
   Code2,
   Mail,
   Copy,
-  Sparkles,
 } from "lucide-react";
 
 export default function StudioSuite() {

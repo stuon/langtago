@@ -6,12 +6,22 @@ import {
   Check,
   Cpu,
   Lock,
-  Code2,
-  Terminal,
   RefreshCw,
-  Layers,
   Sparkles,
 } from "lucide-react";
+
+async function computeSha256(payload: Record<string, unknown>) {
+  const start = typeof performance !== "undefined" ? performance.now() : Date.now();
+  const canonicalString = JSON.stringify(payload);
+  const encoder = new TextEncoder();
+  const data = encoder.encode(canonicalString);
+  const hashBuffer = await window.crypto.subtle.digest("SHA-256", data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const computedHash = hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
+  const end = typeof performance !== "undefined" ? performance.now() : Date.now();
+  const duration = Math.max(0.12, +(end - start).toFixed(2));
+  return { computedHash, duration };
+}
 
 export default function OfflineVerifierTool() {
   const [activeTab, setActiveTab] = useState<"SINGLE" | "MERKLE">("SINGLE");
@@ -38,20 +48,7 @@ export default function OfflineVerifierTool() {
 
   const handleVerify = async () => {
     setIsVerifying(true);
-    const start = performance.now();
-
-    // Canonical payload stringification
-    const canonicalString = JSON.stringify(sampleIssuePayload);
-
-    // Compute real SHA-256 in browser using Web Cryptography API
-    const encoder = new TextEncoder();
-    const data = encoder.encode(canonicalString);
-    const hashBuffer = await window.crypto.subtle.digest("SHA-256", data);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    const computedHash = hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
-
-    const end = performance.now();
-    const duration = Math.max(0.12, +(end - start).toFixed(2));
+    const { computedHash, duration } = await computeSha256(sampleIssuePayload);
 
     setTimeout(() => {
       setVerificationResult({

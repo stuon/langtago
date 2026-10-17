@@ -4,16 +4,13 @@ import { useEffect, useState } from "react";
 import {
   X,
   ShieldCheck,
-  Check,
   Copy,
-  ExternalLink,
   Lock,
   GitPullRequest,
   CheckCircle2,
   FileText,
   Clock,
   Sparkles,
-  Download,
   Layers,
   FileSpreadsheet,
 } from "lucide-react";

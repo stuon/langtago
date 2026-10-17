@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { FileText, ShieldCheck, Scale, AlertCircle, ArrowLeft } from "lucide-react";
+import { FileText, AlertCircle, ArrowLeft } from "lucide-react";
 
 export const metadata = {
   title: "Terms of Service | Langtago & EvidenceLog for Jira",
