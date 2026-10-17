@@ -10,6 +10,7 @@ import {
   Check,
   ServerOff,
   Code2,
+  Mail,
 } from "lucide-react";
 
 export default function StudioHomePage() {
@@ -365,29 +366,96 @@ export default function StudioHomePage() {
           </div>
         </section>
 
-        {/* Contact & Support Section */}
-        <section id="contact" className="relative py-20 border-t border-white/[0.06] bg-[#080b0f]">
-          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center space-y-5">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">
-              Connect with Langtago Studio
-            </h2>
-            <p className="text-xs sm:text-sm text-zinc-400 max-w-lg mx-auto">
-              Questions about our apps, custom GRC control mappings, or enterprise Atlassian deployments? Our engineering team is here to assist.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-              <a
-                href="mailto:support@langtago.com"
-                className="inline-flex items-center gap-2 rounded-xl bg-zinc-900 border border-white/[0.1] px-5 py-2.5 text-xs font-medium text-zinc-200 hover:bg-zinc-800 hover:text-white transition-colors"
-              >
-                <span>support@langtago.com</span>
-              </a>
-              <Link
-                href="/evidence-log"
-                className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-2.5 text-xs font-semibold text-zinc-950 hover:bg-emerald-400 transition-colors"
-              >
-                <span>View EvidenceLog for Jira</span>
-                <ArrowRight className="h-3.5 w-3.5" />
-              </Link>
+        {/* Enterprise Inquiries & Support Card */}
+        <section id="contact" className="relative py-24 border-t border-white/[0.06] bg-[#070a0e]">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="rounded-2xl border border-white/[0.08] bg-[#0c1017] p-8 sm:p-12 shadow-2xl">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                {/* Left Column: Commercial / Security Value (7 cols) */}
+                <div className="lg:col-span-7 space-y-4">
+                  <div className="inline-flex items-center gap-2 font-mono text-xs tracking-wider text-emerald-400 uppercase">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                    <span>Enterprise &amp; Compliance Inquiries</span>
+                  </div>
+
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                    Deploy with confidence. <br className="hidden sm:inline" />
+                    Backed directly by our engineering team.
+                  </h2>
+
+                  <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed max-w-xl">
+                    Need assistance with an internal vendor security review, custom SOC 2 control mappings, or high-volume multi-instance Jira licenses? We fast-track enterprise onboarding with pre-approved Forge security packages.
+                  </p>
+
+                  <div className="pt-2 space-y-2.5 font-mono text-xs text-zinc-300">
+                    <div className="flex items-center gap-2.5">
+                      <Check className="h-4 w-4 text-emerald-400 shrink-0" />
+                      <span>Direct engineer response within 4 business hours</span>
+                    </div>
+                    <div className="flex items-center gap-2.5">
+                      <Check className="h-4 w-4 text-emerald-400 shrink-0" />
+                      <span>Security questionnaire &amp; Data Protection Agreement (DPA) package</span>
+                    </div>
+                    <div className="flex items-center gap-2.5">
+                      <Check className="h-4 w-4 text-emerald-400 shrink-0" />
+                      <span>Zero-egress architecture verified by Atlassian Forge platform</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Column: Two Action Cards (5 cols) */}
+                <div className="lg:col-span-5 space-y-3.5">
+                  {/* Action 1: Self-Serve Product Tour */}
+                  <div className="rounded-xl border border-emerald-500/30 bg-emerald-950/[0.15] p-5 space-y-3 transition-colors hover:border-emerald-500/50">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-[10px] font-bold text-emerald-400 uppercase tracking-wider">
+                        Flagship App
+                      </span>
+                      <span className="rounded bg-emerald-500/10 px-2 py-0.5 font-mono text-[10px] text-emerald-400 border border-emerald-500/20">
+                        Free up to 10 users
+                      </span>
+                    </div>
+                    <h3 className="text-sm font-bold text-white">
+                      Start using EvidenceLog for Jira
+                    </h3>
+                    <p className="text-xs text-zinc-400 leading-relaxed">
+                      Install in 2 minutes directly from the Atlassian Marketplace with automated SOC 2 sealing.
+                    </p>
+                    <Link
+                      href="/evidence-log"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-emerald-500 py-2.5 px-4 text-xs font-semibold text-zinc-950 hover:bg-emerald-400 transition-colors shadow-sm"
+                    >
+                      <span>Explore EvidenceLog &amp; Pricing</span>
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </Link>
+                  </div>
+
+                  {/* Action 2: Direct Enterprise Contact */}
+                  <div className="rounded-xl border border-white/[0.08] bg-zinc-900/60 p-5 space-y-3 transition-colors hover:border-white/[0.16]">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-[10px] font-bold text-zinc-400 uppercase tracking-wider">
+                        Direct Inquiries
+                      </span>
+                      <span className="font-mono text-[10px] text-zinc-500">
+                        support@langtago.com
+                      </span>
+                    </div>
+                    <h3 className="text-sm font-bold text-white">
+                      Security &amp; Custom Control Reviews
+                    </h3>
+                    <p className="text-xs text-zinc-400 leading-relaxed">
+                      Speak directly with our technical team for custom framework mapping or procurement.
+                    </p>
+                    <a
+                      href="mailto:support@langtago.com?subject=Langtago%20Enterprise%20Inquiry"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-white/[0.1] bg-zinc-900 py-2.5 px-4 text-xs font-medium text-zinc-200 hover:bg-zinc-800 hover:text-white transition-colors"
+                    >
+                      <Mail className="h-3.5 w-3.5 text-emerald-400" />
+                      <span>Contact Engineering Team</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
