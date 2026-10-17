@@ -73,7 +73,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} dark scroll-smooth`}>
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${geistSans.variable} ${geistMono.variable} dark scroll-smooth`}
+    >
       <body className="bg-[#080b0f] text-zinc-100 min-h-screen flex flex-col selection:bg-emerald-500/20 selection:text-emerald-200">
         {GA_MEASUREMENT_ID && (
           <>

@@ -31,7 +31,7 @@ export default function GatekeeperDemo() {
     (scenario === "MISSING_SECURITY" && !remediated);
 
   return (
-    <section className="relative py-20 border-t border-white/[0.06] bg-[#070b12]">
+    <section id="gatekeeper" className="relative py-20 border-t border-white/[0.06] bg-[#070b12]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center space-y-3">
           <div className="inline-flex items-center gap-2 font-mono text-xs tracking-wider text-emerald-400 uppercase">
