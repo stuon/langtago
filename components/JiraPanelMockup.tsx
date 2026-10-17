@@ -42,19 +42,19 @@ export default function JiraPanelMockup({ onOpenAuditModal }: JiraPanelMockupPro
           </div>
           <div className="ml-3 hidden sm:flex items-center gap-1.5 rounded-md bg-slate-950/70 px-3 py-1 text-xs text-slate-400 border border-slate-800">
             <span className="text-slate-500">https://</span>
-            <span className="text-slate-300">acme-corp.atlassian.net</span>
-            <span className="text-slate-500">/jira/your-work/PROD-1429</span>
+            <span className="text-slate-200 font-medium">langtago-demo.atlassian.net</span>
+            <span className="text-slate-500">/browse/LANG-10</span>
           </div>
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="inline-flex items-center gap-1 rounded-full bg-cyan-950/80 px-2.5 py-0.5 text-[11px] font-medium text-cyan-400 border border-cyan-800/60">
+          <span className="inline-flex items-center gap-1 rounded-full bg-cyan-950/80 px-2.5 py-0.5 text-[11px] font-medium text-cyan-400 border border-cyan-800/60 font-mono">
             <Sparkles className="h-3 w-3" />
             Atlassian Forge Native
           </span>
-          <span className="inline-flex items-center gap-1 rounded-full bg-emerald-950/80 px-2.5 py-0.5 text-[11px] font-medium text-emerald-400 border border-emerald-800/60">
+          <span className="inline-flex items-center gap-1 rounded-full bg-emerald-950/80 px-2.5 py-0.5 text-[11px] font-medium text-emerald-400 border border-emerald-800/60 font-mono">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            Live Preview
+            Live Sealed Issue
           </span>
         </div>
       </div>
@@ -64,12 +64,12 @@ export default function JiraPanelMockup({ onOpenAuditModal }: JiraPanelMockupPro
         {/* Left Column: Jira Ticket Core Details (7 cols) */}
         <div className="lg:col-span-7 p-5 sm:p-7 border-b lg:border-b-0 lg:border-r border-slate-800/80 space-y-5">
           {/* Breadcrumbs */}
-          <div className="flex items-center gap-1.5 text-xs text-slate-400">
+          <div className="flex items-center gap-1.5 text-xs text-slate-400 font-mono">
             <span className="text-slate-400 hover:text-slate-300">Projects</span>
             <ChevronRight className="h-3 w-3 text-slate-600" />
-            <span className="text-slate-400 hover:text-slate-300">Production Infrastructure</span>
+            <span className="text-slate-300">Langtago Demo</span>
             <ChevronRight className="h-3 w-3 text-slate-600" />
-            <span className="font-semibold text-emerald-400">PROD-1429</span>
+            <span className="font-semibold text-emerald-400">LANG-10</span>
           </div>
 
           {/* Issue Title */}

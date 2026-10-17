@@ -43,9 +43,9 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
   if (!isOpen) return null;
 
   const sampleJson = {
-    report_id: "EV-SOC2-2026-PROD-1429",
+    report_id: "EV-SOC2-2026-LANG-10",
     standard: "AICPA SOC 2 Type II - CC8.1 / CC7.1",
-    jira_issue_key: "PROD-1429",
+    jira_issue_key: "LANG-10",
     summary: "Migrate Auth Token Service to Ed25519 Keys",
     repository: "github.com/org/auth-gateway-service",
     pull_request_id: "#384",
@@ -54,7 +54,7 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
       "9f83ac2b7c4d516e8812c32e5f56a3120199e8b7c62d08a0ef93d927a44fbc81",
     verification_status: "CRYPTOGRAPHICALLY_SEALED",
     immutable_timestamp: "2026-10-14T16:42:08.192Z",
-    tenant: "jira-cloud-corp-tenant-09",
+    tenant: "langtago-demo.atlassian.net",
     controls_verified: [
       {
         control_id: "CC8.1.1",
@@ -207,7 +207,7 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
                 <div className="rounded-xl border border-slate-800 bg-slate-950/50 p-3.5">
                   <span className="text-[11px] font-medium text-slate-400">Jira Ticket Reference</span>
                   <div className="mt-1 flex items-center gap-2">
-                    <span className="font-mono text-sm font-semibold text-emerald-400">PROD-1429</span>
+                    <span className="font-mono text-sm font-semibold text-emerald-400">LANG-10</span>
                     <span className="rounded bg-emerald-500/20 px-1.5 py-0.5 text-[10px] font-medium text-emerald-300">
                       RESOLVED
                     </span>
@@ -357,7 +357,7 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
                 <div className="relative">
                   <div className="absolute -left-[23px] top-1.5 h-3 w-3 rounded-full bg-emerald-500 ring-4 ring-slate-900" />
                   <span className="text-[11px] font-mono text-slate-400">2026-10-14 14:15:00 UTC</span>
-                  <p className="text-xs font-semibold text-white mt-0.5">Jira Issue PROD-1429 Created & Scoped</p>
+                  <p className="text-xs font-semibold text-white mt-0.5">Jira Issue LANG-10 Created & Scoped</p>
                   <p className="text-xs text-slate-400">Created by alex.k@enterprise.io. Target release sprint: 2026-Q4-R2.</p>
                 </div>
 

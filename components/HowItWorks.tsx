@@ -7,7 +7,7 @@ export default function HowItWorks() {
       icon: GitPullRequest,
       title: "Developers code as usual",
       description:
-        "No extra dashboards or mandatory sign-offs to bookmark. Developers branch, code, and submit Pull Requests referencing Jira issue keys (e.g. PROD-1429).",
+        "No extra dashboards or mandatory sign-offs to bookmark. Developers branch, code, and submit Pull Requests referencing Jira issue keys (e.g. LANG-10).",
     },
     {
       step: "02",

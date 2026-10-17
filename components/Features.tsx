@@ -42,7 +42,7 @@ export default function Features() {
               {/* Technical Rule Mockup */}
               <div className="mt-6 rounded-xl border border-white/[0.06] bg-black/50 p-4 font-mono text-xs space-y-2">
                 <div className="flex items-center justify-between text-zinc-500 text-[11px]">
-                  <span>POLICY EVALUATION: PROD-1429</span>
+                  <span>POLICY EVALUATION: LANG-10</span>
                   <span className="text-emerald-400">STATUS: PASS</span>
                 </div>
                 <div className="text-zinc-300">
@@ -84,7 +84,7 @@ export default function Features() {
 
               <div className="mt-6 rounded-xl border border-white/[0.06] bg-black/50 p-4 font-mono text-xs text-zinc-300 space-y-2">
                 <div className="text-[10px] text-zinc-500">DIGEST INPUT:</div>
-                <div className="truncate text-zinc-400">issue:PROD-1429|sha:4f738a1|ts:1728924128</div>
+                <div className="truncate text-zinc-400">issue:LANG-10|sha:4f738a1|ts:1728924128</div>
                 <div className="text-[10px] text-zinc-500 pt-1">COMPUTED SEAL:</div>
                 <div className="text-emerald-400 truncate text-[11px]">sha256:9f83ac2b7c4d516e8812...</div>
               </div>

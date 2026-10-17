@@ -221,7 +221,7 @@ export default function StudioHomePage() {
                     <div className="flex items-center justify-between pb-2.5 border-b border-white/[0.06]">
                       <div className="flex items-center gap-2 text-white font-semibold">
                         <ShieldCheck className="h-4 w-4 text-emerald-400" />
-                        <span>PROD-1429 (Sealed)</span>
+                        <span>LANG-10 (Sealed)</span>
                       </div>
                       <span className="text-[10px] text-emerald-400">SOC 2 CC8.1</span>
                     </div>

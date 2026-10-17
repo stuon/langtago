@@ -93,7 +93,7 @@ export default function SecurityArchitecture() {
                         <span className="font-mono text-[10px] text-slate-500">Core Issue API</span>
                       </div>
                       <p className="text-xs text-slate-400">
-                        Issues, workflow transitions, and peer review links (PROD-1429, PR #384).
+                        Issues, workflow transitions, and peer review links (LANG-10, PR #384).
                       </p>
                       <div className="pt-2 flex items-center gap-1.5 text-[11px] font-mono text-emerald-400">
                         <Check className="h-3 w-3" />
