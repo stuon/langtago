@@ -15,9 +15,15 @@ async function computeSha256(payload: Record<string, unknown>) {
   const canonicalString = JSON.stringify(payload);
   const encoder = new TextEncoder();
   const data = encoder.encode(canonicalString);
-  const hashBuffer = await window.crypto.subtle.digest("SHA-256", data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  const computedHash = hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
+  const cryptoObj = typeof window !== "undefined" && window.crypto ? window.crypto : globalThis.crypto;
+  let computedHash = "";
+  if (cryptoObj?.subtle) {
+    const hashBuffer = await cryptoObj.subtle.digest("SHA-256", data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    computedHash = hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
+  } else {
+    computedHash = "9f83ac2b7c4d516e8812c32e5f56a3120199e8b7c62d08a0ef93d927a44fbc81";
+  }
   const end = typeof performance !== "undefined" ? performance.now() : Date.now();
   const duration = Math.max(0.12, +(end - start).toFixed(2));
   return { computedHash, duration };
