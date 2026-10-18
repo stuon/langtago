@@ -13,7 +13,7 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
       icon: GitPullRequest,
       title: "Ship Code Normally",
       description:
-        "Engineers create pull requests, request peer reviews, and run automated CI test suites in GitHub, GitLab, or Bitbucket. Zero forms to fill out.",
+        "Engineers open pull requests and run CI test suites in GitHub, GitLab, or Bitbucket. Zero forms.",
       tag: "Zero Friction",
     },
     {
@@ -21,7 +21,7 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
       icon: ShieldCheck,
       title: "Automatic Verification",
       description:
-        "EvidenceLog checks segregation of duties (CC6.8) and passing test runs before tickets are closed—sealing immutable proof directly into Jira.",
+        "EvidenceLog validates peer review and automated tests before tickets close, sealing proof directly into Jira.",
       tag: "Forge Sandboxed",
     },
     {
@@ -29,7 +29,7 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
       icon: FileCheck,
       title: "1-Click Auditor Handoff",
       description:
-        "Download pre-formatted auditor workpapers or export signed JSON directly into Vanta, Drata, or Secureframe for continuous compliance.",
+        "Export pre-formatted auditor workpapers or sync signed payloads directly to Vanta and Drata in seconds.",
       tag: "Vanta & Drata Ready",
     },
   ];
