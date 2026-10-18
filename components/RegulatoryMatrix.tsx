@@ -5,7 +5,11 @@ import { Check, Sparkles } from "lucide-react";
 
 type FrameworkKey = "SOC2" | "ISO27001" | "HIPAA" | "FEDRAMP" | "NIST" | "PCIDSS";
 
-export default function RegulatoryMatrix() {
+interface RegulatoryMatrixProps {
+  embedded?: boolean;
+}
+
+export default function RegulatoryMatrix({ embedded = false }: RegulatoryMatrixProps) {
   const [activeFramework, setActiveFramework] = useState<FrameworkKey>("SOC2");
 
   const frameworks: Record<
@@ -216,10 +220,10 @@ export default function RegulatoryMatrix() {
 
   const current = frameworks[activeFramework];
 
-  return (
-    <section className="relative py-16 border-t border-white/[0.06] bg-[#070b12]">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center space-y-2">
+  const content = (
+    <div className={embedded ? "" : "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"}>
+      {!embedded && (
+        <div className="mx-auto max-w-2xl text-center space-y-2 mb-8">
           <div className="inline-flex items-center gap-2 font-mono text-[11px] tracking-wider text-emerald-400 uppercase">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
             <span>Multi-Framework Crosswalk</span>
@@ -231,9 +235,10 @@ export default function RegulatoryMatrix() {
             Automatically satisfies auditor requirements across global compliance standards.
           </p>
         </div>
+      )}
 
-        {/* Framework Selector Tabs */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
+      {/* Framework Selector Tabs */}
+      <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
           {(Object.keys(frameworks) as FrameworkKey[]).map((key) => {
             const fw = frameworks[key];
             const isActive = activeFramework === key;
@@ -312,6 +317,15 @@ export default function RegulatoryMatrix() {
           </div>
         </div>
       </div>
+  );
+
+  if (embedded) {
+    return content;
+  }
+
+  return (
+    <section className="relative py-16 border-t border-white/[0.06] bg-[#070b12]">
+      {content}
     </section>
   );
 }

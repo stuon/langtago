@@ -3,12 +3,10 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import ProblemSolution from "@/components/ProblemSolution";
 import HowItWorks from "@/components/HowItWorks";
 import Features from "@/components/Features";
-import AuditHubMockup from "@/components/AuditHubMockup";
-import GatekeeperDemo from "@/components/GatekeeperDemo";
-import OfflineVerifierTool from "@/components/OfflineVerifierTool";
-import RegulatoryMatrix from "@/components/RegulatoryMatrix";
+import ProductTour from "@/components/ProductTour";
 import SecurityArchitecture from "@/components/SecurityArchitecture";
 import Pricing from "@/components/Pricing";
 import StudioSuite from "@/components/StudioSuite";
@@ -33,54 +31,31 @@ export default function HomePage() {
         {/* 1. Hero: Core Value Proposition & Interactive Live Jira Panel Mockup */}
         <Hero onOpenAuditModal={() => setIsAuditModalOpen(true)} />
 
-        {/* 2. Visual 4-Step Pipeline */}
+        {/* 2. Before vs After: The Audit Scramble vs EvidenceLog */}
+        <ProblemSolution />
+
+        {/* 3. Visual 4-Step Pipeline */}
         <HowItWorks />
 
-        {/* 3. 6-Pillar Compliance Bento Grid */}
+        {/* 4. The 6 Compliance Pillars Bento Grid */}
         <Features />
 
-        {/* 4. Project Executive Audit Hub Command Center */}
-        <section id="audit-hub" className="relative py-20 border-t border-white/[0.06] bg-[#070a0f]">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center space-y-2 mb-10">
-              <div className="inline-flex items-center gap-2 font-mono text-[11px] tracking-wider text-emerald-400 uppercase">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                <span>Project-Level Command Center</span>
-              </div>
-              <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
-                The Executive Audit Hub. Built into Jira.
-              </h2>
-              <p className="text-xs sm:text-sm text-zinc-400">
-                Real-time release scorecards for engineering leads. Batch certify sprint releases and export sealed audit dossiers in 1 click.
-              </p>
-            </div>
+        {/* 5. Unified Interactive Product Tour (Gatekeeper, Audit Hub, Verifier, Matrix) */}
+        <ProductTour onOpenAuditModal={() => setIsAuditModalOpen(true)} />
 
-            <AuditHubMockup onOpenAuditModal={() => setIsAuditModalOpen(true)} />
-          </div>
-        </section>
-
-        {/* 5. Preventive Workflow Gatekeeper Simulator */}
-        <GatekeeperDemo />
-
-        {/* 6. Standalone Zero-Trust Cryptographic Verifier Tool */}
-        <OfflineVerifierTool />
-
-        {/* 7. Multi-Framework Regulatory Crosswalk Matrix */}
-        <RegulatoryMatrix />
-
-        {/* 8. Security & Zero-Egress Forge Architecture */}
+        {/* 6. Security & Zero-Egress Forge Architecture */}
         <SecurityArchitecture />
 
-        {/* 9. 3-Tier B2B Transparent Pricing */}
+        {/* 7. 3-Tier B2B Transparent Pricing */}
         <Pricing onOpenAuditModal={() => setIsAuditModalOpen(true)} />
 
-        {/* 10. Langtago Studio Suite & Enterprise Inquiries */}
+        {/* 8. Langtago Studio Suite & Enterprise Inquiries */}
         <StudioSuite />
 
-        {/* 11. Interactive FAQ */}
+        {/* 9. Interactive FAQ */}
         <FAQ />
 
-        {/* 12. Pre-Footer Call to Action */}
+        {/* 10. Pre-Footer Call to Action */}
         <section className="relative py-16 border-t border-white/[0.06] bg-[#070a0e]">
           <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center space-y-4">
             <div className="inline-flex items-center gap-2 font-mono text-[11px] tracking-wider text-emerald-400 uppercase">

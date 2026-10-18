@@ -23,7 +23,11 @@ async function computeSha256(payload: Record<string, unknown>) {
   return { computedHash, duration };
 }
 
-export default function OfflineVerifierTool() {
+interface OfflineVerifierToolProps {
+  embedded?: boolean;
+}
+
+export default function OfflineVerifierTool({ embedded = false }: OfflineVerifierToolProps) {
   const [activeTab, setActiveTab] = useState<"SINGLE" | "MERKLE">("SINGLE");
   const [isVerifying, setIsVerifying] = useState(false);
   const [verificationResult, setVerificationResult] = useState<{
@@ -61,10 +65,10 @@ export default function OfflineVerifierTool() {
     }, 200);
   };
 
-  return (
-    <section className="relative py-20 border-t border-white/[0.06] bg-[#05080e]">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center space-y-2">
+  const content = (
+    <div className={embedded ? "" : "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"}>
+      {!embedded && (
+        <div className="mx-auto max-w-2xl text-center space-y-2 mb-8">
           <div className="inline-flex items-center gap-2 font-mono text-[11px] tracking-wider text-emerald-400 uppercase">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
             <span>Zero-Trust Standalone Verifier</span>
@@ -76,9 +80,10 @@ export default function OfflineVerifierTool() {
             Native W3C Web Cryptography in your browser. Verify SHA-256 evidence digests and release Merkle roots with zero server egress.
           </p>
         </div>
+      )}
 
-        {/* Tab Toggle */}
-        <div className="mt-8 flex justify-center">
+      {/* Tab Toggle */}
+      <div className="flex justify-center">
           <div className="inline-flex rounded-lg border border-slate-800 bg-slate-900/60 p-1 font-mono text-xs">
             <button
               type="button"
@@ -253,6 +258,15 @@ export default function OfflineVerifierTool() {
           </div>
         </div>
       </div>
+  );
+
+  if (embedded) {
+    return content;
+  }
+
+  return (
+    <section className="relative py-20 border-t border-white/[0.06] bg-[#05080e]">
+      {content}
     </section>
   );
 }

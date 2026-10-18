@@ -11,7 +11,11 @@ import {
 
 type GatekeeperScenario = "COMPLIANT" | "SELF_APPROVAL" | "MISSING_SECURITY";
 
-export default function GatekeeperDemo() {
+interface GatekeeperDemoProps {
+  embedded?: boolean;
+}
+
+export default function GatekeeperDemo({ embedded = false }: GatekeeperDemoProps) {
   const [scenario, setScenario] = useState<GatekeeperScenario>("SELF_APPROVAL");
   const [remediated, setRemediated] = useState(false);
 
@@ -24,10 +28,10 @@ export default function GatekeeperDemo() {
     (scenario === "SELF_APPROVAL" && !remediated) ||
     (scenario === "MISSING_SECURITY" && !remediated);
 
-  return (
-    <section id="gatekeeper" className="relative py-20 border-t border-white/[0.06] bg-[#070b12]">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center space-y-2">
+  const content = (
+    <div className={embedded ? "" : "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"}>
+      {!embedded && (
+        <div className="mx-auto max-w-2xl text-center space-y-2 mb-8">
           <div className="inline-flex items-center gap-2 font-mono text-[11px] tracking-wider text-emerald-400 uppercase">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
             <span>Preventive Workflow Gatekeeper</span>
@@ -39,9 +43,10 @@ export default function GatekeeperDemo() {
             Native Jira Workflow Validator that intercepts and blocks transitions to <span className="font-mono text-white">Done</span> until peer reviews, test runs, and security scans are satisfied.
           </p>
         </div>
+      )}
 
-        {/* Interactive Scenario Selector */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
+      {/* Interactive Scenario Selector */}
+      <div className="flex flex-wrap items-center justify-center gap-2">
           <button
             type="button"
             onClick={() => resetScenario("SELF_APPROVAL")}
@@ -224,6 +229,15 @@ export default function GatekeeperDemo() {
           </div>
         </div>
       </div>
+  );
+
+  if (embedded) {
+    return content;
+  }
+
+  return (
+    <section id="gatekeeper" className="relative py-20 border-t border-white/[0.06] bg-[#070b12]">
+      {content}
     </section>
   );
 }

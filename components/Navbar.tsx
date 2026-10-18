@@ -38,13 +38,10 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
           <a href={`${prefix}#features`} className="hover:text-white transition-colors">
             6 Pillars
           </a>
-          <a href={`${prefix}#audit-hub`} className="hover:text-white transition-colors">
-            Audit Hub
+          <a href={`${prefix}#interactive-lab`} className="hover:text-white transition-colors text-emerald-400 font-semibold">
+            Product Tour
           </a>
-          <a href={`${prefix}#gatekeeper`} className="hover:text-white transition-colors">
-            Gatekeeper
-          </a>
-          <a href={`${prefix}#security`} className="hover:text-white transition-colors text-emerald-400/90 hover:text-emerald-300">
+          <a href={`${prefix}#security`} className="hover:text-white transition-colors">
             Security &amp; Forge
           </a>
           <a href={`${prefix}#pricing`} className="hover:text-white transition-colors">
@@ -112,18 +109,11 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
             6 Compliance Pillars
           </a>
           <a
-            href={`${prefix}#audit-hub`}
+            href={`${prefix}#interactive-lab`}
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-1 text-zinc-400 hover:text-white"
+            className="block py-1 text-emerald-400 font-semibold"
           >
-            Project Audit Hub
-          </a>
-          <a
-            href={`${prefix}#gatekeeper`}
-            onClick={() => setMobileMenuOpen(false)}
-            className="block py-1 text-zinc-400 hover:text-white"
-          >
-            Workflow Gatekeeper
+            Interactive Product Tour
           </a>
           <a
             href={`${prefix}#security`}
