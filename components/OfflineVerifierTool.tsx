@@ -64,18 +64,16 @@ export default function OfflineVerifierTool() {
   return (
     <section className="relative py-20 border-t border-white/[0.06] bg-[#05080e]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center space-y-3">
-          <div className="inline-flex items-center gap-2 font-mono text-xs tracking-wider text-emerald-400 uppercase">
+        <div className="mx-auto max-w-2xl text-center space-y-2">
+          <div className="inline-flex items-center gap-2 font-mono text-[11px] tracking-wider text-emerald-400 uppercase">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
             <span>Zero-Trust Standalone Verifier</span>
           </div>
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
             Independent offline verification.
           </h2>
-          <p className="text-sm text-zinc-400">
-            External Big 4 auditors (PwC, EY, KPMG, Deloitte) don&apos;t need to take your word for it.
-            EvidenceLog includes an offline cryptographic verifier using the native browser Web Cryptography API.
-            No server calls, zero data egress.
+          <p className="text-xs sm:text-sm text-zinc-400">
+            Native W3C Web Cryptography in your browser. Verify SHA-256 evidence digests and release Merkle roots with zero server egress.
           </p>
         </div>
 

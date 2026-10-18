@@ -21,9 +21,8 @@ export default function SecurityArchitecture() {
             <span className="text-slate-400 font-normal">Mathematically verified.</span>
           </h2>
 
-          <p className="mt-4 text-base text-slate-400 leading-relaxed">
-            Legacy compliance tools ingest your private issue comments, code diffs, and developer emails into third-party databases.
-            EvidenceLog executes 100% inside Atlassian Forge’s sandboxed serverless runtime with zero outbound egress permissions.
+          <p className="mt-3 text-sm text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            Legacy tools copy code diffs and ticket comments into third-party databases. EvidenceLog executes 100% inside Atlassian Forge’s sandbox with strict zero outbound egress permissions.
           </p>
         </div>
 

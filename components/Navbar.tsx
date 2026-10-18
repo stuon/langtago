@@ -98,56 +98,56 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
       {mobileMenuOpen && (
         <div className="border-b border-white/[0.08] bg-[#0c1017] px-4 pt-3 pb-6 md:hidden text-xs space-y-3">
           <a
-            href="#preview"
+            href={`${prefix}#preview`}
             onClick={() => setMobileMenuOpen(false)}
             className="block py-1 text-zinc-400 hover:text-white"
           >
             Issue Panel
           </a>
           <a
-            href="#features"
+            href={`${prefix}#features`}
             onClick={() => setMobileMenuOpen(false)}
             className="block py-1 text-zinc-400 hover:text-white"
           >
             6 Compliance Pillars
           </a>
           <a
-            href="#audit-hub"
+            href={`${prefix}#audit-hub`}
             onClick={() => setMobileMenuOpen(false)}
             className="block py-1 text-zinc-400 hover:text-white"
           >
             Project Audit Hub
           </a>
           <a
-            href="#gatekeeper"
+            href={`${prefix}#gatekeeper`}
             onClick={() => setMobileMenuOpen(false)}
             className="block py-1 text-zinc-400 hover:text-white"
           >
             Workflow Gatekeeper
           </a>
           <a
-            href="#security"
+            href={`${prefix}#security`}
             onClick={() => setMobileMenuOpen(false)}
             className="block py-1 text-emerald-400 hover:text-emerald-300"
           >
             Security &amp; Forge Sandbox
           </a>
           <a
-            href="#pricing"
+            href={`${prefix}#pricing`}
             onClick={() => setMobileMenuOpen(false)}
             className="block py-1 text-zinc-400 hover:text-white"
           >
             Pricing
           </a>
           <a
-            href="#studio"
+            href={`${prefix}#studio`}
             onClick={() => setMobileMenuOpen(false)}
             className="block py-1 text-zinc-400 hover:text-white"
           >
             Langtago Studio Suite
           </a>
           <a
-            href="#faq"
+            href={`${prefix}#faq`}
             onClick={() => setMobileMenuOpen(false)}
             className="block py-1 text-zinc-400 hover:text-white"
           >

@@ -27,17 +27,16 @@ export default function GatekeeperDemo() {
   return (
     <section id="gatekeeper" className="relative py-20 border-t border-white/[0.06] bg-[#070b12]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center space-y-3">
-          <div className="inline-flex items-center gap-2 font-mono text-xs tracking-wider text-emerald-400 uppercase">
+        <div className="mx-auto max-w-2xl text-center space-y-2">
+          <div className="inline-flex items-center gap-2 font-mono text-[11px] tracking-wider text-emerald-400 uppercase">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
             <span>Preventive Workflow Gatekeeper</span>
           </div>
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
             Never let non-compliant code reach production.
           </h2>
-          <p className="text-sm text-zinc-400">
-            EvidenceLog installs directly as a native Jira Workflow Transition Validator.
-            If a developer attempts to move an issue to <span className="font-mono text-white">Done</span> without required evidence, the transition is intercepted and blocked programmatically.
+          <p className="text-xs sm:text-sm text-zinc-400">
+            Native Jira Workflow Validator that intercepts and blocks transitions to <span className="font-mono text-white">Done</span> until peer reviews, test runs, and security scans are satisfied.
           </p>
         </div>
 

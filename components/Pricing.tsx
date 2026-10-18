@@ -82,10 +82,10 @@ export default function Pricing({ onOpenAuditModal }: PricingProps) {
             <span>Marketplace Pricing</span>
           </div>
 
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">
             Predictable, transparent licensing.
           </h2>
-          <p className="mt-3 text-sm text-zinc-400">
+          <p className="mt-2 text-xs sm:text-sm text-zinc-400">
             Billed conveniently through your standard Atlassian Cloud invoice. No separate contracts or credit cards required.
           </p>
 

@@ -3,12 +3,12 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import HowItWorks from "@/components/HowItWorks";
 import Features from "@/components/Features";
 import AuditHubMockup from "@/components/AuditHubMockup";
 import GatekeeperDemo from "@/components/GatekeeperDemo";
 import OfflineVerifierTool from "@/components/OfflineVerifierTool";
 import RegulatoryMatrix from "@/components/RegulatoryMatrix";
-import HowItWorks from "@/components/HowItWorks";
 import SecurityArchitecture from "@/components/SecurityArchitecture";
 import Pricing from "@/components/Pricing";
 import StudioSuite from "@/components/StudioSuite";
@@ -33,23 +33,25 @@ export default function HomePage() {
         {/* 1. Hero: Core Value Proposition & Interactive Live Jira Panel Mockup */}
         <Hero onOpenAuditModal={() => setIsAuditModalOpen(true)} />
 
-        {/* 2. 6-Pillar Compliance Bento Grid */}
+        {/* 2. Visual 4-Step Pipeline */}
+        <HowItWorks />
+
+        {/* 3. 6-Pillar Compliance Bento Grid */}
         <Features />
 
-        {/* 3. Project Executive Audit Hub Command Center */}
-        <section id="audit-hub" className="relative py-24 border-t border-white/[0.06] bg-[#070a0f]">
+        {/* 4. Project Executive Audit Hub Command Center */}
+        <section id="audit-hub" className="relative py-20 border-t border-white/[0.06] bg-[#070a0f]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center space-y-3 mb-14">
-              <div className="inline-flex items-center gap-2 font-mono text-xs tracking-wider text-emerald-400 uppercase">
+            <div className="mx-auto max-w-2xl text-center space-y-2 mb-10">
+              <div className="inline-flex items-center gap-2 font-mono text-[11px] tracking-wider text-emerald-400 uppercase">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
                 <span>Project-Level Command Center</span>
               </div>
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
                 The Executive Audit Hub. Built into Jira.
               </h2>
-              <p className="text-sm text-zinc-400 leading-relaxed">
-                Engineering leaders and compliance officers get a real-time release scorecard.
-                Monitor overall readiness, 1-click batch certify entire release sprints, and export tamper-evident dossiers.
+              <p className="text-xs sm:text-sm text-zinc-400">
+                Real-time release scorecards for engineering leads. Batch certify sprint releases and export sealed audit dossiers in 1 click.
               </p>
             </div>
 
@@ -57,17 +59,14 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* 4. Preventive Workflow Gatekeeper Simulator */}
+        {/* 5. Preventive Workflow Gatekeeper Simulator */}
         <GatekeeperDemo />
 
-        {/* 5. Standalone Zero-Trust Cryptographic Verifier Tool */}
+        {/* 6. Standalone Zero-Trust Cryptographic Verifier Tool */}
         <OfflineVerifierTool />
 
-        {/* 6. Multi-Framework Regulatory Crosswalk Matrix */}
+        {/* 7. Multi-Framework Regulatory Crosswalk Matrix */}
         <RegulatoryMatrix />
-
-        {/* 7. Workflow Step Walkthrough */}
-        <HowItWorks />
 
         {/* 8. Security & Zero-Egress Forge Architecture */}
         <SecurityArchitecture />
@@ -75,25 +74,25 @@ export default function HomePage() {
         {/* 9. 3-Tier B2B Transparent Pricing */}
         <Pricing onOpenAuditModal={() => setIsAuditModalOpen(true)} />
 
-        {/* 10. Langtago Studio Suite, Roadmap & Engineering Principles */}
+        {/* 10. Langtago Studio Suite & Enterprise Inquiries */}
         <StudioSuite />
 
         {/* 11. Interactive FAQ */}
         <FAQ />
 
         {/* 12. Pre-Footer Call to Action */}
-        <section className="relative py-20 border-t border-white/[0.06] bg-[#070a0e]">
-          <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center space-y-6">
-            <div className="inline-flex items-center gap-2 font-mono text-xs tracking-wider text-emerald-400 uppercase">
+        <section className="relative py-16 border-t border-white/[0.06] bg-[#070a0e]">
+          <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div className="inline-flex items-center gap-2 font-mono text-[11px] tracking-wider text-emerald-400 uppercase">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
               <span>Get Started in 2 Minutes</span>
             </div>
 
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
               Eliminate manual audit screenshots today.
             </h2>
 
-            <p className="mx-auto max-w-xl text-sm text-zinc-400 leading-relaxed">
+            <p className="mx-auto max-w-lg text-xs sm:text-sm text-zinc-400">
               Install EvidenceLog into your Jira Cloud workspace. Free up to 10 users with instant Atlassian Forge sandboxing and zero external data retention.
             </p>
 
@@ -102,7 +101,7 @@ export default function HomePage() {
                 href="https://marketplace.atlassian.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 py-3 text-xs font-semibold text-zinc-950 hover:bg-emerald-400 transition-colors shadow-lg shadow-emerald-500/20"
+                className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-emerald-500 px-5 py-2.5 text-xs font-semibold text-zinc-950 hover:bg-emerald-400 transition-colors shadow-md shadow-emerald-500/20"
               >
                 <span>Get EvidenceLog on Marketplace</span>
                 <ArrowRight className="h-3.5 w-3.5" />
@@ -111,7 +110,7 @@ export default function HomePage() {
               <button
                 type="button"
                 onClick={() => setIsAuditModalOpen(true)}
-                className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-white/[0.1] bg-zinc-900 px-5 py-3 text-xs font-semibold text-zinc-200 hover:bg-zinc-800 hover:text-white transition-colors"
+                className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-white/[0.1] bg-zinc-900 px-4 py-2.5 text-xs font-semibold text-zinc-200 hover:bg-zinc-800 hover:text-white transition-colors"
               >
                 <FileCheck className="h-3.5 w-3.5 text-emerald-400" />
                 <span>View Sample SOC 2 Output</span>
