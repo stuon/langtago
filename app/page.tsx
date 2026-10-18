@@ -9,7 +9,6 @@ import Features from "@/components/Features";
 import ProductTour from "@/components/ProductTour";
 import SecurityArchitecture from "@/components/SecurityArchitecture";
 import Pricing from "@/components/Pricing";
-import StudioSuite from "@/components/StudioSuite";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import AuditModal from "@/components/AuditModal";
@@ -34,14 +33,14 @@ export default function HomePage() {
         {/* 2. Before vs After: The Audit Scramble vs EvidenceLog */}
         <ProblemSolution />
 
-        {/* 3. Visual 4-Step Pipeline */}
+        {/* 3. The Live Magic: Interactive Product Tour */}
+        <ProductTour onOpenAuditModal={() => setIsAuditModalOpen(true)} />
+
+        {/* 4. Visual 4-Step Pipeline */}
         <HowItWorks />
 
-        {/* 4. The 6 Compliance Pillars Bento Grid */}
+        {/* 5. The 6 Compliance Pillars Bento Grid */}
         <Features />
-
-        {/* 5. Unified Interactive Product Tour (Gatekeeper, Audit Hub, Verifier, Matrix) */}
-        <ProductTour onOpenAuditModal={() => setIsAuditModalOpen(true)} />
 
         {/* 6. Security & Zero-Egress Forge Architecture */}
         <SecurityArchitecture />
@@ -49,13 +48,10 @@ export default function HomePage() {
         {/* 7. 3-Tier B2B Transparent Pricing */}
         <Pricing onOpenAuditModal={() => setIsAuditModalOpen(true)} />
 
-        {/* 8. Langtago Studio Suite & Enterprise Inquiries */}
-        <StudioSuite />
-
-        {/* 9. Interactive FAQ */}
+        {/* 8. Interactive FAQ */}
         <FAQ />
 
-        {/* 10. Pre-Footer Call to Action */}
+        {/* 9. Pre-Footer Call to Action */}
         <section className="relative py-16 border-t border-white/[0.06] bg-[#070a0e]">
           <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center space-y-4">
             <div className="inline-flex items-center gap-2 font-mono text-[11px] tracking-wider text-emerald-400 uppercase">

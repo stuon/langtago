@@ -7,7 +7,7 @@ export default function SecurityArchitecture() {
   const [activeTab, setActiveTab] = useState<"topology" | "manifest">("topology");
 
   return (
-    <section id="security" className="relative py-24 sm:py-32 border-t border-white/[0.06] bg-[#070a0e]">
+    <section id="security" className="relative py-16 sm:py-20 border-t border-white/[0.06] bg-[#070a0e]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center">
@@ -27,7 +27,7 @@ export default function SecurityArchitecture() {
         </div>
 
         {/* Technical Architecture Showcase */}
-        <div className="mt-16 rounded-2xl border border-white/[0.08] bg-[#0c1017] shadow-2xl overflow-hidden">
+        <div className="mt-8 sm:mt-10 rounded-2xl border border-white/[0.08] bg-[#0c1017] shadow-2xl overflow-hidden">
           {/* Top Inspector Bar */}
           <div className="flex flex-wrap items-center justify-between border-b border-white/[0.08] bg-[#090d13] px-6 py-3.5">
             <div className="flex items-center gap-3">

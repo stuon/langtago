@@ -8,9 +8,6 @@ import {
   Bug,
   RefreshCw,
   Cpu,
-  AlertTriangle,
-  Clock,
-  Sparkles,
 } from "lucide-react";
 
 export default function Features() {
@@ -25,8 +22,6 @@ export default function Features() {
         "Verifies Given/When/Then Acceptance Criteria",
         "Validates PR & commit links across GitHub, GitLab & Bitbucket",
       ],
-      codeSnippet: `✓ AC Defined: Given/When/Then verified
-✓ Git Link: GitHub PR #384 (Merged)`,
       icon: GitPullRequest,
     },
     {
@@ -39,8 +34,6 @@ export default function Features() {
         "Blocks self-approval (Author != Approver)",
         "Inspects JSM ITIL Change Advisory Board (CAB) sign-offs",
       ],
-      codeSnippet: `Author: alex.k | Approver: sarah.m (Peer)
-JSM CAB: Approved by Change Board`,
       icon: ShieldCheck,
     },
     {
@@ -53,8 +46,6 @@ JSM CAB: Approved by Change Board`,
         "Validates QA workflow transitions & 'qa-verified' labels",
         "Confirms pre-production test suite execution passes",
       ],
-      codeSnippet: `QA Signer: elena.r (Senior QA Lead)
-Automated Tests: 1,482 passed (100%)`,
       icon: Bug,
     },
     {
@@ -65,10 +56,8 @@ Automated Tests: 1,482 passed (100%)`,
       badgeColor: "text-amber-400 bg-amber-500/10 border-amber-500/20",
       bullets: [
         "Verifies CI build pipeline run status & commit hashes",
-        "Enforces documented rollback / backout plans for High-Risk changes",
+        "Enforces documented rollback plans for High-Risk changes",
       ],
-      codeSnippet: `CI Pipeline: GitHub Actions #9142 (Passed)
-Rollback Plan: Feature-flag & db backout`,
       icon: RefreshCw,
     },
     {
@@ -81,8 +70,6 @@ Rollback Plan: Feature-flag & db backout`,
         "Auto-detects Snyk, SonarQube, Trivy, Dependabot & OWASP ZAP",
         "Guarantees 0 Critical / 0 High CVEs prior to ticket closure",
       ],
-      codeSnippet: `Detected Scanners: [Snyk, Trivy, SonarQube]
-Vulnerabilities: 0 Critical / 0 High`,
       icon: Cpu,
     },
     {
@@ -95,41 +82,12 @@ Vulnerabilities: 0 Critical / 0 High`,
         "Binary SHA-256 Merkle tree computed across release versions",
         "Instant mathematical proof against retroactive tampering",
       ],
-      codeSnippet: `Merkle Root: sha256:7e49f2b189a03bc432d...
-Coverage: 28/28 Release Tickets Certified`,
       icon: Layers,
     },
   ];
 
-  const advancedEngines = [
-    {
-      title: "Change Risk Profiling",
-      standard: "ITIL 4 • SOC 2 CC8.1",
-      description: "Classifies changes into Emergency, High, and Normal risk tiers with tailored CAB workflows.",
-      badge: "Risk Engine",
-      icon: AlertTriangle,
-      color: "text-amber-400",
-    },
-    {
-      title: "Weekly Scheduled Digest",
-      standard: "Forge Background Cron",
-      description: "Automated weekly cron aggregating release health & pass rates into encrypted Forge Storage.",
-      badge: "Automation",
-      icon: Clock,
-      color: "text-emerald-400",
-    },
-    {
-      title: "1-Click Auto-Remediation",
-      standard: "In-Situ Fixes",
-      description: "In-panel buttons to append Acceptance Criteria checklists or apply QA labels in seconds.",
-      badge: "1-Click Fix",
-      icon: Sparkles,
-      color: "text-cyan-400",
-    },
-  ];
-
   return (
-    <section id="features" className="relative py-20 border-t border-white/[0.06] bg-[#080b0f]">
+    <section id="features" className="relative py-16 border-t border-white/[0.06] bg-[#080b0f]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto max-w-2xl text-center space-y-2">
@@ -145,29 +103,33 @@ Coverage: 28/28 Release Tickets Certified`,
           </p>
         </div>
 
-        {/* 6-Pillar Bento Grid */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* 6-Pillar Clean Grid */}
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {pillars.map((p) => {
             const Icon = p.icon;
             return (
               <div
                 key={p.pillar}
-                className="rounded-xl border border-white/[0.08] bg-[#0d1117] p-5 flex flex-col justify-between hover:border-emerald-500/30 transition-all duration-200"
+                className="group rounded-xl border border-white/[0.08] bg-[#0c1017] p-5 flex flex-col justify-between hover:border-emerald-500/40 hover:bg-[#0e141e] transition-all duration-200"
               >
                 <div>
                   <div className="flex items-center justify-between">
-                    <span className={`rounded px-2 py-0.5 text-[10px] font-mono border font-semibold ${p.badgeColor}`}>
+                    <span className={`rounded-full px-2.5 py-0.5 text-[10px] font-mono border font-semibold ${p.badgeColor}`}>
                       {p.badge}
                     </span>
-                    <span className="font-mono text-[11px] text-zinc-500">Pillar {p.pillar}</span>
+                    <span className="font-mono text-xs text-zinc-600 font-semibold group-hover:text-zinc-400 transition-colors">
+                      Pillar {p.pillar}
+                    </span>
                   </div>
 
-                  <div className="mt-3.5 flex items-center gap-2.5">
-                    <div className="rounded-lg bg-white/[0.04] p-1.5 text-emerald-400 border border-white/[0.08]">
+                  <div className="mt-4 flex items-center gap-3">
+                    <div className="rounded-lg bg-white/[0.04] p-2 text-emerald-400 border border-white/[0.08] group-hover:bg-emerald-500/10 group-hover:border-emerald-500/30 transition-colors">
                       <Icon className="h-4 w-4" />
                     </div>
                     <div>
-                      <h3 className="text-sm font-bold text-white">{p.title}</h3>
+                      <h3 className="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">
+                        {p.title}
+                      </h3>
                       <span className="font-mono text-[10px] text-zinc-500 uppercase tracking-wider block">
                         {p.standard}
                       </span>
@@ -175,7 +137,7 @@ Coverage: 28/28 Release Tickets Certified`,
                   </div>
 
                   {/* Scannable Bullets */}
-                  <div className="mt-3.5 space-y-1.5">
+                  <div className="mt-4 space-y-2">
                     {p.bullets.map((bullet, idx) => (
                       <div key={idx} className="flex items-start gap-2 text-xs text-zinc-300">
                         <Check className="h-3.5 w-3.5 text-emerald-400 shrink-0 mt-0.5" />
@@ -183,53 +145,18 @@ Coverage: 28/28 Release Tickets Certified`,
                       </div>
                     ))}
                   </div>
-
-                  {/* Code snippet badge */}
-                  <pre className="mt-3.5 rounded-lg border border-white/[0.06] bg-black/60 p-2.5 font-mono text-[10.5px] text-emerald-300/90 whitespace-pre-wrap leading-relaxed">
-                    {p.codeSnippet}
-                  </pre>
                 </div>
 
-                <div className="mt-4 pt-2.5 border-t border-white/[0.06] flex items-center gap-1.5 font-mono text-[10.5px] text-zinc-400">
-                  <Check className="h-3 w-3 text-emerald-400 shrink-0" />
-                  <span>100% automated in Atlassian Forge</span>
+                <div className="mt-5 pt-3 border-t border-white/[0.06] flex items-center justify-between font-mono text-[11px] text-zinc-500">
+                  <span className="flex items-center gap-1.5 text-emerald-400/90 font-medium">
+                    <Check className="h-3 w-3 text-emerald-400 shrink-0" />
+                    Forge Automated
+                  </span>
+                  <span className="text-[10px] text-zinc-600">Continuous</span>
                 </div>
               </div>
             );
           })}
-        </div>
-
-        {/* Advanced Governance Capabilities Strip */}
-        <div className="mt-8 rounded-xl border border-white/[0.08] bg-[#0c1017]/80 p-5">
-          <div className="flex items-center justify-between mb-4">
-            <span className="font-mono text-[11px] text-emerald-400 uppercase tracking-wider font-semibold">
-              Continuous Governance Engines
-            </span>
-            <span className="font-mono text-[10px] text-zinc-500">Built-in Intelligence</span>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            {advancedEngines.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={idx}
-                  className="rounded-lg border border-white/[0.06] bg-[#080b0f] p-3.5 space-y-1.5 hover:border-white/[0.14] transition-colors"
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <div className={`rounded bg-white/[0.04] p-1 border border-white/[0.08] ${item.color}`}>
-                        <Icon className="h-3.5 w-3.5" />
-                      </div>
-                      <h4 className="text-xs font-bold text-white">{item.title}</h4>
-                    </div>
-                    <span className="font-mono text-[9px] text-zinc-500 uppercase">{item.badge}</span>
-                  </div>
-                  <p className="text-[11px] text-zinc-400 leading-snug">{item.description}</p>
-                </div>
-              );
-            })}
-          </div>
         </div>
       </div>
     </section>

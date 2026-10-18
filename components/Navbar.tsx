@@ -32,23 +32,20 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-6 md:flex text-xs font-medium text-zinc-400">
-          <a href={`${prefix}#preview`} className="hover:text-white transition-colors">
-            Issue Panel
+          <a href={`${prefix}#interactive-lab`} className="text-emerald-400 font-semibold hover:text-emerald-300 transition-colors">
+            Interactive Tour
+          </a>
+          <a href={`${prefix}#how-it-works`} className="hover:text-white transition-colors">
+            How It Works
           </a>
           <a href={`${prefix}#features`} className="hover:text-white transition-colors">
             6 Pillars
           </a>
-          <a href={`${prefix}#interactive-lab`} className="hover:text-white transition-colors text-emerald-400 font-semibold">
-            Product Tour
-          </a>
           <a href={`${prefix}#security`} className="hover:text-white transition-colors">
-            Security &amp; Forge
+            Zero-Egress Security
           </a>
           <a href={`${prefix}#pricing`} className="hover:text-white transition-colors">
             Pricing
-          </a>
-          <a href={`${prefix}#studio`} className="hover:text-white transition-colors">
-            Studio
           </a>
           <a href={`${prefix}#faq`} className="hover:text-white transition-colors">
             FAQ
@@ -116,11 +113,25 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
             Interactive Product Tour
           </a>
           <a
+            href={`${prefix}#how-it-works`}
+            onClick={() => setMobileMenuOpen(false)}
+            className="block py-1 text-zinc-400 hover:text-white"
+          >
+            How It Works
+          </a>
+          <a
+            href={`${prefix}#features`}
+            onClick={() => setMobileMenuOpen(false)}
+            className="block py-1 text-zinc-400 hover:text-white"
+          >
+            6 Compliance Pillars
+          </a>
+          <a
             href={`${prefix}#security`}
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-1 text-emerald-400 hover:text-emerald-300"
+            className="block py-1 text-zinc-400 hover:text-white"
           >
-            Security &amp; Forge Sandbox
+            Zero-Egress Security
           </a>
           <a
             href={`${prefix}#pricing`}
@@ -128,13 +139,6 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
             className="block py-1 text-zinc-400 hover:text-white"
           >
             Pricing
-          </a>
-          <a
-            href={`${prefix}#studio`}
-            onClick={() => setMobileMenuOpen(false)}
-            className="block py-1 text-zinc-400 hover:text-white"
-          >
-            Langtago Studio Suite
           </a>
           <a
             href={`${prefix}#faq`}
