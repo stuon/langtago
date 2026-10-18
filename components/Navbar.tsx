@@ -32,22 +32,13 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-6 md:flex text-xs font-medium text-zinc-400">
-          <a href={`${prefix}#interactive-lab`} className="text-emerald-400 font-semibold hover:text-emerald-300 transition-colors">
-            Interactive Tour
+          <a href={`${prefix}#features`} className="text-zinc-300 hover:text-white transition-colors">
+            Capabilities
           </a>
-          <a href={`${prefix}#how-it-works`} className="hover:text-white transition-colors">
-            How It Works
-          </a>
-          <a href={`${prefix}#features`} className="hover:text-white transition-colors">
-            6 Pillars
-          </a>
-          <a href={`${prefix}#security`} className="hover:text-white transition-colors">
-            Zero-Egress Security
-          </a>
-          <a href={`${prefix}#pricing`} className="hover:text-white transition-colors">
+          <a href={`${prefix}#pricing`} className="text-zinc-300 hover:text-white transition-colors">
             Pricing
           </a>
-          <a href={`${prefix}#faq`} className="hover:text-white transition-colors">
+          <a href={`${prefix}#faq`} className="text-zinc-300 hover:text-white transition-colors">
             FAQ
           </a>
         </nav>
@@ -92,58 +83,23 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
       {mobileMenuOpen && (
         <div className="border-b border-white/[0.08] bg-[#0c1017] px-4 pt-3 pb-6 md:hidden text-xs space-y-3">
           <a
-            href={`${prefix}#preview`}
-            onClick={() => setMobileMenuOpen(false)}
-            className="block py-1 text-zinc-400 hover:text-white"
-          >
-            Issue Panel
-          </a>
-          <a
             href={`${prefix}#features`}
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-1 text-zinc-400 hover:text-white"
+            className="block py-1 text-zinc-300 hover:text-white"
           >
-            6 Compliance Pillars
-          </a>
-          <a
-            href={`${prefix}#interactive-lab`}
-            onClick={() => setMobileMenuOpen(false)}
-            className="block py-1 text-emerald-400 font-semibold"
-          >
-            Interactive Product Tour
-          </a>
-          <a
-            href={`${prefix}#how-it-works`}
-            onClick={() => setMobileMenuOpen(false)}
-            className="block py-1 text-zinc-400 hover:text-white"
-          >
-            How It Works
-          </a>
-          <a
-            href={`${prefix}#features`}
-            onClick={() => setMobileMenuOpen(false)}
-            className="block py-1 text-zinc-400 hover:text-white"
-          >
-            6 Compliance Pillars
-          </a>
-          <a
-            href={`${prefix}#security`}
-            onClick={() => setMobileMenuOpen(false)}
-            className="block py-1 text-zinc-400 hover:text-white"
-          >
-            Zero-Egress Security
+            Capabilities
           </a>
           <a
             href={`${prefix}#pricing`}
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-1 text-zinc-400 hover:text-white"
+            className="block py-1 text-zinc-300 hover:text-white"
           >
             Pricing
           </a>
           <a
             href={`${prefix}#faq`}
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-1 text-zinc-400 hover:text-white"
+            className="block py-1 text-zinc-300 hover:text-white"
           >
             FAQ
           </a>
