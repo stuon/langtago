@@ -3,8 +3,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import ProblemSolution from "@/components/ProblemSolution";
-import FeatureSpotlights from "@/components/FeatureSpotlights";
+import BentoGrid from "@/components/BentoGrid";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
@@ -22,25 +21,22 @@ export default function HomePage() {
       {/* Main Header / Navigation */}
       <Navbar onOpenAuditModal={() => setIsAuditModalOpen(true)} isProductPage={true} />
 
-      {/* Main Content Flow: Clean 4-Beat B2B Story */}
+      {/* Main Content Flow: Clean 3-Beat B2B Story */}
       <main className="relative">
         {/* Beat 1: The Hook & Live Jira Mockup */}
         <Hero onOpenAuditModal={() => setIsAuditModalOpen(true)} />
 
-        {/* Beat 2: The Acute Pain (Manual Scramble vs Continuous Proof) */}
-        <ProblemSolution />
+        {/* Beat 2: The 4 Core Capabilities (Master Bento Grid) */}
+        <BentoGrid onOpenAuditModal={() => setIsAuditModalOpen(true)} />
 
-        {/* Beat 3: The 3 Core Capabilities (Gatekeeper, Zero-Egress, Audit Hub) */}
-        <FeatureSpotlights onOpenAuditModal={() => setIsAuditModalOpen(true)} />
-
-        {/* Beat 4: Transparent Marketplace Pricing */}
+        {/* Beat 3: Transparent Marketplace Pricing */}
         <Pricing onOpenAuditModal={() => setIsAuditModalOpen(true)} />
 
-        {/* Beat 5: Handling Objections */}
+        {/* Beat 4: Essential FAQ */}
         <FAQ />
 
         {/* Final Conversion CTA */}
-        <section className="relative py-20 border-t border-white/[0.06] bg-[#070a0e]">
+        <section className="relative py-16 sm:py-20 border-t border-white/[0.06] bg-[#070a0e]">
           <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center space-y-4">
             <div className="inline-flex items-center gap-2 font-mono text-[11px] tracking-wider text-emerald-400 uppercase">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />

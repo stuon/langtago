@@ -34,7 +34,7 @@ export default function FAQ() {
   ];
 
   return (
-    <section id="faq" className="relative py-24 border-t border-white/[0.06] bg-[#070a0e]">
+    <section id="faq" className="relative py-16 sm:py-20 border-t border-white/[0.06] bg-[#070a0e]">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <div className="inline-flex items-center gap-2 font-mono text-xs tracking-wider text-emerald-400 uppercase">
