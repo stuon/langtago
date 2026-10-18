@@ -5,42 +5,47 @@ import { ShieldCheck, ExternalLink } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/[0.08] bg-[#06080c] text-zinc-400 text-xs">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <footer className="border-t border-slate-800 bg-slate-950 text-slate-400 text-xs">
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
           {/* Brand Info (5 cols) */}
-          <div className="md:col-span-5 space-y-3">
+          <div className="md:col-span-5 space-y-3.5">
             <Link href="/" className="inline-flex items-center gap-2.5 group">
-              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-zinc-900 border border-white/[0.12] text-emerald-400 shadow-sm transition-colors group-hover:border-emerald-500/40">
-                <ShieldCheck className="h-4 w-4" />
+              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-slate-900 border border-slate-700 text-emerald-400 shadow-sm transition-colors group-hover:border-emerald-500/50">
+                <ShieldCheck className="h-5 w-5" />
               </div>
-              <span className="text-sm font-semibold text-white tracking-tight">Langtago</span>
+              <span className="text-base font-bold text-white tracking-tight">Langtago</span>
             </Link>
 
-            <p className="text-zinc-400 text-xs leading-relaxed max-w-sm">
+            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm">
               Continuous SOC 2 &amp; ISO 27001 change evidence automation, sealed natively inside Atlassian Jira Cloud with zero external data egress.
             </p>
 
             <div className="pt-1">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-2.5 py-0.5 font-mono text-[11px] text-emerald-400">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                <span>Atlassian Forge Cloud Sandboxed</span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-300">
+                <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                <span>Atlassian Forge Cloud Native</span>
               </span>
             </div>
           </div>
 
           {/* Links Column 1: Product (3 cols) */}
-          <div className="md:col-span-3 space-y-2.5">
-            <p className="text-[11px] font-mono font-semibold uppercase tracking-wider text-zinc-300">Product</p>
-            <ul className="space-y-2 text-zinc-400">
+          <div className="md:col-span-3 space-y-3">
+            <p className="text-xs font-bold uppercase tracking-wider text-white">Product</p>
+            <ul className="space-y-2 text-slate-400 text-xs">
+              <li>
+                <a href="#how-it-works" className="hover:text-white transition-colors">
+                  How It Works
+                </a>
+              </li>
               <li>
                 <a href="#features" className="hover:text-white transition-colors">
-                  Capabilities &amp; Gatekeeper
+                  Capabilities &amp; Controls
                 </a>
               </li>
               <li>
                 <a href="#pricing" className="hover:text-white transition-colors">
-                  Marketplace Pricing
+                  Transparent Pricing
                 </a>
               </li>
               <li>
@@ -53,7 +58,7 @@ export default function Footer() {
                   href="https://marketplace.atlassian.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 transition-colors"
+                  className="inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 transition-colors font-medium"
                 >
                   <span>Atlassian Marketplace</span>
                   <ExternalLink className="h-3 w-3" />
@@ -63,28 +68,31 @@ export default function Footer() {
           </div>
 
           {/* Links Column 2: Security & Standards (2 cols) */}
-          <div className="md:col-span-2 space-y-2.5">
-            <p className="text-[11px] font-mono font-semibold uppercase tracking-wider text-zinc-300">Compliance</p>
-            <ul className="space-y-2 text-zinc-400">
+          <div className="md:col-span-2 space-y-3">
+            <p className="text-xs font-bold uppercase tracking-wider text-white">Compliance</p>
+            <ul className="space-y-2 text-slate-400 text-xs">
               <li>
-                <span className="text-zinc-300">SOC 2 Type II (CC8.1)</span>
+                <span className="text-slate-300">SOC 2 Type II (CC8.1)</span>
               </li>
               <li>
-                <span className="text-zinc-300">ISO/IEC 27001</span>
+                <span className="text-slate-300">ISO/IEC 27001:2022</span>
               </li>
               <li>
-                <span className="text-zinc-300">Zero Data Egress</span>
+                <span className="text-slate-300">HIPAA §164.312</span>
               </li>
               <li>
-                <span className="text-zinc-300">Vanta &amp; Drata Formatted</span>
+                <span className="text-slate-300">Zero Data Egress</span>
+              </li>
+              <li>
+                <span className="text-slate-300">Vanta &amp; Drata Sync</span>
               </li>
             </ul>
           </div>
 
           {/* Links Column 3: Legal & Support (2 cols) */}
-          <div className="md:col-span-2 space-y-2.5">
-            <p className="text-[11px] font-mono font-semibold uppercase tracking-wider text-zinc-300">Contact &amp; Legal</p>
-            <ul className="space-y-2 text-zinc-400">
+          <div className="md:col-span-2 space-y-3">
+            <p className="text-xs font-bold uppercase tracking-wider text-white">Contact &amp; Legal</p>
+            <ul className="space-y-2 text-slate-400 text-xs">
               <li>
                 <a href="mailto:support@langtago.com" className="hover:text-white transition-colors">
                   support@langtago.com
@@ -105,7 +113,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-10 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-zinc-500 font-mono">
+        <div className="mt-12 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
           <p>© 2026 Langtago. All rights reserved.</p>
           <p className="text-center sm:text-right">
             EvidenceLog is built natively on Atlassian Forge. Jira is a registered trademark of Atlassian Pty Ltd.
