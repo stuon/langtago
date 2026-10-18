@@ -39,7 +39,7 @@ export default function FAQ() {
         <div className="text-center">
           <div className="inline-flex items-center gap-2 font-mono text-xs tracking-wider text-emerald-400 uppercase">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            <span>Frequently Asked Questions</span>
+            <span>Compliance &amp; Architecture FAQ</span>
           </div>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Frequently Asked Questions

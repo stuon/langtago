@@ -50,7 +50,7 @@ export default function BentoGrid({ onOpenAuditModal }: BentoGridProps) {
                   <ShieldAlert className="h-3.5 w-3.5" />
                   <span>Preventive Control</span>
                 </div>
-                <span className="font-mono text-xs text-zinc-500">Pillars 1, 2, 3</span>
+                <span className="font-mono text-xs text-zinc-500">Pre-Merge Verification</span>
               </div>
 
               <div>
