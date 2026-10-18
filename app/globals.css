@@ -1,10 +1,18 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --background: #090c10;
-    --foreground: #f0f3f6;
-  }
+:root {
+  --background: #090c10;
+  --foreground: #f0f3f6;
+  color-scheme: dark;
+}
+
+html {
+  color-scheme: dark;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.16) transparent;
 }
 
 body {
@@ -38,3 +46,32 @@ body {
 .dev-card:hover {
   border-color: rgba(255, 255, 255, 0.16);
 }
+
+/* Custom Sleek Dark Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+/* Hide scrollbar for clean tab strips */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
