@@ -36,7 +36,7 @@ export default function HomePage() {
         <FAQ />
 
         {/* Final Conversion CTA */}
-        <section className="relative py-16 sm:py-20 border-t border-white/[0.06] bg-[#070a0e]">
+        <section className="relative py-12 sm:py-16 border-t border-white/[0.06] bg-[#070a0e]">
           <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center space-y-4">
             <div className="inline-flex items-center gap-2 font-mono text-[11px] tracking-wider text-emerald-400 uppercase">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
