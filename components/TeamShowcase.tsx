@@ -30,8 +30,8 @@ export default function TeamShowcase({ onOpenAuditModal }: TeamShowcaseProps) {
                     <CheckCircle2 className="h-4 w-4" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-slate-900">100% Auditor Sign-off</p>
-                    <p className="text-[10px] text-slate-500">Zero sample rejections</p>
+                    <p className="text-xs font-bold text-slate-900">Automated Sealing</p>
+                    <p className="text-[10px] text-slate-500">SHA-256 tamper-evident</p>
                   </div>
                 </div>
 
@@ -41,8 +41,8 @@ export default function TeamShowcase({ onOpenAuditModal }: TeamShowcaseProps) {
                     <Clock className="h-4 w-4" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-slate-900">40+ Hours Saved</p>
-                    <p className="text-[10px] text-slate-500">Per SOC 2 audit cycle</p>
+                    <p className="text-xs font-bold text-slate-900">Continuous Audit</p>
+                    <p className="text-[10px] text-slate-500">SOC 2 CC8.1 &bull; ISO 27001</p>
                   </div>
                 </div>
 
@@ -56,7 +56,7 @@ export default function TeamShowcase({ onOpenAuditModal }: TeamShowcaseProps) {
                     </div>
                   </div>
                   <span className="rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 text-[10px] font-bold">
-                    DEV APPROVED
+                    FORGE NATIVE
                   </span>
                 </div>
               </div>
@@ -94,17 +94,18 @@ export default function TeamShowcase({ onOpenAuditModal }: TeamShowcaseProps) {
               </div>
             </div>
 
-            {/* Quote block */}
-            <div className="rounded-2xl border-l-4 border-emerald-500 bg-white p-4 shadow-xs">
-              <p className="text-xs sm:text-sm italic text-slate-700 leading-relaxed">
-                &ldquo;EvidenceLog is the first tool our developers and our SOC 2 auditors both genuinely love. It runs quietly in Jira without slowing our sprint cycles down.&rdquo;
-              </p>
-              <div className="mt-2 text-xs font-bold text-slate-900">
-                — Marcus Vance, <span className="text-slate-500 font-normal">VP of Engineering</span>
+            {/* Native Atlassian Assurance Card */}
+            <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs">
+              <div className="flex items-center gap-2 text-xs font-bold text-slate-900">
+                <ShieldCheck className="h-4 w-4 text-emerald-600 shrink-0" />
+                <span>Zero Context Switching &bull; Zero Workflow Disruption</span>
               </div>
+              <p className="mt-1.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Engineers continue reviewing code in GitHub, GitLab, or Bitbucket and closing tasks in Jira. EvidenceLog operates entirely behind the scenes to capture and seal audit evidence.
+              </p>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-1">
               <button
                 type="button"
                 onClick={onOpenAuditModal}
