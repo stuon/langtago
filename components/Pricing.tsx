@@ -72,7 +72,7 @@ export default function Pricing({ onOpenAuditModal }: PricingProps) {
   ];
 
   return (
-    <section id="pricing" className="relative py-16 sm:py-24 bg-slate-50 border-t border-slate-200/80">
+    <section id="pricing" className="relative py-16 sm:py-24 bg-white border-t border-slate-200/80">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center space-y-3">

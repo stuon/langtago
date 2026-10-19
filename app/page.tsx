@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import HowItWorks from "@/components/HowItWorks";
 import BentoGrid from "@/components/BentoGrid";
+import TeamShowcase from "@/components/TeamShowcase";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
@@ -24,13 +25,16 @@ export default function HomePage() {
         {/* Step 1: The Hook & Live Jira Mockup */}
         <Hero onOpenAuditModal={() => setIsAuditModalOpen(true)} />
 
-        {/* Step 2: 3-Step "How It Works" Narrative */}
+        {/* Step 2: 3-Step "How It Works" Narrative with 3D Pipeline Diagram */}
         <HowItWorks onOpenAuditModal={() => setIsAuditModalOpen(true)} />
 
-        {/* Step 3: Core Capabilities & Controls */}
+        {/* Step 3: Core Capabilities & Controls with 3D Diagrams & Visuals */}
         <BentoGrid onOpenAuditModal={() => setIsAuditModalOpen(true)} />
 
-        {/* Step 4: Easy Transparent Pricing */}
+        {/* Step 4: Engineering Velocity & Stock Photo Showcase */}
+        <TeamShowcase onOpenAuditModal={() => setIsAuditModalOpen(true)} />
+
+        {/* Step 5: Easy Transparent Pricing */}
         <Pricing onOpenAuditModal={() => setIsAuditModalOpen(true)} />
 
         {/* Step 5: Essential FAQ */}

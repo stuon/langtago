@@ -1,16 +1,10 @@
-"use client";
-
+import Image from "next/image";
 import {
   ShieldCheck,
-  Lock,
-  FileCheck,
   Check,
   ArrowRight,
-  Database,
-  Ban,
-  FileSpreadsheet,
   Download,
-  ShieldX,
+  ShieldAlert,
 } from "lucide-react";
 
 interface BentoGridProps {
@@ -22,7 +16,7 @@ export default function BentoGrid({ onOpenAuditModal }: BentoGridProps) {
     <section id="features" className="relative py-20 sm:py-28 bg-white border-t border-slate-200/80">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-24 sm:space-y-32">
         {/* =========================================================================
-            FEATURE 1: Separation of Duties (50/50 Split Showcase)
+            FEATURE 1: Separation of Duties (50/50 Split Showcase with 3D Diagram)
             ========================================================================= */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Column: Short, Punchy Copy */}
@@ -66,124 +60,76 @@ export default function BentoGrid({ onOpenAuditModal }: BentoGridProps) {
             </div>
           </div>
 
-          {/* Right Column: High-Impact Visual Graphic */}
+          {/* Right Column: 3D Isometric Gatekeeper Diagram */}
           <div className="lg:col-span-7">
-            <div className="relative rounded-3xl border border-slate-200/90 bg-slate-50/80 p-6 sm:p-9 shadow-lg">
-              <div className="space-y-4">
-                {/* Visual Flow Header */}
-                <div className="flex items-center justify-between text-xs font-bold text-slate-500 border-b border-slate-200/80 pb-3">
-                  <span>Jira Gatekeeper &bull; LANG-10</span>
-                  <span className="text-emerald-700 bg-emerald-100 px-2.5 py-0.5 rounded-full">Automated Check</span>
+            <div className="relative rounded-3xl border border-slate-200/90 bg-white p-3 sm:p-4 shadow-xl overflow-hidden group">
+              <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden bg-slate-100">
+                <Image
+                  src="/images/separation-duties-diagram.jpg"
+                  alt="3D diagram showing Separation of Duties automated gatekeeper in Jira Cloud blocking self-approvals"
+                  width={800}
+                  height={600}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  priority
+                />
+
+                {/* Floating Pills */}
+                <div className="absolute top-3 right-3 flex flex-col gap-2">
+                  <div className="rounded-xl bg-white/95 backdrop-blur-md px-3 py-1.5 shadow-md border border-slate-200/80 flex items-center gap-2 text-xs font-bold text-rose-700">
+                    <ShieldAlert className="h-3.5 w-3.5 text-rose-600" />
+                    <span>Self-Approval Blocked</span>
+                  </div>
+                  <div className="rounded-xl bg-white/95 backdrop-blur-md px-3 py-1.5 shadow-md border border-slate-200/80 flex items-center gap-2 text-xs font-bold text-emerald-800">
+                    <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
+                    <span>Peer Sign-off Verified</span>
+                  </div>
                 </div>
 
-                {/* State 1: Self-Approval Attempt (Blocked) */}
-                <div className="flex items-center justify-between rounded-2xl border border-rose-200 bg-white p-4 shadow-xs">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-rose-50 text-rose-600 font-bold text-xs">
-                      AK
-                    </div>
+                {/* Bottom Overlay Card */}
+                <div className="absolute bottom-3 left-3 right-3 rounded-xl bg-slate-900/85 backdrop-blur-md p-3 text-white flex items-center justify-between border border-white/10 shadow-lg">
+                  <div className="flex items-center gap-2">
+                    <ShieldCheck className="h-5 w-5 text-emerald-400 shrink-0" />
                     <div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm font-bold text-slate-900">alex.k</span>
-                        <span className="rounded bg-slate-100 px-1.5 py-0.5 text-[10px] font-semibold text-slate-600">Author</span>
-                      </div>
-                      <p className="text-xs text-rose-600 font-semibold mt-0.5">Attempted self-review &amp; close</p>
+                      <p className="text-xs font-bold">Automated Gatekeeper Rule &bull; CC6.8</p>
+                      <p className="text-[10px] text-slate-300">Author != Reviewer enforcement &bull; SHA-256 sealed</p>
                     </div>
                   </div>
-
-                  <div className="flex items-center gap-1.5 rounded-xl bg-rose-50 border border-rose-200 px-3 py-1.5 text-xs font-bold text-rose-700">
-                    <ShieldX className="h-4 w-4" />
-                    <span>BLOCKED</span>
-                  </div>
+                  <span className="rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 text-[10px] font-bold">
+                    PASSING
+                  </span>
                 </div>
-
-                {/* Arrow Connector */}
-                <div className="flex justify-center -my-1 text-slate-400">
-                  <div className="h-6 w-0.5 bg-slate-200" />
-                </div>
-
-                {/* State 2: Peer Review (Passed) */}
-                <div className="flex items-center justify-between rounded-2xl border border-emerald-200 bg-emerald-50/40 p-4 shadow-xs">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700 font-bold text-xs">
-                      SM
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm font-bold text-slate-900">sarah.m</span>
-                        <span className="rounded bg-emerald-100 px-1.5 py-0.5 text-[10px] font-bold text-emerald-800">Security Lead</span>
-                      </div>
-                      <p className="text-xs text-emerald-700 font-semibold mt-0.5">Independent peer sign-off logged</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-1.5 rounded-xl bg-emerald-600 text-white px-3 py-1.5 text-xs font-bold shadow-xs">
-                    <ShieldCheck className="h-4 w-4" />
-                    <span>VERIFIED</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Graphic Footnote */}
-              <div className="mt-5 pt-4 border-t border-slate-200/80 flex items-center justify-between text-xs font-semibold text-slate-500">
-                <span>Result: Jira issue transition authorized</span>
-                <span className="text-emerald-700 font-bold">100% Auditor Proof</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* =========================================================================
-            FEATURE 2: Zero Data Egress (50/50 Split Showcase Reversed)
+            FEATURE 2: Zero Data Egress (50/50 Split Showcase Reversed with 3D Diagram)
             ========================================================================= */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          {/* Left Column: Visual Diagram Graphic */}
+          {/* Left Column: 3D Isometric Architectural Diagram */}
           <div className="lg:col-span-7 order-2 lg:order-1">
-            <div className="relative rounded-3xl border border-slate-200/90 bg-slate-50/80 p-6 sm:p-9 shadow-lg">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {/* Box 1: Legacy Compliance Platform (Red Warning) */}
-                <div className="rounded-2xl border border-rose-200 bg-white p-5 space-y-3 shadow-xs">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold uppercase tracking-wider text-rose-600">Legacy Tools</span>
-                    <Ban className="h-4 w-4 text-rose-500" />
+            <div className="relative rounded-3xl border border-slate-200/90 bg-white p-3 sm:p-4 shadow-xl overflow-hidden group">
+              <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden bg-slate-100">
+                <Image
+                  src="/images/cloud-security-diagram.jpg"
+                  alt="3D Architectural diagram of EvidenceLog zero-egress security pipeline inside Atlassian Forge"
+                  width={800}
+                  height={600}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute bottom-3 left-3 right-3 rounded-xl bg-slate-900/85 backdrop-blur-md p-3 text-white flex items-center justify-between border border-white/10 shadow-lg">
+                  <div className="flex items-center gap-2">
+                    <ShieldCheck className="h-5 w-5 text-emerald-400 shrink-0" />
+                    <div>
+                      <p className="text-xs font-bold">Atlassian Forge Sandbox Architecture</p>
+                      <p className="text-[10px] text-slate-300">Strict deny-all outbound policy &bull; 0 external servers</p>
+                    </div>
                   </div>
-                  <div className="space-y-1.5">
-                    <p className="text-sm font-bold text-slate-900">External Database Storage</p>
-                    <p className="text-xs text-slate-500 leading-relaxed">
-                      Copies Jira tickets, commit metadata, and source code into third-party servers.
-                    </p>
-                  </div>
-                  <div className="pt-2 border-t border-slate-100 flex items-center gap-1.5 text-xs font-bold text-rose-600">
-                    <span>Egress Risk: High</span>
-                  </div>
+                  <span className="rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 text-[10px] font-bold">
+                    ZERO EGRESS
+                  </span>
                 </div>
-
-                {/* Box 2: EvidenceLog Forge Sandbox (Clean Green) */}
-                <div className="rounded-2xl border-2 border-emerald-500 bg-white p-5 space-y-3 shadow-md shadow-emerald-500/10">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold uppercase tracking-wider text-emerald-700">EvidenceLog</span>
-                    <ShieldCheck className="h-5 w-5 text-emerald-600" />
-                  </div>
-                  <div className="space-y-1.5">
-                    <p className="text-sm font-bold text-slate-900">Atlassian Forge Native</p>
-                    <p className="text-xs text-slate-600 leading-relaxed">
-                      Executes strictly within your Atlassian Cloud sandbox with deny-all outbound policy.
-                    </p>
-                  </div>
-                  <div className="pt-2 border-t border-slate-100 flex items-center gap-1.5 text-xs font-bold text-emerald-700">
-                    <Lock className="h-3.5 w-3.5" />
-                    <span>0 External Servers</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Graphic Footnote */}
-              <div className="mt-5 pt-4 border-t border-slate-200/80 flex items-center justify-between text-xs font-semibold text-slate-500">
-                <span className="flex items-center gap-1.5">
-                  <Database className="h-4 w-4 text-emerald-600" />
-                  <span>Encrypted Jira KVS Storage</span>
-                </span>
-                <span className="text-emerald-700 font-bold">Deny-All Network Sandbox</span>
               </div>
             </div>
           </div>
@@ -232,7 +178,7 @@ export default function BentoGrid({ onOpenAuditModal }: BentoGridProps) {
         </div>
 
         {/* =========================================================================
-            FEATURE 3: Instant Auditor & GRC Sync (50/50 Split Showcase)
+            FEATURE 3: Instant Auditor & GRC Sync (50/50 Split Showcase with Photo)
             ========================================================================= */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Column: Short, Punchy Copy */}
@@ -276,63 +222,45 @@ export default function BentoGrid({ onOpenAuditModal }: BentoGridProps) {
             </div>
           </div>
 
-          {/* Right Column: Visual Auditor Export Graphic */}
+          {/* Right Column: Visual Auditor Review Photo with Floating Badges */}
           <div className="lg:col-span-7">
-            <div className="relative rounded-3xl border border-slate-200/90 bg-slate-50/80 p-6 sm:p-9 shadow-lg">
-              <div className="rounded-2xl border border-slate-200 bg-white p-5 space-y-4 shadow-xs">
-                {/* Graphic Header */}
-                <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                  <div className="flex items-center gap-2">
-                    <FileCheck className="h-5 w-5 text-emerald-600" />
-                    <span className="text-sm font-bold text-slate-900">Certified Audit Package</span>
-                  </div>
-                  <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-bold text-emerald-800">
-                    AUDIT READY
-                  </span>
-                </div>
+            <div className="relative rounded-3xl border border-slate-200/90 bg-white p-3 sm:p-4 shadow-xl overflow-hidden group">
+              <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden bg-slate-100">
+                <Image
+                  src="/images/auditor-review.jpg"
+                  alt="Founder and auditor reviewing clean SOC 2 compliance reports on laptop"
+                  width={800}
+                  height={500}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
 
-                {/* 3 Formats Graphic Chips */}
-                <div className="grid grid-cols-3 gap-2.5 text-center text-xs">
-                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 space-y-1">
-                    <FileSpreadsheet className="h-5 w-5 text-emerald-600 mx-auto" />
-                    <span className="font-bold text-slate-800 block text-xs">Auditor CSV</span>
-                    <span className="text-[10px] text-slate-500">Big 4 Sample</span>
+                {/* Floating GRC Format Pills on Photo */}
+                <div className="absolute top-3 right-3 flex flex-col gap-2">
+                  <div className="rounded-xl bg-white/95 backdrop-blur-md px-3 py-1.5 shadow-md border border-slate-200/80 flex items-center gap-2 text-xs font-bold text-slate-800">
+                    <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                    <span>Big 4 CSV Workpapers</span>
                   </div>
-
-                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 space-y-1">
-                    <Database className="h-5 w-5 text-cyan-600 mx-auto" />
-                    <span className="font-bold text-slate-800 block text-xs">Vanta JSON</span>
-                    <span className="text-[10px] text-slate-500">Auto Ingest</span>
-                  </div>
-
-                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 space-y-1">
-                    <Lock className="h-5 w-5 text-purple-600 mx-auto" />
-                    <span className="font-bold text-slate-800 block text-xs">Drata Format</span>
-                    <span className="text-[10px] text-slate-500">DCF-67 Verified</span>
+                  <div className="rounded-xl bg-white/95 backdrop-blur-md px-3 py-1.5 shadow-md border border-slate-200/80 flex items-center gap-2 text-xs font-bold text-slate-800">
+                    <span className="h-2 w-2 rounded-full bg-cyan-500" />
+                    <span>Vanta &amp; Drata Sync</span>
                   </div>
                 </div>
 
-                {/* Instant Download Action Banner */}
-                <div className="rounded-xl bg-emerald-50/80 border border-emerald-200 p-3 flex items-center justify-between text-xs">
-                  <div className="space-y-0.5">
-                    <span className="font-bold text-emerald-900">LANG-10 Evidence Package</span>
-                    <p className="text-[11px] text-emerald-700">Cryptographically sealed with SHA-256</p>
+                {/* Bottom Overlay Card */}
+                <div className="absolute bottom-3 left-3 right-3 rounded-xl bg-white/95 backdrop-blur-md p-3.5 border border-slate-200/80 shadow-lg flex items-center justify-between">
+                  <div>
+                    <span className="text-xs font-bold text-slate-900 block">LANG-10 Certified Audit Dossier</span>
+                    <p className="text-[11px] text-slate-500">AICPA SOC 2 Type II CC8.1 &bull; 100% Passed</p>
                   </div>
                   <button
                     type="button"
                     onClick={onOpenAuditModal}
-                    className="flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white shadow-xs hover:bg-emerald-500 transition-colors"
+                    className="flex items-center gap-1.5 rounded-xl bg-emerald-600 px-3.5 py-1.5 text-xs font-bold text-white shadow-xs hover:bg-emerald-500 transition-colors"
                   >
                     <Download className="h-3.5 w-3.5" />
-                    <span>Export</span>
+                    <span>1-Click Export</span>
                   </button>
                 </div>
-              </div>
-
-              {/* Graphic Footnote */}
-              <div className="mt-5 pt-4 border-t border-slate-200/80 flex items-center justify-between text-xs font-semibold text-slate-500">
-                <span>Standard: AICPA SOC 2 Type II CC8.1</span>
-                <span className="text-emerald-700 font-bold">1-Click Generation</span>
               </div>
             </div>
           </div>

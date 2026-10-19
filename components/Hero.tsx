@@ -35,7 +35,7 @@ export default function Hero({ onOpenAuditModal }: HeroProps) {
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-            Stop chasing engineers for audit screenshots. EvidenceLog automatically validates peer reviews, CI/CD test runs, and segregation of duties—stamping immutable compliance evidence right inside Jira on every release.
+            Stop chasing engineers for audit screenshots. EvidenceLog automatically validates peer reviews and CI runs—sealing tamper-evident compliance proof right inside Jira on every release.
           </p>
 
           {/* Action Buttons */}
@@ -77,8 +77,30 @@ export default function Hero({ onOpenAuditModal }: HeroProps) {
           </div>
         </div>
 
-        {/* Jira Mockup Section with Crisp Card Elevation */}
+        {/* Jira Mockup Section with Floating Badges */}
         <div id="preview" className="mt-12 sm:mt-16 relative flex justify-center">
+          {/* Floating Top-Left Trust Card */}
+          <div className="hidden lg:flex absolute -top-4 -left-6 items-center gap-3 rounded-2xl bg-white border border-slate-200/90 px-4 py-2.5 shadow-xl z-10">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700">
+              <ShieldCheck className="h-5 w-5" />
+            </div>
+            <div>
+              <span className="text-xs font-bold text-slate-900 block">SOC 2 CC8.1 Enforced</span>
+              <span className="text-[10px] text-slate-500">Zero manual screenshots</span>
+            </div>
+          </div>
+
+          {/* Floating Bottom-Right GRC Card */}
+          <div className="hidden lg:flex absolute -bottom-4 -right-6 items-center gap-3 rounded-2xl bg-white border border-slate-200/90 px-4 py-2.5 shadow-xl z-10">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
+              <FileCheck className="h-5 w-5" />
+            </div>
+            <div>
+              <span className="text-xs font-bold text-slate-900 block">Big 4 &amp; Vanta Ready</span>
+              <span className="text-[10px] text-slate-500">1-Click CSV &amp; JSON Export</span>
+            </div>
+          </div>
+
           <div className="relative w-full max-w-5xl rounded-3xl border border-slate-200/90 bg-white p-2 sm:p-3 shadow-2xl shadow-slate-200/90">
             <JiraPanelMockup onOpenAuditModal={onOpenAuditModal} />
           </div>
