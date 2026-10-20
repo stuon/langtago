@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
+  --colorPrimary: #ff8565;
+  --colorSecondary: #111013;
+  --colorWhite: #ffffff;
+  --paraColor: #5c728e;
+  --headingFont: var(--font-heading), "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --paraFont: var(--font-body), "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   color-scheme: light;
 }
 
@@ -10,39 +14,136 @@ html {
   color-scheme: light;
 }
 
+body {
+  font-family: var(--paraFont);
+  color: var(--paraColor);
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--headingFont);
+  color: var(--colorSecondary);
+}
+
+/* Contis-inspired Primary Button */
+.tf__common_btn {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--paraFont);
+  padding: 13px 22px;
+  background: var(--colorSecondary);
+  color: var(--colorWhite);
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.tf__common_btn:hover {
+  background: var(--colorPrimary);
+  color: var(--colorWhite);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(255, 133, 101, 0.35);
+}
+
+/* Contis-inspired Secondary / Outlined Button */
+.tf__common_btn2 {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--paraFont);
+  padding: 12px 22px;
+  background: #ffffff;
+  color: var(--colorSecondary);
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.tf__common_btn2:hover {
+  border-color: var(--colorSecondary);
+  background: var(--colorSecondary);
+  color: var(--colorWhite);
+  transform: translateY(-1px);
+}
+
+/* Contis Section Heading */
+.tf__common_heading {
+  text-align: center;
+}
+
+.tf__common_heading h6 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--colorPrimary);
+  font-family: var(--headingFont);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.tf__common_heading h6 span {
+  color: var(--colorPrimary);
+}
+
+.tf__common_heading h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--colorSecondary);
+  line-height: 1.15;
+}
+
+@media (min-width: 640px) {
+  .tf__common_heading h2 {
+    font-size: 48px;
+  }
+}
+
+/* Contis Single Feature Card */
+.tf__single_service {
+  background: var(--colorWhite);
+  padding: 36px 28px;
+  border-radius: 12px;
+  border: 1px solid #f1f3f7;
+  transition: all 0.3s ease;
+}
+
+.tf__single_service:hover {
+  transform: translateY(-3px);
+  border-color: var(--colorPrimary);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.tf__single_service span.icon_badge {
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  border-radius: 8px;
+  background: var(--colorPrimary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  color: #ffffff;
+}
+
+/* Custom Scrollbars */
 * {
   scrollbar-width: thin;
   scrollbar-color: rgba(148, 163, 184, 0.4) transparent;
 }
 
-body {
-  background-color: #f8fafc;
-  color: #0f172a;
-  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  overflow-x: hidden;
-  selection-background-color: rgba(16, 185, 129, 0.2);
-  selection-color: #065f46;
-}
-
-/* Subtle modern SaaS dot grid */
-.grid-dots {
-  background-size: 32px 32px;
-  background-image: radial-gradient(circle, rgba(148, 163, 184, 0.25) 1px, transparent 1px);
-}
-
-/* Polished modern white card with soft ambient elevation */
-.saas-card {
-  background-color: #ffffff;
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
-}
-
-.saas-card:hover {
-  border-color: rgba(203, 213, 225, 0.9);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
-}
-
-/* Custom Sleek Scrollbars */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -57,11 +158,6 @@ body {
   border-radius: 9999px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(100, 116, 139, 0.6);
-}
-
-/* Hide scrollbar for clean tab strips */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -69,4 +165,3 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-

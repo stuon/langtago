@@ -1,121 +1,191 @@
 "use client";
 
-import Image from "next/image";
-import { GitPullRequest, ShieldCheck, FileCheck, ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, Check, ShieldCheck } from "lucide-react";
 
 interface HowItWorksProps {
   onOpenAuditModal: () => void;
 }
 
 export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
+  const [activeStep, setActiveStep] = useState(1);
+
   const steps = [
     {
-      step: "01",
-      icon: GitPullRequest,
-      title: "Ship Code Normally",
-      description: "Engineers push code and run CI tests in GitHub, GitLab, or Bitbucket. Zero forms.",
-      tag: "Zero Friction",
+      id: 1,
+      title: "Push code & open pull request normally",
+      desc: "Engineers push code and create PRs in GitHub, GitLab, or Bitbucket. Zero forms, zero compliance bureaucracy, and zero disruption to daily engineering velocity.",
+      badge: "Stage 01: Git PR",
+      detail: "Author: @alex.k • Branch: feat/auth • CI: 48/48 Passing",
     },
     {
-      step: "02",
-      icon: ShieldCheck,
-      title: "Automatic Verification",
-      description: "EvidenceLog validates peer review and automated tests, sealing tamper-evident proof directly in Jira.",
-      tag: "Atlassian Forge Native",
+      id: 2,
+      title: "Forge sandbox verifies review & CI test rules",
+      desc: "EvidenceLog automatically validates separation of duties: confirming independent reviewers signed off and automated CI tests passed 100%.",
+      badge: "Stage 02: Jira Forge",
+      detail: "Rule: Author != Reviewer • @sarah.m Approved • Egress: Denied",
     },
     {
-      step: "03",
-      icon: FileCheck,
-      title: "1-Click Auditor Handoff",
-      description: "Export Big 4 CSV workpapers or sync signed compliance payloads directly to Vanta and Drata.",
-      tag: "Vanta & Drata Ready",
+      id: 3,
+      title: "Cryptographic proof sealed directly in Jira ticket",
+      desc: "An immutable SHA-256 seal is logged in the Jira ticket. Auditors can inspect it directly or export Big 4 CSV workpapers in 1 click.",
+      badge: "Stage 03: Compliance Seal",
+      detail: "Digest: SHA-256 Sealed • Vanta & Drata Ready • Exportable CSV",
     },
   ];
 
   return (
-    <section id="how-it-works" className="relative py-16 sm:py-24 bg-slate-50 border-t border-slate-200/80">
+    <section id="how-it-works" className="py-20 sm:py-28 bg-white border-t border-slate-100">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="mx-auto max-w-2xl text-center space-y-3">
-          <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200 px-3.5 py-1 text-xs font-bold text-emerald-800 uppercase tracking-wider">
-            <span>Automated Lifecycle</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
-            Audit readiness in 3 simple steps.
+        {/* Contis-inspired Section Heading */}
+        <div className="tf__common_heading mb-16 max-w-2xl mx-auto">
+          <h6 className="text-[#ff8565] font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 font-heading">
+            WORKING PROCESS
+          </h6>
+          <h2 className="text-3xl sm:text-5xl font-bold text-[#111013] font-heading leading-tight">
+            How EvidenceLog works in 3 steps
           </h2>
-
-          <p className="text-sm sm:text-base text-slate-600">
-            No chasing engineers for screenshots. No manual spreadsheets. Everything runs in the background.
-          </p>
         </div>
 
-        {/* 3D Isometric Pipeline Showcase Graphic */}
-        <div className="mt-12 mx-auto max-w-5xl">
-          <div className="relative rounded-3xl border border-slate-200/90 bg-white p-3 sm:p-4 shadow-xl overflow-hidden group">
-            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden bg-slate-100">
-              <Image
-                src="/images/three-step-pipeline-diagram.jpg"
-                alt="3D isometric workflow diagram showing Code Commit, Jira Ticket Enforcement, and Certified SOC 2 Dossier"
-                width={1200}
-                height={675}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                priority
-              />
-
-              {/* Bottom Subtle Caption */}
-              <div className="absolute bottom-3 left-3 right-3 rounded-xl bg-slate-900/85 backdrop-blur-md p-3 text-white flex items-center justify-between border border-white/10 shadow-lg">
+        {/* 2-Column Working Process Layout (Left Visual, Right Stepper Accordion) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          {/* Left Column: Visual Mockup (col-6) */}
+          <div className="lg:col-span-6">
+            <div className="rounded-2xl border border-slate-200/90 bg-slate-50/70 p-6 sm:p-8 shadow-xl relative overflow-hidden">
+              <div className="flex items-center justify-between border-b border-slate-200/80 pb-4 mb-5">
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="h-5 w-5 text-emerald-400 shrink-0" />
-                  <div>
-                    <p className="text-xs font-bold">End-to-End Compliance Pipeline</p>
-                    <p className="text-[10px] text-slate-300">Git PR &bull; Atlassian Forge Sandbox &bull; Sealed SOC 2 Workpapers</p>
+                  <span className="h-3 w-3 rounded-full bg-[#ff8565]" />
+                  <span className="text-xs font-bold text-[#111013] uppercase tracking-wider font-heading">
+                    Active Step: {steps[activeStep - 1].badge}
+                  </span>
+                </div>
+                <span className="text-[11px] font-mono text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-semibold">
+                  Verified ✓
+                </span>
+              </div>
+
+              {/* Dynamic Step Visual */}
+              <div className="space-y-4">
+                <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-xs">
+                  <div className="flex items-center justify-between text-xs font-semibold text-[#111013] mb-2 font-heading">
+                    <span>{steps[activeStep - 1].title}</span>
+                    <span className="text-[#ff8565] font-mono">0{activeStep}</span>
+                  </div>
+                  <p className="text-xs text-[#5c728e] leading-relaxed mb-3">
+                    {steps[activeStep - 1].desc}
+                  </p>
+                  <div className="rounded-lg bg-slate-50 p-2.5 font-mono text-[11px] text-[#111013] border border-slate-200/60 flex items-center justify-between">
+                    <span className="truncate">{steps[activeStep - 1].detail}</span>
+                    <Check className="h-3.5 w-3.5 text-emerald-600 shrink-0 ml-2" />
                   </div>
                 </div>
-                <button
-                  type="button"
-                  onClick={onOpenAuditModal}
-                  className="rounded-md bg-emerald-600 px-3 py-1 text-[11px] font-bold text-white hover:bg-emerald-500 transition-colors shadow-xs"
-                >
-                  View Sample Export
-                </button>
+
+                <div className="p-4 rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200/80 text-xs text-emerald-950 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <ShieldCheck className="h-4 w-4 text-emerald-700" />
+                    <span className="font-semibold">Atlassian Forge Sandbox Zero Egress</span>
+                  </div>
+                  <span className="font-bold text-emerald-700">100% In-Tenant</span>
+                </div>
               </div>
             </div>
           </div>
+
+          {/* Right Column: Contis-Style Vertical Numbered Stepper (col-6) */}
+          <div className="lg:col-span-6 space-y-4">
+            {steps.map((step) => {
+              const isActive = activeStep === step.id;
+              return (
+                <div
+                  key={step.id}
+                  onClick={() => setActiveStep(step.id)}
+                  className={`cursor-pointer rounded-xl border transition-all p-5 ${
+                    isActive
+                      ? "border-[#ff8565] bg-white shadow-lg"
+                      : "border-slate-200/80 bg-slate-50/50 hover:bg-white hover:border-slate-300"
+                  }`}
+                >
+                  <div className="flex items-start gap-4">
+                    {/* Contis Numbered Circle Badge */}
+                    <div
+                      className={`h-9 w-9 rounded-full flex items-center justify-center font-bold text-sm shrink-0 transition-colors ${
+                        isActive
+                          ? "bg-[#ff8565] text-white"
+                          : "bg-slate-200 text-[#111013]"
+                      }`}
+                    >
+                      {step.id}
+                    </div>
+
+                    <div className="flex-1">
+                      <h4 className="text-base sm:text-lg font-bold text-[#111013] font-heading">
+                        {step.title}
+                      </h4>
+
+                      {isActive && (
+                        <div className="mt-2.5 space-y-3">
+                          <p className="text-sm text-[#5c728e] leading-relaxed">
+                            {step.desc}
+                          </p>
+                          <div>
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                onOpenAuditModal();
+                              }}
+                              className="text-xs font-bold text-[#ff8565] hover:underline inline-flex items-center gap-1.5"
+                            >
+                              <span>View Sample Output</span>
+                              <ArrowRight className="h-3 w-3" />
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
-        {/* 3 Step Cards Grid */}
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
-          {steps.map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={idx}
-                className="relative rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-7 shadow-xs hover:shadow-lg hover:border-emerald-300 transition-all duration-300 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-600">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <span className="font-mono text-xl font-black text-slate-300">{item.step}</span>
-                  </div>
-
-                  <h3 className="mt-5 text-lg font-bold text-slate-900">{item.title}</h3>
-                  <p className="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">{item.description}</p>
-                </div>
-
-                <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
-                  <span className="inline-flex items-center rounded-lg bg-slate-100 px-2 py-0.5 font-semibold text-slate-700">
-                    {item.tag}
-                  </span>
-                  <span className="font-bold text-emerald-700 flex items-center gap-1">
-                    Step {idx + 1} of 3 <ArrowRight className="h-3 w-3" />
-                  </span>
-                </div>
+        {/* Contis-inspired Counter Banner (tf__counter) */}
+        <div className="mt-16 sm:mt-20 rounded-2xl bg-gradient-to-r from-[#dbf1c3]/30 via-[#dce7e3]/40 to-[#cdfff1]/30 border border-slate-200/70 p-8 sm:p-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+              <div className="text-3xl sm:text-4xl font-extrabold text-[#111013] font-heading">
+                100%
               </div>
-            );
-          })}
+              <div className="text-xs sm:text-sm font-semibold text-[#5c728e] mt-1">
+                Audit Sampling Pass Rate
+              </div>
+            </div>
+            <div>
+              <div className="text-3xl sm:text-4xl font-extrabold text-[#ff8565] font-heading">
+                0
+              </div>
+              <div className="text-xs sm:text-sm font-semibold text-[#5c728e] mt-1">
+                Manual Screenshots
+              </div>
+            </div>
+            <div>
+              <div className="text-3xl sm:text-4xl font-extrabold text-[#111013] font-heading">
+                10k+
+              </div>
+              <div className="text-xs sm:text-sm font-semibold text-[#5c728e] mt-1">
+                Jira Releases Sealed
+              </div>
+            </div>
+            <div>
+              <div className="text-3xl sm:text-4xl font-extrabold text-[#ff8565] font-heading">
+                2 Min
+              </div>
+              <div className="text-xs sm:text-sm font-semibold text-[#5c728e] mt-1">
+                Atlassian Cloud Install
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,55 +1,114 @@
 "use client";
 
 import Link from "next/link";
-import { ShieldCheck, ExternalLink } from "lucide-react";
+import { ShieldCheck, ArrowRight, ExternalLink } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-800 bg-slate-950 text-slate-400 text-xs">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
+    <footer className="bg-white border-t border-slate-100 pt-16 pb-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
+        {/* Contis-inspired "Unlock the Power" Callout Card (tf__unlock) */}
+        <div className="rounded-3xl bg-[#111013] text-white p-8 sm:p-12 lg:p-14 shadow-2xl relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Left/Middle Content (8 cols) */}
+            <div className="lg:col-span-8 space-y-4">
+              <div className="inline-block rounded-md bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#ff8565] font-heading">
+                UNLOCK INSTANT AUDIT READINESS
+              </div>
+
+              <h2 className="text-2xl sm:text-4xl font-bold font-heading leading-tight">
+                Stop wasting engineering hours on manual audit screenshots
+              </h2>
+
+              <p className="text-sm text-slate-300 max-w-xl leading-relaxed">
+                Install EvidenceLog into your Jira Cloud workspace in 2 minutes. Free forever for up to 10 users with zero external data egress.
+              </p>
+
+              <div className="flex flex-wrap items-center gap-4 text-xs font-medium text-slate-300 pt-2">
+                <span className="flex items-center gap-1.5">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#ff8565]" />
+                  <span>No credit card required</span>
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#ff8565]" />
+                  <span>100% Atlassian Forge Native</span>
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#ff8565]" />
+                  <span>Vanta &amp; Drata Ready</span>
+                </span>
+              </div>
+            </div>
+
+            {/* Right Action Button (4 cols) */}
+            <div className="lg:col-span-4 flex lg:justify-end">
+              <a
+                href="https://marketplace.atlassian.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 py-4 px-7 rounded-xl bg-[#ff8565] hover:bg-white hover:text-[#111013] text-white text-sm font-bold shadow-lg transition-all cursor-pointer"
+              >
+                <span>Install Free on Marketplace</span>
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* 4-Column Footer Navigation Links */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 pt-6">
           {/* Brand Info (5 cols) */}
-          <div className="md:col-span-5 space-y-3.5">
+          <div className="lg:col-span-5 space-y-4">
             <Link href="/" className="inline-flex items-center gap-2.5 group">
-              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-slate-900 border border-slate-700 text-emerald-400 shadow-sm transition-colors group-hover:border-emerald-500/50">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#111013] text-[#ff8565] shadow-xs">
                 <ShieldCheck className="h-5 w-5" />
               </div>
-              <span className="text-base font-bold text-white tracking-tight">Langtago</span>
+              <div className="flex items-center gap-2">
+                <span className="text-lg font-bold text-[#111013] tracking-tight font-heading">
+                  Langtago
+                </span>
+                <span className="text-slate-300 font-light">/</span>
+                <span className="text-xs font-semibold text-[#ff8565] bg-[#ff8565]/10 rounded-md px-2 py-0.5">
+                  EvidenceLog
+                </span>
+              </div>
             </Link>
 
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm">
+            <p className="text-xs sm:text-sm text-[#5c728e] leading-relaxed max-w-sm">
               Continuous SOC 2 &amp; ISO 27001 change evidence automation, sealed natively inside Atlassian Jira Cloud with zero external data egress.
             </p>
 
             <div className="pt-1">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-300">
-                <span className="h-2 w-2 rounded-full bg-emerald-400" />
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-[#111013]">
+                <span className="h-2 w-2 rounded-full bg-emerald-500" />
                 <span>Atlassian Forge Cloud Native</span>
               </span>
             </div>
           </div>
 
           {/* Links Column 1: Product (3 cols) */}
-          <div className="md:col-span-3 space-y-3">
-            <p className="text-xs font-bold uppercase tracking-wider text-white">Product</p>
-            <ul className="space-y-2 text-slate-400 text-xs">
+          <div className="lg:col-span-3 space-y-3">
+            <p className="text-xs font-bold uppercase tracking-wider text-[#111013] font-heading">
+              Product
+            </p>
+            <ul className="space-y-2.5 text-xs text-[#5c728e]">
               <li>
-                <a href="#how-it-works" className="hover:text-white transition-colors">
+                <a href="#how-it-works" className="hover:text-[#111013] transition-colors">
                   How It Works
                 </a>
               </li>
               <li>
-                <a href="#features" className="hover:text-white transition-colors">
+                <a href="#features" className="hover:text-[#111013] transition-colors">
                   Capabilities &amp; Controls
                 </a>
               </li>
               <li>
-                <a href="#pricing" className="hover:text-white transition-colors">
+                <a href="#pricing" className="hover:text-[#111013] transition-colors">
                   Transparent Pricing
                 </a>
               </li>
               <li>
-                <a href="#faq" className="hover:text-white transition-colors">
+                <a href="#faq" className="hover:text-[#111013] transition-colors">
                   Frequently Asked Questions
                 </a>
               </li>
@@ -58,7 +117,7 @@ export default function Footer() {
                   href="https://marketplace.atlassian.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 transition-colors font-medium"
+                  className="inline-flex items-center gap-1 text-[#ff8565] font-semibold hover:underline"
                 >
                   <span>Atlassian Marketplace</span>
                   <ExternalLink className="h-3 w-3" />
@@ -67,57 +126,74 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Links Column 2: Security & Standards (2 cols) */}
-          <div className="md:col-span-2 space-y-3">
-            <p className="text-xs font-bold uppercase tracking-wider text-white">Compliance</p>
-            <ul className="space-y-2 text-slate-400 text-xs">
+          {/* Links Column 2: Standards (2 cols) */}
+          <div className="lg:col-span-2 space-y-3">
+            <p className="text-xs font-bold uppercase tracking-wider text-[#111013] font-heading">
+              Compliance
+            </p>
+            <ul className="space-y-2.5 text-xs text-[#5c728e]">
               <li>
-                <span className="text-slate-300">SOC 2 Type II (CC8.1)</span>
+                <span>SOC 2 Type II (CC8.1)</span>
               </li>
               <li>
-                <span className="text-slate-300">ISO/IEC 27001:2022</span>
+                <span>ISO/IEC 27001:2022</span>
               </li>
               <li>
-                <span className="text-slate-300">HIPAA §164.312</span>
+                <span>HIPAA §164.312</span>
               </li>
               <li>
-                <span className="text-slate-300">Zero Data Egress</span>
+                <span>Zero Data Egress</span>
               </li>
               <li>
-                <span className="text-slate-300">Vanta &amp; Drata Sync</span>
+                <span>Vanta &amp; Drata Ready</span>
               </li>
             </ul>
           </div>
 
-          {/* Links Column 3: Legal & Support (2 cols) */}
-          <div className="md:col-span-2 space-y-3">
-            <p className="text-xs font-bold uppercase tracking-wider text-white">Contact &amp; Legal</p>
-            <ul className="space-y-2 text-slate-400 text-xs">
+          {/* Links Column 3: Contact & Legal (2 cols) */}
+          <div className="lg:col-span-2 space-y-3">
+            <p className="text-xs font-bold uppercase tracking-wider text-[#111013] font-heading">
+              Contact &amp; Legal
+            </p>
+            <ul className="space-y-2.5 text-xs text-[#5c728e]">
               <li>
-                <a href="mailto:support@langtago.com" className="hover:text-white transition-colors">
+                <a href="mailto:support@langtago.com" className="hover:text-[#111013] transition-colors">
                   support@langtago.com
                 </a>
               </li>
               <li>
-                <Link href="/privacy" className="hover:text-white transition-colors">
+                <Link href="/privacy" className="hover:text-[#111013] transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="hover:text-white transition-colors">
+                <Link href="/terms" className="hover:text-[#111013] transition-colors">
                   Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link href="/security" className="hover:text-[#111013] transition-colors">
+                  Security Architecture
                 </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-          <p>© 2026 Langtago. All rights reserved.</p>
-          <p className="text-center sm:text-right">
-            EvidenceLog is built natively on Atlassian Forge. Jira is a registered trademark of Atlassian Pty Ltd.
-          </p>
+        {/* Copyright Bar */}
+        <div className="border-t border-slate-100 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#5c728e] gap-4">
+          <p>© {new Date().getFullYear()} Langtago Inc. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <Link href="/privacy" className="hover:text-[#111013] transition-colors">
+              Privacy
+            </Link>
+            <Link href="/terms" className="hover:text-[#111013] transition-colors">
+              Terms
+            </Link>
+            <Link href="/security" className="hover:text-[#111013] transition-colors">
+              Security
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

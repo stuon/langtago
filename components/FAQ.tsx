@@ -1,15 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 
 export default function FAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   const faqs = [
     {
-      q: "Does EvidenceLog store our Jira issue data or source code on third-party servers?",
-      a: "No. EvidenceLog is built 100% on Atlassian Forge. All compute executes strictly within Atlassian's sandboxed environment, and all evidence digests are stored directly inside your Atlassian Cloud tenant via Forge Storage. We operate zero external servers and have zero external data egress.",
+      q: "Does EvidenceLog send or store our code outside Jira?",
+      a: "No. EvidenceLog is built 100% natively on Atlassian Forge. All compute executes strictly within Atlassian's isolated microVMs, and all evidence digests are stored directly inside your Atlassian Cloud tenant. We operate zero external servers, zero external databases, and enforce strict zero network data egress.",
     },
     {
       q: "How does EvidenceLog satisfy SOC 2 CC8.1 and ISO 27001 requirements?",
@@ -34,46 +34,48 @@ export default function FAQ() {
   ];
 
   return (
-    <section id="faq" className="relative py-16 sm:py-24 bg-slate-50 border-t border-slate-200/80">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center space-y-3">
-          <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200 px-3.5 py-1 text-xs font-bold text-emerald-800 uppercase tracking-wider">
-            <span>FAQ</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-            Frequently Asked Questions
+    <section id="faq" className="bg-gradient-to-r from-[#dbf1c3]/20 via-[#dce7e3]/30 to-[#cdfff1]/20 rounded-t-[40px] pt-20 pb-24 px-4 sm:px-6 lg:px-8 border-t border-slate-100">
+      <div className="mx-auto max-w-4xl">
+        {/* Contis-inspired Section Heading */}
+        <div className="tf__common_heading mb-14 text-center">
+          <h6 className="text-[#ff8565] font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 font-heading">
+            FAQ
+          </h6>
+          <h2 className="text-3xl sm:text-5xl font-bold text-[#111013] font-heading leading-tight">
+            Frequently asked questions
           </h2>
-
-          <p className="text-base text-slate-600">
+          <p className="text-sm sm:text-base text-[#5c728e] mt-3">
             Straightforward answers for engineering leaders and compliance teams.
           </p>
         </div>
 
-        <div className="mt-12 space-y-3.5">
+        {/* Contis-style FAQ Accordion with Plus / Minus */}
+        <div className="space-y-4">
           {faqs.map((faq, idx) => {
             const isOpen = openIdx === idx;
             return (
               <div
                 key={idx}
-                className="rounded-2xl border border-slate-200/90 bg-white transition-all overflow-hidden shadow-xs hover:border-slate-300"
+                className="rounded-2xl border border-slate-200/90 bg-white shadow-xs overflow-hidden transition-all"
               >
                 <button
                   type="button"
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
-                  className="flex w-full items-center justify-between p-5 sm:p-6 text-left focus:outline-none"
+                  className="w-full flex items-center justify-between p-6 text-left focus:outline-none cursor-pointer"
                 >
-                  <span className="text-base font-bold text-slate-900 pr-4">
+                  <span className="text-base sm:text-lg font-bold text-[#111013] font-heading pr-4">
                     {faq.q}
                   </span>
-                  <ChevronDown
-                    className={`h-5 w-5 text-slate-400 shrink-0 transition-transform duration-200 ${
-                      isOpen ? "rotate-180 text-emerald-600" : ""
+                  <div
+                    className={`h-8 w-8 rounded-full flex items-center justify-center shrink-0 transition-colors ${
+                      isOpen ? "bg-[#ff8565] text-white" : "bg-slate-100 text-[#111013]"
                     }`}
-                  />
+                  >
+                    {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+                  </div>
                 </button>
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                  <div className="px-6 pb-6 pt-1 text-sm text-[#5c728e] leading-relaxed border-t border-slate-100">
                     {faq.a}
                   </div>
                 )}

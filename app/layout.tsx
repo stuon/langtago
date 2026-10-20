@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Sans, Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const dmSans = DM_Sans({
+  variable: "--font-heading",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-body",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -75,10 +77,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      data-scroll-behavior="smooth"
-      className={`${geistSans.variable} ${geistMono.variable} dark scroll-smooth`}
+      className={`${dmSans.variable} ${inter.variable} scroll-smooth`}
     >
-      <body className="bg-[#080b0f] text-zinc-100 min-h-screen flex flex-col selection:bg-emerald-500/20 selection:text-emerald-200">
+      <body className="bg-white text-[#5c728e] font-sans min-h-screen flex flex-col selection:bg-[#ff8565]/20 selection:text-[#111013]">
         {GA_MEASUREMENT_ID && (
           <>
             <Script

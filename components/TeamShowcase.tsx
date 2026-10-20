@@ -1,7 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import { ShieldCheck, Clock, CheckCircle2, ArrowRight } from "lucide-react";
+import { Lock, Download, Check, ArrowRight } from "lucide-react";
 
 interface TeamShowcaseProps {
   onOpenAuditModal: () => void;
@@ -9,110 +8,140 @@ interface TeamShowcaseProps {
 
 export default function TeamShowcase({ onOpenAuditModal }: TeamShowcaseProps) {
   return (
-    <section className="relative py-20 sm:py-28 bg-slate-50 border-t border-slate-200/80 overflow-hidden">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left Column: Team Stock Photo with Floating Stat Badges */}
-          <div className="lg:col-span-7">
-            <div className="relative rounded-3xl border border-slate-200/90 bg-white p-3 sm:p-4 shadow-xl overflow-hidden group">
-              <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden bg-slate-100">
-                <Image
-                  src="/images/team-collaboration.jpg"
-                  alt="Modern software engineering team collaborating on architecture and compliance"
-                  width={900}
-                  height={560}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+    <section id="security" className="py-20 sm:py-28 bg-slate-50 border-t border-slate-200/80">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
+        {/* Contis-Style Row 1: Left Graphic, Right Story */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          {/* Left Visual: Clean Gatekeeper UI */}
+          <div className="lg:col-span-6">
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-xl space-y-4">
+              <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+                <span className="text-xs font-bold text-[#111013] uppercase tracking-wider font-heading">
+                  SOC 2 CC8.1 Gatekeeper Rule
+                </span>
+                <span className="rounded bg-emerald-50 text-emerald-800 text-[11px] font-bold px-2 py-0.5">
+                  Automated Enforcement
+                </span>
+              </div>
 
-                {/* Floating Top Badge */}
-                <div className="absolute top-3 left-3 rounded-xl bg-white/95 backdrop-blur-md px-3.5 py-2 shadow-lg border border-slate-200/80 flex items-center gap-2.5">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-100 text-emerald-700">
-                    <CheckCircle2 className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-slate-900">Automated Sealing</p>
-                    <p className="text-[10px] text-slate-500">SHA-256 tamper-evident</p>
-                  </div>
-                </div>
-
-                {/* Floating Right Badge */}
-                <div className="absolute bottom-16 right-3 rounded-xl bg-white/95 backdrop-blur-md px-3.5 py-2 shadow-lg border border-slate-200/80 flex items-center gap-2.5">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-100 text-blue-700">
-                    <Clock className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-slate-900">Continuous Audit</p>
-                    <p className="text-[10px] text-slate-500">SOC 2 CC8.1 &bull; ISO 27001</p>
-                  </div>
-                </div>
-
-                {/* Bottom Overlay Card */}
-                <div className="absolute bottom-3 left-3 right-3 rounded-xl bg-slate-900/85 backdrop-blur-md p-3 text-white flex items-center justify-between border border-white/10 shadow-lg">
-                  <div className="flex items-center gap-2">
-                    <ShieldCheck className="h-5 w-5 text-emerald-400 shrink-0" />
-                    <div>
-                      <p className="text-xs font-bold">Zero Developer Interruption</p>
-                      <p className="text-[10px] text-slate-300">No manual screenshot requests &bull; Automatic Jira sealing</p>
-                    </div>
-                  </div>
-                  <span className="rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 text-[10px] font-bold">
-                    FORGE NATIVE
+              {/* Blocked Self-Approval Case */}
+              <div className="rounded-xl border border-rose-200 bg-rose-50/50 p-4 space-y-1.5">
+                <div className="flex items-center justify-between text-xs font-bold text-rose-900">
+                  <span>Author Self-Approval Check</span>
+                  <span className="rounded bg-rose-100 text-rose-800 text-[10px] px-1.5 py-0.5">
+                    REJECTED
                   </span>
                 </div>
+                <p className="text-xs text-rose-700">
+                  Author @alex.k attempted self-approval &bull; Blocked by EvidenceLog Policy.
+                </p>
+              </div>
+
+              {/* Verified Independent Sign-off */}
+              <div className="rounded-xl border border-emerald-200 bg-emerald-50/50 p-4 space-y-1.5">
+                <div className="flex items-center justify-between text-xs font-bold text-emerald-900">
+                  <span>Independent Peer Reviewer</span>
+                  <span className="rounded bg-emerald-100 text-emerald-800 text-[10px] px-1.5 py-0.5">
+                    VERIFIED ✓
+                  </span>
+                </div>
+                <p className="text-xs text-emerald-800 font-medium">
+                  Approved by Staff Engineer @sarah.m &bull; SOC 2 CC8.1 requirement satisfied.
+                </p>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Short Punchy Copy & Key Stats */}
-          <div className="lg:col-span-5 space-y-6 text-left">
-            <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200 px-3.5 py-1 text-xs font-bold text-emerald-800 uppercase tracking-wider">
-              <span>Velocity &bull; Compliance</span>
-            </div>
+          {/* Right Text Story (Contis Typography) */}
+          <div className="lg:col-span-6 space-y-5">
+            <h6 className="text-[#ff8565] font-bold text-xs sm:text-sm tracking-widest uppercase font-heading">
+              SEPARATION OF DUTIES
+            </h6>
 
-            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
-              Engineers keep shipping. <br />
-              <span className="text-emerald-600">Auditors get proof.</span>
-            </h2>
+            <h3 className="text-3xl sm:text-4xl font-bold text-[#111013] font-heading leading-tight">
+              Never worry about unauthorized code in production
+            </h3>
 
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-              Developers never fill out compliance forms or take screenshots. EvidenceLog quietly verifies pull requests and CI/CD pipelines behind Jira on every sprint release.
+            <p className="text-base text-[#5c728e] leading-relaxed">
+              SOC 2 CC8.1 requires verifiable segregation of duties: developers cannot self-approve changes to production. EvidenceLog automatically validates that whoever authored the pull request did not approve it.
             </p>
 
-            {/* 3 Metrics Pillars */}
-            <div className="grid grid-cols-3 gap-3 pt-2">
-              <div className="rounded-2xl border border-slate-200/90 bg-white p-3.5 text-center shadow-xs">
-                <span className="block text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">0 min</span>
-                <span className="mt-1 block text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Manual screenshots</span>
-              </div>
-              <div className="rounded-2xl border border-slate-200/90 bg-white p-3.5 text-center shadow-xs">
-                <span className="block text-2xl sm:text-3xl font-black text-emerald-600 tracking-tight">100%</span>
-                <span className="mt-1 block text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Forge sandboxed</span>
-              </div>
-              <div className="rounded-2xl border border-slate-200/90 bg-white p-3.5 text-center shadow-xs">
-                <span className="block text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">&lt; 2 min</span>
-                <span className="mt-1 block text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Jira setup</span>
-              </div>
+            <ul className="space-y-2.5 pt-2">
+              <li className="flex items-center gap-2 text-sm text-[#111013] font-medium">
+                <Check className="h-4 w-4 text-[#ff8565] shrink-0" />
+                <span>Instant author vs. reviewer verification on every merge</span>
+              </li>
+              <li className="flex items-center gap-2 text-sm text-[#111013] font-medium">
+                <Check className="h-4 w-4 text-[#ff8565] shrink-0" />
+                <span>Zero friction for engineers—no screenshots or ticket forms</span>
+              </li>
+            </ul>
+
+            <div className="pt-2">
+              <a
+                href="https://marketplace.atlassian.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#111013] text-white hover:bg-[#ff8565] font-semibold text-xs transition-all shadow-xs cursor-pointer"
+              >
+                <span>Install on Atlassian Marketplace</span>
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Contis-Style Row 2: Two Side-by-Side Cards (tf__single_content_creator_bottom) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Card A: Zero Data Egress */}
+          <div className="rounded-2xl border border-slate-200 bg-white p-7 sm:p-9 shadow-md hover:border-[#ff8565] transition-all space-y-4">
+            <div className="h-10 w-10 rounded-xl bg-[#111013] text-[#ff8565] flex items-center justify-center">
+              <Lock className="h-5 w-5" />
             </div>
 
-            {/* Native Atlassian Assurance Card */}
-            <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs">
-              <div className="flex items-center gap-2 text-xs font-bold text-slate-900">
-                <ShieldCheck className="h-4 w-4 text-emerald-600 shrink-0" />
-                <span>Zero Context Switching &bull; Zero Workflow Disruption</span>
-              </div>
-              <p className="mt-1.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Engineers continue reviewing code in GitHub, GitLab, or Bitbucket and closing tasks in Jira. EvidenceLog operates entirely behind the scenes to capture and seal audit evidence.
-              </p>
+            <h4 className="text-xl sm:text-2xl font-bold text-[#111013] font-heading">
+              Strict in-tenant Atlassian Forge sandboxing
+            </h4>
+
+            <p className="text-sm text-[#5c728e] leading-relaxed">
+              Zero external data egress. All code analysis and evidence sealing runs inside Atlassian&apos;s isolated microVMs. Your secrets, source code, and Jira tickets never touch third-party servers.
+            </p>
+
+            <div className="pt-3">
+              <a
+                href="https://marketplace.atlassian.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white border border-slate-200 text-[#111013] hover:border-[#111013] font-semibold text-xs transition-all shadow-2xs cursor-pointer"
+              >
+                <span>Learn About Forge Security</span>
+                <ArrowRight className="h-3 w-3" />
+              </a>
+            </div>
+          </div>
+
+          {/* Card B: Instant Big 4 Handoff */}
+          <div className="rounded-2xl border border-slate-200 bg-white p-7 sm:p-9 shadow-md hover:border-[#ff8565] transition-all space-y-4">
+            <div className="h-10 w-10 rounded-xl bg-[#111013] text-[#ff8565] flex items-center justify-center">
+              <Download className="h-5 w-5" />
             </div>
 
-            <div className="pt-1">
+            <h4 className="text-xl sm:text-2xl font-bold text-[#111013] font-heading">
+              Auditor-approved Big 4 workpapers in 1 click
+            </h4>
+
+            <p className="text-sm text-[#5c728e] leading-relaxed">
+              Eliminate folder chaos and manual screenshot gathering. Export clean, formatted CSV sampling tables and JSON bundles designed specifically for PwC, EY, Deloitte, KPMG, and Vanta.
+            </p>
+
+            <div className="pt-3">
               <button
                 type="button"
                 onClick={onOpenAuditModal}
-                className="inline-flex items-center gap-2 rounded-2xl bg-emerald-600 px-6 py-3 text-sm font-bold text-white shadow-md shadow-emerald-600/20 hover:bg-emerald-500 transition-all"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#111013] text-white hover:bg-[#ff8565] font-semibold text-xs transition-all shadow-xs cursor-pointer"
               >
-                <span>View Sample Audit Dossier</span>
-                <ArrowRight className="h-4 w-4" />
+                <span>Inspect Sample CSV Workpaper</span>
+                <ArrowRight className="h-3 w-3" />
               </button>
             </div>
           </div>

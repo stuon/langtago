@@ -12,223 +12,192 @@ export default function Pricing({ onOpenAuditModal }: PricingProps) {
 
   const tiers = [
     {
-      name: "Starter",
-      id: "tier-starter",
-      href: "https://marketplace.atlassian.com",
+      name: "Free Plan",
+      subtitle: "Perfect for testing & squads up to 10 users",
       priceMonthly: "$0",
       priceAnnual: "$0",
-      period: "/ month",
-      badge: "Free Forever",
-      description: "For squads up to 10 users getting audit-ready without budget approval.",
+      period: "Free forever",
+      cta: "Install Free on Jira",
       features: [
         "Up to 10 Jira Cloud users",
-        "Atlassian Forge native storage (Zero egress)",
-        "Automated PR review & status sealing",
-        "SHA-256 tamper-evident checksums",
-        "Standard CSV auditor export",
+        "Atlassian Forge native execution",
+        "Automated PR review verification",
+        "SHA-256 cryptographic seal",
+        "Standard CSV workpaper export",
       ],
-      cta: "Install Free on Jira",
-      isPrimary: false,
+      isPopular: false,
     },
     {
       name: "Pro Growth",
-      id: "tier-pro",
-      href: "https://marketplace.atlassian.com",
-      priceMonthly: "$5",
-      priceAnnual: "$4",
-      period: "/ user / mo",
-      badge: "Best Choice",
-      description: "Automated SOC 2 CC8.1 & ISO 27001 evidence for scaling engineering teams.",
+      subtitle: "Continuous SOC 2 & ISO 27001 automation",
+      priceMonthly: "$3.50",
+      priceAnnual: "$2.50",
+      period: "/ user / month",
+      cta: "Start 30-Day Free Trial",
       features: [
         "Unlimited Jira users & projects",
-        "Separation of Duties automated enforcement",
-        "1-Click SOC 2 & ISO 27001 Auditor Packs",
-        "Vanta, Drata & Secureframe ready JSON",
-        "GitHub, GitLab & Bitbucket pipelines",
+        "Separation of duties automatic check",
+        "1-Click SOC 2 & ISO 27001 Auditor Pack",
+        "Vanta, Drata & Secureframe sync",
+        "GitHub, GitLab & Bitbucket support",
         "Priority developer support",
       ],
-      cta: "Start 30-Day Free Trial",
-      isPrimary: true,
+      isPopular: true,
     },
     {
       name: "Enterprise",
-      id: "tier-enterprise",
-      href: "mailto:support@langtago.com?subject=EvidenceLog%20Enterprise%20Inquiry",
+      subtitle: "For multi-instance Jira & custom GRC SLAs",
       priceMonthly: "Custom",
       priceAnnual: "Custom",
-      period: "",
-      badge: "Custom GRC",
-      description: "For multi-instance Jira setups, custom compliance mapping, and enterprise SLAs.",
+      period: "Billed annually",
+      cta: "Contact Enterprise Sales",
       features: [
-        "Multi-tenant Jira Cloud aggregation",
-        "Custom GRC control mapping & retention",
+        "Multi-instance Jira Cloud aggregation",
+        "Custom compliance control mapping",
         "Dedicated compliance architect review",
         "Vendor security assessment support",
         "99.9% uptime SLA & dedicated channel",
       ],
-      cta: "Contact Enterprise Sales",
-      isPrimary: false,
+      isPopular: false,
     },
   ];
 
   return (
-    <section id="pricing" className="relative py-16 sm:py-24 bg-white border-t border-slate-200/80">
+    <section id="pricing" className="py-20 sm:py-28 bg-white border-t border-slate-100">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="mx-auto max-w-3xl text-center space-y-3">
-          <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200 px-3.5 py-1 text-xs font-bold text-emerald-800 uppercase tracking-wider">
-            <span>Transparent Pricing</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
-            Simple, predictable pricing.
+        {/* Contis-inspired Section Heading */}
+        <div className="tf__common_heading mb-14 max-w-2xl mx-auto">
+          <h6 className="text-[#ff8565] font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 font-heading">
+            PRICING
+          </h6>
+          <h2 className="text-3xl sm:text-5xl font-bold text-[#111013] font-heading leading-tight">
+            Simple, transparent pricing for every team
           </h2>
-
-          <p className="text-base text-slate-600">
-            Billed conveniently through your standard Atlassian Cloud invoice. No separate contracts or credit cards needed.
+          <p className="text-sm sm:text-base text-[#5c728e] mt-3">
+            Billed conveniently through your standard Atlassian Cloud invoice. No separate credit card required.
           </p>
 
           {/* Monthly / Annual Toggle */}
-          <div className="pt-4 flex items-center justify-center gap-3">
+          <div className="pt-6 flex items-center justify-center gap-3">
             <span
-              className={`text-sm font-semibold cursor-pointer ${
-                !annualBilling ? "text-slate-900" : "text-slate-400"
+              className={`text-xs sm:text-sm font-semibold cursor-pointer ${
+                !annualBilling ? "text-[#111013]" : "text-[#5c728e]"
               }`}
               onClick={() => setAnnualBilling(false)}
             >
-              Monthly
+              Monthly Billing
             </span>
             <button
               type="button"
               onClick={() => setAnnualBilling(!annualBilling)}
-              className="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border border-slate-300 bg-slate-200 transition-colors duration-200 ease-in-out focus:outline-none"
-              role="switch"
-              aria-checked={annualBilling}
+              className="relative inline-flex h-6 w-11 items-center rounded-full bg-[#111013] transition-colors"
             >
               <span
-                className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-emerald-600 shadow-md transition duration-200 ease-in-out ${
-                  annualBilling ? "translate-x-5" : "translate-x-0.5"
+                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                  annualBilling ? "translate-x-6" : "translate-x-1"
                 }`}
               />
             </button>
             <span
-              className={`text-sm font-semibold flex items-center gap-2 cursor-pointer ${
-                annualBilling ? "text-slate-900" : "text-slate-400"
+              className={`text-xs sm:text-sm font-semibold cursor-pointer flex items-center gap-1.5 ${
+                annualBilling ? "text-[#111013]" : "text-[#5c728e]"
               }`}
               onClick={() => setAnnualBilling(true)}
             >
-              <span>Annual</span>
-              <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-bold text-emerald-800">
-                Save 20%
+              <span>Annual Billing</span>
+              <span className="rounded-full bg-[#ff8565]/15 text-[#ff8565] px-2 py-0.5 text-[10px] font-bold">
+                Save 28%
               </span>
             </span>
           </div>
         </div>
 
-        {/* Pricing Cards Grid (Easy Design, Clear Choice) */}
-        <div className="mt-14 grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-          {tiers.map((tier) => (
-            <div
-              key={tier.id}
-              className={`relative rounded-3xl p-8 sm:p-9 flex flex-col justify-between transition-all duration-300 ${
-                tier.isPrimary
-                  ? "bg-white border-2 border-emerald-500 shadow-xl shadow-emerald-500/10 lg:-translate-y-2"
-                  : "bg-white border border-slate-200/90 shadow-sm hover:shadow-lg hover:border-slate-300"
-              }`}
-            >
-              {/* Elevated Badge on Recommended Tier (Inspired by reference screenshot) */}
-              {tier.isPrimary && (
-                <div className="absolute -top-3.5 right-6 rounded-full bg-slate-900 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-md">
-                  {tier.badge}
-                </div>
-              )}
-
-              <div>
-                <div className="flex items-center justify-between">
-                  <h3 className="text-xl font-bold text-slate-900">{tier.name}</h3>
-                  {!tier.isPrimary && (
-                    <span className="rounded-lg bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-slate-600">
-                      {tier.badge}
-                    </span>
-                  )}
-                </div>
-
-                <p className="mt-3 text-xs sm:text-sm text-slate-500 leading-relaxed min-h-[42px]">
-                  {tier.description}
-                </p>
-
-                {/* Big Bold Green Price (Exactly like reference) */}
-                <div className="mt-6 flex items-baseline gap-1.5">
-                  <span className="text-4xl sm:text-5xl font-black tracking-tight text-emerald-600 font-sans">
-                    {annualBilling ? tier.priceAnnual : tier.priceMonthly}
-                  </span>
-                  {tier.period && (
-                    <span className="text-sm font-semibold text-slate-500">{tier.period}</span>
-                  )}
-                </div>
-
-                {tier.priceAnnual !== "Custom" && tier.priceAnnual !== "$0" && (
-                  <p className="mt-1 text-xs text-slate-400 font-medium">
-                    {annualBilling ? "Billed annually via Atlassian Marketplace" : "Billed monthly via Atlassian Marketplace"}
-                  </p>
+        {/* 3 Pricing Cards (Contis tf__single_pricing style) */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+          {tiers.map((tier, idx) => {
+            const price = annualBilling ? tier.priceAnnual : tier.priceMonthly;
+            return (
+              <div
+                key={idx}
+                className={`rounded-2xl border transition-all p-8 flex flex-col justify-between group ${
+                  tier.isPopular
+                    ? "border-[#ff8565] bg-white shadow-xl relative"
+                    : "border-slate-200 bg-white hover:border-[#111013] shadow-sm"
+                }`}
+              >
+                {tier.isPopular && (
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-[#ff8565] px-3.5 py-1 text-[11px] font-bold text-white uppercase tracking-wider shadow-sm">
+                    Most Popular
+                  </div>
                 )}
 
-                {/* Primary Button */}
-                <div className="mt-7">
+                <div>
+                  <h4 className="text-xl font-bold text-[#111013] font-heading mb-1">
+                    {tier.name}
+                  </h4>
+                  <p className="text-xs text-[#5c728e] mb-6">{tier.subtitle}</p>
+
+                  <div className="flex items-baseline gap-2 mb-6">
+                    <span className="text-4xl sm:text-5xl font-extrabold text-[#111013] font-heading">
+                      {price}
+                    </span>
+                    <span className="text-xs text-[#5c728e] font-medium">{tier.period}</span>
+                  </div>
+
                   <a
-                    href={tier.href}
-                    target={tier.href.startsWith("http") ? "_blank" : undefined}
-                    rel={tier.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className={`flex w-full items-center justify-center gap-2 rounded-2xl py-3.5 px-4 text-sm font-bold transition-all ${
-                      tier.isPrimary
-                        ? "bg-emerald-600 text-white hover:bg-emerald-500 shadow-md shadow-emerald-600/25"
-                        : "border-2 border-slate-200 bg-white text-slate-800 hover:bg-slate-50 hover:border-slate-300"
+                    href="https://marketplace.atlassian.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`w-full text-center py-3 px-4 rounded-lg font-semibold text-xs transition-all inline-flex items-center justify-center gap-2 mb-8 ${
+                      tier.isPopular
+                        ? "bg-[#111013] text-white hover:bg-[#ff8565]"
+                        : "bg-slate-100 text-[#111013] hover:bg-[#111013] hover:text-white"
                     }`}
                   >
                     <span>{tier.cta}</span>
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-3.5 w-3.5" />
                   </a>
+
+                  <div className="border-t border-slate-100 pt-6">
+                    <div className="text-[11px] font-bold text-[#111013] uppercase tracking-wider mb-3">
+                      Included Features:
+                    </div>
+                    <ul className="space-y-2.5">
+                      {tier.features.map((feature, fIdx) => (
+                        <li
+                          key={fIdx}
+                          className="flex items-start gap-2 text-xs text-[#5c728e] font-medium"
+                        >
+                          <Check className="h-4 w-4 text-[#ff8565] shrink-0 mt-0.5" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
 
-                {/* Included Capabilities List */}
-                <div className="mt-8 pt-6 border-t border-slate-100 space-y-3">
-                  <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
-                    What&apos;s included:
+                <div className="pt-6 border-t border-slate-100 mt-6 text-center">
+                  <span className="text-[11px] text-[#5c728e]">
+                    Direct Atlassian Cloud Marketplace checkout
                   </span>
-                  <ul className="space-y-3 text-sm text-slate-700">
-                    {tier.features.map((feature, fIdx) => (
-                      <li key={fIdx} className="flex items-start gap-3">
-                        <Check className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span className="leading-snug">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </div>
-
-              {/* Bottom Card Footer */}
-              <div className="mt-8 pt-4 border-t border-slate-100 text-center">
-                <span className="text-xs text-slate-400 font-medium">
-                  Atlassian Cloud integrated billing
-                </span>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        {/* Assurance Banner */}
-        <div className="mt-12 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-600 shadow-xs">
-          <div>
-            <strong className="text-slate-900 font-bold">Consolidated Atlassian Invoice:</strong>{" "}
-            <span>No separate vendor onboarding. Everything is charged through your active Jira Cloud account.</span>
-          </div>
-          <button
-            type="button"
-            onClick={onOpenAuditModal}
-            className="shrink-0 text-sm font-bold text-emerald-700 hover:text-emerald-800 underline underline-offset-4"
-          >
-            Review Sample SOC 2 Output →
-          </button>
+        {/* Evaluate Sample Output link */}
+        <div className="mt-12 text-center">
+          <p className="text-xs text-[#5c728e]">
+            Want to review the SOC 2 export format before installing?{" "}
+            <button
+              type="button"
+              onClick={onOpenAuditModal}
+              className="text-[#ff8565] font-bold hover:underline ml-1 cursor-pointer"
+            >
+              Inspect sample auditor workpaper &rarr;
+            </button>
+          </p>
         </div>
       </div>
     </section>
