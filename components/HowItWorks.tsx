@@ -149,44 +149,6 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
             })}
           </div>
         </div>
-
-        {/* Contis-inspired Counter Banner (tf__counter) */}
-        <div className="mt-16 sm:mt-20 rounded-3xl bg-gradient-to-r from-[#dbf1c3] to-[#dce7e3] border border-white/60 p-8 sm:p-10 shadow-md">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div>
-              <div className="text-3xl sm:text-4xl font-extrabold text-[#111013] font-heading">
-                100%
-              </div>
-              <div className="text-xs sm:text-sm font-semibold text-[#5c728e] mt-1">
-                Audit Sampling Pass Rate
-              </div>
-            </div>
-            <div>
-              <div className="text-3xl sm:text-4xl font-extrabold text-[#15803d] font-heading">
-                0
-              </div>
-              <div className="text-xs sm:text-sm font-semibold text-[#5c728e] mt-1">
-                Manual Screenshots
-              </div>
-            </div>
-            <div>
-              <div className="text-3xl sm:text-4xl font-extrabold text-[#111013] font-heading">
-                10,000+
-              </div>
-              <div className="text-xs sm:text-sm font-semibold text-[#5c728e] mt-1">
-                Jira Releases Sealed
-              </div>
-            </div>
-            <div>
-              <div className="text-3xl sm:text-4xl font-extrabold text-[#15803d] font-heading">
-                2 Min
-              </div>
-              <div className="text-xs sm:text-sm font-semibold text-[#5c728e] mt-1">
-                Atlassian Cloud Install
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

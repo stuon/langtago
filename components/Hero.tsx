@@ -1,6 +1,6 @@
 "use client";
 
-import { ShieldCheck, ArrowRight, FileCheck, Check, Lock, Download, Star } from "lucide-react";
+import { ShieldCheck, ArrowRight, FileCheck, Check, Lock, Download } from "lucide-react";
 import Image from "next/image";
 
 interface HeroProps {
@@ -34,29 +34,28 @@ export default function Hero({ onOpenAuditModal }: HeroProps) {
                 Separation of Duties
               </div>
               <div className="text-xs text-[#5c728e] font-medium mt-0.5">
-                100% CC8.1 Verified
+                Automated CC8.1 Rule
               </div>
-              <div className="flex items-center gap-1 text-amber-400 text-[11px] mt-1">
-                <Star className="h-3 w-3 fill-amber-400" />
-                <Star className="h-3 w-3 fill-amber-400" />
-                <Star className="h-3 w-3 fill-amber-400" />
-                <Star className="h-3 w-3 fill-amber-400" />
-                <Star className="h-3 w-3 fill-amber-400" />
+              <div className="text-[11px] font-mono text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded mt-1 font-semibold inline-block">
+                Author &ne; Reviewer
               </div>
             </div>
           </div>
 
-          {/* Contis Floating Pill Card Right: 10k+ Releases Sealed */}
+          {/* Contis Floating Pill Card Right: Cryptographic SHA-256 Digest */}
           <div className="hidden xl:flex items-center gap-3.5 absolute -right-16 top-40 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-slate-100 z-20 text-left hover:-translate-y-1 transition-transform">
-            <div className="w-12 h-12 rounded-full bg-[#111013] text-[#dbf1c3] flex items-center justify-center shrink-0 shadow-2xs font-bold text-sm">
-              <Check className="h-6 w-6 text-[#dbf1c3]" />
+            <div className="w-12 h-12 rounded-xl bg-[#111013] text-[#dbf1c3] flex items-center justify-center shrink-0 shadow-2xs font-bold text-sm">
+              <Lock className="h-5 w-5 text-[#dbf1c3]" />
             </div>
             <div>
-              <div className="text-base font-extrabold text-[#111013] font-heading leading-tight">
-                10,000+
+              <div className="text-sm font-bold text-[#111013] font-heading leading-tight">
+                SHA-256 Seal
               </div>
-              <div className="text-xs text-[#5c728e] font-medium">
-                Releases Sealed in Jira
+              <div className="text-xs text-[#5c728e] font-medium mt-0.5">
+                Immutable Audit Proof
+              </div>
+              <div className="text-[11px] font-mono text-slate-700 bg-slate-100 px-2 py-0.5 rounded mt-1 font-semibold inline-block">
+                Zero Data Egress
               </div>
             </div>
           </div>
