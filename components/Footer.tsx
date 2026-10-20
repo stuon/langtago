@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left/Middle Content (8 cols) */}
             <div className="lg:col-span-8 space-y-4">
-              <div className="inline-block rounded-md bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#ff8565] font-heading">
+              <div className="inline-block rounded-md bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#dbf1c3] font-heading">
                 UNLOCK INSTANT AUDIT READINESS
               </div>
 
@@ -26,15 +26,15 @@ export default function Footer() {
 
               <div className="flex flex-wrap items-center gap-4 text-xs font-medium text-slate-300 pt-2">
                 <span className="flex items-center gap-1.5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#ff8565]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#dbf1c3]" />
                   <span>No credit card required</span>
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#ff8565]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#dbf1c3]" />
                   <span>100% Atlassian Forge Native</span>
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#ff8565]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#dbf1c3]" />
                   <span>Vanta &amp; Drata Ready</span>
                 </span>
               </div>
@@ -46,7 +46,7 @@ export default function Footer() {
                 href="https://marketplace.atlassian.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 py-4 px-7 rounded-xl bg-[#ff8565] hover:bg-white hover:text-[#111013] text-white text-sm font-bold shadow-lg transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 py-4 px-7 rounded-xl bg-[#dbf1c3] hover:bg-white text-[#111013] text-sm font-bold shadow-lg transition-all cursor-pointer"
               >
                 <span>Install Free on Marketplace</span>
                 <ArrowRight className="h-4 w-4" />
@@ -60,7 +60,7 @@ export default function Footer() {
           {/* Brand Info (5 cols) */}
           <div className="lg:col-span-5 space-y-4">
             <Link href="/" className="inline-flex items-center gap-2.5 group">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#111013] text-[#ff8565] shadow-xs">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#111013] text-[#dbf1c3] shadow-xs">
                 <ShieldCheck className="h-5 w-5" />
               </div>
               <div className="flex items-center gap-2">
@@ -68,7 +68,7 @@ export default function Footer() {
                   Langtago
                 </span>
                 <span className="text-slate-300 font-light">/</span>
-                <span className="text-xs font-semibold text-[#ff8565] bg-[#ff8565]/10 rounded-md px-2 py-0.5">
+                <span className="text-xs font-bold text-[#15803d] bg-[#dbf1c3]/70 rounded-md px-2 py-0.5">
                   EvidenceLog
                 </span>
               </div>
@@ -117,7 +117,7 @@ export default function Footer() {
                   href="https://marketplace.atlassian.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-[#ff8565] font-semibold hover:underline"
+                  className="inline-flex items-center gap-1 text-[#15803d] font-semibold hover:underline"
                 >
                   <span>Atlassian Marketplace</span>
                   <ExternalLink className="h-3 w-3" />

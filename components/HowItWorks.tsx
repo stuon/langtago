@@ -39,7 +39,7 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Contis-inspired Section Heading */}
         <div className="tf__common_heading mb-16 max-w-2xl mx-auto">
-          <h6 className="text-[#ff8565] font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 font-heading">
+          <h6 className="text-[#15803d] font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 font-heading">
             WORKING PROCESS
           </h6>
           <h2 className="text-3xl sm:text-5xl font-bold text-[#111013] font-heading leading-tight">
@@ -54,7 +54,7 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
             <div className="rounded-2xl border border-slate-200/90 bg-slate-50/70 p-6 sm:p-8 shadow-xl relative overflow-hidden">
               <div className="flex items-center justify-between border-b border-slate-200/80 pb-4 mb-5">
                 <div className="flex items-center gap-2">
-                  <span className="h-3 w-3 rounded-full bg-[#ff8565]" />
+                  <span className="h-3 w-3 rounded-full bg-[#15803d]" />
                   <span className="text-xs font-bold text-[#111013] uppercase tracking-wider font-heading">
                     Active Step: {steps[activeStep - 1].badge}
                   </span>
@@ -69,7 +69,7 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
                 <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-xs">
                   <div className="flex items-center justify-between text-xs font-semibold text-[#111013] mb-2 font-heading">
                     <span>{steps[activeStep - 1].title}</span>
-                    <span className="text-[#ff8565] font-mono">0{activeStep}</span>
+                    <span className="text-[#15803d] font-mono">0{activeStep}</span>
                   </div>
                   <p className="text-xs text-[#5c728e] leading-relaxed mb-3">
                     {steps[activeStep - 1].desc}
@@ -101,7 +101,7 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
                   onClick={() => setActiveStep(step.id)}
                   className={`cursor-pointer rounded-xl border transition-all p-5 ${
                     isActive
-                      ? "border-[#ff8565] bg-white shadow-lg"
+                      ? "border-[#15803d] bg-white shadow-lg"
                       : "border-slate-200/80 bg-slate-50/50 hover:bg-white hover:border-slate-300"
                   }`}
                 >
@@ -110,7 +110,7 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
                     <div
                       className={`h-9 w-9 rounded-full flex items-center justify-center font-bold text-sm shrink-0 transition-colors ${
                         isActive
-                          ? "bg-[#ff8565] text-white"
+                          ? "bg-[#111013] text-[#dbf1c3]"
                           : "bg-slate-200 text-[#111013]"
                       }`}
                     >
@@ -134,7 +134,7 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
                                 e.stopPropagation();
                                 onOpenAuditModal();
                               }}
-                              className="text-xs font-bold text-[#ff8565] hover:underline inline-flex items-center gap-1.5"
+                              className="text-xs font-bold text-[#15803d] hover:underline inline-flex items-center gap-1.5"
                             >
                               <span>View Sample Output</span>
                               <ArrowRight className="h-3 w-3" />
@@ -151,7 +151,7 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
         </div>
 
         {/* Contis-inspired Counter Banner (tf__counter) */}
-        <div className="mt-16 sm:mt-20 rounded-2xl bg-gradient-to-r from-[#dbf1c3]/30 via-[#dce7e3]/40 to-[#cdfff1]/30 border border-slate-200/70 p-8 sm:p-10">
+        <div className="mt-16 sm:mt-20 rounded-3xl bg-gradient-to-r from-[#dbf1c3] to-[#dce7e3] border border-white/60 p-8 sm:p-10 shadow-md">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
               <div className="text-3xl sm:text-4xl font-extrabold text-[#111013] font-heading">
@@ -162,7 +162,7 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
               </div>
             </div>
             <div>
-              <div className="text-3xl sm:text-4xl font-extrabold text-[#ff8565] font-heading">
+              <div className="text-3xl sm:text-4xl font-extrabold text-[#15803d] font-heading">
                 0
               </div>
               <div className="text-xs sm:text-sm font-semibold text-[#5c728e] mt-1">
@@ -171,14 +171,14 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
             </div>
             <div>
               <div className="text-3xl sm:text-4xl font-extrabold text-[#111013] font-heading">
-                10k+
+                10,000+
               </div>
               <div className="text-xs sm:text-sm font-semibold text-[#5c728e] mt-1">
                 Jira Releases Sealed
               </div>
             </div>
             <div>
-              <div className="text-3xl sm:text-4xl font-extrabold text-[#ff8565] font-heading">
+              <div className="text-3xl sm:text-4xl font-extrabold text-[#15803d] font-heading">
                 2 Min
               </div>
               <div className="text-xs sm:text-sm font-semibold text-[#5c728e] mt-1">

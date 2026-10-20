@@ -76,19 +76,19 @@ export default function BentoGrid({ onOpenAuditModal }: BentoGridProps) {
   ];
 
   return (
-    <section id="features" className="bg-[#111013] rounded-t-[40px] pt-20 pb-24 px-4 sm:px-6 lg:px-8">
+    <section id="features" className="bg-gradient-to-r from-[#dbf1c3] to-[#dce7e3] pt-6 pb-24 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         {/* Contis-inspired Section Heading */}
         <div className="text-center mb-14 max-w-3xl mx-auto">
-          <h6 className="text-[#ff8565] font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 font-heading">
+          <h6 className="text-[#15803d] font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 font-heading">
             EVIDENCELOG MAKES AUDIT READINESS FAST &amp; EFFORTLESS
           </h6>
-          <h2 className="text-3xl sm:text-5xl font-bold text-white font-heading leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-bold text-[#111013] font-heading leading-tight">
             Experience continuous change compliance sealed in Jira
           </h2>
         </div>
 
-        {/* Contis-inspired Layout: 6 White Cards (col-9) + 1 Coral Highlight Card (col-3) */}
+        {/* Contis-inspired Layout: 6 White Cards (col-9) + 1 Highlight Card (col-3) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           {/* Main 6 Service Cards Grid (9 cols) */}
           <div className="lg:col-span-9 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -97,15 +97,15 @@ export default function BentoGrid({ onOpenAuditModal }: BentoGridProps) {
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-2xl p-7 border border-slate-100 shadow-md hover:-translate-y-1 hover:border-[#ff8565] transition-all duration-300 flex flex-col justify-between group"
+                  className="bg-white rounded-2xl p-7 border border-white/80 shadow-md hover:-translate-y-1 hover:shadow-xl hover:border-[#15803d]/30 transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div>
                     {/* Contis signature square icon badge */}
-                    <div className="w-12 h-12 rounded-xl bg-[#ff8565] text-white flex items-center justify-center mb-5 shrink-0 shadow-xs">
+                    <div className="w-12 h-12 rounded-xl bg-[#111013] text-[#dbf1c3] group-hover:bg-[#15803d] group-hover:text-white transition-colors flex items-center justify-center mb-5 shrink-0 shadow-xs">
                       <Icon className="h-6 w-6" />
                     </div>
 
-                    <h4 className="text-lg font-bold text-[#111013] font-heading mb-2 group-hover:text-[#ff8565] transition-colors">
+                    <h4 className="text-lg font-bold text-[#111013] font-heading mb-2 group-hover:text-[#15803d] transition-colors">
                       {cap.title}
                     </h4>
 
@@ -119,7 +119,7 @@ export default function BentoGrid({ onOpenAuditModal }: BentoGridProps) {
                           key={bIdx}
                           className="text-xs text-[#111013] font-medium flex items-center gap-2"
                         >
-                          <Check className="h-3.5 w-3.5 text-[#ff8565] shrink-0" />
+                          <Check className="h-3.5 w-3.5 text-[#15803d] shrink-0" />
                           <span>{bullet}</span>
                         </li>
                       ))}
@@ -131,7 +131,7 @@ export default function BentoGrid({ onOpenAuditModal }: BentoGridProps) {
                       <button
                         type="button"
                         onClick={cap.action}
-                        className="text-xs font-bold text-[#ff8565] hover:text-[#111013] transition-colors inline-flex items-center gap-1 cursor-pointer"
+                        className="text-xs font-bold text-[#15803d] hover:text-[#111013] transition-colors inline-flex items-center gap-1 cursor-pointer"
                       >
                         <span>{cap.actionLabel}</span>
                         <ArrowRight className="h-3.5 w-3.5" />
@@ -144,9 +144,9 @@ export default function BentoGrid({ onOpenAuditModal }: BentoGridProps) {
           </div>
 
           {/* Right Highlight Promo Card (3 cols - Contis signature tf__single_service_right) */}
-          <div className="lg:col-span-3 rounded-2xl bg-[#ff8565] p-7 text-white flex flex-col justify-between shadow-xl">
+          <div className="lg:col-span-3 rounded-2xl bg-[#111013] p-7 text-white flex flex-col justify-between shadow-xl">
             <div className="space-y-4">
-              <div className="inline-block rounded-md bg-white/20 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-white">
+              <div className="inline-block rounded-md bg-[#dbf1c3] px-2.5 py-1 text-xs font-extrabold uppercase tracking-wider text-[#0f5132]">
                 Free Forever
               </div>
 
@@ -154,21 +154,21 @@ export default function BentoGrid({ onOpenAuditModal }: BentoGridProps) {
                 Install EvidenceLog &amp; fall in love with audits.
               </h3>
 
-              <p className="text-sm text-white/90 leading-relaxed">
+              <p className="text-sm text-slate-300 leading-relaxed">
                 Free forever for squads up to 10 users. Zero external servers, zero credit card required.
               </p>
 
-              <div className="pt-2 space-y-2 text-xs font-medium text-white/95">
+              <div className="pt-2 space-y-2.5 text-xs font-medium text-slate-200">
                 <div className="flex items-center gap-2">
-                  <Check className="h-4 w-4 shrink-0 text-white" />
+                  <Check className="h-4 w-4 shrink-0 text-[#dbf1c3]" />
                   <span>2-minute instant Jira install</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Check className="h-4 w-4 shrink-0 text-white" />
+                  <Check className="h-4 w-4 shrink-0 text-[#dbf1c3]" />
                   <span>SOC 2 CC8.1 &amp; ISO 27001</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Check className="h-4 w-4 shrink-0 text-white" />
+                  <Check className="h-4 w-4 shrink-0 text-[#dbf1c3]" />
                   <span>Zero network data egress</span>
                 </div>
               </div>
@@ -179,7 +179,7 @@ export default function BentoGrid({ onOpenAuditModal }: BentoGridProps) {
                 href="https://marketplace.atlassian.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full text-center bg-[#111013] hover:bg-white hover:text-[#111013] text-white py-3.5 px-4 rounded-lg font-semibold text-xs transition-all inline-flex items-center justify-center gap-2 shadow-md cursor-pointer"
+                className="w-full text-center bg-[#dbf1c3] hover:bg-white text-[#111013] py-3.5 px-4 rounded-xl font-bold text-xs transition-all inline-flex items-center justify-center gap-2 shadow-md cursor-pointer"
               >
                 <span>Install on Marketplace</span>
                 <ArrowRight className="h-4 w-4" />

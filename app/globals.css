@@ -1,12 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --colorPrimary: #ff8565;
+  --colorPrimary: #15803d;
+  --colorGreenBrand: #dbf1c3;
+  --colorGreenSage: #dce7e3;
+  --colorGreenMint: #cdfff1;
   --colorSecondary: #111013;
   --colorWhite: #ffffff;
   --paraColor: #5c728e;
   --headingFont: var(--font-heading), "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   --paraFont: var(--font-body), "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --gradiantBg: linear-gradient(102deg, #dbf1c3 -7.72%, #dce7e3 86.48%);
   color-scheme: light;
 }
 
@@ -31,10 +35,10 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 15px;
   font-weight: 600;
   font-family: var(--paraFont);
-  padding: 13px 22px;
+  padding: 13px 24px;
   background: var(--colorSecondary);
   color: var(--colorWhite);
-  border-radius: 8px;
+  border-radius: 10px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -45,10 +49,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .tf__common_btn:hover {
-  background: var(--colorPrimary);
+  background: #15803d;
   color: var(--colorWhite);
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(255, 133, 101, 0.35);
+  box-shadow: 0 6px 20px rgba(21, 128, 61, 0.25);
 }
 
 /* Contis-inspired Secondary / Outlined Button */
@@ -83,17 +87,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .tf__common_heading h6 {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
-  color: var(--colorPrimary);
+  color: #15803d;
   font-family: var(--headingFont);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .tf__common_heading h6 span {
-  color: var(--colorPrimary);
+  color: #15803d;
 }
 
 .tf__common_heading h2 {
@@ -113,15 +117,15 @@ h1, h2, h3, h4, h5, h6 {
 .tf__single_service {
   background: var(--colorWhite);
   padding: 36px 28px;
-  border-radius: 12px;
+  border-radius: 16px;
   border: 1px solid #f1f3f7;
   transition: all 0.3s ease;
 }
 
 .tf__single_service:hover {
   transform: translateY(-3px);
-  border-color: var(--colorPrimary);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border-color: #dbf1c3;
+  box-shadow: 0 14px 35px rgba(17, 16, 19, 0.08);
 }
 
 .tf__single_service span.icon_badge {
@@ -129,13 +133,13 @@ h1, h2, h3, h4, h5, h6 {
   height: 48px;
   line-height: 48px;
   text-align: center;
-  border-radius: 8px;
-  background: var(--colorPrimary);
+  border-radius: 12px;
+  background: #111013;
+  color: #dbf1c3;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 18px;
-  color: #ffffff;
 }
 
 /* Custom Scrollbars */

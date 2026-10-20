@@ -67,7 +67,7 @@ export default function Pricing({ onOpenAuditModal }: PricingProps) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Contis-inspired Section Heading */}
         <div className="tf__common_heading mb-14 max-w-2xl mx-auto">
-          <h6 className="text-[#ff8565] font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 font-heading">
+          <h6 className="text-[#15803d] font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 font-heading">
             PRICING
           </h6>
           <h2 className="text-3xl sm:text-5xl font-bold text-[#111013] font-heading leading-tight">
@@ -105,7 +105,7 @@ export default function Pricing({ onOpenAuditModal }: PricingProps) {
               onClick={() => setAnnualBilling(true)}
             >
               <span>Annual Billing</span>
-              <span className="rounded-full bg-[#ff8565]/15 text-[#ff8565] px-2 py-0.5 text-[10px] font-bold">
+              <span className="rounded-full bg-[#dbf1c3] text-[#0f5132] px-2.5 py-0.5 text-[10px] font-extrabold">
                 Save 28%
               </span>
             </span>
@@ -121,12 +121,12 @@ export default function Pricing({ onOpenAuditModal }: PricingProps) {
                 key={idx}
                 className={`rounded-2xl border transition-all p-8 flex flex-col justify-between group ${
                   tier.isPopular
-                    ? "border-[#ff8565] bg-white shadow-xl relative"
+                    ? "border-[#15803d] border-2 bg-white shadow-xl relative"
                     : "border-slate-200 bg-white hover:border-[#111013] shadow-sm"
                 }`}
               >
                 {tier.isPopular && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-[#ff8565] px-3.5 py-1 text-[11px] font-bold text-white uppercase tracking-wider shadow-sm">
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-[#15803d] px-3.5 py-1 text-[11px] font-bold text-white uppercase tracking-wider shadow-sm">
                     Most Popular
                   </div>
                 )}
@@ -148,9 +148,9 @@ export default function Pricing({ onOpenAuditModal }: PricingProps) {
                     href="https://marketplace.atlassian.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-full text-center py-3 px-4 rounded-lg font-semibold text-xs transition-all inline-flex items-center justify-center gap-2 mb-8 ${
+                    className={`w-full text-center py-3 px-4 rounded-xl font-semibold text-xs transition-all inline-flex items-center justify-center gap-2 mb-8 ${
                       tier.isPopular
-                        ? "bg-[#111013] text-white hover:bg-[#ff8565]"
+                        ? "bg-[#111013] text-white hover:bg-[#15803d]"
                         : "bg-slate-100 text-[#111013] hover:bg-[#111013] hover:text-white"
                     }`}
                   >
@@ -168,7 +168,7 @@ export default function Pricing({ onOpenAuditModal }: PricingProps) {
                           key={fIdx}
                           className="flex items-start gap-2 text-xs text-[#5c728e] font-medium"
                         >
-                          <Check className="h-4 w-4 text-[#ff8565] shrink-0 mt-0.5" />
+                          <Check className="h-4 w-4 text-[#15803d] shrink-0 mt-0.5" />
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -193,7 +193,7 @@ export default function Pricing({ onOpenAuditModal }: PricingProps) {
             <button
               type="button"
               onClick={onOpenAuditModal}
-              className="text-[#ff8565] font-bold hover:underline ml-1 cursor-pointer"
+              className="text-[#15803d] font-bold hover:underline ml-1 cursor-pointer"
             >
               Inspect sample auditor workpaper &rarr;
             </button>

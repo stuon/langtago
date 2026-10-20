@@ -8,7 +8,7 @@ interface TeamShowcaseProps {
 
 export default function TeamShowcase({ onOpenAuditModal }: TeamShowcaseProps) {
   return (
-    <section id="security" className="py-20 sm:py-28 bg-slate-50 border-t border-slate-200/80">
+    <section id="security" className="py-20 sm:py-28 bg-[#f8f6f9] border-t border-slate-200/80">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Contis-Style Row 1: Left Graphic, Right Story */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -54,7 +54,7 @@ export default function TeamShowcase({ onOpenAuditModal }: TeamShowcaseProps) {
 
           {/* Right Text Story (Contis Typography) */}
           <div className="lg:col-span-6 space-y-5">
-            <h6 className="text-[#ff8565] font-bold text-xs sm:text-sm tracking-widest uppercase font-heading">
+            <h6 className="text-[#15803d] font-bold text-xs sm:text-sm tracking-widest uppercase font-heading">
               SEPARATION OF DUTIES
             </h6>
 
@@ -68,11 +68,11 @@ export default function TeamShowcase({ onOpenAuditModal }: TeamShowcaseProps) {
 
             <ul className="space-y-2.5 pt-2">
               <li className="flex items-center gap-2 text-sm text-[#111013] font-medium">
-                <Check className="h-4 w-4 text-[#ff8565] shrink-0" />
+                <Check className="h-4 w-4 text-[#15803d] shrink-0" />
                 <span>Instant author vs. reviewer verification on every merge</span>
               </li>
               <li className="flex items-center gap-2 text-sm text-[#111013] font-medium">
-                <Check className="h-4 w-4 text-[#ff8565] shrink-0" />
+                <Check className="h-4 w-4 text-[#15803d] shrink-0" />
                 <span>Zero friction for engineers—no screenshots or ticket forms</span>
               </li>
             </ul>
@@ -82,7 +82,7 @@ export default function TeamShowcase({ onOpenAuditModal }: TeamShowcaseProps) {
                 href="https://marketplace.atlassian.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#111013] text-white hover:bg-[#ff8565] font-semibold text-xs transition-all shadow-xs cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#111013] text-white hover:bg-[#15803d] font-semibold text-xs transition-all shadow-xs cursor-pointer"
               >
                 <span>Install on Atlassian Marketplace</span>
                 <ArrowRight className="h-4 w-4" />
@@ -94,8 +94,8 @@ export default function TeamShowcase({ onOpenAuditModal }: TeamShowcaseProps) {
         {/* Contis-Style Row 2: Two Side-by-Side Cards (tf__single_content_creator_bottom) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Card A: Zero Data Egress */}
-          <div className="rounded-2xl border border-slate-200 bg-white p-7 sm:p-9 shadow-md hover:border-[#ff8565] transition-all space-y-4">
-            <div className="h-10 w-10 rounded-xl bg-[#111013] text-[#ff8565] flex items-center justify-center">
+          <div className="rounded-2xl border border-slate-200 bg-white p-7 sm:p-9 shadow-md hover:border-[#15803d]/40 transition-all space-y-4">
+            <div className="h-10 w-10 rounded-xl bg-[#111013] text-[#dbf1c3] flex items-center justify-center">
               <Lock className="h-5 w-5" />
             </div>
 
@@ -121,8 +121,8 @@ export default function TeamShowcase({ onOpenAuditModal }: TeamShowcaseProps) {
           </div>
 
           {/* Card B: Instant Big 4 Handoff */}
-          <div className="rounded-2xl border border-slate-200 bg-white p-7 sm:p-9 shadow-md hover:border-[#ff8565] transition-all space-y-4">
-            <div className="h-10 w-10 rounded-xl bg-[#111013] text-[#ff8565] flex items-center justify-center">
+          <div className="rounded-2xl border border-slate-200 bg-white p-7 sm:p-9 shadow-md hover:border-[#15803d]/40 transition-all space-y-4">
+            <div className="h-10 w-10 rounded-xl bg-[#111013] text-[#dbf1c3] flex items-center justify-center">
               <Download className="h-5 w-5" />
             </div>
 
@@ -138,7 +138,7 @@ export default function TeamShowcase({ onOpenAuditModal }: TeamShowcaseProps) {
               <button
                 type="button"
                 onClick={onOpenAuditModal}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#111013] text-white hover:bg-[#ff8565] font-semibold text-xs transition-all shadow-xs cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#111013] text-white hover:bg-[#15803d] font-semibold text-xs transition-all shadow-xs cursor-pointer"
               >
                 <span>Inspect Sample CSV Workpaper</span>
                 <ArrowRight className="h-3 w-3" />

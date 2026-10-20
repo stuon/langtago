@@ -79,7 +79,7 @@ export default function RootLayout({
       lang="en"
       className={`${dmSans.variable} ${inter.variable} scroll-smooth`}
     >
-      <body className="bg-white text-[#5c728e] font-sans min-h-screen flex flex-col selection:bg-[#ff8565]/20 selection:text-[#111013]">
+      <body className="bg-white text-[#5c728e] font-sans min-h-screen flex flex-col selection:bg-[#dbf1c3] selection:text-[#0f5132]">
         {GA_MEASUREMENT_ID && (
           <>
             <Script

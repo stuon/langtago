@@ -16,7 +16,7 @@ export default function HomePage() {
   const [isAuditModalOpen, setIsAuditModalOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen bg-white font-sans text-[#5c728e] selection:bg-[#ff8565]/20 selection:text-[#111013]">
+    <div className="relative min-h-screen bg-white font-sans text-[#5c728e] selection:bg-[#dbf1c3] selection:text-[#0f5132]">
       {/* Contis-Style Header & Navigation */}
       <Navbar onOpenAuditModal={() => setIsAuditModalOpen(true)} isProductPage={true} />
 

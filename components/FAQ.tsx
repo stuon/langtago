@@ -34,11 +34,11 @@ export default function FAQ() {
   ];
 
   return (
-    <section id="faq" className="bg-gradient-to-r from-[#dbf1c3]/20 via-[#dce7e3]/30 to-[#cdfff1]/20 rounded-t-[40px] pt-20 pb-24 px-4 sm:px-6 lg:px-8 border-t border-slate-100">
+    <section id="faq" className="bg-gradient-to-r from-[#dbf1c3] to-[#dce7e3] rounded-t-[40px] pt-20 pb-24 px-4 sm:px-6 lg:px-8 border-t border-white/60">
       <div className="mx-auto max-w-4xl">
         {/* Contis-inspired Section Heading */}
         <div className="tf__common_heading mb-14 text-center">
-          <h6 className="text-[#ff8565] font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 font-heading">
+          <h6 className="text-[#15803d] font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 font-heading">
             FAQ
           </h6>
           <h2 className="text-3xl sm:text-5xl font-bold text-[#111013] font-heading leading-tight">
@@ -56,7 +56,7 @@ export default function FAQ() {
             return (
               <div
                 key={idx}
-                className="rounded-2xl border border-slate-200/90 bg-white shadow-xs overflow-hidden transition-all"
+                className="rounded-2xl border border-white/80 bg-white shadow-xs overflow-hidden transition-all"
               >
                 <button
                   type="button"
@@ -68,7 +68,7 @@ export default function FAQ() {
                   </span>
                   <div
                     className={`h-8 w-8 rounded-full flex items-center justify-center shrink-0 transition-colors ${
-                      isOpen ? "bg-[#ff8565] text-white" : "bg-slate-100 text-[#111013]"
+                      isOpen ? "bg-[#111013] text-[#dbf1c3]" : "bg-slate-100 text-[#111013]"
                     }`}
                   >
                     {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
