@@ -24,42 +24,6 @@ export default function Hero({ onOpenAuditModal }: HeroProps) {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
         {/* Hero Title & Subtitle in Contis Typography */}
         <div className="mx-auto max-w-4xl text-center relative">
-          {/* Contis Floating Pill Card Left: Separation of Duties */}
-          <div className="hidden xl:flex items-center gap-3.5 absolute -left-20 top-20 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-slate-100 z-20 text-left hover:-translate-y-1 transition-transform">
-            <div className="w-12 h-12 rounded-xl bg-[#dbf1c3] text-[#0f5132] flex items-center justify-center shrink-0 shadow-2xs">
-              <ShieldCheck className="h-6 w-6" />
-            </div>
-            <div>
-              <div className="text-sm font-bold text-[#111013] font-heading leading-tight">
-                Separation of Duties
-              </div>
-              <div className="text-xs text-[#5c728e] font-medium mt-0.5">
-                Automated CC8.1 Rule
-              </div>
-              <div className="text-[11px] font-mono text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded mt-1 font-semibold inline-block">
-                Author &ne; Reviewer
-              </div>
-            </div>
-          </div>
-
-          {/* Contis Floating Pill Card Right: Cryptographic SHA-256 Digest */}
-          <div className="hidden xl:flex items-center gap-3.5 absolute -right-16 top-40 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-slate-100 z-20 text-left hover:-translate-y-1 transition-transform">
-            <div className="w-12 h-12 rounded-xl bg-[#111013] text-[#dbf1c3] flex items-center justify-center shrink-0 shadow-2xs font-bold text-sm">
-              <Lock className="h-5 w-5 text-[#dbf1c3]" />
-            </div>
-            <div>
-              <div className="text-sm font-bold text-[#111013] font-heading leading-tight">
-                SHA-256 Seal
-              </div>
-              <div className="text-xs text-[#5c728e] font-medium mt-0.5">
-                Immutable Audit Proof
-              </div>
-              <div className="text-[11px] font-mono text-slate-700 bg-slate-100 px-2 py-0.5 rounded mt-1 font-semibold inline-block">
-                Zero Data Egress
-              </div>
-            </div>
-          </div>
-
           {/* Subdued green kicker */}
           <h6 className="text-[#15803d] font-bold text-xs sm:text-sm tracking-widest uppercase mb-3 font-heading">
             EVIDENCELOG FOR JIRA CLOUD
