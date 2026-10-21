@@ -6,7 +6,6 @@ import Hero from "@/components/Hero";
 import BrandStrip from "@/components/BrandStrip";
 import BentoGrid from "@/components/BentoGrid";
 import HowItWorks from "@/components/HowItWorks";
-import TeamShowcase from "@/components/TeamShowcase";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
@@ -28,14 +27,11 @@ export default function HomePage() {
         {/* Brand Integration Strip */}
         <BrandStrip />
 
-        {/* Core Capabilities: Contis Main Service Dark Curved Block */}
-        <BentoGrid onOpenAuditModal={() => setIsAuditModalOpen(true)} />
-
-        {/* Working Process: 2-Column Numbered Stepper & Metric Counter Strip */}
+        {/* Working Process: 2-Column Numbered Stepper */}
         <HowItWorks onOpenAuditModal={() => setIsAuditModalOpen(true)} />
 
-        {/* Feature Spotlights: Separation of Duties & Sandboxing */}
-        <TeamShowcase onOpenAuditModal={() => setIsAuditModalOpen(true)} />
+        {/* Core Capabilities: Contis Main Service Block */}
+        <BentoGrid onOpenAuditModal={() => setIsAuditModalOpen(true)} />
 
         {/* Transparent 3-Tier Pricing */}
         <Pricing onOpenAuditModal={() => setIsAuditModalOpen(true)} />

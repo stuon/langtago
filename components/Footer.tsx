@@ -21,7 +21,7 @@ export default function Footer() {
               </h2>
 
               <p className="text-sm text-slate-300 max-w-xl leading-relaxed">
-                Install EvidenceLog into your Jira Cloud workspace in 2 minutes. Free forever for up to 10 users with zero external data egress.
+                Install EvidenceLog into your Jira Cloud workspace directly from the Atlassian Marketplace. Free forever for squads up to 10 users with zero external data egress.
               </p>
 
               <div className="flex flex-wrap items-center gap-4 text-xs font-medium text-slate-300 pt-2">

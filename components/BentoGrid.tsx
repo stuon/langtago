@@ -59,7 +59,7 @@ export default function BentoGrid({ onOpenAuditModal }: BentoGridProps) {
       description: "Generate pre-formatted Big 4 sampling workpapers ready for inspection.",
       bullets: [
         "Pre-formatted for Big 4 & AICPA",
-        "Saves 40+ hours per audit cycle",
+        "Standardized CSV & JSON export",
       ],
       action: onOpenAuditModal,
       actionLabel: "Inspect Workpaper",
@@ -151,7 +151,7 @@ export default function BentoGrid({ onOpenAuditModal }: BentoGridProps) {
               </div>
 
               <h3 className="text-2xl font-bold font-heading leading-snug">
-                Install EvidenceLog &amp; fall in love with audits.
+                Continuous change compliance sealed in Jira.
               </h3>
 
               <p className="text-sm text-slate-300 leading-relaxed">
@@ -161,7 +161,7 @@ export default function BentoGrid({ onOpenAuditModal }: BentoGridProps) {
               <div className="pt-2 space-y-2.5 text-xs font-medium text-slate-200">
                 <div className="flex items-center gap-2">
                   <Check className="h-4 w-4 shrink-0 text-[#dbf1c3]" />
-                  <span>2-minute instant Jira install</span>
+                  <span>Atlassian Forge Cloud app</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Check className="h-4 w-4 shrink-0 text-[#dbf1c3]" />
