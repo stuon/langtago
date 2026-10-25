@@ -9,6 +9,10 @@ import {
   Share2,
   ArrowRight,
   Check,
+  ShieldAlert,
+  Zap,
+  LayoutDashboard,
+  FileText,
 } from "lucide-react";
 
 interface BentoGridProps {
@@ -18,60 +22,60 @@ interface BentoGridProps {
 export default function BentoGrid({ onOpenAuditModal }: BentoGridProps) {
   const capabilities = [
     {
-      icon: UserCheck,
-      title: "Peer Review Verification",
-      description: "Guarantees independent code sign-off on every production release ticket.",
+      icon: ShieldAlert,
+      title: "Preventive Workflow Gatekeeper",
+      description: "Programmatically blocks issues from closing unless all compliance criteria are satisfied.",
       bullets: [
-        "Separation of duties enforced",
-        "Author vs. reviewer check",
+        "Jira workflow validator integration",
+        "Zero unverified tickets reach production",
       ],
     },
     {
-      icon: GitCommit,
-      title: "Automated CI/CD Evidence",
-      description: "Captures 100% passing test suites, build outputs, and deployment status.",
+      icon: UserCheck,
+      title: "5-Pillar Compliance Engine",
+      description: "Real-time evaluation of Acceptance Criteria, Git links, Peer Review, QA, and SAST scans.",
       bullets: [
-        "Validates test suite pass rates",
-        "Links commit SHA to Jira issue",
+        "Given/When/Then & Definition of Done",
+        "Snyk, SonarQube & Trivy scan detection",
+      ],
+    },
+    {
+      icon: Zap,
+      title: "1-Click Interactive Remediation",
+      description: "Fix missing compliance evidence in seconds with direct in-situ developer buttons.",
+      bullets: [
+        "+ Append AC Checklist template",
+        "+ Apply qa-verified & post QA sign-off",
+      ],
+    },
+    {
+      icon: LayoutDashboard,
+      title: "Project Audit Hub & Batch Certify",
+      description: "Executive dashboard with 5 KPI scorecards and 1-click bulk certification for entire releases.",
+      bullets: [
+        "1-click ⚡ Batch Certify all tickets",
+        "Emergency hotfix post-incident CAB alerts",
       ],
     },
     {
       icon: ShieldCheck,
-      title: "Cryptographic SHA-256 Seal",
-      description: "Creates tamper-evident compliance records stored inside Jira Forge.",
+      title: "Cryptographic Merkle Root Seal",
+      description: "Tamper-evident SHA-256 fingerprints and release-wide binary Merkle tree integrity proofs.",
       bullets: [
-        "Immutable hash digest generated",
-        "Instant tamper detection",
+        "Immutable hash stored in Forge KVS",
+        "Zero-trust offline browser verifier",
       ],
-    },
-    {
-      icon: Lock,
-      title: "Zero Data Egress",
-      description: "Executes 100% inside your Atlassian Forge tenant. No external servers.",
-      bullets: [
-        "Zero third-party database storage",
-        "Code never leaves Atlassian Cloud",
-      ],
-    },
-    {
-      icon: FileSpreadsheet,
-      title: "1-Click Auditor Handoff",
-      description: "Generate pre-formatted Big 4 sampling workpapers ready for inspection.",
-      bullets: [
-        "Pre-formatted for Big 4 & AICPA",
-        "Standardized CSV & JSON export",
-      ],
-      action: onOpenAuditModal,
-      actionLabel: "Inspect Workpaper",
     },
     {
       icon: Share2,
-      title: "Native GRC Integration",
-      description: "Direct compliance data sync for continuous monitoring platforms.",
+      title: "Vanta, Drata & Big 4 Workpapers",
+      description: "Continuous compliance payload exports and printable executive attestation PDFs.",
       bullets: [
-        "1-click sync to Vanta & Drata",
-        "JSON & CSV auditor packages",
+        "1-click sync to Vanta & Drata GRC",
+        "Auditor CSV matrices & printable certificates",
       ],
+      action: onOpenAuditModal,
+      actionLabel: "Inspect Audit Dossier",
     },
   ];
 

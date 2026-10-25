@@ -53,7 +53,7 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
           </div>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden items-center gap-8 md:flex text-sm font-medium text-[#5c728e]">
+          <nav className="hidden items-center gap-7 md:flex text-sm font-medium text-[#5c728e]">
             <a href={`${prefix}#how-it-works`} className="hover:text-[#111013] transition-colors">
               How It Works
             </a>
@@ -65,6 +65,14 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
             </a>
             <a href={`${prefix}#faq`} className="hover:text-[#111013] transition-colors">
               FAQ
+            </a>
+            <a
+              href="/docs/user-guide.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#15803d] font-semibold hover:text-[#111013] transition-colors flex items-center gap-1"
+            >
+              <span>User Guide &amp; Docs ↗</span>
             </a>
           </nav>
 
@@ -134,6 +142,15 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
               className="block py-2 text-[#111013] font-semibold"
             >
               FAQ
+            </a>
+            <a
+              href="/docs/user-guide.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-2 text-[#15803d] font-bold"
+            >
+              User Guide &amp; Docs ↗
             </a>
             <div className="pt-3 border-t border-slate-100 flex flex-col gap-2.5">
               {onOpenAuditModal && (

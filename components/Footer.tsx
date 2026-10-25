@@ -89,27 +89,41 @@ export default function Footer() {
           {/* Links Column 1: Product (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
             <p className="text-xs font-bold uppercase tracking-wider text-[#111013] font-heading">
-              Product
+              Product &amp; Docs
             </p>
             <ul className="space-y-2.5 text-xs text-[#5c728e]">
               <li>
                 <a href="#how-it-works" className="hover:text-[#111013] transition-colors">
-                  How It Works
+                  How It Works (5 Pillars)
                 </a>
               </li>
               <li>
                 <a href="#features" className="hover:text-[#111013] transition-colors">
-                  Capabilities &amp; Controls
+                  Preventive Gatekeeper &amp; Audit Hub
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/docs/user-guide.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#15803d] font-semibold hover:underline inline-flex items-center gap-1"
+                >
+                  <span>Production User Guide ↗</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/docs/evidencelog-user-guide.md"
+                  download="EvidenceLog-User-Guide.md"
+                  className="hover:text-[#111013] transition-colors"
+                >
+                  Download Guide (Markdown)
                 </a>
               </li>
               <li>
                 <a href="#pricing" className="hover:text-[#111013] transition-colors">
                   Transparent Pricing
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="hover:text-[#111013] transition-colors">
-                  Frequently Asked Questions
                 </a>
               </li>
               <li>
@@ -133,19 +147,25 @@ export default function Footer() {
             </p>
             <ul className="space-y-2.5 text-xs text-[#5c728e]">
               <li>
-                <span>SOC 2 Type II (CC8.1)</span>
+                <span>SOC 2 Type II (CC8.1, CC6.8, CC7.1)</span>
               </li>
               <li>
                 <span>ISO/IEC 27001:2022</span>
               </li>
               <li>
-                <span>HIPAA §164.312</span>
+                <span>HIPAA §164.312 &amp; FedRAMP</span>
               </li>
               <li>
-                <span>Zero Data Egress</span>
+                <span>ITIL 4 Risk &amp; CAB Review</span>
               </li>
               <li>
-                <span>Vanta &amp; Drata Ready</span>
+                <span>Binary Merkle Tree Proofs</span>
+              </li>
+              <li>
+                <span>Zero Data Egress (Forge)</span>
+              </li>
+              <li>
+                <span>Vanta &amp; Drata Ingestion</span>
               </li>
             </ul>
           </div>

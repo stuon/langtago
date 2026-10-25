@@ -123,63 +123,152 @@ export default function Hero({ onOpenAuditModal }: HeroProps) {
 
               {/* EvidenceLog Native Jira Panel Glance */}
               <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-5 space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="h-7 w-7 rounded-lg bg-[#111013] text-[#dbf1c3] flex items-center justify-center">
-                      <ShieldCheck className="h-4 w-4" />
+                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200/80 pb-3">
+                  <div className="flex items-center gap-2.5">
+                    <div className="h-8 w-8 rounded-lg bg-[#111013] text-[#dbf1c3] flex items-center justify-center shadow-xs">
+                      <ShieldCheck className="h-5 w-5" />
                     </div>
                     <div>
-                      <span className="text-sm font-bold text-[#111013] block font-heading">
-                        EvidenceLog Compliance Seal
-                      </span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm font-bold text-[#111013] font-heading">
+                          EvidenceLog Compliance Ledger
+                        </span>
+                        <span className="rounded bg-[#dbf1c3] text-[#0f5132] text-[10px] font-extrabold px-2 py-0.5 font-mono">
+                          AUDIT READY (5/5)
+                        </span>
+                        <span className="rounded bg-slate-200 text-slate-700 text-[10px] font-semibold px-2 py-0.5">
+                          Standard Change (Low Risk)
+                        </span>
+                      </div>
                       <span className="text-xs text-[#5c728e]">
-                        Cryptographically stamped via Atlassian Forge Sandbox
+                        Cryptographically sealed in Atlassian Forge KVS &bull; Zero Data Egress
                       </span>
                     </div>
                   </div>
-                  <button
-                    type="button"
-                    onClick={onOpenAuditModal}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#111013] text-white hover:bg-[#15803d] font-semibold text-xs transition-all shadow-xs cursor-pointer"
-                  >
-                    <Download className="h-3.5 w-3.5" />
-                    <span>Export CSV</span>
-                  </button>
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={onOpenAuditModal}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#111013] text-white hover:bg-[#15803d] font-semibold text-xs transition-all shadow-xs cursor-pointer"
+                    >
+                      <Download className="h-3.5 w-3.5" />
+                      <span>Inspect Audit Dossier</span>
+                    </button>
+                  </div>
                 </div>
 
-                {/* 3 Core Compliance Verifications */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-2">
-                  <div className="rounded-lg bg-white p-3.5 border border-slate-200 shadow-xs">
-                    <div className="text-[11px] font-bold text-[#5c728e] uppercase tracking-wider mb-1">
-                      Separation of Duties
+                {/* 5-Step Lifecycle Progress Tracker */}
+                <div className="rounded-lg bg-white p-3 border border-slate-200 shadow-2xs">
+                  <div className="text-[10px] font-bold text-[#5c728e] uppercase tracking-wider mb-2 font-mono">
+                    Change Lifecycle Audit Trail (Automated Pre-Flight Gatekeeper)
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2 text-xs font-semibold text-[#111013]">
+                    <span className="flex items-center gap-1 text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
+                      <Check className="h-3 w-3 text-emerald-600" /> 1. AC Defined
+                    </span>
+                    <span className="text-slate-300">&bull;</span>
+                    <span className="flex items-center gap-1 text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
+                      <Check className="h-3 w-3 text-emerald-600" /> 2. Code Linked
+                    </span>
+                    <span className="text-slate-300">&bull;</span>
+                    <span className="flex items-center gap-1 text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
+                      <Check className="h-3 w-3 text-emerald-600" /> 3. Peer Reviewed
+                    </span>
+                    <span className="text-slate-300">&bull;</span>
+                    <span className="flex items-center gap-1 text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
+                      <Check className="h-3 w-3 text-emerald-600" /> 4. QA Verified
+                    </span>
+                    <span className="text-slate-300">&bull;</span>
+                    <span className="flex items-center gap-1 text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-mono">
+                      <Lock className="h-3 w-3 text-emerald-600" /> 5. Certified
+                    </span>
+                  </div>
+                </div>
+
+                {/* 5 Core Compliance Verifications Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 pt-1">
+                  <div className="rounded-lg bg-white p-3 border border-slate-200 shadow-2xs">
+                    <div className="text-[10px] font-bold text-[#5c728e] uppercase tracking-wider mb-1">
+                      1. Acceptance Criteria (CC8.1)
                     </div>
                     <div className="text-xs font-bold text-[#111013] flex items-center gap-1.5">
-                      <Check className="h-4 w-4 text-emerald-600 shrink-0" />
-                      <span>Approved by @sarah.m</span>
+                      <Check className="h-3.5 w-3.5 text-emerald-600 shrink-0" />
+                      <span>Given / When / Then DoD</span>
                     </div>
-                    <div className="text-[10px] text-[#5c728e] mt-1">Author @alex.k &ne; Reviewer</div>
+                    <div className="text-[10px] text-[#5c728e] mt-0.5">Explicit BDD specs validated</div>
                   </div>
 
-                  <div className="rounded-lg bg-white p-3.5 border border-slate-200 shadow-xs">
-                    <div className="text-[11px] font-bold text-[#5c728e] uppercase tracking-wider mb-1">
-                      CI Test Evidence
+                  <div className="rounded-lg bg-white p-3 border border-slate-200 shadow-2xs">
+                    <div className="text-[10px] font-bold text-[#5c728e] uppercase tracking-wider mb-1">
+                      2. Code Linkage &amp; CI/CD
                     </div>
                     <div className="text-xs font-bold text-[#111013] flex items-center gap-1.5">
-                      <Check className="h-4 w-4 text-emerald-600 shrink-0" />
-                      <span>48/48 Tests Passed</span>
+                      <Check className="h-3.5 w-3.5 text-emerald-600 shrink-0" />
+                      <span>PR #384 &bull; 48/48 Tests</span>
                     </div>
-                    <div className="text-[10px] text-[#5c728e] mt-1">GitHub Actions build #894</div>
+                    <div className="text-[10px] text-[#5c728e] mt-0.5">GitHub Actions passing build</div>
                   </div>
 
-                  <div className="rounded-lg bg-white p-3.5 border border-slate-200 shadow-xs">
-                    <div className="text-[11px] font-bold text-[#5c728e] uppercase tracking-wider mb-1">
-                      SHA-256 Digest
+                  <div className="rounded-lg bg-white p-3 border border-slate-200 shadow-2xs">
+                    <div className="text-[10px] font-bold text-[#5c728e] uppercase tracking-wider mb-1">
+                      3. Segregation of Duties (CC6.8)
                     </div>
-                    <div className="text-xs font-mono font-bold text-[#111013] flex items-center gap-1.5 truncate">
-                      <Lock className="h-3.5 w-3.5 text-[#15803d] shrink-0" />
-                      <span className="truncate">e3b0c44298fc1c14...</span>
+                    <div className="text-xs font-bold text-[#111013] flex items-center gap-1.5">
+                      <Check className="h-3.5 w-3.5 text-emerald-600 shrink-0" />
+                      <span>Signed off @sarah.m</span>
                     </div>
-                    <div className="text-[10px] text-emerald-700 font-semibold mt-1">Immutable &bull; Unaltered</div>
+                    <div className="text-[10px] text-[#5c728e] mt-0.5">Author @alex.k &ne; Approver</div>
+                  </div>
+
+                  <div className="rounded-lg bg-white p-3 border border-slate-200 shadow-2xs">
+                    <div className="text-[10px] font-bold text-[#5c728e] uppercase tracking-wider mb-1">
+                      4. QA Verification (A.8.29)
+                    </div>
+                    <div className="text-xs font-bold text-[#111013] flex items-center gap-1.5">
+                      <Check className="h-3.5 w-3.5 text-emerald-600 shrink-0" />
+                      <span>qa-verified Tag &amp; Sign-off</span>
+                    </div>
+                    <div className="text-[10px] text-[#5c728e] mt-0.5">Staging run signed by QA lead</div>
+                  </div>
+
+                  <div className="rounded-lg bg-white p-3 border border-slate-200 shadow-2xs">
+                    <div className="text-[10px] font-bold text-[#5c728e] uppercase tracking-wider mb-1">
+                      5. Security Scan (CC7.1)
+                    </div>
+                    <div className="text-xs font-bold text-[#111013] flex items-center gap-1.5">
+                      <Check className="h-3.5 w-3.5 text-emerald-600 shrink-0" />
+                      <span>Snyk SAST: 0 CVEs</span>
+                    </div>
+                    <div className="text-[10px] text-[#5c728e] mt-0.5">Vulnerability check verified</div>
+                  </div>
+
+                  <div className="rounded-lg bg-[#111013] text-white p-3 shadow-2xs flex flex-col justify-between">
+                    <div className="text-[10px] font-bold text-[#dbf1c3] uppercase tracking-wider font-mono">
+                      SHA-256 Digest Seal
+                    </div>
+                    <div className="text-xs font-mono font-bold text-white truncate flex items-center gap-1.5 my-0.5">
+                      <Lock className="h-3 w-3 text-[#dbf1c3] shrink-0" />
+                      <span className="truncate">9f83ac2b7c4d...</span>
+                    </div>
+                    <div className="text-[10px] text-slate-300">Locked in Forge Encrypted Storage</div>
+                  </div>
+                </div>
+
+                {/* In-Situ Quick Remediation Bar */}
+                <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-slate-200/80 text-xs">
+                  <span className="text-[#5c728e] font-medium text-[11px]">
+                    1-Click In-Situ Remediation:
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    <span className="rounded bg-white border border-slate-200 px-2 py-0.5 text-[11px] font-semibold text-[#111013]">
+                      + Append AC Checklist
+                    </span>
+                    <span className="rounded bg-white border border-slate-200 px-2 py-0.5 text-[11px] font-semibold text-[#111013]">
+                      + Apply "qa-verified" Tag
+                    </span>
+                    <span className="rounded bg-white border border-slate-200 px-2 py-0.5 text-[11px] font-semibold text-[#111013]">
+                      + Post QA Sign-off
+                    </span>
                   </div>
                 </div>
               </div>
