@@ -6,12 +6,16 @@ import {
   ShieldCheck,
   Copy,
   Lock,
-  GitPullRequest,
-  CheckCircle2,
   FileText,
-  Clock,
   Check,
   Code2,
+  ExternalLink,
+  Laptop,
+  Layers,
+  FileSpreadsheet,
+  CheckCircle2,
+  ArrowRight,
+  Sparkles,
 } from "lucide-react";
 
 interface AuditModalProps {
@@ -20,10 +24,10 @@ interface AuditModalProps {
 }
 
 export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
-  const [activeTab, setActiveTab] = useState<"summary" | "timeline" | "exports">("summary");
+  const [activeTab, setActiveTab] = useState<"screenshot" | "exports">("screenshot");
+  const [screenshotView, setScreenshotView] = useState<"glance" | "snapshot" | "actions">("glance");
   const [exportSubTab, setExportSubTab] = useState<"json" | "vanta" | "drata" | "csv" | "merkle">("json");
   const [copied, setCopied] = useState(false);
-  const [verifiedState, setVerifiedState] = useState<"idle" | "verifying" | "verified">("idle");
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -164,7 +168,7 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
     } else if (activeTab === "exports") {
       if (exportSubTab === "vanta") text = JSON.stringify(vantaPayload, null, 2);
       else if (exportSubTab === "drata") text = JSON.stringify(drataPayload, null, 2);
-      else if (exportSubTab === "csv") text = sampleCsvRow;
+      else if (exportSubTab === "csv") text = `IssueKey,Summary,Reporter,Approver,QASigner,Status,Score,Fingerprint,Timestamp\n${sampleCsvRow}`;
       else if (exportSubTab === "merkle") text = "sha256:7e49f2b189a03bc432d9101f78e4d2e9941a3bc68e0d84f229a1b80c33f98ea1";
       else text = JSON.stringify(sampleJson, null, 2);
     } else {
@@ -176,27 +180,40 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleReverify = () => {
-    setVerifiedState("verifying");
-    setTimeout(() => {
-      setVerifiedState("verified");
-      setTimeout(() => setVerifiedState("idle"), 2500);
-    }, 450);
+  const screenshotDetails = {
+    glance: {
+      title: "Jira Issue Glance & 5/5 Shield",
+      src: "/images/evidencelog_jira_ui.jpg",
+      badge: "Native Issue Glance",
+      desc: "Live production ticket LANG-10 on langtago-demo.atlassian.net showing the real EvidenceLog 5-Pillar Compliance Shield, Git linkage, independent QA sign-off, and tamper-evident SHA-256 seal.",
+    },
+    snapshot: {
+      title: "Atlassian Forge Audit Snapshot Modal",
+      src: "/images/evidencelog_snapshot_modal.png",
+      badge: "Forge Native Modal",
+      desc: "Real Atlassian Forge dialog rendered directly inside Jira with the compliance verification matrix and the 'Certify & Save Snapshot' button.",
+    },
+    actions: {
+      title: "Jira Quick Action & Workflow Toolbar",
+      src: "/images/jira_demo9_compliance_ticket.png",
+      badge: "Jira Cloud Integration",
+      desc: "EvidenceLog button embedded natively in the Jira quick actions bar alongside linked GitHub pull requests and qa-verified labels.",
+    },
   };
 
   return (
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Sample SOC 2 Audit Report Modal"
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-slate-950/80 backdrop-blur-md animate-in fade-in duration-200"
+      aria-label="Real Jira Cloud EvidenceLog Preview"
+      className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-slate-950/85 backdrop-blur-md animate-in fade-in duration-200"
     >
       <div
-        className="relative w-full max-w-4xl max-h-[94vh] md:max-h-[850px] flex flex-col rounded-2xl border border-white/[0.12] bg-[#090d16] shadow-2xl overflow-hidden font-sans text-left"
+        className="relative w-full max-w-5xl max-h-[96vh] md:max-h-[900px] flex flex-col rounded-2xl border border-slate-700/80 bg-[#0f141f] shadow-2xl overflow-hidden font-sans text-left"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Unified Top Header */}
-        <div className="flex items-center justify-between border-b border-white/[0.08] bg-[#0b1019] px-5 sm:px-6 py-3.5">
+        {/* Top Header */}
+        <div className="flex items-center justify-between border-b border-slate-800 bg-[#141b29] px-5 sm:px-6 py-3.5">
           <div className="flex items-center gap-3">
             <div className="rounded-xl bg-emerald-500/10 p-2 text-emerald-400 border border-emerald-500/20 shadow-inner">
               <ShieldCheck className="h-5 w-5" />
@@ -204,14 +221,14 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-semibold text-white text-sm sm:text-base">
-                  SOC 2 Change Evidence Package
+                  EvidenceLog for Jira — Live Product Interface
                 </span>
                 <span className="rounded bg-emerald-500/20 px-2 py-0.5 text-[10px] font-mono text-emerald-300 font-semibold border border-emerald-500/30">
-                  AUDIT READY (5/5)
+                  REAL JIRA CLOUD
                 </span>
               </div>
-              <p className="text-xs text-zinc-400 mt-0.5">
-                Issue <strong className="text-emerald-400 font-mono">LANG-10</strong> &bull; Tenant: <span className="font-mono text-zinc-300">langtago-demo.atlassian.net</span>
+              <p className="text-xs text-slate-400 mt-0.5">
+                Tenant: <span className="font-mono text-emerald-400">langtago-demo.atlassian.net</span> &bull; 100% In-Tenant Forge Compute
               </p>
             </div>
           </div>
@@ -219,231 +236,176 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
           <button
             type="button"
             onClick={onClose}
-            className="rounded-lg p-2 text-zinc-400 hover:bg-zinc-800 hover:text-white transition-colors"
+            className="rounded-lg p-2 text-slate-400 hover:bg-slate-800 hover:text-white transition-colors"
             aria-label="Close modal"
           >
             <X className="h-5 w-5" />
           </button>
         </div>
 
-        {/* Cryptographic Seal & Verification Ribbon */}
-        <div className="flex flex-wrap items-center justify-between gap-3 bg-emerald-950/20 border-b border-emerald-900/30 px-5 sm:px-6 py-2 text-xs text-emerald-300">
-          <div className="flex items-center gap-2">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            <span className="font-medium text-zinc-300">Sealed Hash:</span>
-            <code className="rounded bg-black/60 px-2 py-0.5 text-[11px] font-mono text-emerald-400 border border-emerald-500/20">
-              sha256:9f83ac2b...44fbc81
-            </code>
-          </div>
-
-          <div className="flex items-center gap-2 font-mono text-[11px]">
+        {/* Primary View Switcher Navigation */}
+        <div className="flex flex-wrap items-center justify-between gap-3 bg-[#111724] border-b border-slate-800 px-5 sm:px-6 py-2.5">
+          <div className="flex items-center gap-1.5 bg-black/40 p-1 rounded-xl border border-slate-800">
             <button
               type="button"
-              onClick={handleReverify}
-              className={`flex items-center gap-1.5 px-2.5 py-0.5 rounded transition-all ${
-                verifiedState === "verified"
-                  ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40"
-                  : "text-emerald-400 hover:text-emerald-300 underline underline-offset-2"
+              onClick={() => setActiveTab("screenshot")}
+              className={`flex items-center gap-2 rounded-lg px-3.5 py-1.5 text-xs font-semibold transition-all ${
+                activeTab === "screenshot"
+                  ? "bg-emerald-500 text-slate-950 shadow-sm"
+                  : "text-slate-400 hover:text-white"
               }`}
             >
-              <Lock className="h-3 w-3" />
-              <span>
-                {verifiedState === "verifying"
-                  ? "Recalculating..."
-                  : verifiedState === "verified"
-                  ? "✔ Verified in Forge KVS"
-                  : "Verify Hash Integrity"}
-              </span>
-            </button>
-            <span className="text-zinc-600">|</span>
-            <span className="text-zinc-400">Atlassian Forge Storage</span>
-          </div>
-        </div>
-
-        {/* Streamlined 3-Tab Segmented Switcher (Zero Overflow / Zero Scrollbar) */}
-        <div className="border-b border-white/[0.08] bg-[#090d15] px-5 sm:px-6 py-2 flex items-center justify-between">
-          <div className="inline-flex rounded-xl bg-black/40 border border-white/[0.08] p-1 font-mono text-xs">
-            <button
-              type="button"
-              onClick={() => setActiveTab("summary")}
-              className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-medium transition-all ${
-                activeTab === "summary"
-                  ? "bg-emerald-500 text-zinc-950 font-semibold shadow-sm"
-                  : "text-zinc-400 hover:text-white"
-              }`}
-            >
-              <FileText className="h-3.5 w-3.5" />
-              <span>Control Proofs</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveTab("timeline")}
-              className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-medium transition-all ${
-                activeTab === "timeline"
-                  ? "bg-emerald-500 text-zinc-950 font-semibold shadow-sm"
-                  : "text-zinc-400 hover:text-white"
-              }`}
-            >
-              <Clock className="h-3.5 w-3.5" />
-              <span>Audit Timeline</span>
+              <Laptop className="h-3.5 w-3.5" />
+              <span>Real Jira Screenshots (Live App)</span>
             </button>
             <button
               type="button"
               onClick={() => setActiveTab("exports")}
-              className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-medium transition-all ${
+              className={`flex items-center gap-2 rounded-lg px-3.5 py-1.5 text-xs font-semibold transition-all ${
                 activeTab === "exports"
-                  ? "bg-emerald-500 text-zinc-950 font-semibold shadow-sm"
-                  : "text-zinc-400 hover:text-white"
+                  ? "bg-emerald-500 text-slate-950 shadow-sm"
+                  : "text-slate-400 hover:text-white"
               }`}
             >
               <Code2 className="h-3.5 w-3.5" />
-              <span>Export Formats</span>
+              <span>Export Formats (Big 4 & GRC)</span>
             </button>
           </div>
 
-          <span className="hidden sm:inline font-mono text-[11px] text-zinc-500">
-            AICPA SOC 2 Type II Certified
-          </span>
+          <div className="hidden sm:flex items-center gap-2 text-[11px] font-mono text-emerald-400 bg-emerald-950/40 border border-emerald-800/50 px-2.5 py-1 rounded-lg">
+            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span>Zero Data Egress Verified</span>
+          </div>
         </div>
 
-        {/* Modal Body with Custom Dark Scrollbar */}
-        <div className="flex-1 overflow-y-auto p-4 sm:p-5 space-y-4">
+        {/* Modal Body */}
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 bg-[#0a0e17]">
           {/* =========================================================================
-              VIEW 1: CONTROL PROOFS (Summary)
+              VIEW 1: REAL JIRA CLOUD SCREENSHOTS
               ========================================================================= */}
-          {activeTab === "summary" && (
+          {activeTab === "screenshot" && (
             <div className="space-y-4">
-              {/* Ticket Metadata Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                <div className="rounded-xl border border-white/[0.08] bg-[#0c1017] p-3">
-                  <span className="text-[11px] font-medium text-zinc-400">Jira Ticket Reference</span>
-                  <div className="mt-1 flex items-center gap-2">
-                    <span className="font-mono text-sm font-semibold text-emerald-400">LANG-10</span>
-                    <span className="rounded bg-emerald-500/20 px-1.5 py-0.5 text-[10px] font-medium text-emerald-300">
-                      RESOLVED
-                    </span>
-                  </div>
-                  <p className="mt-1 text-xs text-zinc-300 truncate">Migrate Auth Token Service to Ed25519 Keys</p>
+              {/* Screenshot Sub-selector Pills */}
+              <div className="flex flex-wrap items-center justify-between gap-3 pb-2 border-b border-slate-800/80">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="text-xs font-medium text-slate-400 mr-1">Views:</span>
+                  <button
+                    type="button"
+                    onClick={() => setScreenshotView("glance")}
+                    className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-all ${
+                      screenshotView === "glance"
+                        ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 font-semibold"
+                        : "text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
+                    }`}
+                  >
+                    1. Jira Issue Glance (5/5 Shield)
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setScreenshotView("snapshot")}
+                    className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-all ${
+                      screenshotView === "snapshot"
+                        ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 font-semibold"
+                        : "text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
+                    }`}
+                  >
+                    2. Forge Audit Snapshot Modal
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setScreenshotView("actions")}
+                    className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-all ${
+                      screenshotView === "actions"
+                        ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 font-semibold"
+                        : "text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
+                    }`}
+                  >
+                    3. Jira Toolbar & Quick Actions
+                  </button>
                 </div>
 
-                <div className="rounded-xl border border-white/[0.08] bg-[#0c1017] p-3">
-                  <span className="text-[11px] font-medium text-zinc-400">Git Pull Request</span>
-                  <div className="mt-1 flex items-center gap-2 font-mono text-xs">
-                    <GitPullRequest className="h-3.5 w-3.5 text-emerald-400" />
-                    <span className="text-white font-semibold">PR #384</span>
-                    <span className="text-zinc-500">(Merged)</span>
-                  </div>
-                  <p className="mt-1 font-mono text-[11px] text-zinc-400 truncate">commit: 4f738a192d04a6e...</p>
-                </div>
-
-                <div className="rounded-xl border border-white/[0.08] bg-[#0c1017] p-3">
-                  <span className="text-[11px] font-medium text-zinc-400">Segregation of Duties Check</span>
-                  <div className="mt-1 flex items-center gap-2">
-                    <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[11px] font-medium text-emerald-300">
-                      PASS (Independent)
-                    </span>
-                  </div>
-                  <p className="mt-1 text-xs text-zinc-300">Author: alex.k | Approver: sarah.m</p>
+                <div className="flex items-center gap-1.5 text-[11px] text-slate-400 font-mono">
+                  <span className="rounded bg-slate-800 px-2 py-0.5 text-slate-300">
+                    {screenshotDetails[screenshotView].badge}
+                  </span>
                 </div>
               </div>
 
-              {/* Evaluated Controls List */}
-              <div className="space-y-2">
-                <h4 className="text-[11px] font-semibold uppercase tracking-wider text-zinc-400">
-                  Evaluated Trust Services Criteria &amp; Evidence Proofs
-                </h4>
+              {/* Real Browser Chrome Mockup Container */}
+              <div className="rounded-xl border border-slate-700/80 bg-slate-950 shadow-2xl overflow-hidden">
+                {/* Browser Top Bar with macOS Window Dots & URL Bar */}
+                <div className="flex items-center justify-between border-b border-slate-800 bg-[#161c28] px-4 py-2.5">
+                  <div className="flex items-center gap-2">
+                    <span className="h-3 w-3 rounded-full bg-[#ff5f56] inline-block" />
+                    <span className="h-3 w-3 rounded-full bg-[#ffbd2e] inline-block" />
+                    <span className="h-3 w-3 rounded-full bg-[#27c93f] inline-block" />
+                  </div>
 
-                <div className="space-y-2">
-                  {sampleJson.controls_verified.map((ctrl) => (
-                    <div
-                      key={ctrl.control_id}
-                      className="rounded-xl border border-white/[0.06] bg-[#0b0f16] px-3.5 py-2.5 space-y-1 hover:border-white/[0.12] transition-colors"
-                    >
-                      <div className="flex flex-wrap items-center justify-between gap-2">
-                        <div className="flex items-center gap-2">
-                          <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
-                          <span className="font-semibold text-white text-xs">{ctrl.name}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <span className="font-mono text-[11px] text-zinc-400">{ctrl.control_id}</span>
-                          <span className="rounded bg-emerald-500/20 px-2 py-0.5 text-[10px] font-semibold text-emerald-300 border border-emerald-500/30">
-                            {ctrl.status}
-                          </span>
-                        </div>
-                      </div>
-                      <p className="text-xs text-zinc-400 pl-6 leading-relaxed">{ctrl.evidence}</p>
+                  <div className="flex items-center justify-center flex-1 max-w-md mx-3">
+                    <div className="w-full flex items-center justify-center gap-2 bg-[#0c1017] border border-slate-700/60 rounded-md px-3 py-1 text-[11px] font-mono text-slate-300 truncate">
+                      <Lock className="h-3 w-3 text-emerald-400 shrink-0" />
+                      <span className="truncate">https://langtago-demo.atlassian.net/browse/LANG-10</span>
                     </div>
-                  ))}
+                  </div>
+
+                  <div className="text-[11px] font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-2 py-0.5 rounded">
+                    Atlassian Cloud
+                  </div>
+                </div>
+
+                {/* Screenshot Display */}
+                <div className="relative bg-slate-950 flex items-center justify-center p-2 sm:p-3 overflow-hidden">
+                  <img
+                    src={screenshotDetails[screenshotView].src}
+                    alt={screenshotDetails[screenshotView].title}
+                    className="w-full h-auto max-h-[520px] object-contain rounded-lg border border-slate-800/80 shadow-md transition-all"
+                  />
+                </div>
+              </div>
+
+              {/* Informative Explanation Bar */}
+              <div className="rounded-xl border border-emerald-900/40 bg-emerald-950/20 p-3.5 sm:p-4 text-xs text-slate-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                <div className="space-y-1">
+                  <div className="font-semibold text-emerald-300 flex items-center gap-1.5">
+                    <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                    <span>{screenshotDetails[screenshotView].title}</span>
+                  </div>
+                  <p className="text-slate-400 leading-relaxed text-[11px] sm:text-xs">
+                    {screenshotDetails[screenshotView].desc}
+                  </p>
+                </div>
+                <div className="shrink-0">
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab("exports")}
+                    className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-3 py-1.5 text-xs font-semibold transition-colors"
+                  >
+                    <span>View Raw Auditor Exports</span>
+                    <ArrowRight className="h-3 w-3" />
+                  </button>
                 </div>
               </div>
             </div>
           )}
 
           {/* =========================================================================
-              VIEW 2: AUDIT TIMELINE
-              ========================================================================= */}
-          {activeTab === "timeline" && (
-            <div className="space-y-6 pt-2">
-              <div className="relative pl-6 border-l-2 border-zinc-800 space-y-6 text-left ml-2">
-                <div className="relative">
-                  <div className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full bg-emerald-500 ring-4 ring-[#090d16]" />
-                  <span className="text-[11px] font-mono text-zinc-400">2026-10-14 14:15:00 UTC</span>
-                  <p className="text-xs font-semibold text-white mt-0.5">Jira Issue LANG-10 Created &amp; Scoped</p>
-                  <p className="text-xs text-zinc-400">Created by alex.k. Target release: Release 2026.4-LTS.</p>
-                </div>
-
-                <div className="relative">
-                  <div className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full bg-emerald-500 ring-4 ring-[#090d16]" />
-                  <span className="text-[11px] font-mono text-zinc-400">2026-10-14 15:02:18 UTC</span>
-                  <p className="text-xs font-semibold text-white mt-0.5">GitHub Pull Request #384 Opened</p>
-                  <p className="text-xs text-zinc-400">Linked to LANG-10 via Atlassian Jira Remote Links API.</p>
-                </div>
-
-                <div className="relative">
-                  <div className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full bg-emerald-500 ring-4 ring-[#090d16]" />
-                  <span className="text-[11px] font-mono text-zinc-400">2026-10-14 15:45:22 UTC</span>
-                  <p className="text-xs font-semibold text-white mt-0.5">Peer Review Approved by sarah.m</p>
-                  <p className="text-xs text-zinc-400">Segregation of duties verified: Approver is independent from author.</p>
-                </div>
-
-                <div className="relative">
-                  <div className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full bg-emerald-500 ring-4 ring-[#090d16]" />
-                  <span className="text-[11px] font-mono text-zinc-400">2026-10-14 16:10:44 UTC</span>
-                  <p className="text-xs font-semibold text-white mt-0.5">CI/CD Pipeline Succeeded &amp; Snyk Scan Clean</p>
-                  <p className="text-xs text-zinc-400">1,482 unit &amp; integration tests passed. 0 CVEs detected.</p>
-                </div>
-
-                <div className="relative">
-                  <div className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full bg-emerald-400 ring-4 ring-[#090d16]" />
-                  <span className="text-[11px] font-mono text-emerald-400 font-semibold">2026-10-14 16:42:08 UTC</span>
-                  <p className="text-xs font-semibold text-emerald-300 mt-0.5">Cryptographic SHA-256 Seal Applied</p>
-                  <p className="text-xs text-zinc-400">Sealed inside customer Atlassian tenant Forge KVS. Immutable.</p>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* =========================================================================
-              VIEW 3: EXPORT FORMATS (GRC & RAW EVIDENCE)
+              VIEW 2: AUDITOR EXPORT FORMATS (GRC & BIG 4)
               ========================================================================= */}
           {activeTab === "exports" && (
             <div className="space-y-4">
-              {/* Format Sub-Pill Selector */}
-              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/[0.08] pb-3">
-                <div className="inline-flex flex-wrap gap-1.5 font-mono text-[11px]">
+              {/* Sub-tabs for Export Formats */}
+              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
+                <div className="flex flex-wrap gap-2 text-xs font-mono">
                   <button
                     type="button"
                     onClick={() => setExportSubTab("json")}
                     className={`rounded-lg px-2.5 py-1 transition-all ${
                       exportSubTab === "json"
                         ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-semibold"
-                        : "text-zinc-400 hover:text-white bg-zinc-900 border border-white/[0.06]"
+                        : "text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
                     }`}
                   >
-                    Canonical JSON
+                    SOC 2 JSON
                   </button>
                   <button
                     type="button"
@@ -451,7 +413,7 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
                     className={`rounded-lg px-2.5 py-1 transition-all ${
                       exportSubTab === "vanta"
                         ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 font-semibold"
-                        : "text-zinc-400 hover:text-white bg-zinc-900 border border-white/[0.06]"
+                        : "text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
                     }`}
                   >
                     Vanta Format
@@ -462,7 +424,7 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
                     className={`rounded-lg px-2.5 py-1 transition-all ${
                       exportSubTab === "drata"
                         ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-semibold"
-                        : "text-zinc-400 hover:text-white bg-zinc-900 border border-white/[0.06]"
+                        : "text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
                     }`}
                   >
                     Drata Format
@@ -473,10 +435,10 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
                     className={`rounded-lg px-2.5 py-1 transition-all ${
                       exportSubTab === "csv"
                         ? "bg-amber-500/20 text-amber-300 border border-amber-500/40 font-semibold"
-                        : "text-zinc-400 hover:text-white bg-zinc-900 border border-white/[0.06]"
+                        : "text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
                     }`}
                   >
-                    Auditor CSV
+                    Big 4 CSV
                   </button>
                   <button
                     type="button"
@@ -484,17 +446,17 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
                     className={`rounded-lg px-2.5 py-1 transition-all ${
                       exportSubTab === "merkle"
                         ? "bg-purple-500/20 text-purple-300 border border-purple-500/40 font-semibold"
-                        : "text-zinc-400 hover:text-white bg-zinc-900 border border-white/[0.06]"
+                        : "text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
                     }`}
                   >
-                    Merkle Root
+                    Merkle Tree Proof
                   </button>
                 </div>
 
                 <button
                   type="button"
                   onClick={() => handleCopy()}
-                  className="flex items-center gap-1.5 rounded-lg border border-white/[0.1] bg-zinc-900 px-3 py-1 font-mono text-[11px] text-zinc-200 hover:bg-zinc-800 transition-colors"
+                  className="flex items-center gap-1.5 rounded-lg border border-slate-700 bg-slate-900 px-3 py-1 font-mono text-[11px] text-slate-200 hover:bg-slate-800 transition-colors"
                 >
                   {copied ? (
                     <>
@@ -503,20 +465,20 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
                     </>
                   ) : (
                     <>
-                      <Copy className="h-3 w-3 text-zinc-400" />
+                      <Copy className="h-3 w-3 text-slate-400" />
                       <span>Copy Payload</span>
                     </>
                   )}
                 </button>
               </div>
 
-              {/* Sub-view code content */}
+              {/* Sub-view Code Contents */}
               {exportSubTab === "json" && (
                 <div className="space-y-2">
-                  <div className="text-[11px] font-mono text-zinc-400">
-                    Schema: AICPA SOC 2 Type II Canonical JSON (v2.0.0)
+                  <div className="text-[11px] font-mono text-slate-400">
+                    Schema: AICPA SOC 2 Type II Canonical JSON (v2.0.0) &bull; CC8.1 / CC6.8 / CC7.1
                   </div>
-                  <pre className="overflow-x-auto rounded-xl border border-white/[0.08] bg-black/60 p-4 font-mono text-xs text-emerald-300 leading-relaxed max-h-[360px]">
+                  <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 p-4 font-mono text-xs text-emerald-300 leading-relaxed max-h-[420px]">
                     {JSON.stringify(sampleJson, null, 2)}
                   </pre>
                 </div>
@@ -525,9 +487,9 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
               {exportSubTab === "vanta" && (
                 <div className="space-y-2">
                   <div className="text-[11px] font-mono text-cyan-400">
-                    Format: Vanta Change Management Ingestion Schema
+                    Format: Vanta Change Management Ingestion Schema &bull; ResourceType: ChangeManagementTicket
                   </div>
-                  <pre className="overflow-x-auto rounded-xl border border-white/[0.08] bg-black/60 p-4 font-mono text-xs text-cyan-300 leading-relaxed max-h-[360px]">
+                  <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 p-4 font-mono text-xs text-cyan-300 leading-relaxed max-h-[420px]">
                     {JSON.stringify(vantaPayload, null, 2)}
                   </pre>
                 </div>
@@ -536,9 +498,9 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
               {exportSubTab === "drata" && (
                 <div className="space-y-2">
                   <div className="text-[11px] font-mono text-emerald-400">
-                    Format: Drata Continuous Compliance Payload (DCF-67 to DCF-70)
+                    Format: Drata Continuous Compliance Payload &bull; Controls: DCF-67 to DCF-70
                   </div>
-                  <pre className="overflow-x-auto rounded-xl border border-white/[0.08] bg-black/60 p-4 font-mono text-xs text-emerald-300 leading-relaxed max-h-[360px]">
+                  <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 p-4 font-mono text-xs text-emerald-300 leading-relaxed max-h-[420px]">
                     {JSON.stringify(drataPayload, null, 2)}
                   </pre>
                 </div>
@@ -547,10 +509,10 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
               {exportSubTab === "csv" && (
                 <div className="space-y-2">
                   <div className="text-[11px] font-mono text-amber-400">
-                    Format: Big 4 Audit Workpaper CSV (Comma-Delimited)
+                    Format: Big 4 Audit Workpaper CSV (Deloitte / EY / PwC / KPMG Standard Format)
                   </div>
-                  <pre className="overflow-x-auto rounded-xl border border-white/[0.08] bg-black/60 p-4 font-mono text-xs text-amber-300 leading-relaxed">
-                    IssueKey,Summary,Reporter,Approver,QASigner,Status,Score,Fingerprint,Timestamp{'\n'}
+                  <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 p-4 font-mono text-xs text-amber-300 leading-relaxed">
+                    IssueKey,Summary,Reporter,Approver,QASigner,Status,Score,Fingerprint,Timestamp{"\n"}
                     {sampleCsvRow}
                   </pre>
                 </div>
@@ -558,21 +520,21 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
 
               {exportSubTab === "merkle" && (
                 <div className="space-y-3 font-mono text-xs">
-                  <div className="rounded-xl border border-white/[0.08] bg-black/60 p-4 space-y-3">
-                    <div className="flex items-center justify-between text-zinc-300">
+                  <div className="rounded-xl border border-slate-800 bg-slate-950 p-4 space-y-3">
+                    <div className="flex items-center justify-between text-slate-300">
                       <span className="font-semibold text-white">Release 2026.4-LTS Merkle Root Hash</span>
                       <span className="rounded bg-purple-500/20 px-2 py-0.5 text-purple-300 text-[10px] font-semibold border border-purple-500/30">
-                        VERIFIED ROOT
+                        VERIFIED MERKLE ROOT
                       </span>
                     </div>
-                    <code className="block bg-black/80 p-3 rounded-lg border border-white/[0.06] text-purple-300 break-all text-[11px]">
+                    <code className="block bg-black/80 p-3 rounded-lg border border-slate-800 text-purple-300 break-all text-[11px]">
                       sha256:7e49f2b189a03bc432d9101f78e4d2e9941a3bc68e0d84f229a1b80c33f98ea1
                     </code>
-                    <div className="pt-2 border-t border-white/[0.06] space-y-1.5 text-[11px] text-zinc-400">
-                      <div>Leaf 0 (LANG-10): <code className="text-zinc-300">9f83ac2b7c4d516e8812c32e...</code></div>
-                      <div>Leaf 1 (LANG-9):  <code className="text-zinc-300">3a7b1c4e88019ab921de22a1...</code></div>
-                      <div>Leaf 2 (LANG-8):  <code className="text-zinc-300">5f12e88a0b9432ce912389ab...</code></div>
-                      <div>Leaf 3 (LANG-7):  <code className="text-zinc-300">c41e8820312ef90ab77810aa...</code></div>
+                    <div className="pt-2 border-t border-slate-800 space-y-1.5 text-[11px] text-slate-400">
+                      <div>Leaf 0 (LANG-10): <code className="text-slate-300">9f83ac2b7c4d516e8812c32e...</code></div>
+                      <div>Leaf 1 (LANG-9):  <code className="text-slate-300">3a7b1c4e88019ab921de22a1...</code></div>
+                      <div>Leaf 2 (LANG-8):  <code className="text-slate-300">5f12e88a0b9432ce912389ab...</code></div>
+                      <div>Leaf 3 (LANG-7):  <code className="text-slate-300">c41e8820312ef90ab77810aa...</code></div>
                     </div>
                   </div>
                 </div>
@@ -581,17 +543,17 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
           )}
         </div>
 
-        {/* Streamlined Modal Footer */}
-        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-white/[0.08] bg-[#0b1019] px-5 sm:px-6 py-3.5">
-          <div className="flex items-center gap-2 text-xs text-zinc-400 font-mono">
+        {/* Modal Footer */}
+        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-800 bg-[#141b29] px-5 sm:px-6 py-3.5">
+          <div className="flex items-center gap-2 text-xs text-slate-400 font-mono">
             <Lock className="h-3.5 w-3.5 text-emerald-400" />
-            <span>AICPA SOC 2 Type II &bull; CC8.1 Change Controls</span>
+            <span>AICPA SOC 2 Type II &bull; CC8.1 Change Controls &bull; 100% In-Tenant Forge</span>
           </div>
           <div className="flex items-center gap-2">
             <button
               type="button"
               onClick={() => handleCopy()}
-              className="flex items-center gap-1.5 rounded-lg border border-white/[0.1] bg-zinc-900 px-3.5 py-1.5 text-xs font-semibold text-zinc-200 hover:bg-zinc-800 transition-colors"
+              className="flex items-center gap-1.5 rounded-lg border border-slate-700 bg-slate-900 px-3.5 py-1.5 text-xs font-semibold text-slate-200 hover:bg-slate-800 transition-colors"
             >
               {copied ? (
                 <>
@@ -601,14 +563,14 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
               ) : (
                 <>
                   <Copy className="h-3.5 w-3.5" />
-                  <span>Copy Current View</span>
+                  <span>Copy Payload</span>
                 </>
               )}
             </button>
             <button
               type="button"
               onClick={onClose}
-              className="rounded-lg bg-emerald-500 px-4 py-1.5 text-xs font-semibold text-zinc-950 hover:bg-emerald-400 transition-colors"
+              className="rounded-lg bg-emerald-500 px-4 py-1.5 text-xs font-semibold text-slate-950 hover:bg-emerald-400 transition-colors cursor-pointer"
             >
               Close
             </button>
@@ -618,4 +580,3 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
     </div>
   );
 }
-
