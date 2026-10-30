@@ -25,7 +25,7 @@ interface AuditModalProps {
 
 export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
   const [activeTab, setActiveTab] = useState<"screenshot" | "exports">("screenshot");
-  const [screenshotView, setScreenshotView] = useState<"glance" | "snapshot" | "actions">("glance");
+  const [screenshotView, setScreenshotView] = useState<"glance" | "remediation" | "snapshot" | "blocker">("glance");
   const [exportSubTab, setExportSubTab] = useState<"json" | "vanta" | "drata" | "csv" | "merkle">("json");
   const [copied, setCopied] = useState(false);
 
@@ -182,10 +182,16 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
 
   const screenshotDetails = {
     glance: {
-      title: "Jira Cloud Issue & Compliance Controls (DEMO-9)",
-      src: "/images/jira_demo9_compliance_ticket.png",
-      badge: "Real Jira Cloud Issue",
-      desc: "Live production ticket DEMO-9 on Jira Cloud showing the native EvidenceLog Compliance action button, linked GitHub PR #42, explicit acceptance criteria, and qa-verified labels.",
+      title: "5-Pillar Compliance Checklist & Stage Progress",
+      src: "/images/jira_compliance_checklist.png",
+      badge: "DEMO-9 Compliance Panel",
+      desc: "Live production ticket DEMO-9 on Jira Cloud showing the native EvidenceLog compliance ledger, 5-stage audit lifecycle progress tracker, and SOC 2 / ISO 27001 verification checklist.",
+    },
+    remediation: {
+      title: "1-Click Remediation & Tamper-Evident SHA-256 Fingerprint",
+      src: "/images/jira_quick_remediation.png",
+      badge: "In-Situ Remediation",
+      desc: "Live ticket DEMO-9 showing the interactive '+ Apply security-approved Label' 1-click remediation action, cryptographic SHA-256 evidence fingerprint certified in KVS, and QA sign-off comment.",
     },
     snapshot: {
       title: "Atlassian Forge Audit Snapshot Modal",
@@ -193,11 +199,11 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
       badge: "Forge Native Modal",
       desc: "Real Atlassian Forge dialog rendered directly inside Jira with the compliance verification matrix and the 'Certify & Save Snapshot' button.",
     },
-    actions: {
-      title: "Atlassian Marketplace Free Tier Licensing",
-      src: "/images/atlassian_billing_free_tier.png",
-      badge: "Atlassian Marketplace",
-      desc: "EvidenceLog running 100% natively in Atlassian Cloud with zero external data egress and free tier licensing up to 10 users.",
+    blocker: {
+      title: "Preventive Gatekeeper Blocker (Unverified DEMO-10)",
+      src: "/images/jira_unverified_blocker.png",
+      badge: "DEMO-10 Failure Test",
+      desc: "Live ticket DEMO-10 demonstrating the preventive compliance blocker when acceptance criteria, PR links, or QA verification traces are missing.",
     },
   };
 
@@ -298,7 +304,18 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
                         : "text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
                     }`}
                   >
-                    1. Jira Issue Glance (5/5 Shield)
+                    1. 5-Pillar Checklist (DEMO-9)
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setScreenshotView("remediation")}
+                    className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-all ${
+                      screenshotView === "remediation"
+                        ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 font-semibold"
+                        : "text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
+                    }`}
+                  >
+                    2. 1-Click Remediation &amp; SHA-256
                   </button>
                   <button
                     type="button"
@@ -309,18 +326,18 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
                         : "text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
                     }`}
                   >
-                    2. Forge Audit Snapshot Modal
+                    3. Forge Audit Snapshot Modal
                   </button>
                   <button
                     type="button"
-                    onClick={() => setScreenshotView("actions")}
+                    onClick={() => setScreenshotView("blocker")}
                     className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-all ${
-                      screenshotView === "actions"
+                      screenshotView === "blocker"
                         ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 font-semibold"
                         : "text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
                     }`}
                   >
-                    3. Jira Toolbar & Quick Actions
+                    4. Non-Compliant Blocker (DEMO-10)
                   </button>
                 </div>
 
@@ -344,7 +361,11 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
                   <div className="flex items-center justify-center flex-1 max-w-md mx-3">
                     <div className="w-full flex items-center justify-center gap-2 bg-[#0c1017] border border-slate-700/60 rounded-md px-3 py-1 text-[11px] font-mono text-slate-300 truncate">
                       <Lock className="h-3 w-3 text-emerald-400 shrink-0" />
-                      <span className="truncate">https://langtago-demo.atlassian.net/browse/DEMO-9</span>
+                      <span className="truncate">
+                        {screenshotView === "blocker"
+                          ? "https://langtago-demo.atlassian.net/browse/DEMO-10"
+                          : "https://langtago-demo.atlassian.net/browse/DEMO-9"}
+                      </span>
                     </div>
                   </div>
 

@@ -17,8 +17,8 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
       desc: "Engineers push code and create PRs in GitHub, GitLab, or Bitbucket. Zero forms, zero compliance bureaucracy, and zero disruption to daily engineering velocity.",
       badge: "Stage 01: Git PR",
       detail: "Author: @alex.k • Branch: feat/auth • CI: 48/48 Passing • PR #104",
-      screenshot: "/images/jira_demo9_compliance_ticket.png",
-      caption: "Real Jira Ticket with GitHub PR Linkage & QA Sign-Off Label",
+      screenshot: "/images/jira_demo9_ticket_full.png",
+      caption: "Real Jira Ticket with GitHub PR Linkage & EvidenceLog Action Toolbar",
     },
     {
       id: 2,
@@ -26,8 +26,8 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
       desc: "EvidenceLog automatically validates 5 mandatory controls: Acceptance Criteria, Git & PR Linkage, independent Peer Review (Author != Reviewer), QA Verification, and SAST Security Scans (Snyk/SonarQube). Jira's workflow validator prevents transitions to Done if controls fail, offering 1-click in-situ remediation.",
       badge: "Stage 02: Jira Forge & Gatekeeper",
       detail: "5/5 Verified: AC ✓ • Git PR ✓ • Reviewer ✓ • QA Sign-off ✓ • SAST Clean ✓",
-      screenshot: "/images/evidencelog_snapshot_modal.png",
-      caption: "Real Forge Compliance Verification Matrix & Certification Modal",
+      screenshot: "/images/jira_compliance_checklist.png",
+      caption: "Real EvidenceLog 5-Pillar SDLC Checklist & Stage Progress Tracker",
     },
     {
       id: 3,
@@ -35,8 +35,8 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
       desc: "An immutable SHA-256 seal is logged in Jira ticket storage. For entire release sprints, EvidenceLog computes a cryptographic Binary Merkle Tree root hash. Audit teams can batch-certify issues, download Big 4 CSV workpapers, or run offline verifications with zero vendor lock-in.",
       badge: "Stage 03: Merkle Seal & Audit Hub",
       detail: "Digest: SHA-256 Sealed • Merkle Root Verified • Vanta / Drata Ready • Exportable CSV",
-      screenshot: "/images/atlassian_billing_free_tier.png",
-      caption: "Real Atlassian Cloud Marketplace Integration & Zero Data Egress",
+      screenshot: "/images/jira_quick_remediation.png",
+      caption: "Real 1-Click Remediation & Tamper-Evident SHA-256 Fingerprint in KVS",
     },
   ];
 

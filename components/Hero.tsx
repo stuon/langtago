@@ -114,8 +114,8 @@ export default function Hero({ onOpenAuditModal }: HeroProps) {
               className="relative cursor-pointer overflow-hidden bg-slate-950"
             >
               <img
-                src="/images/jira_demo9_compliance_ticket.png"
-                alt="EvidenceLog for Jira - Real Live Product Interface on DEMO-9"
+                src="/images/jira_compliance_checklist.png"
+                alt="EvidenceLog for Jira - Real Live Product Interface on DEMO-9 with 5-Pillar SDLC Checklist"
                 className="w-full h-auto object-cover sm:object-contain transition-transform duration-300 group-hover:scale-[1.01]"
               />
 
