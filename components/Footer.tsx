@@ -114,6 +114,16 @@ export default function Footer() {
               </li>
               <li>
                 <a
+                  href="/docs/verifier.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#15803d] font-semibold hover:underline inline-flex items-center gap-1"
+                >
+                  <span>Zero-Trust Offline Verifier ↗</span>
+                </a>
+              </li>
+              <li>
+                <a
                   href="/docs/evidencelog-user-guide.md"
                   download="EvidenceLog-User-Guide.md"
                   className="hover:text-[#111013] transition-colors"

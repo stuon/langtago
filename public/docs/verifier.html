@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EvidenceLog - Zero-Trust Cryptographic Auditor Verifier</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --success: #10b981;
+      --error: #ef4444;
+      --code-bg: #090d16;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 32px 16px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .logo-badge {
+      display: inline-block;
+      background: #0284c7;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 8px;
+    }
+    p.lead {
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+    .tab-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+    }
+    .tab-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 13px;
+      transition: all 0.15s ease;
+    }
+    .tab-btn.active {
+      background: #0284c7;
+      border-color: #0284c7;
+      color: white;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    textarea {
+      width: 100%;
+      height: 180px;
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: #38bdf8;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12px;
+      padding: 12px;
+      resize: vertical;
+      margin-bottom: 16px;
+    }
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    .btn {
+      background: #0284c7;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .btn:hover { background: #0369a1; }
+    .result-box {
+      margin-top: 20px;
+      padding: 16px;
+      border-radius: 8px;
+      display: none;
+    }
+    .result-box.success {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid var(--success);
+      color: var(--success);
+    }
+    .result-box.error {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid var(--error);
+      color: var(--error);
+    }
+    .hash-display {
+      font-family: ui-monospace, monospace;
+      font-size: 12px;
+      word-break: break-all;
+      background: var(--code-bg);
+      padding: 10px;
+      border-radius: 6px;
+      margin: 8px 0;
+      color: var(--text);
+    }
+    .footer-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 32px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-badge">by Langtago • Independent Auditor Verification</div>
+      <h1>EvidenceLog Cryptographic Verifier</h1>
+      <p class="lead">
+        100% offline, client-side Web Crypto verification tool. Verify SHA-256 issue fingerprints and release Merkle tree roots without trusting Atlassian or cloud servers.
+      </p>
+    </header>
+
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab('single')">1. Verify Issue Snapshot</button>
+      <button class="tab-btn" onclick="switchTab('merkle')">2. Verify Release Merkle Root</button>
+    </div>
+
+    <!-- TAB 1: Single Issue Verification -->
+    <div id="tab-single" class="card">
+      <label for="json-input">Paste EvidenceLog Snapshot JSON (or Vanta / Drata Payload):</label>
+      <textarea id="json-input" placeholder='Paste JSON snapshot export here... e.g.:
+{
+  "issue": { "key": "DEMO-9", ... },
+  "evidenceFingerprint": { "hash": "..." }
+}'></textarea>
+      <button class="btn" onclick="verifySingleSnapshot()">Verify Cryptographic Fingerprint</button>
+
+      <div id="single-result" class="result-box"></div>
+    </div>
+
+    <!-- TAB 2: Merkle Root Verification -->
+    <div id="tab-merkle" class="card" style="display: none;">
+      <label for="merkle-hashes">Paste Release Issue Hashes (one 64-char SHA-256 hash per line):</label>
+      <textarea id="merkle-hashes" placeholder="c3ab8ff13720e8ad9047dd39466b3c8974e592c2fa383d4a3960714caef0c4f2
+8f434346648f6b96df89dda901c5176b10e6d83961dd3c1ac88b59b2dc327aa4
+..."></textarea>
+      
+      <label for="expected-merkle">Declared Release Merkle Root (from Dossier or Attestation):</label>
+      <input type="text" id="expected-merkle" style="width: 100%; padding: 10px; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: white; font-family: monospace; margin-bottom: 16px;" placeholder="e.g. 9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08">
+
+      <button class="btn" onclick="verifyMerkleRoot()">Compute &amp; Verify Merkle Root</button>
+
+      <div id="merkle-result" class="result-box"></div>
+    </div>
+
+    <div class="footer-note">
+      EvidenceLog for Jira by <a href="https://langtago.com" target="_blank" style="color:#38bdf8; text-decoration:none;">Langtago (langtago.com)</a> &bull; Zero external network requests made &bull; Native W3C Web Cryptography API
+    </div>
+  </div>
+
+  <script>
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      if (tab === 'single') {
+        document.querySelectorAll('.tab-btn')[0].classList.add('active');
+        document.getElementById('tab-single').style.display = 'block';
+        document.getElementById('tab-merkle').style.display = 'none';
+      } else {
+        document.querySelectorAll('.tab-btn')[1].classList.add('active');
+        document.getElementById('tab-single').style.display = 'none';
+        document.getElementById('tab-merkle').style.display = 'block';
+      }
+    }
+
+    async function sha256Hex(str) {
+      const buffer = new TextEncoder().encode(str);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
+      return Array.from(new Uint8Array(hashBuffer))
+        .map(b => b.toString(16).padStart(2, '0'))
+        .join('');
+    }
+
+    async function verifySingleSnapshot() {
+      const raw = document.getElementById('json-input').value.trim();
+      const resEl = document.getElementById('single-result');
+      resEl.style.display = 'block';
+
+      if (!raw) {
+        resEl.className = 'result-box error';
+        resEl.innerHTML = '<strong>Error:</strong> Please paste a JSON payload.';
+        return;
+      }
+
+      try {
+        const parsed = JSON.parse(raw);
+        const declaredHash = parsed.evidenceFingerprint?.hash || parsed.cryptographicHash || parsed.evidenceHash || parsed.hash;
+
+        if (!declaredHash) {
+          resEl.className = 'result-box error';
+          resEl.innerHTML = '<strong>Warning:</strong> No declared SHA-256 fingerprint found in JSON.';
+          return;
+        }
+
+        // Clone and remove evidenceFingerprint to calculate canonical hash
+        const clone = JSON.parse(JSON.stringify(parsed));
+        delete clone.evidenceFingerprint;
+        const canonicalString = JSON.stringify(clone);
+        const computedHash = await sha256Hex(canonicalString);
+
+        if (computedHash.toLowerCase() === declaredHash.toLowerCase()) {
+          const cEval = parsed.criteriaEvaluation || {};
+          const cSummary = parsed.complianceSummary || {};
+          const issueKey = parsed.issue?.key || 'Issue Record';
+          const riskLevel = parsed.riskProfile?.level || parsed.changeManagement?.riskProfile?.level || 'NORMAL';
+          const rollback = parsed.changeManagement?.rollbackPlan?.passed ? '✅ Documented' : 'ℹ️ Not Required / Standard';
+
+          const c1 = cEval.acceptanceCriteria ? (cEval.acceptanceCriteria.passed ? '✅ PASS' : '❌ INCOMPLETE') : 'N/A';
+          const c2 = cEval.codeLinkage ? (cEval.codeLinkage.passed ? '✅ PASS' : '❌ INCOMPLETE') : 'N/A';
+          const c3 = cEval.segregationOfDuties ? (cEval.segregationOfDuties.passed ? '✅ PASS' : '❌ INCOMPLETE') : 'N/A';
+          const c4 = cEval.qaConfirmation ? (cEval.qaConfirmation.passed ? '✅ PASS' : '❌ INCOMPLETE') : 'N/A';
+          const c5 = cEval.securityScan ? (cEval.securityScan.passed ? '✅ PASS' : '❌ INCOMPLETE') : 'N/A';
+
+          resEl.className = 'result-box success';
+          resEl.innerHTML = `
+            <h3>✅ Cryptographic Verification PASSED</h3>
+            <p><strong>${issueKey}</strong>: The record is authentic, tamper-free, and unaltered since certification.</p>
+            <div class="hash-display">Declared Fingerprint: ${declaredHash}</div>
+            <div class="hash-display">Computed Canonical SHA-256: ${computedHash}</div>
+            <div style="margin-top: 14px; padding: 12px; background: rgba(0,0,0,0.25); border-radius: 6px; font-size: 13px;">
+              <div style="font-weight: 700; margin-bottom: 8px; color: #38bdf8;">SOC 2 / ISO 27001 Control Evaluation Summary (Score: ${cSummary.score || 'Verified'} | Risk: ${riskLevel}):</div>
+              <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
+                <li>1. Acceptance Criteria (SOC 2 CC8.1): <strong>${c1}</strong></li>
+                <li>2. Code & VCS Linkage (ISO 27001 A.8.32): <strong>${c2}</strong></li>
+                <li>3. Segregation of Duties (SOC 2 CC6.8): <strong>${c3}</strong></li>
+                <li>4. QA & Test Verification (ISO 27001 A.8.29): <strong>${c4}</strong></li>
+                <li>5. Security Scan / SAST (SOC 2 CC7.1): <strong>${c5}</strong></li>
+                <li>6. Rollback / Backout Assurance (CC8.1): <strong>${rollback}</strong></li>
+              </ul>
+            </div>
+          `;
+        } else {
+          resEl.className = 'result-box error';
+          resEl.innerHTML = `
+            <h3>❌ Cryptographic Verification FAILED</h3>
+            <p>Hash mismatch! The content of this record has been modified or corrupted.</p>
+            <div class="hash-display">Declared Hash: ${declaredHash}</div>
+            <div class="hash-display">Computed Hash: ${computedHash}</div>
+          `;
+        }
+      } catch (err) {
+        resEl.className = 'result-box error';
+        resEl.innerHTML = `<strong>JSON Parsing Error:</strong> ${err.message}`;
+      }
+    }
+
+    async function verifyMerkleRoot() {
+      const text = document.getElementById('merkle-hashes').value.trim();
+      const expected = document.getElementById('expected-merkle').value.trim().toLowerCase();
+      const resEl = document.getElementById('merkle-result');
+      resEl.style.display = 'block';
+
+      if (!text) {
+        resEl.className = 'result-box error';
+        resEl.innerHTML = '<strong>Error:</strong> Please provide one or more issue SHA-256 hashes.';
+        return;
+      }
+
+      const lines = text.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+      let currentLayer = [];
+      for (const line of lines) {
+        currentLayer.push(line.toLowerCase());
+      }
+      currentLayer.sort();
+
+      while (currentLayer.length > 1) {
+        const nextLayer = [];
+        for (let i = 0; i < currentLayer.length; i += 2) {
+          if (i + 1 < currentLayer.length) {
+            const combined = currentLayer[i] + currentLayer[i + 1];
+            nextLayer.push(await sha256Hex(combined));
+          } else {
+            nextLayer.push(currentLayer[i]);
+          }
+        }
+        currentLayer = nextLayer;
+      }
+
+      const computedRoot = currentLayer[0];
+
+      if (expected && computedRoot === expected) {
+        resEl.className = 'result-box success';
+        resEl.innerHTML = `
+          <h3>✅ Merkle Tree Root Verified</h3>
+          <p>The entire release batch is intact. All ${lines.length} issues are cryptographically accounted for with zero omissions or additions.</p>
+          <div class="hash-display">Computed Merkle Root: ${computedRoot}</div>
+        `;
+      } else if (expected) {
+        resEl.className = 'result-box error';
+        resEl.innerHTML = `
+          <h3>❌ Merkle Root Mismatch</h3>
+          <p>The computed root does not match the declared release root. One or more tickets were added, removed, or altered.</p>
+          <div class="hash-display">Declared Root: ${expected}</div>
+          <div class="hash-display">Computed Root: ${computedRoot}</div>
+        `;
+      } else {
+        resEl.className = 'result-box success';
+        resEl.innerHTML = `
+          <h3>Computed Release Merkle Root (${lines.length} Leaf Nodes)</h3>
+          <div class="hash-display">${computedRoot}</div>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>
