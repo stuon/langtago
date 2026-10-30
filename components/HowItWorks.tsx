@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Check, ShieldCheck, Lock } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 interface HowItWorksProps {
   onOpenAuditModal: () => void;
@@ -58,55 +58,24 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
           </p>
         </div>
 
-        {/* 2-Column Working Process Layout (Left Real Screenshot, Right Stepper Accordion) */}
+        {/* 2-Column Working Process Layout (Left Clean Screenshot, Right Stepper Accordion) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          {/* Left Column: Real Jira Cloud Screenshot Viewer (col-6) */}
+          {/* Left Column: Clean Jira Cloud Screenshot Viewer (col-6) */}
           <div className="lg:col-span-6">
             <div
               onClick={onOpenAuditModal}
-              className="rounded-2xl border border-slate-700/80 bg-[#0d121c] shadow-2xl overflow-hidden cursor-pointer group"
+              className="relative rounded-2xl border border-slate-200/90 bg-white shadow-xl hover:shadow-2xl overflow-hidden cursor-pointer group transition-all duration-300"
             >
-              {/* Browser Window Header */}
-              <div className="bg-[#141b29] border-b border-slate-800 px-4 py-2.5 flex items-center justify-between text-xs">
-                <div className="flex items-center gap-1.5">
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#27c93f]" />
-                  <span className="text-[11px] font-mono text-slate-400 ml-2">
-                    langtago-demo.atlassian.net
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-2 py-0.5 rounded">
-                    Real Screenshot
-                  </span>
-                </div>
-              </div>
+              <img
+                src={currentStep.screenshot}
+                alt={currentStep.caption}
+                className="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-[1.01]"
+              />
 
-              {/* Real Screenshot with Hover Effect */}
-              <div className="relative bg-slate-950 p-2 sm:p-3 min-h-[320px] flex items-center justify-center">
-                <img
-                  src={currentStep.screenshot}
-                  alt={currentStep.caption}
-                  className="w-full h-auto max-h-[380px] object-contain rounded-lg border border-slate-800/80 transition-all duration-300 group-hover:scale-[1.01]"
-                />
-
-                <div className="absolute inset-0 bg-slate-950/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[1px]">
-                  <span className="px-3.5 py-2 rounded-xl bg-white text-[#111013] text-xs font-bold shadow-2xl flex items-center gap-1.5">
-                    <span>Inspect Full Audit Dossier</span>
-                    <ArrowRight className="h-3 w-3" />
-                  </span>
-                </div>
-              </div>
-
-              {/* Bottom Real Proof Info Bar */}
-              <div className="bg-[#111724] border-t border-slate-800 px-4 py-2.5 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-300">
-                <div className="flex items-center gap-1.5 text-emerald-300 font-semibold truncate">
-                  <ShieldCheck className="h-3.5 w-3.5 text-emerald-400 shrink-0" />
-                  <span className="truncate">{currentStep.caption}</span>
-                </div>
-                <span className="text-[11px] text-slate-400 font-mono">
-                  {currentStep.badge}
+              <div className="absolute inset-0 bg-slate-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[1px]">
+                <span className="px-4 py-2 rounded-xl bg-white text-[#111013] text-xs font-bold shadow-xl flex items-center gap-1.5">
+                  <span>Inspect Full Audit Dossier</span>
+                  <ArrowRight className="h-3.5 w-3.5" />
                 </span>
               </div>
             </div>

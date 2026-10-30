@@ -348,40 +348,13 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
                 </div>
               </div>
 
-              {/* Real Browser Chrome Mockup Container */}
-              <div className="rounded-xl border border-slate-700/80 bg-slate-950 shadow-2xl overflow-hidden">
-                {/* Browser Top Bar with macOS Window Dots & URL Bar */}
-                <div className="flex items-center justify-between border-b border-slate-800 bg-[#161c28] px-4 py-2.5">
-                  <div className="flex items-center gap-2">
-                    <span className="h-3 w-3 rounded-full bg-[#ff5f56] inline-block" />
-                    <span className="h-3 w-3 rounded-full bg-[#ffbd2e] inline-block" />
-                    <span className="h-3 w-3 rounded-full bg-[#27c93f] inline-block" />
-                  </div>
-
-                  <div className="flex items-center justify-center flex-1 max-w-md mx-3">
-                    <div className="w-full flex items-center justify-center gap-2 bg-[#0c1017] border border-slate-700/60 rounded-md px-3 py-1 text-[11px] font-mono text-slate-300 truncate">
-                      <Lock className="h-3 w-3 text-emerald-400 shrink-0" />
-                      <span className="truncate">
-                        {screenshotView === "blocker"
-                          ? "https://langtago-demo.atlassian.net/browse/DEMO-10"
-                          : "https://langtago-demo.atlassian.net/browse/DEMO-9"}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="text-[11px] font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-2 py-0.5 rounded">
-                    Atlassian Cloud
-                  </div>
-                </div>
-
-                {/* Screenshot Display */}
-                <div className="relative bg-slate-950 flex items-center justify-center p-2 sm:p-3 overflow-hidden">
-                  <img
-                    src={screenshotDetails[screenshotView].src}
-                    alt={screenshotDetails[screenshotView].title}
-                    className="w-full h-auto max-h-[520px] object-contain rounded-lg border border-slate-800/80 shadow-md transition-all"
-                  />
-                </div>
+              {/* Clean Screenshot Container */}
+              <div className="rounded-xl border border-slate-800 bg-slate-950/80 shadow-2xl overflow-hidden flex items-center justify-center p-2 sm:p-3">
+                <img
+                  src={screenshotDetails[screenshotView].src}
+                  alt={screenshotDetails[screenshotView].title}
+                  className="w-full h-auto max-h-[560px] object-contain rounded-lg border border-slate-800/80 shadow-md transition-all"
+                />
               </div>
 
               {/* Informative Explanation Bar */}
