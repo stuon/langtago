@@ -1,7 +1,6 @@
 "use client";
 
-import { ArrowRight, FileCheck, Check, Download, ShieldCheck } from "lucide-react";
-import Image from "next/image";
+import { ArrowRight, FileCheck, Check, ShieldCheck } from "lucide-react";
 
 interface HeroProps {
   onOpenAuditModal: () => void;
@@ -10,23 +9,11 @@ interface HeroProps {
 export default function Hero({ onOpenAuditModal }: HeroProps) {
   return (
     <section className="relative overflow-hidden pt-12 pb-16 md:pt-16 md:pb-24 bg-white">
-      {/* Signature Contis subtle background shape */}
-      <div className="pointer-events-none absolute right-0 top-0 w-[500px] md:w-[700px] h-[500px] md:h-[600px] z-0 opacity-80 select-none">
-        <Image
-          src="/images/banner_shape_3.png"
-          alt=""
-          fill
-          priority
-          className="object-contain object-right-top"
-        />
-      </div>
-
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
         {/* Split 2-Column Hero: 100% Above-the-Fold Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Value Proposition, Headlines & CTAs */}
           <div className="lg:col-span-6 xl:col-span-7 text-left">
-            {/* Subdued green kicker */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#dbf1c3]/60 border border-[#b8e29a] text-[#15803d] font-bold text-xs tracking-wider uppercase mb-5 font-heading">
               <ShieldCheck className="h-3.5 w-3.5 text-[#15803d]" />
               <span>EVIDENCELOG FOR JIRA CLOUD</span>
@@ -80,45 +67,14 @@ export default function Hero({ onOpenAuditModal }: HeroProps) {
             </div>
           </div>
 
-          {/* Right Column: Live Frameless App Visual — 100% Above the Fold */}
-          <div className="lg:col-span-6 xl:col-span-5 relative">
-            {/* Ambient Background Glow behind the visual */}
-            <div className="absolute -inset-4 bg-gradient-to-tr from-[#dbf1c3]/40 via-emerald-100/30 to-transparent rounded-3xl blur-2xl -z-10" />
-
-            {/* Frameless Live Jira Ticket & EvidenceLog Visual */}
-            <div
+          {/* Right Column: Pure Live App Screenshot — Clean, Frameless, Zero Fluff */}
+          <div className="lg:col-span-6 xl:col-span-5 flex items-center justify-center">
+            <img
+              src="/images/jira_compliance_checklist_tight.png"
+              alt="EvidenceLog for Jira - Real Live Product Interface on DEMO-9 with 5-Pillar SDLC Checklist"
+              className="w-full h-auto object-contain cursor-pointer transition-transform duration-200 hover:scale-[1.01]"
               onClick={onOpenAuditModal}
-              className="relative cursor-pointer rounded-2xl border border-slate-200/80 bg-white shadow-xl hover:shadow-2xl overflow-hidden group transition-all duration-300"
-            >
-              <img
-                src="/images/jira_compliance_checklist_tight.png"
-                alt="EvidenceLog for Jira - Real Live Product Interface on DEMO-9 with 5-Pillar SDLC Checklist"
-                className="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-[1.01]"
-              />
-
-              {/* Floating Live Verification Badge (Babun-style micro-proof) */}
-              <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-xs border border-emerald-200/90 rounded-lg px-2.5 py-1 shadow-md flex items-center gap-1.5 pointer-events-none">
-                <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-[11px] font-bold text-emerald-800 font-mono">
-                  5/5 Verified • SOC 2
-                </span>
-              </div>
-
-              {/* Subtle Hover Inspection Affordance */}
-              <div className="absolute inset-0 bg-slate-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center backdrop-blur-[1px]">
-                <span className="px-4 py-2 rounded-xl bg-white text-[#111013] text-xs font-bold shadow-xl flex items-center gap-1.5">
-                  <Download className="h-3.5 w-3.5 text-[#15803d]" />
-                  <span>Click to Inspect Full Audit Dossier</span>
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </span>
-              </div>
-            </div>
-
-            {/* Subtext indicator */}
-            <div className="mt-3 flex items-center justify-between text-[11px] text-[#5c728e] px-1 font-mono">
-              <span>Tenant: langtago-demo.atlassian.net</span>
-              <span className="text-emerald-700 font-semibold">100% In-Tenant Forge Compute</span>
-            </div>
+            />
           </div>
         </div>
       </div>

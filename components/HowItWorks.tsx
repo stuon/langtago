@@ -60,25 +60,14 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
 
         {/* 2-Column Working Process Layout (Left Clean Screenshot, Right Stepper Accordion) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          {/* Left Column: Clean Jira Cloud Screenshot Viewer (col-6) */}
-          <div className="lg:col-span-6">
-            <div
+          {/* Left Column: Clean Jira Cloud Screenshot (col-6) */}
+          <div className="lg:col-span-6 flex items-center justify-center">
+            <img
+              src={currentStep.screenshot}
+              alt={currentStep.caption}
+              className="w-full h-auto object-contain cursor-pointer transition-transform duration-200 hover:scale-[1.01]"
               onClick={onOpenAuditModal}
-              className="relative rounded-2xl border border-slate-200/90 bg-white shadow-xl hover:shadow-2xl overflow-hidden cursor-pointer group transition-all duration-300"
-            >
-              <img
-                src={currentStep.screenshot}
-                alt={currentStep.caption}
-                className="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-[1.01]"
-              />
-
-              <div className="absolute inset-0 bg-slate-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[1px]">
-                <span className="px-4 py-2 rounded-xl bg-white text-[#111013] text-xs font-bold shadow-xl flex items-center gap-1.5">
-                  <span>Inspect Full Audit Dossier</span>
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </span>
-              </div>
-            </div>
+            />
           </div>
 
           {/* Right Column: Contis-Style Vertical Numbered Stepper (col-6) */}
