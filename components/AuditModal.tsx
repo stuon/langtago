@@ -5,17 +5,12 @@ import {
   X,
   ShieldCheck,
   Copy,
-  Lock,
-  FileText,
   Check,
   Code2,
-  ExternalLink,
-  Laptop,
-  Layers,
   FileSpreadsheet,
   CheckCircle2,
   ArrowRight,
-  Sparkles,
+  ExternalLink,
 } from "lucide-react";
 
 interface AuditModalProps {
@@ -24,8 +19,7 @@ interface AuditModalProps {
 }
 
 export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
-  const [activeTab, setActiveTab] = useState<"screenshot" | "exports">("screenshot");
-  const [screenshotView, setScreenshotView] = useState<"glance" | "remediation" | "snapshot" | "blocker">("glance");
+  const [currentView, setCurrentView] = useState<"checklist" | "remediation" | "blocker" | "exports">("checklist");
   const [exportSubTab, setExportSubTab] = useState<"json" | "vanta" | "drata" | "csv" | "merkle">("json");
   const [copied, setCopied] = useState(false);
 
@@ -161,49 +155,40 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
 
   const sampleCsvRow = `LANG-10,"Migrate Auth Token Service to Ed25519 Keys",alex.k,sarah.m,elena.r,AUDIT_READY,5/5,9f83ac2b7c4d516e8812c32e5f56a3120199e8b7c62d08a0ef93d927a44fbc81,2026-10-14T16:42:08.192Z`;
 
-  const handleCopy = (contentToCopy?: string) => {
+  const handleCopy = () => {
     let text = "";
-    if (contentToCopy) {
-      text = contentToCopy;
-    } else if (activeTab === "exports") {
-      if (exportSubTab === "vanta") text = JSON.stringify(vantaPayload, null, 2);
-      else if (exportSubTab === "drata") text = JSON.stringify(drataPayload, null, 2);
-      else if (exportSubTab === "csv") text = `IssueKey,Summary,Reporter,Approver,QASigner,Status,Score,Fingerprint,Timestamp\n${sampleCsvRow}`;
-      else if (exportSubTab === "merkle") text = "sha256:7e49f2b189a03bc432d9101f78e4d2e9941a3bc68e0d84f229a1b80c33f98ea1";
-      else text = JSON.stringify(sampleJson, null, 2);
-    } else {
-      text = JSON.stringify(sampleJson, null, 2);
-    }
+    if (exportSubTab === "vanta") text = JSON.stringify(vantaPayload, null, 2);
+    else if (exportSubTab === "drata") text = JSON.stringify(drataPayload, null, 2);
+    else if (exportSubTab === "csv") text = `IssueKey,Summary,Reporter,Approver,QASigner,Status,Score,Fingerprint,Timestamp\n${sampleCsvRow}`;
+    else if (exportSubTab === "merkle") text = "sha256:7e49f2b189a03bc432d9101f78e4d2e9941a3bc68e0d84f229a1b80c33f98ea1";
+    else text = JSON.stringify(sampleJson, null, 2);
 
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const screenshotDetails = {
-    glance: {
-      title: "5-Pillar Compliance Checklist & Stage Progress",
+  const views = {
+    checklist: {
+      title: "5-Pillar Compliance Checklist (DEMO-9)",
+      ticket: "DEMO-9 • Deploy Payment Microservice v2",
+      badge: "SOC 2 CC8.1",
       src: "/images/jira_compliance_checklist_tight.png",
-      badge: "DEMO-9 Compliance Panel",
-      desc: "Live production ticket DEMO-9 on Jira Cloud showing the native EvidenceLog compliance ledger, 5-stage audit lifecycle progress tracker, and SOC 2 / ISO 27001 verification checklist.",
+      desc: "Live production ticket DEMO-9 showing automated verification of Acceptance Criteria, GitHub PR linkage, Peer Review, and QA Sign-off.",
     },
     remediation: {
-      title: "1-Click Remediation & Tamper-Evident SHA-256 Fingerprint",
+      title: "1-Click Interactive Remediation & SHA-256 Seal",
+      ticket: "DEMO-9 • In-Situ Developer Remediation",
+      badge: "Certified in KVS",
       src: "/images/jira_quick_remediation_tight.png",
-      badge: "In-Situ Remediation",
-      desc: "Live ticket DEMO-9 showing the interactive '+ Apply security-approved Label' 1-click remediation action, cryptographic SHA-256 evidence fingerprint certified in KVS, and QA sign-off comment.",
-    },
-    snapshot: {
-      title: "Atlassian Forge Audit Snapshot Modal",
-      src: "/images/evidencelog_snapshot_modal.png",
-      badge: "Forge Native Modal",
-      desc: "Real Atlassian Forge dialog rendered directly inside Jira with the compliance verification matrix and the 'Certify & Save Snapshot' button.",
+      desc: "Live 1-click in-situ remediation button ('+ Apply security-approved Label') and tamper-evident SHA-256 fingerprint certified in Forge KVS.",
     },
     blocker: {
-      title: "Preventive Gatekeeper Blocker (Unverified DEMO-10)",
+      title: "Preventive Gatekeeper Blocker (DEMO-10)",
+      ticket: "DEMO-10 • Negative Compliance Test",
+      badge: "Action Required",
       src: "/images/jira_unverified_blocker_tight.png",
-      badge: "DEMO-10 Failure Test",
-      desc: "Live ticket DEMO-10 demonstrating the preventive compliance blocker when acceptance criteria, PR links, or QA verification traces are missing.",
+      desc: "Live ticket DEMO-10 demonstrating how Jira workflow transitions are blocked when acceptance criteria, PR links, or QA traces are missing.",
     },
   };
 
@@ -211,30 +196,26 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Real Jira Cloud EvidenceLog Preview"
-      className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-slate-950/85 backdrop-blur-md animate-in fade-in duration-200"
+      aria-label="Sample SOC 2 Audit Report"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-950/60 backdrop-blur-sm animate-in fade-in duration-150"
+      onClick={onClose}
     >
       <div
-        className="relative w-full max-w-5xl max-h-[96vh] md:max-h-[900px] flex flex-col rounded-2xl border border-slate-700/80 bg-[#0f141f] shadow-2xl overflow-hidden font-sans text-left"
+        className="relative w-full max-w-4xl max-h-[86vh] flex flex-col rounded-2xl border border-slate-200 bg-white shadow-2xl overflow-hidden font-sans text-left"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Top Header */}
-        <div className="flex items-center justify-between border-b border-slate-800 bg-[#141b29] px-5 sm:px-6 py-3.5">
+        {/* Clean SaaS Header */}
+        <div className="flex items-center justify-between border-b border-slate-100 bg-white px-5 sm:px-6 py-4">
           <div className="flex items-center gap-3">
-            <div className="rounded-xl bg-emerald-500/10 p-2 text-emerald-400 border border-emerald-500/20 shadow-inner">
+            <div className="rounded-xl bg-[#dbf1c3]/70 p-2 text-[#15803d]">
               <ShieldCheck className="h-5 w-5" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <span className="font-semibold text-white text-sm sm:text-base">
-                  EvidenceLog for Jira — Live Product Interface
-                </span>
-                <span className="rounded bg-emerald-500/20 px-2 py-0.5 text-[10px] font-mono text-emerald-300 font-semibold border border-emerald-500/30">
-                  REAL JIRA CLOUD
-                </span>
-              </div>
-              <p className="text-xs text-slate-400 mt-0.5">
-                Tenant: <span className="font-mono text-emerald-400">langtago-demo.atlassian.net</span> &bull; 100% In-Tenant Forge Compute
+              <h3 className="font-bold text-[#111013] text-base sm:text-lg font-heading">
+                Sample SOC 2 &amp; ISO 27001 Audit Report
+              </h3>
+              <p className="text-xs text-[#5c728e]">
+                Live change-management verification directly inside Jira Cloud tickets
               </p>
             </div>
           </div>
@@ -242,172 +223,126 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
           <button
             type="button"
             onClick={onClose}
-            className="rounded-lg p-2 text-slate-400 hover:bg-slate-800 hover:text-white transition-colors"
+            className="rounded-lg p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-700 transition-colors cursor-pointer"
             aria-label="Close modal"
           >
             <X className="h-5 w-5" />
           </button>
         </div>
 
-        {/* Primary View Switcher Navigation */}
-        <div className="flex flex-wrap items-center justify-between gap-3 bg-[#111724] border-b border-slate-800 px-5 sm:px-6 py-2.5">
-          <div className="flex items-center gap-1.5 bg-black/40 p-1 rounded-xl border border-slate-800">
-            <button
-              type="button"
-              onClick={() => setActiveTab("screenshot")}
-              className={`flex items-center gap-2 rounded-lg px-3.5 py-1.5 text-xs font-semibold transition-all ${
-                activeTab === "screenshot"
-                  ? "bg-emerald-500 text-slate-950 shadow-sm"
-                  : "text-slate-400 hover:text-white"
-              }`}
-            >
-              <Laptop className="h-3.5 w-3.5" />
-              <span>Real Jira Screenshots (Live App)</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveTab("exports")}
-              className={`flex items-center gap-2 rounded-lg px-3.5 py-1.5 text-xs font-semibold transition-all ${
-                activeTab === "exports"
-                  ? "bg-emerald-500 text-slate-950 shadow-sm"
-                  : "text-slate-400 hover:text-white"
-              }`}
-            >
-              <Code2 className="h-3.5 w-3.5" />
-              <span>Export Formats (Big 4 & GRC)</span>
-            </button>
-          </div>
-
-          <div className="hidden sm:flex items-center gap-2 text-[11px] font-mono text-emerald-400 bg-emerald-950/40 border border-emerald-800/50 px-2.5 py-1 rounded-lg">
-            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Zero Data Egress Verified</span>
-          </div>
+        {/* Streamlined View Navigation (Single Clean Row) */}
+        <div className="flex items-center gap-1.5 border-b border-slate-100 bg-slate-50/70 px-5 sm:px-6 py-2.5 overflow-x-auto text-xs">
+          <button
+            type="button"
+            onClick={() => setCurrentView("checklist")}
+            className={`px-3 py-1.5 rounded-lg font-medium transition-all whitespace-nowrap cursor-pointer ${
+              currentView === "checklist"
+                ? "bg-white text-[#111013] font-bold shadow-xs border border-slate-200"
+                : "text-[#5c728e] hover:text-[#111013]"
+            }`}
+          >
+            1. Compliance Checklist (DEMO-9)
+          </button>
+          <button
+            type="button"
+            onClick={() => setCurrentView("remediation")}
+            className={`px-3 py-1.5 rounded-lg font-medium transition-all whitespace-nowrap cursor-pointer ${
+              currentView === "remediation"
+                ? "bg-white text-[#111013] font-bold shadow-xs border border-slate-200"
+                : "text-[#5c728e] hover:text-[#111013]"
+            }`}
+          >
+            2. 1-Click Remediation &amp; SHA-256
+          </button>
+          <button
+            type="button"
+            onClick={() => setCurrentView("blocker")}
+            className={`px-3 py-1.5 rounded-lg font-medium transition-all whitespace-nowrap cursor-pointer ${
+              currentView === "blocker"
+                ? "bg-white text-[#111013] font-bold shadow-xs border border-slate-200"
+                : "text-[#5c728e] hover:text-[#111013]"
+            }`}
+          >
+            3. Gatekeeper Blocker (DEMO-10)
+          </button>
+          <button
+            type="button"
+            onClick={() => setCurrentView("exports")}
+            className={`px-3 py-1.5 rounded-lg font-medium transition-all whitespace-nowrap cursor-pointer ${
+              currentView === "exports"
+                ? "bg-white text-[#111013] font-bold shadow-xs border border-slate-200"
+                : "text-[#5c728e] hover:text-[#111013]"
+            }`}
+          >
+            4. Raw Auditor Exports (CSV / GRC)
+          </button>
         </div>
 
-        {/* Modal Body */}
-        <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 bg-[#0a0e17]">
-          {/* =========================================================================
-              VIEW 1: REAL JIRA CLOUD SCREENSHOTS
-              ========================================================================= */}
-          {activeTab === "screenshot" && (
-            <div className="space-y-4">
-              {/* Screenshot Sub-selector Pills */}
-              <div className="flex flex-wrap items-center justify-between gap-3 pb-2 border-b border-slate-800/80">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="text-xs font-medium text-slate-400 mr-1">Views:</span>
-                  <button
-                    type="button"
-                    onClick={() => setScreenshotView("glance")}
-                    className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-all ${
-                      screenshotView === "glance"
-                        ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 font-semibold"
-                        : "text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
-                    }`}
-                  >
-                    1. 5-Pillar Checklist (DEMO-9)
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setScreenshotView("remediation")}
-                    className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-all ${
-                      screenshotView === "remediation"
-                        ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 font-semibold"
-                        : "text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
-                    }`}
-                  >
-                    2. 1-Click Remediation &amp; SHA-256
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setScreenshotView("snapshot")}
-                    className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-all ${
-                      screenshotView === "snapshot"
-                        ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 font-semibold"
-                        : "text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
-                    }`}
-                  >
-                    3. Forge Audit Snapshot Modal
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setScreenshotView("blocker")}
-                    className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-all ${
-                      screenshotView === "blocker"
-                        ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 font-semibold"
-                        : "text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
-                    }`}
-                  >
-                    4. Non-Compliant Blocker (DEMO-10)
-                  </button>
-                </div>
-
-                <div className="flex items-center gap-1.5 text-[11px] text-slate-400 font-mono">
-                  <span className="rounded bg-slate-800 px-2 py-0.5 text-slate-300">
-                    {screenshotDetails[screenshotView].badge}
-                  </span>
-                </div>
+        {/* Modal Body with Viewport-Constrained Scroll */}
+        <div className="flex-1 overflow-y-auto p-5 sm:p-6 bg-slate-50/30 space-y-4">
+          {/* Screenshot Views (1, 2, 3) */}
+          {currentView !== "exports" && (
+            <div className="space-y-3">
+              {/* Context Header */}
+              <div className="flex items-center justify-between text-xs px-1">
+                <span className="font-bold text-[#111013] font-mono">
+                  {views[currentView].ticket}
+                </span>
+                <span className="px-2 py-0.5 rounded bg-emerald-50 text-[#15803d] font-bold border border-emerald-200 text-[11px] font-mono">
+                  {views[currentView].badge}
+                </span>
               </div>
 
-              {/* Clean Screenshot Container */}
-              <div className="rounded-xl border border-slate-800 bg-slate-950/80 shadow-2xl overflow-hidden flex items-center justify-center p-2 sm:p-3">
+              {/* Clean Frameless Image Presentation */}
+              <div className="rounded-xl border border-slate-200 bg-white p-3 shadow-xs flex items-center justify-center overflow-hidden">
                 <img
-                  src={screenshotDetails[screenshotView].src}
-                  alt={screenshotDetails[screenshotView].title}
-                  className="w-full h-auto max-h-[560px] object-contain rounded-lg border border-slate-800/80 shadow-md transition-all"
+                  src={views[currentView].src}
+                  alt={views[currentView].title}
+                  className="w-full h-auto max-h-[380px] object-contain rounded"
                 />
               </div>
 
-              {/* Informative Explanation Bar */}
-              <div className="rounded-xl border border-emerald-900/40 bg-emerald-950/20 p-3.5 sm:p-4 text-xs text-slate-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                <div className="space-y-1">
-                  <div className="font-semibold text-emerald-300 flex items-center gap-1.5">
-                    <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
-                    <span>{screenshotDetails[screenshotView].title}</span>
-                  </div>
-                  <p className="text-slate-400 leading-relaxed text-[11px] sm:text-xs">
-                    {screenshotDetails[screenshotView].desc}
-                  </p>
-                </div>
-                <div className="shrink-0">
-                  <button
-                    type="button"
-                    onClick={() => setActiveTab("exports")}
-                    className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-3 py-1.5 text-xs font-semibold transition-colors"
-                  >
-                    <span>View Raw Auditor Exports</span>
-                    <ArrowRight className="h-3 w-3" />
-                  </button>
-                </div>
-              </div>
+              {/* Single Clear Explanation */}
+              <p className="text-xs text-[#5c728e] leading-relaxed px-1">
+                {views[currentView].desc}
+              </p>
             </div>
           )}
 
-          {/* =========================================================================
-              VIEW 2: AUDITOR EXPORT FORMATS (GRC & BIG 4)
-              ========================================================================= */}
-          {activeTab === "exports" && (
+          {/* Export Formats View (4) */}
+          {currentView === "exports" && (
             <div className="space-y-4">
-              {/* Sub-tabs for Export Formats */}
-              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
-                <div className="flex flex-wrap gap-2 text-xs font-mono">
+              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3">
+                <div className="flex flex-wrap gap-1.5 text-xs">
                   <button
                     type="button"
                     onClick={() => setExportSubTab("json")}
-                    className={`rounded-lg px-2.5 py-1 transition-all ${
+                    className={`px-2.5 py-1 rounded-md font-mono transition-all cursor-pointer ${
                       exportSubTab === "json"
-                        ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-semibold"
-                        : "text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
+                        ? "bg-[#111013] text-[#dbf1c3] font-bold"
+                        : "bg-white text-slate-600 border border-slate-200 hover:text-black"
                     }`}
                   >
                     SOC 2 JSON
                   </button>
                   <button
                     type="button"
+                    onClick={() => setExportSubTab("csv")}
+                    className={`px-2.5 py-1 rounded-md font-mono transition-all cursor-pointer ${
+                      exportSubTab === "csv"
+                        ? "bg-[#111013] text-[#dbf1c3] font-bold"
+                        : "bg-white text-slate-600 border border-slate-200 hover:text-black"
+                    }`}
+                  >
+                    Big 4 CSV
+                  </button>
+                  <button
+                    type="button"
                     onClick={() => setExportSubTab("vanta")}
-                    className={`rounded-lg px-2.5 py-1 transition-all ${
+                    className={`px-2.5 py-1 rounded-md font-mono transition-all cursor-pointer ${
                       exportSubTab === "vanta"
-                        ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 font-semibold"
-                        : "text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
+                        ? "bg-[#111013] text-[#dbf1c3] font-bold"
+                        : "bg-white text-slate-600 border border-slate-200 hover:text-black"
                     }`}
                   >
                     Vanta Format
@@ -415,47 +350,36 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
                   <button
                     type="button"
                     onClick={() => setExportSubTab("drata")}
-                    className={`rounded-lg px-2.5 py-1 transition-all ${
+                    className={`px-2.5 py-1 rounded-md font-mono transition-all cursor-pointer ${
                       exportSubTab === "drata"
-                        ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-semibold"
-                        : "text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
+                        ? "bg-[#111013] text-[#dbf1c3] font-bold"
+                        : "bg-white text-slate-600 border border-slate-200 hover:text-black"
                     }`}
                   >
                     Drata Format
                   </button>
                   <button
                     type="button"
-                    onClick={() => setExportSubTab("csv")}
-                    className={`rounded-lg px-2.5 py-1 transition-all ${
-                      exportSubTab === "csv"
-                        ? "bg-amber-500/20 text-amber-300 border border-amber-500/40 font-semibold"
-                        : "text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
-                    }`}
-                  >
-                    Big 4 CSV
-                  </button>
-                  <button
-                    type="button"
                     onClick={() => setExportSubTab("merkle")}
-                    className={`rounded-lg px-2.5 py-1 transition-all ${
+                    className={`px-2.5 py-1 rounded-md font-mono transition-all cursor-pointer ${
                       exportSubTab === "merkle"
-                        ? "bg-purple-500/20 text-purple-300 border border-purple-500/40 font-semibold"
-                        : "text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
+                        ? "bg-[#111013] text-[#dbf1c3] font-bold"
+                        : "bg-white text-slate-600 border border-slate-200 hover:text-black"
                     }`}
                   >
-                    Merkle Tree Proof
+                    Merkle Tree Root
                   </button>
                 </div>
 
                 <button
                   type="button"
-                  onClick={() => handleCopy()}
-                  className="flex items-center gap-1.5 rounded-lg border border-slate-700 bg-slate-900 px-3 py-1 font-mono text-[11px] text-slate-200 hover:bg-slate-800 transition-colors"
+                  onClick={handleCopy}
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg border border-slate-200 bg-white text-xs font-semibold text-[#111013] hover:bg-slate-50 transition-colors shadow-2xs cursor-pointer"
                 >
                   {copied ? (
                     <>
-                      <Check className="h-3 w-3 text-emerald-400" />
-                      <span className="text-emerald-400 font-semibold">Copied!</span>
+                      <Check className="h-3 w-3 text-[#15803d]" />
+                      <span className="text-[#15803d]">Copied!</span>
                     </>
                   ) : (
                     <>
@@ -466,69 +390,68 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
                 </button>
               </div>
 
-              {/* Sub-view Code Contents */}
               {exportSubTab === "json" && (
-                <div className="space-y-2">
-                  <div className="text-[11px] font-mono text-slate-400">
-                    Schema: AICPA SOC 2 Type II Canonical JSON (v2.0.0) &bull; CC8.1 / CC6.8 / CC7.1
+                <div className="space-y-1.5">
+                  <div className="text-[11px] font-mono text-slate-500">
+                    AICPA SOC 2 Type II Canonical JSON (CC8.1 / CC6.8 / CC7.1)
                   </div>
-                  <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 p-4 font-mono text-xs text-emerald-300 leading-relaxed max-h-[420px]">
+                  <pre className="overflow-x-auto rounded-xl bg-[#111013] p-4 font-mono text-xs text-[#dbf1c3] leading-relaxed max-h-[340px]">
                     {JSON.stringify(sampleJson, null, 2)}
                   </pre>
                 </div>
               )}
 
-              {exportSubTab === "vanta" && (
-                <div className="space-y-2">
-                  <div className="text-[11px] font-mono text-cyan-400">
-                    Format: Vanta Change Management Ingestion Schema &bull; ResourceType: ChangeManagementTicket
-                  </div>
-                  <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 p-4 font-mono text-xs text-cyan-300 leading-relaxed max-h-[420px]">
-                    {JSON.stringify(vantaPayload, null, 2)}
-                  </pre>
-                </div>
-              )}
-
-              {exportSubTab === "drata" && (
-                <div className="space-y-2">
-                  <div className="text-[11px] font-mono text-emerald-400">
-                    Format: Drata Continuous Compliance Payload &bull; Controls: DCF-67 to DCF-70
-                  </div>
-                  <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 p-4 font-mono text-xs text-emerald-300 leading-relaxed max-h-[420px]">
-                    {JSON.stringify(drataPayload, null, 2)}
-                  </pre>
-                </div>
-              )}
-
               {exportSubTab === "csv" && (
-                <div className="space-y-2">
-                  <div className="text-[11px] font-mono text-amber-400">
-                    Format: Big 4 Audit Workpaper CSV (Deloitte / EY / PwC / KPMG Standard Format)
+                <div className="space-y-1.5">
+                  <div className="text-[11px] font-mono text-slate-500">
+                    Big 4 Audit Workpaper CSV (Deloitte / EY / PwC / KPMG Standard Format)
                   </div>
-                  <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 p-4 font-mono text-xs text-amber-300 leading-relaxed">
+                  <pre className="overflow-x-auto rounded-xl bg-[#111013] p-4 font-mono text-xs text-[#dbf1c3] leading-relaxed max-h-[340px]">
                     IssueKey,Summary,Reporter,Approver,QASigner,Status,Score,Fingerprint,Timestamp{"\n"}
                     {sampleCsvRow}
                   </pre>
                 </div>
               )}
 
+              {exportSubTab === "vanta" && (
+                <div className="space-y-1.5">
+                  <div className="text-[11px] font-mono text-slate-500">
+                    Vanta Automated Ingestion Schema (ResourceType: ChangeManagementTicket)
+                  </div>
+                  <pre className="overflow-x-auto rounded-xl bg-[#111013] p-4 font-mono text-xs text-cyan-300 leading-relaxed max-h-[340px]">
+                    {JSON.stringify(vantaPayload, null, 2)}
+                  </pre>
+                </div>
+              )}
+
+              {exportSubTab === "drata" && (
+                <div className="space-y-1.5">
+                  <div className="text-[11px] font-mono text-slate-500">
+                    Drata Continuous Compliance Payload (Controls: DCF-67 to DCF-70)
+                  </div>
+                  <pre className="overflow-x-auto rounded-xl bg-[#111013] p-4 font-mono text-xs text-emerald-300 leading-relaxed max-h-[340px]">
+                    {JSON.stringify(drataPayload, null, 2)}
+                  </pre>
+                </div>
+              )}
+
               {exportSubTab === "merkle" && (
                 <div className="space-y-3 font-mono text-xs">
-                  <div className="rounded-xl border border-slate-800 bg-slate-950 p-4 space-y-3">
-                    <div className="flex items-center justify-between text-slate-300">
-                      <span className="font-semibold text-white">Release 2026.4-LTS Merkle Root Hash</span>
-                      <span className="rounded bg-purple-500/20 px-2 py-0.5 text-purple-300 text-[10px] font-semibold border border-purple-500/30">
-                        VERIFIED MERKLE ROOT
+                  <div className="rounded-xl border border-slate-200 bg-white p-4 space-y-3 shadow-xs">
+                    <div className="flex items-center justify-between text-slate-700">
+                      <span className="font-bold text-[#111013]">Release 2026.4-LTS Binary Merkle Root</span>
+                      <span className="rounded bg-purple-50 px-2 py-0.5 text-purple-700 text-[10px] font-bold border border-purple-200">
+                        VERIFIED HASH
                       </span>
                     </div>
-                    <code className="block bg-black/80 p-3 rounded-lg border border-slate-800 text-purple-300 break-all text-[11px]">
+                    <code className="block bg-[#111013] p-3 rounded-lg text-[#dbf1c3] break-all text-[11px]">
                       sha256:7e49f2b189a03bc432d9101f78e4d2e9941a3bc68e0d84f229a1b80c33f98ea1
                     </code>
-                    <div className="pt-2 border-t border-slate-800 space-y-1.5 text-[11px] text-slate-400">
-                      <div>Leaf 0 (LANG-10): <code className="text-slate-300">9f83ac2b7c4d516e8812c32e...</code></div>
-                      <div>Leaf 1 (LANG-9):  <code className="text-slate-300">3a7b1c4e88019ab921de22a1...</code></div>
-                      <div>Leaf 2 (LANG-8):  <code className="text-slate-300">5f12e88a0b9432ce912389ab...</code></div>
-                      <div>Leaf 3 (LANG-7):  <code className="text-slate-300">c41e8820312ef90ab77810aa...</code></div>
+                    <div className="pt-2 border-t border-slate-100 space-y-1 text-[11px] text-slate-500">
+                      <div>Leaf 0 (LANG-10): <code className="text-slate-800">9f83ac2b7c4d516e8812c32e...</code></div>
+                      <div>Leaf 1 (LANG-9):  <code className="text-slate-800">3a7b1c4e88019ab921de22a1...</code></div>
+                      <div>Leaf 2 (LANG-8):  <code className="text-slate-800">5f12e88a0b9432ce912389ab...</code></div>
+                      <div>Leaf 3 (LANG-7):  <code className="text-slate-800">c41e8820312ef90ab77810aa...</code></div>
                     </div>
                   </div>
                 </div>
@@ -537,37 +460,28 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
           )}
         </div>
 
-        {/* Modal Footer */}
-        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-800 bg-[#141b29] px-5 sm:px-6 py-3.5">
-          <div className="flex items-center gap-2 text-xs text-slate-400 font-mono">
-            <Lock className="h-3.5 w-3.5 text-emerald-400" />
-            <span>AICPA SOC 2 Type II &bull; CC8.1 Change Controls &bull; 100% In-Tenant Forge</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={() => handleCopy()}
-              className="flex items-center gap-1.5 rounded-lg border border-slate-700 bg-slate-900 px-3.5 py-1.5 text-xs font-semibold text-slate-200 hover:bg-slate-800 transition-colors"
-            >
-              {copied ? (
-                <>
-                  <Check className="h-3.5 w-3.5 text-emerald-400" />
-                  <span className="text-emerald-400">Copied!</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="h-3.5 w-3.5" />
-                  <span>Copy Payload</span>
-                </>
-              )}
-            </button>
+        {/* Clean Minimal Footer */}
+        <div className="flex items-center justify-between border-t border-slate-100 bg-white px-5 sm:px-6 py-3.5 text-xs">
+          <span className="text-[#5c728e] font-medium hidden sm:inline">
+            100% In-Tenant Forge Architecture &bull; Zero External Data Egress
+          </span>
+          <div className="flex items-center gap-2.5 ml-auto">
             <button
               type="button"
               onClick={onClose}
-              className="rounded-lg bg-emerald-500 px-4 py-1.5 text-xs font-semibold text-slate-950 hover:bg-emerald-400 transition-colors cursor-pointer"
+              className="px-4 py-2 rounded-lg border border-slate-200 text-[#111013] hover:bg-slate-50 font-semibold transition-colors cursor-pointer"
             >
               Close
             </button>
+            <a
+              href="https://marketplace.atlassian.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#111013] text-white hover:bg-[#15803d] font-semibold transition-colors shadow-xs cursor-pointer"
+            >
+              <span>Install Free on Marketplace</span>
+              <ArrowRight className="h-3.5 w-3.5" />
+            </a>
           </div>
         </div>
       </div>
