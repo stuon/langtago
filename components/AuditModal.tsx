@@ -183,13 +183,13 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
   const screenshotDetails = {
     glance: {
       title: "5-Pillar Compliance Checklist & Stage Progress",
-      src: "/images/jira_compliance_checklist.png",
+      src: "/images/jira_compliance_checklist_tight.png",
       badge: "DEMO-9 Compliance Panel",
       desc: "Live production ticket DEMO-9 on Jira Cloud showing the native EvidenceLog compliance ledger, 5-stage audit lifecycle progress tracker, and SOC 2 / ISO 27001 verification checklist.",
     },
     remediation: {
       title: "1-Click Remediation & Tamper-Evident SHA-256 Fingerprint",
-      src: "/images/jira_quick_remediation.png",
+      src: "/images/jira_quick_remediation_tight.png",
       badge: "In-Situ Remediation",
       desc: "Live ticket DEMO-9 showing the interactive '+ Apply security-approved Label' 1-click remediation action, cryptographic SHA-256 evidence fingerprint certified in KVS, and QA sign-off comment.",
     },
@@ -201,7 +201,7 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
     },
     blocker: {
       title: "Preventive Gatekeeper Blocker (Unverified DEMO-10)",
-      src: "/images/jira_unverified_blocker.png",
+      src: "/images/jira_unverified_blocker_tight.png",
       badge: "DEMO-10 Failure Test",
       desc: "Live ticket DEMO-10 demonstrating the preventive compliance blocker when acceptance criteria, PR links, or QA verification traces are missing.",
     },
