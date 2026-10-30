@@ -13,7 +13,7 @@ export default function Hero({ onOpenAuditModal }: HeroProps) {
         {/* Split 2-Column Hero: 100% Above-the-Fold Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Value Proposition, Headlines & CTAs */}
-          <div className="lg:col-span-6 xl:col-span-7 text-left">
+          <div className="lg:col-span-6 xl:col-span-6 text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#dbf1c3]/60 border border-[#b8e29a] text-[#15803d] font-bold text-xs tracking-wider uppercase mb-5 font-heading">
               <ShieldCheck className="h-3.5 w-3.5 text-[#15803d]" />
               <span>EVIDENCELOG FOR JIRA CLOUD</span>
@@ -67,14 +67,33 @@ export default function Hero({ onOpenAuditModal }: HeroProps) {
             </div>
           </div>
 
-          {/* Right Column: Pure Live App Screenshot — Clean, Frameless, Zero Fluff */}
-          <div className="lg:col-span-6 xl:col-span-5 flex items-center justify-center">
-            <img
-              src="/images/jira_compliance_checklist_tight.png"
-              alt="EvidenceLog for Jira - Real Live Product Interface on DEMO-9 with 5-Pillar SDLC Checklist"
-              className="w-full h-auto object-contain cursor-pointer transition-transform duration-200 hover:scale-[1.01]"
+          {/* Right Column: Clean Live Jira Ticket Card — Above the Fold */}
+          <div className="lg:col-span-6 xl:col-span-6 flex items-center justify-center">
+            <div
               onClick={onOpenAuditModal}
-            />
+              className="w-full max-w-lg cursor-pointer rounded-2xl border border-slate-200/90 bg-white p-4 sm:p-5 shadow-xl shadow-slate-900/5 transition-all duration-300 hover:shadow-2xl hover:border-slate-300"
+            >
+              {/* Minimal Clean Ticket Header */}
+              <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-100 text-xs">
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-[#111013] font-mono">DEMO-9</span>
+                  <span className="text-slate-300">&bull;</span>
+                  <span className="text-slate-700 font-medium truncate max-w-[220px]">
+                    Deploy Payment Microservice v2
+                  </span>
+                </div>
+                <span className="px-2 py-0.5 rounded bg-emerald-50 text-[#15803d] text-[10px] font-bold border border-emerald-200 font-mono">
+                  SOC 2 CC8.1
+                </span>
+              </div>
+
+              {/* The Genuine Jira Screenshot */}
+              <img
+                src="/images/jira_compliance_checklist_tight.png"
+                alt="EvidenceLog for Jira - Real Live Product Interface on DEMO-9 with 5-Pillar SDLC Checklist"
+                className="w-full h-auto object-contain rounded-lg"
+              />
+            </div>
           </div>
         </div>
       </div>
