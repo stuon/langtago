@@ -182,10 +182,10 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
 
   const screenshotDetails = {
     glance: {
-      title: "Jira Issue Glance & 5/5 Shield",
-      src: "/images/evidencelog_jira_ui.jpg",
-      badge: "Native Issue Glance",
-      desc: "Live production ticket LANG-10 on langtago-demo.atlassian.net showing the real EvidenceLog 5-Pillar Compliance Shield, Git linkage, independent QA sign-off, and tamper-evident SHA-256 seal.",
+      title: "Jira Cloud Issue & Compliance Controls (DEMO-9)",
+      src: "/images/jira_demo9_compliance_ticket.png",
+      badge: "Real Jira Cloud Issue",
+      desc: "Live production ticket DEMO-9 on Jira Cloud showing the native EvidenceLog Compliance action button, linked GitHub PR #42, explicit acceptance criteria, and qa-verified labels.",
     },
     snapshot: {
       title: "Atlassian Forge Audit Snapshot Modal",
@@ -194,10 +194,10 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
       desc: "Real Atlassian Forge dialog rendered directly inside Jira with the compliance verification matrix and the 'Certify & Save Snapshot' button.",
     },
     actions: {
-      title: "Jira Quick Action & Workflow Toolbar",
-      src: "/images/jira_demo9_compliance_ticket.png",
-      badge: "Jira Cloud Integration",
-      desc: "EvidenceLog button embedded natively in the Jira quick actions bar alongside linked GitHub pull requests and qa-verified labels.",
+      title: "Atlassian Marketplace Free Tier Licensing",
+      src: "/images/atlassian_billing_free_tier.png",
+      badge: "Atlassian Marketplace",
+      desc: "EvidenceLog running 100% natively in Atlassian Cloud with zero external data egress and free tier licensing up to 10 users.",
     },
   };
 
@@ -344,7 +344,7 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
                   <div className="flex items-center justify-center flex-1 max-w-md mx-3">
                     <div className="w-full flex items-center justify-center gap-2 bg-[#0c1017] border border-slate-700/60 rounded-md px-3 py-1 text-[11px] font-mono text-slate-300 truncate">
                       <Lock className="h-3 w-3 text-emerald-400 shrink-0" />
-                      <span className="truncate">https://langtago-demo.atlassian.net/browse/LANG-10</span>
+                      <span className="truncate">https://langtago-demo.atlassian.net/browse/DEMO-9</span>
                     </div>
                   </div>
 

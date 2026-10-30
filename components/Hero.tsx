@@ -96,7 +96,7 @@ export default function Hero({ onOpenAuditModal }: HeroProps) {
               <div className="flex items-center justify-center flex-1 max-w-md mx-3">
                 <div className="w-full flex items-center justify-center gap-2 bg-[#090d15] border border-slate-700/60 rounded-lg px-3 py-1 text-[11px] font-mono text-slate-300 truncate">
                   <Lock className="h-3 w-3 text-emerald-400 shrink-0" />
-                  <span className="truncate">https://langtago-demo.atlassian.net/browse/LANG-10</span>
+                  <span className="truncate">https://langtago-demo.atlassian.net/browse/DEMO-9</span>
                 </div>
               </div>
 
@@ -114,8 +114,8 @@ export default function Hero({ onOpenAuditModal }: HeroProps) {
               className="relative cursor-pointer overflow-hidden bg-slate-950"
             >
               <img
-                src="/images/evidencelog_jira_ui.jpg"
-                alt="EvidenceLog for Jira - Real Live Product Interface on LANG-10"
+                src="/images/jira_demo9_compliance_ticket.png"
+                alt="EvidenceLog for Jira - Real Live Product Interface on DEMO-9"
                 className="w-full h-auto object-cover sm:object-contain transition-transform duration-300 group-hover:scale-[1.01]"
               />
 
@@ -141,11 +141,11 @@ export default function Hero({ onOpenAuditModal }: HeroProps) {
               <div className="flex flex-wrap items-center gap-4 text-slate-300">
                 <span className="flex items-center gap-1.5 font-semibold text-emerald-400">
                   <ShieldCheck className="h-4 w-4 text-emerald-400" />
-                  <span>Real Jira Cloud Glance (LANG-10)</span>
+                  <span>Real Jira Cloud Production Ticket (DEMO-9)</span>
                 </span>
                 <span className="hidden sm:inline text-slate-600">&bull;</span>
                 <span className="text-slate-400 text-[11px]">
-                  5/5 Compliance Shield &bull; PR #384 Linked &bull; QA Signed &bull; SHA-256 Tamper-Proof
+                  5-Pillar SDLC Controls &bull; GitHub PR Linked &bull; QA Signed &bull; SHA-256 Tamper-Proof
                 </span>
               </div>
 

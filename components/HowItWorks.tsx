@@ -26,8 +26,8 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
       desc: "EvidenceLog automatically validates 5 mandatory controls: Acceptance Criteria, Git & PR Linkage, independent Peer Review (Author != Reviewer), QA Verification, and SAST Security Scans (Snyk/SonarQube). Jira's workflow validator prevents transitions to Done if controls fail, offering 1-click in-situ remediation.",
       badge: "Stage 02: Jira Forge & Gatekeeper",
       detail: "5/5 Verified: AC ✓ • Git PR ✓ • Reviewer ✓ • QA Sign-off ✓ • SAST Clean ✓",
-      screenshot: "/images/evidencelog_jira_ui.jpg",
-      caption: "Real Jira Glance Showing 5/5 Shield & Peer Review SoD Verification",
+      screenshot: "/images/evidencelog_snapshot_modal.png",
+      caption: "Real Forge Compliance Verification Matrix & Certification Modal",
     },
     {
       id: 3,
@@ -35,8 +35,8 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
       desc: "An immutable SHA-256 seal is logged in Jira ticket storage. For entire release sprints, EvidenceLog computes a cryptographic Binary Merkle Tree root hash. Audit teams can batch-certify issues, download Big 4 CSV workpapers, or run offline verifications with zero vendor lock-in.",
       badge: "Stage 03: Merkle Seal & Audit Hub",
       detail: "Digest: SHA-256 Sealed • Merkle Root Verified • Vanta / Drata Ready • Exportable CSV",
-      screenshot: "/images/evidencelog_snapshot_modal.png",
-      caption: "Real Forge Audit Trail Snapshot Modal Sealed in Jira Tenant",
+      screenshot: "/images/atlassian_billing_free_tier.png",
+      caption: "Real Atlassian Cloud Marketplace Integration & Zero Data Egress",
     },
   ];
 
