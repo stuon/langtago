@@ -11,6 +11,11 @@ import {
   CheckCircle2,
   ArrowRight,
   ExternalLink,
+  AlertTriangle,
+  Lock,
+  Database,
+  FileCheck2,
+  ZoomIn,
 } from "lucide-react";
 
 interface AuditModalProps {
@@ -172,23 +177,58 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
     checklist: {
       title: "5-Pillar Compliance Checklist (DEMO-9)",
       ticket: "DEMO-9 • Deploy Payment Microservice v2",
-      badge: "SOC 2 CC8.1",
+      badge: "5/5 Verified",
+      badgeStyle: "bg-emerald-50 text-[#15803d] border-emerald-200",
       src: "/images/jira_compliance_checklist_tight.png",
-      desc: "Live production ticket DEMO-9 showing automated verification of Acceptance Criteria, GitHub PR linkage, Peer Review, and QA Sign-off.",
+      desc: "Native Atlassian Forge panel in Jira verifying 5 change-management controls in real-time.",
+      framework: "AICPA SOC 2 Type II (CC8.1) • ISO 27001 (A.8.32)",
+      statusText: "CRYPTOGRAPHICALLY SEALED",
+      fingerprint: "9f83ac2b7c4d516e8812c32e5f56a3120199e8b7c62d08a0ef93d927a44fbc81",
+      storage: "Atlassian Forge KVS (Zero External Data Egress)",
+      controls: [
+        { name: "Acceptance Criteria", detail: "Given/When/Then DoD verified", pass: true },
+        { name: "Code Traceability", detail: "GitHub PR #42 linked with 3 commits", pass: true },
+        { name: "Segregation of Duties", detail: "Author != Reviewer confirmed", pass: true },
+        { name: "Independent QA", detail: "qa-verified label & sign-off logged", pass: true },
+        { name: "Security Scanning", detail: "Snyk SAST scan 0 High/Critical", pass: true },
+      ],
     },
     remediation: {
       title: "1-Click Interactive Remediation & SHA-256 Seal",
       ticket: "DEMO-9 • In-Situ Developer Remediation",
       badge: "Certified in KVS",
+      badgeStyle: "bg-blue-50 text-blue-700 border-blue-200",
       src: "/images/jira_quick_remediation_tight.png",
-      desc: "Live 1-click in-situ remediation button ('+ Apply security-approved Label') and tamper-evident SHA-256 fingerprint certified in Forge KVS.",
+      desc: "One-click '+ Apply security-approved Label' allows engineers to remediate missing evidence in-situ without leaving Jira.",
+      framework: "Automated Continuous Compliance & Audit Trail",
+      statusText: "IN-SITU REMEDIATION ENABLED",
+      fingerprint: "c60415619210d9ce4589ab1034f71a0293ec51908234ab889012cdfe34211029",
+      storage: "Certified Snapshot v1 in Forge Storage",
+      controls: [
+        { name: "Instant Remediation", detail: "1-Click label application without Jira context switch", pass: true },
+        { name: "Audit Trail Logging", detail: "Remediation actor and timestamp sealed to storage", pass: true },
+        { name: "Continuous Evaluation", detail: "Checklist updates score from 3/5 to 5/5 instantly", pass: true },
+        { name: "Tamper Proofing", detail: "SHA-256 digest recalculates and seals into KVS", pass: true },
+      ],
     },
     blocker: {
       title: "Preventive Gatekeeper Blocker (DEMO-10)",
       ticket: "DEMO-10 • Negative Compliance Test",
-      badge: "Action Required",
+      badge: "Action Required (3/5)",
+      badgeStyle: "bg-amber-50 text-amber-700 border-amber-200",
       src: "/images/jira_unverified_blocker_tight.png",
-      desc: "Live ticket DEMO-10 demonstrating how Jira workflow transitions are blocked when acceptance criteria, PR links, or QA traces are missing.",
+      desc: "Native Jira workflow validator blocks transitions to 'Done' until all compliance controls pass.",
+      framework: "SOC 2 CC8.1 Preventive Release Gatekeeper",
+      statusText: "WORKFLOW TRANSITION BLOCKED",
+      fingerprint: "sha256:pending-evidence-resolution",
+      storage: "Enforced via Jira Forge Workflow Validator",
+      controls: [
+        { name: "Acceptance Criteria", detail: "Documented in Jira description", pass: true },
+        { name: "Code Traceability", detail: "GitHub Pull Request linked", pass: true },
+        { name: "Segregation of Duties", detail: "Peer review requirement satisfied", pass: true },
+        { name: "Independent QA", detail: "MISSING: QA verification trace required", pass: false },
+        { name: "Security Scanning", detail: "MISSING: SAST/DAST scan evidence required", pass: false },
+      ],
     },
   };
 
@@ -201,7 +241,7 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-4xl max-h-[86vh] flex flex-col rounded-2xl border border-slate-200 bg-white shadow-2xl overflow-hidden font-sans text-left"
+        className="relative w-full max-w-5xl max-h-[88vh] flex flex-col rounded-2xl border border-slate-200 bg-white shadow-2xl overflow-hidden font-sans text-left"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Clean SaaS Header */}
@@ -279,33 +319,131 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
         </div>
 
         {/* Modal Body with Viewport-Constrained Scroll */}
-        <div className="flex-1 overflow-y-auto p-5 sm:p-6 bg-slate-50/30 space-y-4">
-          {/* Screenshot Views (1, 2, 3) */}
+        <div className="flex-1 overflow-y-auto p-5 sm:p-6 bg-slate-50/40">
+          {/* Screenshot Views (1, 2, 3) - 2-Column Inspector Layout */}
           {currentView !== "exports" && (
-            <div className="space-y-3">
-              {/* Context Header */}
-              <div className="flex items-center justify-between text-xs px-1">
-                <span className="font-bold text-[#111013] font-mono">
-                  {views[currentView].ticket}
-                </span>
-                <span className="px-2 py-0.5 rounded bg-emerald-50 text-[#15803d] font-bold border border-emerald-200 text-[11px] font-mono">
-                  {views[currentView].badge}
-                </span>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+              {/* Left Column: Evidence Screenshot (7 cols) */}
+              <div className="lg:col-span-7 flex flex-col space-y-2.5">
+                <div className="flex items-center justify-between text-xs px-0.5">
+                  <span className="font-bold text-[#111013] font-mono">
+                    {views[currentView].ticket}
+                  </span>
+                  <span className={`px-2 py-0.5 rounded font-bold border text-[11px] font-mono ${views[currentView].badgeStyle}`}>
+                    {views[currentView].badge}
+                  </span>
+                </div>
+
+                {/* Clean Screenshot Container */}
+                <div className="group relative rounded-xl border border-slate-200 bg-white p-2.5 shadow-xs flex flex-col items-center justify-center overflow-hidden">
+                  <img
+                    src={views[currentView].src}
+                    alt={views[currentView].title}
+                    className="w-full h-auto max-h-[380px] object-contain rounded border border-slate-100/80 shadow-2xs"
+                  />
+                  <a
+                    href={views[currentView].src}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#111013]/90 hover:bg-[#111013] text-white text-xs font-semibold backdrop-blur-xs shadow-md"
+                  >
+                    <ZoomIn className="h-3.5 w-3.5" />
+                    <span>View Full Size</span>
+                  </a>
+                </div>
+
+                <p className="text-xs text-[#5c728e] leading-relaxed px-0.5">
+                  {views[currentView].desc}
+                </p>
               </div>
 
-              {/* Clean Frameless Image Presentation */}
-              <div className="rounded-xl border border-slate-200 bg-white p-3 shadow-xs flex items-center justify-center overflow-hidden">
-                <img
-                  src={views[currentView].src}
-                  alt={views[currentView].title}
-                  className="w-full h-auto max-h-[380px] object-contain rounded"
-                />
-              </div>
+              {/* Right Column: Live Auditor Inspection Sheet (5 cols) */}
+              <div className="lg:col-span-5 flex flex-col rounded-xl border border-slate-200 bg-white p-4 shadow-xs space-y-3.5">
+                {/* Inspector Header */}
+                <div className="border-b border-slate-100 pb-2.5">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-mono uppercase tracking-wider text-[#5c728e] font-bold">
+                      Auditor Ledger
+                    </span>
+                    <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                      <FileCheck2 className="h-3 w-3" />
+                      {views[currentView].statusText}
+                    </span>
+                  </div>
+                  <div className="text-xs font-semibold text-[#111013] mt-1.5">
+                    {views[currentView].framework}
+                  </div>
+                </div>
 
-              {/* Single Clear Explanation */}
-              <p className="text-xs text-[#5c728e] leading-relaxed px-1">
-                {views[currentView].desc}
-              </p>
+                {/* Verified Controls List */}
+                <div className="space-y-1.5">
+                  <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                    Control Evidence Trace:
+                  </div>
+                  <div className="space-y-1.5">
+                    {views[currentView].controls.map((ctrl, idx) => (
+                      <div
+                        key={idx}
+                        className={`flex items-start gap-2 p-2 rounded-lg border text-xs transition-colors ${
+                          ctrl.pass
+                            ? "bg-slate-50/70 border-slate-200/70"
+                            : "bg-amber-50/70 border-amber-200/90"
+                        }`}
+                      >
+                        {ctrl.pass ? (
+                          <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600 mt-0.5 shrink-0" />
+                        ) : (
+                          <AlertTriangle className="h-3.5 w-3.5 text-amber-600 mt-0.5 shrink-0" />
+                        )}
+                        <div className="min-w-0 flex-1">
+                          <div className="font-semibold text-[#111013] text-[11px] leading-tight">
+                            {ctrl.name}
+                          </div>
+                          <div className="text-[11px] text-[#5c728e] truncate mt-0.5">
+                            {ctrl.detail}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Cryptographic SHA-256 Box */}
+                <div className="rounded-lg bg-slate-900 p-2.5 text-white space-y-1.5">
+                  <div className="flex items-center justify-between text-[10px] font-mono text-slate-400">
+                    <span>SHA-256 Tamper-Proof Seal</span>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        navigator.clipboard.writeText(views[currentView].fingerprint);
+                        setCopied(true);
+                        setTimeout(() => setCopied(false), 2000);
+                      }}
+                      className="text-[#dbf1c3] hover:underline cursor-pointer inline-flex items-center gap-1"
+                    >
+                      {copied ? <Check className="h-2.5 w-2.5" /> : <Copy className="h-2.5 w-2.5" />}
+                      <span>{copied ? "Copied" : "Copy"}</span>
+                    </button>
+                  </div>
+                  <code className="block text-[10px] font-mono text-[#dbf1c3] break-all leading-tight">
+                    {views[currentView].fingerprint}
+                  </code>
+                  <div className="flex items-center gap-1.5 text-[10px] text-slate-400 pt-1 border-t border-slate-800">
+                    <Database className="h-2.5 w-2.5 text-emerald-400 shrink-0" />
+                    <span className="truncate">{views[currentView].storage}</span>
+                  </div>
+                </div>
+
+                {/* Switch to Raw Exports CTA */}
+                <button
+                  type="button"
+                  onClick={() => setCurrentView("exports")}
+                  className="w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-xs font-semibold text-[#111013] transition-colors cursor-pointer"
+                >
+                  <Code2 className="h-3.5 w-3.5 text-slate-600" />
+                  <span>View Raw Auditor Exports (CSV / GRC) &rarr;</span>
+                </button>
+              </div>
             </div>
           )}
 
