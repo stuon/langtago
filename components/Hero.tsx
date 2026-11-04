@@ -40,13 +40,14 @@ export default function Hero({ onOpenAuditModal }: HeroProps) {
                 <ArrowRight className="h-4 w-4" />
               </a>
 
-              <a
-                href="#sample-report"
+              <button
+                type="button"
+                onClick={onOpenAuditModal}
                 className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-white text-[#111013] border border-slate-300 hover:border-[#111013] font-semibold text-sm transition-all shadow-xs cursor-pointer"
               >
                 <FileCheck className="h-4 w-4 text-[#15803d]" />
                 <span>Inspect Sample SOC 2 Report</span>
-              </a>
+              </button>
             </div>
 
             {/* Simple Trust Assurance Bar */}

@@ -107,13 +107,17 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
                             {step.desc}
                           </p>
                           <div className="flex flex-wrap items-center gap-2 pt-1">
-                            <a
-                              href="#sample-report"
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                onOpenAuditModal();
+                              }}
                               className="text-xs font-bold text-[#15803d] hover:underline inline-flex items-center gap-1.5 cursor-pointer"
                             >
                               <span>Inspect Real Audit Output</span>
                               <ArrowRight className="h-3 w-3" />
-                            </a>
+                            </button>
                             <span className="text-slate-300">&bull;</span>
                             <span className="text-xs text-slate-500 font-mono">
                               Click image to enlarge

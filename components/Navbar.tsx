@@ -78,13 +78,16 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
 
           {/* Desktop Actions */}
           <div className="hidden items-center gap-3 md:flex">
-            <a
-              href="#sample-report"
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-white text-[#111013] border border-slate-200 hover:border-[#111013] font-semibold text-xs transition-all shadow-2xs cursor-pointer"
-            >
-              <FileText className="h-3.5 w-3.5 text-[#15803d]" />
-              <span>Sample Audit Report</span>
-            </a>
+            {onOpenAuditModal && (
+              <button
+                type="button"
+                onClick={onOpenAuditModal}
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-white text-[#111013] border border-slate-200 hover:border-[#111013] font-semibold text-xs transition-all shadow-2xs cursor-pointer"
+              >
+                <FileText className="h-3.5 w-3.5 text-[#15803d]" />
+                <span>Sample Audit Report</span>
+              </button>
+            )}
             <a
               href="https://marketplace.atlassian.com"
               target="_blank"
@@ -150,14 +153,19 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
               User Guide &amp; Docs ↗
             </a>
             <div className="pt-3 border-t border-slate-100 flex flex-col gap-2.5">
-              <a
-                href="#sample-report"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-white border border-slate-200 text-[#111013] font-semibold text-xs cursor-pointer"
-              >
-                <FileText className="h-4 w-4 text-[#15803d]" />
-                <span>Sample Audit Report</span>
-              </a>
+              {onOpenAuditModal && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenAuditModal();
+                  }}
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-white border border-slate-200 text-[#111013] font-semibold text-xs cursor-pointer"
+                >
+                  <FileText className="h-4 w-4 text-[#15803d]" />
+                  <span>Sample Audit Report</span>
+                </button>
+              )}
               <a
                 href="https://marketplace.atlassian.com"
                 target="_blank"

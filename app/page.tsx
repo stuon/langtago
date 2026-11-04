@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import BrandStrip from "@/components/BrandStrip";
 import HowItWorks from "@/components/HowItWorks";
-import AuditShowcase from "@/components/AuditShowcase";
 import BentoGrid from "@/components/BentoGrid";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
@@ -31,9 +30,6 @@ export default function HomePage() {
         {/* Working Process: 2-Column Numbered Stepper */}
         <HowItWorks onOpenAuditModal={() => setIsAuditModalOpen(true)} />
 
-        {/* In-Page Interactive Audit Showcase (Scroll Down Carousel) */}
-        <AuditShowcase />
-
         {/* Core Capabilities: Contis Main Service Block */}
         <BentoGrid onOpenAuditModal={() => setIsAuditModalOpen(true)} />
 
@@ -47,7 +43,7 @@ export default function HomePage() {
       {/* Global Footer with Unlock CTA Banner */}
       <Footer />
 
-      {/* Lightweight Focused Audit Modal (Accessible if triggered directly) */}
+      {/* Clean Vector Audit Certificate Modal */}
       <AuditModal isOpen={isAuditModalOpen} onClose={() => setIsAuditModalOpen(false)} />
     </div>
   );
