@@ -4,8 +4,9 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import BrandStrip from "@/components/BrandStrip";
-import BentoGrid from "@/components/BentoGrid";
 import HowItWorks from "@/components/HowItWorks";
+import AuditShowcase from "@/components/AuditShowcase";
+import BentoGrid from "@/components/BentoGrid";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
@@ -30,6 +31,9 @@ export default function HomePage() {
         {/* Working Process: 2-Column Numbered Stepper */}
         <HowItWorks onOpenAuditModal={() => setIsAuditModalOpen(true)} />
 
+        {/* In-Page Interactive Audit Showcase (Scroll Down Carousel) */}
+        <AuditShowcase />
+
         {/* Core Capabilities: Contis Main Service Block */}
         <BentoGrid onOpenAuditModal={() => setIsAuditModalOpen(true)} />
 
@@ -43,7 +47,7 @@ export default function HomePage() {
       {/* Global Footer with Unlock CTA Banner */}
       <Footer />
 
-      {/* Interactive Sample Audit Modal */}
+      {/* Lightweight Focused Audit Modal (Accessible if triggered directly) */}
       <AuditModal isOpen={isAuditModalOpen} onClose={() => setIsAuditModalOpen(false)} />
     </div>
   );
