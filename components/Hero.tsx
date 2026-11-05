@@ -83,14 +83,14 @@ export default function Hero({ onOpenAuditModal }: HeroProps) {
                   </span>
                 </div>
                 <span className="px-2 py-0.5 rounded bg-emerald-50 text-[#15803d] text-[10px] font-bold border border-emerald-200 font-mono">
-                  SOC 2 CC8.1
+                  5/5 Certified in KVS
                 </span>
               </div>
 
-              {/* The Genuine Jira Screenshot */}
+              {/* The Genuine Jira Screenshot (Certified & Sealed State) */}
               <img
-                src="/images/jira_compliance_checklist_tight.png"
-                alt="EvidenceLog for Jira - Real Live Product Interface on DEMO-9 with 5-Pillar SDLC Checklist"
+                src="/images/jira_demo9_ticket_full_tight.png"
+                alt="EvidenceLog for Jira - Real Live Product Interface on DEMO-9 with Certified Evidence Snapshot"
                 className="w-full h-auto object-contain rounded-lg"
               />
             </div>
