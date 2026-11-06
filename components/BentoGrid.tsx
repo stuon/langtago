@@ -2,17 +2,13 @@
 
 import {
   UserCheck,
-  GitCommit,
   ShieldCheck,
-  Lock,
-  FileSpreadsheet,
   Share2,
   ArrowRight,
   Check,
   ShieldAlert,
   Zap,
   LayoutDashboard,
-  FileText,
 } from "lucide-react";
 
 interface BentoGridProps {

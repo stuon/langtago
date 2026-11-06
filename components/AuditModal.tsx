@@ -12,7 +12,6 @@ import {
   Lock,
   ArrowRight,
   Database,
-  ExternalLink,
 } from "lucide-react";
 
 interface AuditModalProps {
