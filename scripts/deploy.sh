@@ -86,6 +86,13 @@ if [[ "$STAGE" == "production" ]]; then
   fi
 fi
 
+# Setup writable configstore for environments where $HOME/.config is read-only
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-/tmp/.config}"
+mkdir -p "$XDG_CONFIG_HOME/configstore" 2>/dev/null || true
+if [ -f "$HOME/.config/configstore/firebase-tools.json" ] && [ ! -f "$XDG_CONFIG_HOME/configstore/firebase-tools.json" ]; then
+  cp "$HOME/.config/configstore/firebase-tools.json" "$XDG_CONFIG_HOME/configstore/" 2>/dev/null || true
+fi
+
 # Check Firebase CLI
 if ! npx firebase --version &>/dev/null; then
   log_error "Firebase CLI is not accessible via npx. Run 'npm install' first."

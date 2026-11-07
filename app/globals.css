@@ -8,8 +8,8 @@
   --colorSecondary: #111013;
   --colorWhite: #ffffff;
   --paraColor: #5c728e;
-  --headingFont: var(--font-heading), "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --paraFont: var(--font-body), "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --headingFont: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --paraFont: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --gradiantBg: linear-gradient(102deg, #dbf1c3 -7.72%, #dce7e3 86.48%);
   color-scheme: light;
 }

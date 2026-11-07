@@ -186,8 +186,17 @@ export default function Pricing({ onOpenAuditModal }: PricingProps) {
           })}
         </div>
 
-        {/* Evaluate Sample Output link */}
-        <div className="mt-12 text-center">
+        {/* Evaluate Sample Output link & ROI link */}
+        <div className="mt-12 text-center space-y-2">
+          <p className="text-xs text-[#5c728e]">
+            Want to estimate your squad&apos;s exact dollar savings?{" "}
+            <a
+              href="#roi-calculator"
+              className="text-[#15803d] font-bold hover:underline ml-1"
+            >
+              Use the Interactive ROI Calculator &darr;
+            </a>
+          </p>
           <p className="text-xs text-[#5c728e]">
             Want to review the SOC 2 export format before installing?{" "}
             <button

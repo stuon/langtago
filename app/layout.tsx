@@ -1,19 +1,6 @@
 import type { Metadata } from "next";
-import { DM_Sans, Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-
-const dmSans = DM_Sans({
-  variable: "--font-heading",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const inter = Inter({
-  variable: "--font-body",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || "G-3PVMVZ03ZQ";
 
@@ -73,10 +60,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${dmSans.variable} ${inter.variable} scroll-smooth`}
-    >
+    <html lang="en" className="scroll-smooth">
       <body className="bg-white text-[#5c728e] font-sans min-h-screen flex flex-col selection:bg-[#dbf1c3] selection:text-[#0f5132]">
         {GA_MEASUREMENT_ID && (
           <>

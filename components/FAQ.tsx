@@ -43,6 +43,10 @@ export default function FAQ() {
       q: "How does Atlassian Marketplace billing work?",
       a: "EvidenceLog is billed directly through your monthly or annual Atlassian subscription invoice. There are no separate credit cards, purchase orders, or foreign billing entities. It is free up to 10 users, with a standard 30-day free trial on paid plans.",
     },
+    {
+      q: "What is the typical time and cost savings during annual SOC 2 Type II audits?",
+      a: "Engineering teams typically spend 3 to 4 hours per change sample manually locating PRs, capturing approval screenshots, verifying CI build runs, and packaging tickets for auditor review (amounting to 120–250+ engineering hours per 40-sample audit window). With EvidenceLog, that manual gathering is completely eliminated: cryptographic evidence is sealed automatically at ticket resolution and exported in seconds, yielding a measurable 15x–35x ROI on software spend.",
+    },
   ];
 
   return (
