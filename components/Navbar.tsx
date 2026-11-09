@@ -66,6 +66,9 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
             <Link href="/frameworks/soc2-cc81" className="hover:text-[#111013] transition-colors hidden xl:inline-block">
               SOC 2 Guide
             </Link>
+            <Link href="/compare/manual-screenshots-vs-evidencelog" className="hover:text-[#111013] transition-colors hidden 2xl:inline-block">
+              Compare
+            </Link>
             <a href={`${prefix}#pricing`} className="hover:text-[#111013] transition-colors">
               Pricing
             </a>
@@ -148,6 +151,13 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
               className="block py-2 text-[#111013] font-semibold"
             >
               SOC 2 CC8.1 Guide
+            </Link>
+            <Link
+              href="/compare/manual-screenshots-vs-evidencelog"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-2 text-[#111013] font-semibold"
+            >
+              Manual Screenshots vs. EvidenceLog
             </Link>
             <a
               href={`${prefix}#pricing`}

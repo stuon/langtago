@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useId } from "react";
+import Link from "next/link";
 import {
   Calculator,
   ArrowRight,
@@ -208,6 +209,15 @@ export default function RoiCalculator({ onOpenAuditModal }: RoiCalculatorProps) 
                   0 manual hours. Sealed SHA-256 evidence logged natively in Jira. 1-click auditor export.
                 </p>
               </div>
+            </div>
+
+            <div className="pt-2 text-center sm:text-left">
+              <Link
+                href="/compare/manual-screenshots-vs-evidencelog"
+                className="text-xs font-semibold text-[#15803d] hover:underline inline-flex items-center gap-1"
+              >
+                <span>Compare: Full 12-point Manual Screenshots vs. EvidenceLog Matrix ↗</span>
+              </Link>
             </div>
           </div>
 

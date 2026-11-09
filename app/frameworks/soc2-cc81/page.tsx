@@ -216,6 +216,14 @@ export default function Soc2Cc81FrameworkPage() {
                 <div className="text-xs font-semibold text-[#111013] pt-1">
                   Average cost per audit window: <strong>3.5 hours per sample × 40 samples = 140+ engineering hours wasted ($11,900+ in lost dev velocity).</strong>
                 </div>
+                <div className="pt-2">
+                  <Link
+                    href="/compare/manual-screenshots-vs-evidencelog"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#15803d] hover:underline"
+                  >
+                    <span>Read full technical benchmark: Manual Screenshots vs. EvidenceLog ↗</span>
+                  </Link>
+                </div>
               </div>
 
               <div className="lg:col-span-4 rounded-2xl bg-[#111013] text-white p-6 space-y-4 shadow-md">

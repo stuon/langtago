@@ -93,6 +93,14 @@ export default function Footer() {
             </p>
             <ul className="space-y-2.5 text-xs text-[#5c728e]">
               <li>
+                <Link
+                  href="/compare/manual-screenshots-vs-evidencelog"
+                  className="text-[#15803d] font-semibold hover:underline inline-flex items-center gap-1"
+                >
+                  <span>Manual vs. Automated ↗</span>
+                </Link>
+              </li>
+              <li>
                 <a href="#how-it-works" className="hover:text-[#111013] transition-colors">
                   How It Works (5 Pillars)
                 </a>
@@ -162,6 +170,14 @@ export default function Footer() {
                   className="text-[#15803d] font-semibold hover:underline inline-flex items-center gap-1"
                 >
                   <span>SOC 2 CC8.1 Guide ↗</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/compare/manual-screenshots-vs-evidencelog"
+                  className="hover:text-[#111013] transition-colors"
+                >
+                  <span>Screenshots vs. EvidenceLog</span>
                 </Link>
               </li>
               <li>
