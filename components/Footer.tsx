@@ -157,7 +157,12 @@ export default function Footer() {
             </p>
             <ul className="space-y-2.5 text-xs text-[#5c728e]">
               <li>
-                <span>SOC 2 Type II (CC8.1, CC6.8, CC7.1)</span>
+                <Link
+                  href="/frameworks/soc2-cc81"
+                  className="text-[#15803d] font-semibold hover:underline inline-flex items-center gap-1"
+                >
+                  <span>SOC 2 CC8.1 Guide ↗</span>
+                </Link>
               </li>
               <li>
                 <span>ISO/IEC 27001:2022</span>
@@ -172,7 +177,9 @@ export default function Footer() {
                 <span>Binary Merkle Tree Proofs</span>
               </li>
               <li>
-                <span>Zero Data Egress (Forge)</span>
+                <Link href="/security" className="hover:text-[#111013] transition-colors">
+                  Zero Data Egress (Forge)
+                </Link>
               </li>
               <li>
                 <span>Vanta &amp; Drata Ingestion</span>

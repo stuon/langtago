@@ -53,7 +53,7 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
           </div>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden items-center gap-7 md:flex text-sm font-medium text-[#5c728e]">
+          <nav className="hidden items-center gap-6 lg:gap-7 md:flex text-sm font-medium text-[#5c728e]">
             <a href={`${prefix}#how-it-works`} className="hover:text-[#111013] transition-colors">
               How It Works
             </a>
@@ -63,6 +63,9 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
             <a href={`${prefix}#roi-calculator`} className="hover:text-[#111013] transition-colors">
               ROI Calculator
             </a>
+            <Link href="/frameworks/soc2-cc81" className="hover:text-[#111013] transition-colors">
+              SOC 2 Guide
+            </Link>
             <a href={`${prefix}#pricing`} className="hover:text-[#111013] transition-colors">
               Pricing
             </a>
@@ -75,7 +78,7 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
               rel="noopener noreferrer"
               className="text-[#15803d] font-semibold hover:text-[#111013] transition-colors flex items-center gap-1"
             >
-              <span>User Guide &amp; Docs ↗</span>
+              <span>User Guide ↗</span>
             </a>
           </nav>
 
@@ -139,6 +142,13 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
             >
               ROI Calculator
             </a>
+            <Link
+              href="/frameworks/soc2-cc81"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-2 text-[#111013] font-semibold"
+            >
+              SOC 2 CC8.1 Guide
+            </Link>
             <a
               href={`${prefix}#pricing`}
               onClick={() => setMobileMenuOpen(false)}
