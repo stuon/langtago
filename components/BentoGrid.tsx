@@ -150,7 +150,7 @@ export default function BentoGrid({ onOpenAuditModal }: BentoGridProps) {
                 Free Forever
               </div>
 
-              <h3 className="text-2xl font-bold font-heading leading-snug">
+              <h3 className="text-2xl font-bold font-heading text-white leading-snug">
                 Continuous change compliance sealed in Jira.
               </h3>
 

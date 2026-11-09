@@ -435,7 +435,7 @@ export default function ManualVsEvidenceLogComparisonPage() {
               FREE FOR SQUADS UP TO 10 USERS &bull; ZERO DATA EGRESS
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-bold font-heading max-w-2xl mx-auto leading-tight">
+            <h2 className="text-3xl sm:text-5xl font-bold font-heading text-white max-w-2xl mx-auto leading-tight">
               Ready to eliminate the manual screenshot tax forever?
             </h2>
 

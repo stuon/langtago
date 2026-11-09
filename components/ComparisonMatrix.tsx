@@ -464,7 +464,7 @@ export default function ComparisonMatrix() {
             <Lock className="h-3.5 w-3.5" />
             <span>SEE REAL AUDIT EVIDENCE IN ACTION</span>
           </div>
-          <h4 className="text-lg sm:text-2xl font-bold font-heading">
+          <h4 className="text-lg sm:text-2xl font-bold font-heading text-white">
             Inspect a verified 5/5 EvidenceLog audit certificate &amp; raw JSON
           </h4>
           <p className="text-xs sm:text-sm text-slate-300 max-w-xl">

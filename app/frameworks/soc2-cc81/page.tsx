@@ -406,7 +406,7 @@ export default function Soc2Cc81FrameworkPage() {
                 <div className="inline-block rounded-md bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#dbf1c3] font-heading">
                   PREVENTIVE COMPLIANCE
                 </div>
-                <h2 className="text-2xl sm:text-4xl font-bold font-heading leading-tight">
+                <h2 className="text-2xl sm:text-4xl font-bold font-heading text-white leading-tight">
                   The Preventive Workflow Gatekeeper: Stop Failures Before Production
                 </h2>
                 <p className="text-sm text-slate-300 leading-relaxed">
@@ -607,7 +607,7 @@ export default function Soc2Cc81FrameworkPage() {
               FREE UP TO 10 USERS &bull; ZERO DATA EGRESS
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-bold font-heading max-w-2xl mx-auto leading-tight">
+            <h2 className="text-3xl sm:text-5xl font-bold font-heading text-white max-w-2xl mx-auto leading-tight">
               Ready to eliminate SOC 2 manual screenshotting forever?
             </h2>
 

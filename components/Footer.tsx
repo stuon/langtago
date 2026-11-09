@@ -16,7 +16,7 @@ export default function Footer() {
                 UNLOCK INSTANT AUDIT READINESS
               </div>
 
-              <h2 className="text-2xl sm:text-4xl font-bold font-heading leading-tight">
+              <h2 className="text-2xl sm:text-4xl font-bold font-heading text-white leading-tight">
                 Stop wasting engineering hours on manual audit screenshots
               </h2>
 

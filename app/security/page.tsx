@@ -248,7 +248,7 @@ export default function SecurityPage() {
                 <div className="inline-block rounded-md bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#dbf1c3] font-heading">
                   ZERO-TRUST CRYPTOGRAPHY
                 </div>
-                <h2 className="text-2xl sm:text-4xl font-bold font-heading leading-tight">
+                <h2 className="text-2xl sm:text-4xl font-bold font-heading text-white leading-tight">
                   Independent Verification Without Trusting Us or Jira
                 </h2>
                 <p className="text-sm text-slate-300 leading-relaxed max-w-2xl">
