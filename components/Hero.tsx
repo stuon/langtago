@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ArrowRight, FileCheck, Check, ShieldCheck } from "lucide-react";
 
 interface HeroProps {
@@ -88,9 +89,12 @@ export default function Hero({ onOpenAuditModal }: HeroProps) {
               </div>
 
               {/* The Genuine Jira Screenshot (Certified & Sealed State) */}
-              <img
+              <Image
                 src="/images/jira_demo9_ticket_full_tight.png"
                 alt="EvidenceLog for Jira - Real Live Product Interface on DEMO-9 with Certified Evidence Snapshot"
+                width={490}
+                height={443}
+                priority
                 className="w-full h-auto object-contain rounded-lg"
               />
             </div>
