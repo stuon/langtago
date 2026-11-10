@@ -456,10 +456,18 @@ export default function ManualVsEvidenceLogComparisonPage() {
 
               <Link
                 href="/frameworks/soc2-cc81"
-                className="inline-flex items-center justify-center gap-2 py-4 px-7 rounded-xl bg-transparent hover:bg-white/10 text-white text-sm font-semibold border border-white/20 transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-transparent hover:bg-white/10 text-white text-sm font-semibold border border-white/20 transition-all cursor-pointer"
               >
                 <FileCheck2 className="h-4 w-4 text-[#dbf1c3]" />
-                <span>Read Technical SOC 2 CC8.1 Guide</span>
+                <span>SOC 2 CC8.1 Guide</span>
+              </Link>
+
+              <Link
+                href="/frameworks/iso-27001-a832"
+                className="inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-transparent hover:bg-white/10 text-white text-sm font-semibold border border-white/20 transition-all cursor-pointer"
+              >
+                <FileCheck2 className="h-4 w-4 text-[#dbf1c3]" />
+                <span>ISO 27001 Guide</span>
               </Link>
             </div>
           </div>

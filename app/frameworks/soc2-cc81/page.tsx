@@ -180,15 +180,13 @@ export default function Soc2Cc81FrameworkPage() {
                 <ArrowRight className="h-4 w-4" />
               </a>
 
-              <a
-                href="/docs/user-guide.html#pillars"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/frameworks/iso-27001-a832"
                 className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-white text-[#111013] border border-slate-300 hover:border-[#111013] font-semibold text-sm transition-all shadow-xs cursor-pointer"
               >
                 <FileCheck2 className="h-4 w-4 text-[#15803d]" />
-                <span>Inspect Technical Specification ↗</span>
-              </a>
+                <span>ISO 27001:2022 Guide ↗</span>
+              </Link>
             </div>
 
             <div className="flex flex-wrap items-center gap-6 text-xs text-slate-500 pt-3">
@@ -216,12 +214,19 @@ export default function Soc2Cc81FrameworkPage() {
                 <div className="text-xs font-semibold text-[#111013] pt-1">
                   Average cost per audit window: <strong>3.5 hours per sample × 40 samples = 140+ engineering hours wasted ($11,900+ in lost dev velocity).</strong>
                 </div>
-                <div className="pt-2">
+                <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-bold text-[#15803d]">
                   <Link
                     href="/compare/manual-screenshots-vs-evidencelog"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#15803d] hover:underline"
+                    className="inline-flex items-center gap-1.5 hover:underline"
                   >
-                    <span>Read full technical benchmark: Manual Screenshots vs. EvidenceLog ↗</span>
+                    <span>Read benchmark: Manual Screenshots vs. EvidenceLog ↗</span>
+                  </Link>
+                  <span className="text-slate-300 font-normal">•</span>
+                  <Link
+                    href="/frameworks/iso-27001-a832"
+                    className="inline-flex items-center gap-1.5 hover:underline"
+                  >
+                    <span>Explore ISO 27001:2022 A.8.32 Guide ↗</span>
                   </Link>
                 </div>
               </div>

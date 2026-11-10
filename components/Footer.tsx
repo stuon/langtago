@@ -181,7 +181,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <span>ISO/IEC 27001:2022</span>
+                <Link
+                  href="/frameworks/iso-27001-a832"
+                  className="text-[#15803d] font-semibold hover:underline inline-flex items-center gap-1"
+                >
+                  <span>ISO 27001 A.8.32 Guide ↗</span>
+                </Link>
               </li>
               <li>
                 <span>HIPAA §164.312 &amp; FedRAMP</span>
