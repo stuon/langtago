@@ -455,6 +455,14 @@ export default function ManualVsEvidenceLogComparisonPage() {
               </a>
 
               <Link
+                href="/integrations/vanta-drata"
+                className="inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-transparent hover:bg-white/10 text-white text-sm font-semibold border border-white/20 transition-all cursor-pointer"
+              >
+                <FileCheck2 className="h-4 w-4 text-[#dbf1c3]" />
+                <span>Vanta &amp; Drata Sync</span>
+              </Link>
+
+              <Link
                 href="/frameworks/soc2-cc81"
                 className="inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-transparent hover:bg-white/10 text-white text-sm font-semibold border border-white/20 transition-all cursor-pointer"
               >

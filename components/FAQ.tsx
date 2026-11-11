@@ -8,28 +8,28 @@ export default function FAQ() {
 
   const faqs = [
     {
+      q: "Why do I need this if we already have branch protection in GitHub/GitLab?",
+      a: "GitHub and GitLab enforce PR reviews, but auditors audit Jira. When your auditor asks for 40 random change samples from the last 12 months, your team has to manually cross-reference Jira tickets, open PRs, screenshot review timestamps, verify CI runs, and paste them into spreadsheets. EvidenceLog eliminates that entire chore by locking the proof directly inside the Jira ticket at the moment of resolution.",
+    },
+    {
       q: "Does EvidenceLog send or store our code outside Jira?",
       a: "No. EvidenceLog is built 100% natively on Atlassian Forge. All compute executes strictly within Atlassian's isolated microVMs, and all evidence digests are stored directly inside your Atlassian Cloud tenant. We operate zero external servers, zero external databases, and enforce strict zero network data egress.",
     },
     {
-      q: "How does the Preventive Workflow Gatekeeper block non-compliant issues?",
-      a: "EvidenceLog registers an automated Jira Workflow Validator on your transitions (e.g. into 'In Review', 'Ready for Release', or 'Done'). If any of the 5 mandatory controls fail—such as missing QA sign-off, unreviewed PRs, or critical SAST vulnerabilities—the transition is blocked instantly with an informative error message. Standard emergency CAB override labels can be configured for incident hotfixes.",
+      q: "How does EvidenceLog prevent unreviewed code from slipping into production?",
+      a: "EvidenceLog registers an automated Jira Workflow Validator on your transitions (e.g. into 'In Review', 'Ready for Release', or 'Done'). If someone forgot a peer review (Author == Reviewer), QA sign-off, or tests failed, the transition is blocked instantly with a 1-click button to remediate.",
     },
     {
-      q: "How does 1-Click In-Situ Remediation ('Fix It For Me') work?",
-      a: "When a compliance check fails, engineers don't need to read pages of audit policy manuals. The EvidenceLog glance renders interactive remediation buttons directly in the Jira ticket (e.g., 'Apply QA Sign-off Label', 'Append AC Checklist Template', or 'Post QA Sign-off Comment'). One click resolves the deficiency and re-runs evaluation instantly.",
+      q: "Does this satisfy Australian APRA CPS 234 and Essential Eight requirements?",
+      a: "Yes. For Australian banks, fintechs, and critical infrastructure providers, EvidenceLog satisfies APRA CPS 234 §35–§37 (change control, authorization, and segregation of duties) and Essential Eight application change verification without requiring separate regional governance tools.",
     },
     {
-      q: "How do auditors verify records without trusting Langtago or Jira?",
-      a: "EvidenceLog provides a Zero-Trust Offline Cryptographic Verifier. It is a standalone, dependency-free script that external auditors can run on their own machines. It independently parses the raw Jira JSON export, recalculates canonical SHA-256 hashes, and rebuilds the Binary Merkle Tree to mathematically prove no tampering has occurred.",
-    },
-    {
-      q: "How does EvidenceLog satisfy SOC 2 CC8.1 and ISO 27001 requirements?",
-      a: "SOC 2 CC8.1 mandates that all code changes are authorized, independently reviewed, tested, and approved prior to production deployment with segregation of duties. EvidenceLog automatically validates that the change author did not self-approve their PR, verifies QA sign-offs, checks SAST security scans, and seals an immutable SHA-256 digest on the Jira ticket before closure.",
+      q: "How does 1-Click Remediation work for developers?",
+      a: "When a compliance check fails, engineers don't need to read pages of audit manuals. The EvidenceLog glance renders interactive buttons directly in the Jira ticket (e.g., 'Apply QA Sign-off Label', 'Append AC Checklist Template', or 'Post QA Sign-off Comment'). One click resolves the deficiency and unblocks the release.",
     },
     {
       q: "Can we use EvidenceLog alongside Vanta, Drata, or Secureframe?",
-      a: "Yes. EvidenceLog exports pre-structured JSON, CSV, and formatted audit packets from the Project Audit Hub that plug directly into GRC platforms. Instead of engineering leads manually gathering 25–40 change samples and taking screenshots during annual audits, you can export a sealed bundle in seconds.",
+      a: "Yes. Vanta and Drata detect whether change management controls failed; EvidenceLog is the tool that ensures they pass. EvidenceLog exports pre-structured JSON, CSV, and formatted audit packets from the Project Audit Hub that plug directly into GRC platforms without manual screenshot gathering.",
     },
     {
       q: "What happens if a Jira ticket is edited after being sealed?",
@@ -41,11 +41,11 @@ export default function FAQ() {
     },
     {
       q: "How does Atlassian Marketplace billing work?",
-      a: "EvidenceLog is billed directly through your monthly or annual Atlassian subscription invoice. There are no separate credit cards, purchase orders, or foreign billing entities. It is free up to 10 users, with a standard 30-day free trial on paid plans.",
+      a: "EvidenceLog is billed directly through your monthly or annual Atlassian subscription invoice. There are no separate credit cards, purchase orders, or foreign billing entities. It is free forever up to 10 users, with a standard 30-day free trial on paid plans.",
     },
     {
       q: "What is the typical time and cost savings during annual SOC 2 Type II audits?",
-      a: "Engineering teams typically spend 3 to 4 hours per change sample manually locating PRs, capturing approval screenshots, verifying CI build runs, and packaging tickets for auditor review (amounting to 120–250+ engineering hours per 40-sample audit window). With EvidenceLog, that manual gathering is completely eliminated: cryptographic evidence is sealed automatically at ticket resolution and exported in seconds, yielding a measurable 15x–35x ROI on software spend.",
+      a: "Engineering teams typically spend 3 to 4 hours per change sample manually locating PRs, capturing approval screenshots, verifying CI build runs, and packaging tickets for auditor review (amounting to 120–250+ engineering hours per 40-sample audit window). With EvidenceLog, that manual gathering is completely eliminated: cryptographic evidence is sealed automatically at ticket resolution and exported in seconds.",
     },
   ];
 

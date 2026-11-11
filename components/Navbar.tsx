@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { ShieldCheck, ArrowRight, Menu, X, FileText, ChevronDown, BookOpen, Shield, HelpCircle, GitCompare, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, ArrowRight, Menu, X, FileText, ChevronDown, BookOpen, Shield, HelpCircle, GitCompare, CheckCircle2, RefreshCw, FileCheck2 } from "lucide-react";
 
 interface NavbarProps {
   onOpenAuditModal?: () => void;
@@ -99,6 +99,20 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
                 >
                   <div className="space-y-1">
                     <Link
+                      href="/integrations/vanta-drata"
+                      onClick={() => setResourcesOpen(false)}
+                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group"
+                    >
+                      <div className="p-2 rounded-lg bg-emerald-50 text-[#15803d] group-hover:bg-[#15803d] group-hover:text-white transition-colors shrink-0">
+                        <RefreshCw className="h-4 w-4" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-[#111013]">Vanta &amp; Drata Sync</div>
+                        <div className="text-[11px] text-[#5c728e] font-normal leading-snug">Zero-screenshot continuous GRC automation</div>
+                      </div>
+                    </Link>
+
+                    <Link
                       href="/frameworks/soc2-cc81"
                       onClick={() => setResourcesOpen(false)}
                       className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group"
@@ -109,6 +123,20 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
                       <div>
                         <div className="text-xs font-bold text-[#111013]">SOC 2 CC8.1 Guide</div>
                         <div className="text-[11px] text-[#5c728e] font-normal leading-snug">Engineering guide for CC8.1 audit automation</div>
+                      </div>
+                    </Link>
+
+                    <Link
+                      href="/frameworks/iso-27001-a832"
+                      onClick={() => setResourcesOpen(false)}
+                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group"
+                    >
+                      <div className="p-2 rounded-lg bg-emerald-50 text-[#15803d] group-hover:bg-[#15803d] group-hover:text-white transition-colors shrink-0">
+                        <FileCheck2 className="h-4 w-4" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-[#111013]">ISO 27001 A.8.32 Guide</div>
+                        <div className="text-[11px] text-[#5c728e] font-normal leading-snug">Annex A change controls &amp; rollback verification</div>
                       </div>
                     </Link>
 
@@ -235,6 +263,13 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
             >
               ROI Calculator
             </a>
+            <Link
+              href="/integrations/vanta-drata"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-2 text-[#111013] font-semibold"
+            >
+              Vanta &amp; Drata GRC Sync
+            </Link>
             <Link
               href="/frameworks/soc2-cc81"
               onClick={() => setMobileMenuOpen(false)}

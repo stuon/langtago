@@ -786,10 +786,17 @@ export default function Iso27001A832FrameworkPage() {
               </a>
 
               <Link
-                href="/compare/manual-screenshots-vs-evidencelog"
-                className="inline-flex items-center justify-center gap-2 py-4 px-7 rounded-xl bg-transparent hover:bg-white/10 text-white text-sm font-semibold border border-white/20 transition-all cursor-pointer"
+                href="/integrations/vanta-drata"
+                className="inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-transparent hover:bg-white/10 text-white text-sm font-semibold border border-white/20 transition-all cursor-pointer"
               >
-                <span>Compare vs. Manual Evidence</span>
+                <span>Vanta &amp; Drata Sync</span>
+              </Link>
+
+              <Link
+                href="/compare/manual-screenshots-vs-evidencelog"
+                className="inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-transparent hover:bg-white/10 text-white text-sm font-semibold border border-white/20 transition-all cursor-pointer"
+              >
+                <span>Compare vs. Manual</span>
               </Link>
             </div>
           </div>

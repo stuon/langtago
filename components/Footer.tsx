@@ -13,29 +13,29 @@ export default function Footer() {
             {/* Left/Middle Content (8 cols) */}
             <div className="lg:col-span-8 space-y-4">
               <div className="inline-block rounded-md bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#dbf1c3] font-heading">
-                UNLOCK INSTANT AUDIT READINESS
+                ATLASSIAN FORGE CLOUD NATIVE
               </div>
 
               <h2 className="text-2xl sm:text-4xl font-bold font-heading text-white leading-tight">
-                Stop wasting engineering hours on manual audit screenshots
+                Zero external databases. Zero code egress. Zero vendor security headaches.
               </h2>
 
               <p className="text-sm text-slate-300 max-w-xl leading-relaxed">
-                Install EvidenceLog into your Jira Cloud workspace directly from the Atlassian Marketplace. Free forever for squads up to 10 users with zero external data egress.
+                EvidenceLog runs 100% inside your Atlassian Cloud tenant on isolated Forge microVMs. We operate zero external databases, retain no customer code, and enforce strict zero network data egress. Free forever for squads up to 10 users.
               </p>
 
               <div className="flex flex-wrap items-center gap-4 text-xs font-medium text-slate-300 pt-2">
                 <span className="flex items-center gap-1.5">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#dbf1c3]" />
-                  <span>No credit card required</span>
+                  <span>Free up to 10 users</span>
                 </span>
                 <span className="flex items-center gap-1.5">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#dbf1c3]" />
-                  <span>100% Atlassian Forge Native</span>
+                  <span>100% In-Tenant Storage</span>
                 </span>
                 <span className="flex items-center gap-1.5">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#dbf1c3]" />
-                  <span>Vanta &amp; Drata Ready</span>
+                  <span>SOC 2, ISO 27001 &amp; APRA Ready</span>
                 </span>
               </div>
             </div>
@@ -203,7 +203,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <span>Vanta &amp; Drata Ingestion</span>
+                <Link
+                  href="/integrations/vanta-drata"
+                  className="text-[#15803d] font-semibold hover:underline inline-flex items-center gap-1"
+                >
+                  <span>Vanta &amp; Drata Ingestion ↗</span>
+                </Link>
               </li>
             </ul>
           </div>

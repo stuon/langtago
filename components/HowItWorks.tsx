@@ -14,30 +14,30 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
   const steps = [
     {
       id: 1,
-      title: "Push code & open pull request normally",
-      desc: "Engineers push code and create PRs in GitHub, GitLab, or Bitbucket. Zero forms, zero compliance bureaucracy, and zero disruption to daily engineering velocity.",
-      badge: "Stage 01: Git PR",
-      detail: "Author: @alex.k • Branch: feat/auth • CI: 48/48 Passing • PR #104",
+      title: "Write code and review PRs normally",
+      desc: "Engineers open pull requests, run CI tests, and approve code inside GitHub, GitLab, or Bitbucket as usual. Zero forms, zero compliance checklists, and zero disruption to daily engineering velocity.",
+      badge: "Stage 01: Ship Code",
+      detail: "PR #42 • Author: @alex.r • Reviewer: @sarah.c • CI: 48/48 Passing",
       screenshot: "/images/jira_demo9_ticket_full_tight.png",
       caption: "Real Jira Ticket with GitHub PR Linkage & EvidenceLog Action Toolbar",
     },
     {
       id: 2,
-      title: "Automated 5-pillar compliance check & Preventive Gatekeeper",
-      desc: "EvidenceLog automatically validates 5 mandatory controls: Acceptance Criteria, Git & PR Linkage, independent Peer Review (Author != Reviewer), QA Verification, and SAST Security Scans (Snyk/SonarQube). Jira's workflow validator prevents transitions to Done if controls fail, offering 1-click in-situ remediation.",
-      badge: "Stage 02: Jira Forge & Gatekeeper",
-      detail: "5/5 Verified: AC ✓ • Git PR ✓ • Reviewer ✓ • QA Sign-off ✓ • SAST Clean ✓",
+      title: "Move Jira ticket to Done — EvidenceLog locks the proof",
+      desc: "When an issue moves to Done or Deployed, EvidenceLog automatically validates that an independent peer reviewed the code (Author ≠ Approver), tests passed, and acceptance criteria exist. If someone forgot a peer review, Jira blocks the release and provides a 1-click button to fix it.",
+      badge: "Stage 02: In-Situ Check",
+      detail: "✓ Segregation of Duties: Verified • ✓ QA Sign-off: Verified • Status: Release Approved",
       screenshot: "/images/jira_compliance_checklist_tight.png",
-      caption: "Real EvidenceLog 5-Pillar SDLC Checklist & Stage Progress Tracker",
+      caption: "Real EvidenceLog In-Situ Verification Checklist & Stage Progress Tracker",
     },
     {
       id: 3,
-      title: "Cryptographic SHA-256 seal, Merkle Tree proofs & Audit Hub",
-      desc: "An immutable SHA-256 seal is logged in Jira ticket storage. For entire release sprints, EvidenceLog computes a cryptographic Binary Merkle Tree root hash. Audit teams can batch-certify issues, download Big 4 CSV workpapers, or run offline verifications with zero vendor lock-in.",
-      badge: "Stage 03: Merkle Seal & Audit Hub",
-      detail: "Digest: SHA-256 Sealed • Merkle Root Verified • Vanta / Drata Ready • Exportable CSV",
+      title: "Export a signed audit pack in 5 seconds",
+      desc: "When audit season arrives, stop spending 40+ engineering hours digging up old pull requests and capturing screenshots. Export a pre-formatted CSV or signed PDF audit certificate for your auditor in one click.",
+      badge: "Stage 03: 1-Click Audit Pack",
+      detail: "Audit-Pack-2026.csv (42 issues verified • SHA-256 tamper-evident digest)",
       screenshot: "/images/jira_quick_remediation_tight.png",
-      caption: "Real 1-Click Remediation & Tamper-Evident SHA-256 Fingerprint in KVS",
+      caption: "Real 1-Click Remediation & Tamper-Evident SHA-256 Verification in KVS",
     },
   ];
 
@@ -49,13 +49,13 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
         {/* Contis-inspired Section Heading */}
         <div className="tf__common_heading mb-16 max-w-2xl mx-auto text-center">
           <h6 className="text-[#15803d] font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 font-heading">
-            WORKING PROCESS
+            HOW IT WORKS
           </h6>
           <h2 className="text-3xl sm:text-5xl font-bold text-[#111013] font-heading leading-tight">
-            How EvidenceLog works in 3 steps
+            Zero forms. Zero audit fire drills. 3 steps.
           </h2>
           <p className="text-sm sm:text-base text-[#5c728e] mt-3">
-            Real production interface running 100% inside Atlassian Cloud.
+            Your team keeps shipping code in GitHub, GitLab, or Bitbucket. EvidenceLog handles the audit trail automatically.
           </p>
         </div>
 

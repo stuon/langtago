@@ -21,12 +21,11 @@ export default function Hero({ onOpenAuditModal }: HeroProps) {
             </div>
 
             <h1 className="text-3xl sm:text-5xl xl:text-6xl font-bold tracking-tight text-[#111013] leading-[1.12] mb-5 font-heading">
-              Change evidence sealed directly in Jira
+              Stop taking manual screenshots of pull requests for your auditor
             </h1>
 
             <p className="text-base sm:text-lg text-[#5c728e] leading-relaxed font-normal mb-8 max-w-xl">
-              Automatically verify peer reviews, test runs, and approvals on every release.
-              Sealed cryptographic proof for SOC 2 CC8.1 with zero manual screenshots.
+              EvidenceLog automatically snapshots peer review approvals, test runs, and commit SHAs directly inside Jira when issues move to Done. Tamper-evident proof for SOC 2 CC8.1, ISO 27001, and APRA CPS 234—with zero spreadsheet tax.
             </p>
 
             {/* Action Buttons */}
@@ -59,11 +58,11 @@ export default function Hero({ onOpenAuditModal }: HeroProps) {
               </span>
               <span className="flex items-center gap-1.5">
                 <Check className="h-4 w-4 text-[#15803d] shrink-0" />
-                <span>SOC 2 CC8.1 &amp; ISO 27001</span>
+                <span>100% In-Tenant (Zero Data Egress)</span>
               </span>
               <span className="flex items-center gap-1.5">
                 <Check className="h-4 w-4 text-[#15803d] shrink-0" />
-                <span>Zero Data Egress (Forge)</span>
+                <span>SOC 2, ISO 27001 &amp; APRA CPS 234</span>
               </span>
             </div>
           </div>

@@ -632,10 +632,24 @@ export default function Soc2Cc81FrameworkPage() {
               </a>
 
               <Link
-                href="/#roi-calculator"
-                className="inline-flex items-center justify-center gap-2 py-4 px-7 rounded-xl bg-transparent hover:bg-white/10 text-white text-sm font-semibold border border-white/20 transition-all cursor-pointer"
+                href="/integrations/vanta-drata"
+                className="inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-transparent hover:bg-white/10 text-white text-sm font-semibold border border-white/20 transition-all cursor-pointer"
               >
-                <span>Calculate Your ROI Savings</span>
+                <span>Vanta &amp; Drata Sync</span>
+              </Link>
+
+              <Link
+                href="/frameworks/iso-27001-a832"
+                className="inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-transparent hover:bg-white/10 text-white text-sm font-semibold border border-white/20 transition-all cursor-pointer"
+              >
+                <span>ISO 27001 Guide</span>
+              </Link>
+
+              <Link
+                href="/#roi-calculator"
+                className="inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-transparent hover:bg-white/10 text-white text-sm font-semibold border border-white/20 transition-all cursor-pointer"
+              >
+                <span>ROI Calculator</span>
               </Link>
             </div>
           </div>
