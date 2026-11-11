@@ -153,6 +153,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <Link href="/#faq" className="hover:text-[#111013] transition-colors">
+                  Frequently Asked Questions (FAQ)
+                </Link>
+              </li>
+              <li>
                 <a
                   href="https://marketplace.atlassian.com"
                   target="_blank"

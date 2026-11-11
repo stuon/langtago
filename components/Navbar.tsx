@@ -79,6 +79,9 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
             <a href={`${prefix}#pricing`} className="hover:text-[#111013] transition-colors">
               Pricing
             </a>
+            <a href={`${prefix}#faq`} className="hover:text-[#111013] transition-colors">
+              FAQ
+            </a>
 
             {/* Resources Dropdown */}
             <div className="relative" ref={dropdownRef}>
