@@ -188,6 +188,10 @@ export default function Pricing({ onOpenAuditModal }: PricingProps) {
 
         {/* Evaluate Sample Output link & ROI link */}
         <div className="mt-12 text-center space-y-2">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-slate-700 text-xs font-medium mb-3">
+            <span className="h-2 w-2 rounded-full bg-emerald-500" />
+            <span>Global Atlassian Billing: Local currencies (USD, AUD, EUR, GBP) &bull; Automatic Data Residency</span>
+          </div>
           <p className="text-xs text-[#5c728e]">
             Want to estimate your squad&apos;s exact dollar savings?{" "}
             <a

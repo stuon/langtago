@@ -189,6 +189,22 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link
+                  href="/frameworks/apra-cps-234"
+                  className="text-[#15803d] font-semibold hover:underline inline-flex items-center gap-1"
+                >
+                  <span>APRA CPS 234 Guide (AU) ↗</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/frameworks/dora-compliance"
+                  className="text-[#15803d] font-semibold hover:underline inline-flex items-center gap-1"
+                >
+                  <span>DORA &amp; UK FCA Guide (EU/UK) ↗</span>
+                </Link>
+              </li>
+              <li>
                 <span>HIPAA §164.312 &amp; FedRAMP</span>
               </li>
               <li>

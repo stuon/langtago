@@ -65,7 +65,7 @@ export default function BentoGrid({ onOpenAuditModal }: BentoGridProps) {
     {
       icon: Share2,
       title: "Vanta, Drata & Global Framework Ready",
-      description: "Satisfies US SOC 2 (CC8.1/CC6.8), European ISO 27001 (A.8.32), and Australian APRA CPS 234 change controls out of the box.",
+      description: "Satisfies US SOC 2 (CC8.1), ISO 27001 (A.8.32), European DORA, and Australian APRA CPS 234 change controls out of the box.",
       bullets: [
         "Direct payload export for Vanta & Drata GRC",
         "1-click printable SOC 2 verification certificate",

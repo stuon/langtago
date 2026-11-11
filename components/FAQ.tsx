@@ -21,7 +21,11 @@ export default function FAQ() {
     },
     {
       q: "Does this satisfy Australian APRA CPS 234 and Essential Eight requirements?",
-      a: "Yes. For Australian banks, fintechs, and critical infrastructure providers, EvidenceLog satisfies APRA CPS 234 §35–§37 (change control, authorization, and segregation of duties) and Essential Eight application change verification without requiring separate regional governance tools.",
+      a: "Yes. For Australian banks, superannuation funds, insurers, and fintechs, EvidenceLog directly satisfies APRA CPS 234 Paragraphs 23–27 (change control, authorization, and segregation of duties) and Essential Eight application change verification. Because EvidenceLog runs natively in AWS Sydney (ap-southeast-2) with zero data egress, it fully complies with Australian data residency and APRA CPS 231 outsourcing rules.",
+    },
+    {
+      q: "Do we need different regional versions for the UK, Europe (DORA), South Africa (POPIA), or the US?",
+      a: "No. The technical engineering controls required by auditors worldwide are identical across regions: (1) segregation of duties (Author ≠ Approver), (2) non-production test verification, and (3) tamper-evident change logs. Whether your auditor tests for US SOC 2 (CC8.1), International ISO 27001 (A.8.32), European DORA (Articles 9 & 11), UK FCA/PRA Operational Resilience (SS1/21), or South African POPIA / SARB cybersecurity guidelines, EvidenceLog satisfies them with the exact same automated Jira checks. Furthermore, because EvidenceLog runs on Atlassian Forge, your data automatically stays in your local Jira Cloud data residency (Sydney, London, Frankfurt, Dublin, or US) with zero cross-border data transfer.",
     },
     {
       q: "How does 1-Click Remediation work for developers?",

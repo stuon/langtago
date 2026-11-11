@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { ShieldCheck, ArrowRight, Menu, X, FileText, ChevronDown, BookOpen, Shield, HelpCircle, GitCompare, CheckCircle2, RefreshCw, FileCheck2 } from "lucide-react";
+import { ShieldCheck, ArrowRight, Menu, X, FileText, ChevronDown, BookOpen, Shield, HelpCircle, GitCompare, CheckCircle2, RefreshCw, FileCheck2, Landmark, Globe2 } from "lucide-react";
 
 interface NavbarProps {
   onOpenAuditModal?: () => void;
@@ -122,7 +122,7 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
                       </div>
                       <div>
                         <div className="text-xs font-bold text-[#111013]">SOC 2 CC8.1 Guide</div>
-                        <div className="text-[11px] text-[#5c728e] font-normal leading-snug">Engineering guide for CC8.1 audit automation</div>
+                        <div className="text-[11px] text-[#5c728e] font-normal leading-snug">US &amp; Global SaaS change control automation</div>
                       </div>
                     </Link>
 
@@ -136,7 +136,35 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
                       </div>
                       <div>
                         <div className="text-xs font-bold text-[#111013]">ISO 27001 A.8.32 Guide</div>
-                        <div className="text-[11px] text-[#5c728e] font-normal leading-snug">Annex A change controls &amp; rollback verification</div>
+                        <div className="text-[11px] text-[#5c728e] font-normal leading-snug">International Annex A change &amp; rollback controls</div>
+                      </div>
+                    </Link>
+
+                    <Link
+                      href="/frameworks/apra-cps-234"
+                      onClick={() => setResourcesOpen(false)}
+                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group"
+                    >
+                      <div className="p-2 rounded-lg bg-emerald-50 text-[#15803d] group-hover:bg-[#15803d] group-hover:text-white transition-colors shrink-0">
+                        <Landmark className="h-4 w-4" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-[#111013]">APRA CPS 234 &amp; Essential Eight</div>
+                        <div className="text-[11px] text-[#5c728e] font-normal leading-snug">Australia &amp; APAC financial services compliance</div>
+                      </div>
+                    </Link>
+
+                    <Link
+                      href="/frameworks/dora-compliance"
+                      onClick={() => setResourcesOpen(false)}
+                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group"
+                    >
+                      <div className="p-2 rounded-lg bg-emerald-50 text-[#15803d] group-hover:bg-[#15803d] group-hover:text-white transition-colors shrink-0">
+                        <Globe2 className="h-4 w-4" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-[#111013]">DORA &amp; UK FCA Resilience</div>
+                        <div className="text-[11px] text-[#5c728e] font-normal leading-snug">EU (2022/2554) &amp; UK operational resilience</div>
                       </div>
                     </Link>
 
@@ -283,6 +311,20 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
               className="block py-2 text-[#111013] font-semibold"
             >
               ISO 27001 A.8.32 Guide
+            </Link>
+            <Link
+              href="/frameworks/apra-cps-234"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-2 text-[#111013] font-semibold"
+            >
+              APRA CPS 234 (Australia)
+            </Link>
+            <Link
+              href="/frameworks/dora-compliance"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-2 text-[#111013] font-semibold"
+            >
+              DORA &amp; UK FCA (Europe &amp; UK)
             </Link>
             <Link
               href="/compare/manual-screenshots-vs-evidencelog"

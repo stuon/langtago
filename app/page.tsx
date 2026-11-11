@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import BrandStrip from "@/components/BrandStrip";
 import HowItWorks from "@/components/HowItWorks";
 import BentoGrid from "@/components/BentoGrid";
+import RegionalCompliance from "@/components/RegionalCompliance";
 import RoiCalculator from "@/components/RoiCalculator";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
@@ -33,6 +34,9 @@ export default function HomePage() {
 
         {/* Core Capabilities: Contis Main Service Block */}
         <BentoGrid onOpenAuditModal={() => setIsAuditModalOpen(true)} />
+
+        {/* Global Compliance & In-Tenant Data Residency by Region (AU, UK, EU, US, ZA) */}
+        <RegionalCompliance />
 
         {/* Interactive Auditor ROI & Time-Savings Calculator */}
         <RoiCalculator onOpenAuditModal={() => setIsAuditModalOpen(true)} />
