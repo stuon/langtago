@@ -194,34 +194,18 @@ export default function Iso27001A832FrameworkPage() {
               The complete engineering blueprint to satisfy ISO/IEC 27001:2022 Control A.8.32 (Change Management). Eliminate manual Confluence CAB forms and screenshotting with automated in-situ Jira checks, fallback verification, and cryptographic SHA-256 change seals.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 pt-2">
-              <a
-                href="https://marketplace.atlassian.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#111013] text-white hover:bg-[#15803d] font-semibold text-sm transition-all shadow-md hover:shadow-lg cursor-pointer"
-              >
-                <span>Install Free on Atlassian Marketplace</span>
-                <ArrowRight className="h-4 w-4" />
+            <div className="flex flex-wrap items-center gap-6 text-xs text-slate-500 pt-2 pb-1 border-y border-slate-100">
+              <span>Author: <strong className="text-slate-800">Langtago Security &amp; Compliance Team</strong></span>
+              <span>•</span>
+              <span>Updated: <strong className="text-slate-800">November 2026</strong></span>
+              <span>•</span>
+              <span>Edition: <strong className="text-slate-800">ISO/IEC 27001:2022 (A.8.32)</strong></span>
+              <span>•</span>
+              <span>Reading Time: <strong className="text-slate-800">8 min</strong></span>
+              <span>•</span>
+              <a href="#matrix" className="text-[#15803d] font-semibold hover:underline">
+                Jump to A.8.32 Control Matrix &darr;
               </a>
-
-              <Link
-                href="/frameworks/soc2-cc81"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-white text-[#111013] border border-slate-300 hover:border-[#111013] font-semibold text-sm transition-all shadow-xs cursor-pointer"
-              >
-                <FileCheck2 className="h-4 w-4 text-[#15803d]" />
-                <span>View SOC 2 CC8.1 Guide ↗</span>
-              </Link>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-6 text-xs text-slate-500 pt-3">
-              <span>Author: <strong>Langtago Security &amp; Compliance Team</strong></span>
-              <span>•</span>
-              <span>Updated: <strong>November 2026</strong></span>
-              <span>•</span>
-              <span>ISO 27001 Revision: <strong>2022 Edition (Annex A Control 8.32)</strong></span>
-              <span>•</span>
-              <span>Reading Time: <strong>8 min</strong></span>
             </div>
           </div>
 
