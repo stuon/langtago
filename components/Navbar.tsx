@@ -79,9 +79,9 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
             <a href={`${prefix}#pricing`} className="hover:text-[#111013] transition-colors">
               Pricing
             </a>
-            <a href={`${prefix}#faq`} className="hover:text-[#111013] transition-colors">
+            <Link href="/faq" className="hover:text-[#111013] transition-colors">
               FAQ
-            </a>
+            </Link>
 
             {/* Resources Dropdown */}
             <div className="relative" ref={dropdownRef}>
@@ -229,8 +229,8 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
                       </div>
                     </a>
 
-                    <a
-                      href={`${prefix}#faq`}
+                    <Link
+                      href="/faq"
                       onClick={() => setResourcesOpen(false)}
                       className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group"
                     >
@@ -238,10 +238,10 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
                         <HelpCircle className="h-4 w-4" />
                       </div>
                       <div>
-                        <div className="text-xs font-bold text-[#111013]">FAQ</div>
-                        <div className="text-[11px] text-[#5c728e] font-normal leading-snug">Answers to common auditor questions</div>
+                        <div className="text-xs font-bold text-[#111013]">Auditor FAQ Hub</div>
+                        <div className="text-[11px] text-[#5c728e] font-normal leading-snug">Answers to common security &amp; audit questions</div>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               )}
@@ -364,13 +364,13 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
             >
               Pricing
             </a>
-            <a
-              href={`${prefix}#faq`}
+            <Link
+              href="/faq"
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-[#111013] font-semibold"
             >
               FAQ
-            </a>
+            </Link>
             <a
               href="/docs/user-guide.html"
               target="_blank"
