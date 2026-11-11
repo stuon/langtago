@@ -99,6 +99,20 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
                 >
                   <div className="space-y-1">
                     <Link
+                      href="/guides"
+                      onClick={() => setResourcesOpen(false)}
+                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group"
+                    >
+                      <div className="p-2 rounded-lg bg-emerald-50 text-[#15803d] group-hover:bg-[#15803d] group-hover:text-white transition-colors shrink-0">
+                        <BookOpen className="h-4 w-4" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-[#111013]">Engineering Guides</div>
+                        <div className="text-[11px] text-[#5c728e] font-normal leading-snug">Technical blueprints for DevOps &amp; compliance</div>
+                      </div>
+                    </Link>
+
+                    <Link
                       href="/integrations/vanta-drata"
                       onClick={() => setResourcesOpen(false)}
                       className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group"
@@ -291,6 +305,13 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
             >
               ROI Calculator
             </a>
+            <Link
+              href="/guides"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-2 text-[#111013] font-semibold"
+            >
+              Engineering Guides &amp; Articles
+            </Link>
             <Link
               href="/integrations/vanta-drata"
               onClick={() => setMobileMenuOpen(false)}

@@ -94,6 +94,14 @@ export default function Footer() {
             <ul className="space-y-2.5 text-xs text-[#5c728e]">
               <li>
                 <Link
+                  href="/guides"
+                  className="text-[#15803d] font-semibold hover:underline inline-flex items-center gap-1"
+                >
+                  <span>Engineering Guides &amp; Articles ↗</span>
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/compare/manual-screenshots-vs-evidencelog"
                   className="text-[#15803d] font-semibold hover:underline inline-flex items-center gap-1"
                 >
