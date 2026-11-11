@@ -91,8 +91,8 @@ export default function Hero({ onOpenAuditModal }: HeroProps) {
               <Image
                 src="/images/jira_demo9_ticket_full_tight.png"
                 alt="EvidenceLog for Jira - Real Live Product Interface on DEMO-9 with Certified Evidence Snapshot"
-                width={490}
-                height={443}
+                width={515}
+                height={510}
                 priority
                 className="w-full h-auto object-contain rounded-lg"
               />

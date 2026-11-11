@@ -66,8 +66,8 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
             <Image
               src={currentStep.screenshot}
               alt={currentStep.caption}
-              width={490}
-              height={443}
+              width={515}
+              height={495}
               className="w-full h-auto object-contain cursor-pointer transition-transform duration-200 hover:scale-[1.01]"
               onClick={onOpenAuditModal}
             />
