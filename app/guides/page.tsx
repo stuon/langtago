@@ -44,6 +44,17 @@ export default function GuidesHubPage() {
       tag: "Flagship Deep Dive",
     },
     {
+      category: "SOC 2 TYPE II AUDIT PLAYBOOK",
+      title: "The 40-sample SOC 2 change management audit: How to pass without 150 hours of screenshots",
+      description:
+        "Every SOC 2 Type II audit begins with the dreaded 40-sample change request list. Learn the exact 5 criteria auditors inspect on every Jira ticket, where teams fail, and how to automate the evidence in Jira Cloud.",
+      href: "/guides/soc2-change-management-40-sample-audit",
+      readTime: "9 min read",
+      date: "Nov 12, 2026",
+      featured: true,
+      tag: "Audit Playbook",
+    },
+    {
       category: "US & GLOBAL FRAMEWORKS",
       title: "Automate SOC 2 CC8.1 change management controls in Jira Cloud",
       description:

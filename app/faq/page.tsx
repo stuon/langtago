@@ -20,6 +20,7 @@ interface FAQItem {
   category: "security" | "workflow" | "frameworks" | "grc" | "billing";
   categoryLabel: string;
   q: string;
+  plainAnswer: string;
   a: React.ReactNode;
 }
 
@@ -45,6 +46,7 @@ export default function FAQPage() {
       category: "security",
       categoryLabel: "Security & Architecture",
       q: "Does EvidenceLog send or store our source code or tickets outside Jira?",
+      plainAnswer: "No. EvidenceLog is built 100% natively on Atlassian Forge. All compute executes strictly within Atlassian's isolated microVMs, and all cryptographic evidence records persist inside your Atlassian Cloud tenant's encrypted Key-Value Storage (@forge/kvs). We operate zero external databases, retain zero customer source code, and enforce strict zero network data egress.",
       a: (
         <div className="space-y-2.5 text-sm text-[#5c728e] leading-relaxed">
           <p>
@@ -65,6 +67,7 @@ export default function FAQPage() {
       category: "security",
       categoryLabel: "Security & Architecture",
       q: "What happens if someone modifies a Jira ticket after it has been certified?",
+      plainAnswer: "When a Jira ticket transitions to Done, EvidenceLog computes a SHA-256 cryptographic digest of the ticket description, acceptance criteria, linked PR review status, commit SHAs, and QA sign-offs. If someone retroactively modifies the ticket description, deletes comments, or alters fields, EvidenceLog detects the hash mismatch and immediately flags an audit discrepancy alert.",
       a: (
         <div className="space-y-2.5 text-sm text-[#5c728e] leading-relaxed">
           <p>
@@ -81,6 +84,7 @@ export default function FAQPage() {
       category: "security",
       categoryLabel: "Security & Architecture",
       q: "How does Data Residency work for Australian, European, and UK Jira instances?",
+      plainAnswer: "Because EvidenceLog runs on Atlassian Forge, it automatically inherits your designated Jira Cloud data residency region: AWS Sydney (ap-southeast-2) for Australia, AWS Frankfurt and Dublin for the EU, AWS London for the UK, and AWS US East/West for the US. Zero customer data is transferred cross-border, satisfying GDPR, APRA CPS 234, and DORA Chapter V.",
       a: (
         <div className="space-y-2.5 text-sm text-[#5c728e] leading-relaxed">
           <p>
@@ -105,6 +109,7 @@ export default function FAQPage() {
       category: "workflow",
       categoryLabel: "Git & Gatekeeping",
       q: "Why do I need EvidenceLog if we already have branch protection rules in GitHub/GitLab?",
+      plainAnswer: "GitHub and GitLab enforce pull request reviews in Git, but auditors audit Jira. When an auditor asks for 40 random change samples from the last 12 months, your team has to manually cross-reference Jira tickets, find the PRs, screenshot approval timestamps, verify CI runs, and paste them into spreadsheets. Branch protection also allows admin bypasses that trigger audit findings.",
       a: (
         <div className="space-y-2.5 text-sm text-[#5c728e] leading-relaxed">
           <p>
@@ -128,6 +133,7 @@ export default function FAQPage() {
       category: "workflow",
       categoryLabel: "Git & Gatekeeping",
       q: "How does the Jira Workflow Validator prevent unreviewed code from slipping into production?",
+      plainAnswer: "EvidenceLog installs an automated Workflow Validator on your project transitions (e.g. moving from In Review to Done or Deployed). Before the transition can succeed, EvidenceLog verifies: linked pull request exists, author != approver, CI/CD test suite passed, and staging QA verification is recorded. If any check fails, the transition is blocked instantly.",
       a: (
         <div className="space-y-2.5 text-sm text-[#5c728e] leading-relaxed">
           <p>
@@ -144,6 +150,7 @@ export default function FAQPage() {
       category: "workflow",
       categoryLabel: "Git & Gatekeeping",
       q: "How does 1-Click Remediation work for developers?",
+      plainAnswer: "When a compliance check fails, engineers don't need to read pages of audit manuals. The EvidenceLog glance renders interactive buttons directly in the Jira ticket (e.g. Apply QA Sign-off Label, Append Acceptance Criteria Template, or Post QA Sign-off Comment). One click resolves the deficiency and unblocks the release.",
       a: (
         <div className="space-y-2.5 text-sm text-[#5c728e] leading-relaxed">
           <p>
@@ -157,6 +164,7 @@ export default function FAQPage() {
       category: "workflow",
       categoryLabel: "Git & Gatekeeping",
       q: "Which version control systems and security scanners are supported?",
+      plainAnswer: "Any tool that connects with Jira Software Cloud: GitHub, GitLab, and Bitbucket for PRs, commits, and branch names. For automated security scanning, EvidenceLog detects Snyk, SonarQube, Trivy, Dependabot, and OWASP ZAP traces in development linkages and pipeline status webhooks.",
       a: (
         <div className="space-y-2.5 text-sm text-[#5c728e] leading-relaxed">
           <p>
@@ -175,6 +183,7 @@ export default function FAQPage() {
       category: "frameworks",
       categoryLabel: "Compliance Frameworks",
       q: "Does EvidenceLog satisfy AICPA SOC 2 Type II Criterion CC8.1?",
+      plainAnswer: "Yes. Criterion CC8.1 requires that changes to infrastructure, data, and software are authorized, tested, reviewed, and deployed with segregation of duties. EvidenceLog enforces CC8.1 controls automatically on every resolved ticket and generates auditor-ready sample workpapers.",
       a: (
         <div className="space-y-2.5 text-sm text-[#5c728e] leading-relaxed">
           <p>
@@ -195,6 +204,7 @@ export default function FAQPage() {
       category: "frameworks",
       categoryLabel: "Compliance Frameworks",
       q: "Does EvidenceLog cover ISO/IEC 27001:2022 Control A.8.32 (Change Management)?",
+      plainAnswer: "Yes. Control A.8.32 requires documented change planning, security risk assessment, segregation of duties, pre-deployment testing, and fallback rollback procedures. EvidenceLog inspects rollback strategies in Jira descriptions and provides 1-click fallback injection buttons.",
       a: (
         <div className="space-y-2.5 text-sm text-[#5c728e] leading-relaxed">
           <p>
@@ -215,6 +225,7 @@ export default function FAQPage() {
       category: "frameworks",
       categoryLabel: "Compliance Frameworks",
       q: "Does this satisfy Australian APRA CPS 234 and Essential Eight requirements?",
+      plainAnswer: "Yes. For Australian banks, superannuation trustees, insurers, and fintechs, EvidenceLog directly satisfies APRA CPS 234 Paragraphs 23–27 (change control, authorization, segregation of duties, and audit trails) and Essential Eight application change controls, with 100% in-tenant storage in AWS Sydney (ap-southeast-2).",
       a: (
         <div className="space-y-2.5 text-sm text-[#5c728e] leading-relaxed">
           <p>
@@ -235,6 +246,7 @@ export default function FAQPage() {
       category: "frameworks",
       categoryLabel: "Compliance Frameworks",
       q: "Does EvidenceLog satisfy European DORA (EU 2022/2554) and UK FCA Operational Resilience?",
+      plainAnswer: "Yes. Under DORA Articles 9 and 11 and UK FCA/PRA SS1/21, financial entities and ICT providers must maintain robust ICT change management, pre-deployment testing, and rollback capabilities. EvidenceLog executes within Atlassian's Frankfurt/London cloud with zero third-party ICT subcontractor risk.",
       a: (
         <div className="space-y-2.5 text-sm text-[#5c728e] leading-relaxed">
           <p>
@@ -257,6 +269,7 @@ export default function FAQPage() {
       category: "grc",
       categoryLabel: "GRC & Auditor Handoff",
       q: "How does EvidenceLog work with Vanta, Drata, or Secureframe?",
+      plainAnswer: "Vanta and Drata detect whether change management controls failed; EvidenceLog is the tool that ensures they pass. EvidenceLog exports pre-structured JSON and CSV workpaper packets from the Project Audit Hub that plug directly into GRC platforms without manual screenshot gathering.",
       a: (
         <div className="space-y-2.5 text-sm text-[#5c728e] leading-relaxed">
           <p>
@@ -277,6 +290,7 @@ export default function FAQPage() {
       category: "grc",
       categoryLabel: "GRC & Auditor Handoff",
       q: "What format are the auditor exports (CSV, PDF, JSON)?",
+      plainAnswer: "Auditors receive a standardized CSV workpaper table containing: Issue Key, Release Tag, Commit SHA, Author, Independent Reviewer, CI Test Status, Staging QA Sign-off, and SHA-256 seal. You can also export a 1-click signed PDF verification certificate for executive or board compliance presentations.",
       a: (
         <div className="space-y-2.5 text-sm text-[#5c728e] leading-relaxed">
           <p>
@@ -295,6 +309,7 @@ export default function FAQPage() {
       category: "billing",
       categoryLabel: "Billing & Free Tier",
       q: "How does Atlassian Marketplace billing work? Is there a free tier?",
+      plainAnswer: "Yes, EvidenceLog is Free Forever for squads up to 10 users. For larger engineering organizations, paid plans are billed conveniently through your existing monthly or annual Atlassian subscription invoice in your local currency (USD, AUD, EUR, GBP). Every paid tier includes a standard 30-day free trial.",
       a: (
         <div className="space-y-2.5 text-sm text-[#5c728e] leading-relaxed">
           <p>
@@ -311,6 +326,7 @@ export default function FAQPage() {
       category: "billing",
       categoryLabel: "Billing & Free Tier",
       q: "What is the typical time and cost savings during an annual audit?",
+      plainAnswer: "Engineering teams typically spend 3.5 hours per change sample manually locating PRs, capturing approval screenshots, and packaging tickets (amounting to 140+ hours across a 40-sample audit window). EvidenceLog eliminates that manual gathering entirely, saving teams an average of $11,900+ in wasted engineering sprint capacity per audit cycle.",
       a: (
         <div className="space-y-2.5 text-sm text-[#5c728e] leading-relaxed">
           <p>
@@ -354,7 +370,7 @@ export default function FAQPage() {
       name: f.q,
       acceptedAnswer: {
         "@type": "Answer",
-        text: f.id,
+        text: f.plainAnswer,
       },
     })),
   };
