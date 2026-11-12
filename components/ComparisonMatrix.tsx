@@ -62,7 +62,7 @@ export default function ComparisonMatrix() {
       evidencelog: {
         title: "Free (≤10 devs) or $49/mo Pro",
         description:
-          "Free forever for squads up to 10 devs. Unlimited audit exports and instant payback in the first single sprint release.",
+          "Free for squads up to 10 devs with no credit card required. Unlimited audit exports and instant payback in the first single sprint release.",
         good: true,
       },
     },
@@ -204,7 +204,7 @@ export default function ComparisonMatrix() {
         bad: true,
       },
       evidencelog: {
-        title: "0% Audit Exceptions Guaranteed",
+        title: "Prevent Audit Exceptions In-Situ",
         description:
           "The Preventive Gatekeeper blocks unverified issues from reaching 'Done' or 'Released' before they can ever become an audit defect.",
         good: true,

@@ -112,7 +112,7 @@ export default function FAQ() {
       a: (
         <div className="space-y-2">
           <p>
-            <strong>EvidenceLog is Free Forever for squads up to 10 users.</strong>
+            <strong>EvidenceLog is free for squads up to 10 users, with no credit card required.</strong>
           </p>
           <p>
             For larger teams, paid plans are billed conveniently through your existing monthly or annual Atlassian subscription invoice in your local currency. There are no separate vendor agreements or credit cards needed.

@@ -21,7 +21,7 @@ export default function Footer() {
               </h2>
 
               <p className="text-sm text-slate-300 max-w-xl leading-relaxed">
-                EvidenceLog runs 100% inside your Atlassian Cloud tenant on isolated Forge microVMs. We operate zero external databases, retain no customer code, and enforce strict zero network data egress. Free forever for squads up to 10 users.
+                EvidenceLog runs 100% inside your Atlassian Cloud tenant on isolated Forge microVMs. We operate zero external databases, retain no customer code, and enforce strict zero network data egress. Free for squads up to 10 users.
               </p>
 
               <div className="flex flex-wrap items-center gap-4 text-xs font-medium text-slate-300 pt-2">

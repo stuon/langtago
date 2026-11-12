@@ -436,7 +436,7 @@ export default function ManualVsEvidenceLogComparisonPage() {
             </div>
 
             <h2 className="text-3xl sm:text-5xl font-bold font-heading text-white max-w-2xl mx-auto leading-tight">
-              Ready to eliminate the manual screenshot tax forever?
+              Ready to eliminate the manual screenshot tax for good?
             </h2>
 
             <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">

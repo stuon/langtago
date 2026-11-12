@@ -350,7 +350,7 @@ export default function WhyGithubBranchProtectionFailsPage() {
                   Stop gathering screenshots for your next audit
                 </h4>
                 <p className="text-xs text-[#5c728e] max-w-lg">
-                  Install EvidenceLog free on Atlassian Marketplace. Test with up to 10 users forever with zero external servers and zero data egress.
+                  Install EvidenceLog free on Atlassian Marketplace. Free for squads up to 10 users with zero external servers and zero data egress.
                 </p>
               </div>
               <div className="flex items-center gap-3 shrink-0">

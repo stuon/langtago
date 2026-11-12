@@ -652,7 +652,7 @@ export default function Iso27001A832FrameworkPage() {
                   Install from Marketplace
                 </h3>
                 <p className="text-xs text-[#5c728e] leading-relaxed">
-                  Search &ldquo;EvidenceLog&rdquo; on the Atlassian Marketplace and install it with 1 click. Free forever for squads up to 10 users with zero external servers.
+                  Search &ldquo;EvidenceLog&rdquo; on the Atlassian Marketplace and install it with 1 click. Free for squads up to 10 users with zero external servers.
                 </p>
               </div>
 
@@ -755,7 +755,7 @@ export default function Iso27001A832FrameworkPage() {
             </h2>
 
             <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
-              Install EvidenceLog into your Jira Cloud instance today. Stop wasting engineering hours on manual audit screenshots and pass your next ISO Stage 2 surveillance audit with zero findings.
+              Install EvidenceLog into your Jira Cloud instance today. Stop wasting engineering hours on manual audit screenshots and ensure your change controls satisfy ISO Stage 2 surveillance audits.
             </p>
 
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">

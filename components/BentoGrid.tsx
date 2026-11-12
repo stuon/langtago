@@ -147,7 +147,7 @@ export default function BentoGrid({ onOpenAuditModal }: BentoGridProps) {
           <div className="lg:col-span-3 rounded-2xl bg-[#111013] p-7 text-white flex flex-col justify-between shadow-xl">
             <div className="space-y-4">
               <div className="inline-block rounded-md bg-[#dbf1c3] px-2.5 py-1 text-xs font-extrabold uppercase tracking-wider text-[#0f5132]">
-                Free Forever
+                Free Tier
               </div>
 
               <h3 className="text-2xl font-bold font-heading text-white leading-snug">
@@ -155,7 +155,7 @@ export default function BentoGrid({ onOpenAuditModal }: BentoGridProps) {
               </h3>
 
               <p className="text-sm text-slate-300 leading-relaxed">
-                Free forever for squads up to 10 users. Zero external servers, zero credit card required.
+                Free for squads up to 10 users. Zero external servers, no credit card required.
               </p>
 
               <div className="pt-2 space-y-2.5 text-xs font-medium text-slate-200">

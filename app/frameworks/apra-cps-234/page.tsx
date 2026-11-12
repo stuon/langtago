@@ -348,7 +348,7 @@ export default function ApraCps234FrameworkPage() {
                 Ready to automate APRA CPS 234 audit readiness in Jira?
               </h3>
               <p className="text-sm text-[#5c728e] max-w-xl">
-                Install free on Atlassian Marketplace. Test with up to 10 users forever, or upgrade seamlessly through your existing Atlassian invoice.
+                Install free on Atlassian Marketplace. Test with up to 10 users with no credit card required, or upgrade seamlessly through your existing Atlassian invoice.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">

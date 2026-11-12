@@ -81,7 +81,7 @@ export default function VantaDrataIntegrationPage() {
             "name": "Why do change management tests frequently fail in Vanta and Drata?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Vanta and Drata query Jira Cloud APIs for change controls like Segregation of Duties (CC6.8) and QA sign-off (CC8.1). When engineers forget to link their GitHub PR, merge their own code without peer review, or skip QA tags, Vanta and Drata flag the tickets as failing. EvidenceLog's Preventive Gatekeeper blocks tickets from closing until all 5 compliance controls are satisfied, guaranteeing 100% test pass rates.",
+              "text": "Vanta and Drata query Jira Cloud APIs for change controls like Segregation of Duties (CC6.8) and QA sign-off (CC8.1). When engineers forget to link their GitHub PR, merge their own code without peer review, or skip QA tags, Vanta and Drata flag the tickets as failing. EvidenceLog's Preventive Gatekeeper blocks tickets from closing until all 5 compliance controls are satisfied, preventing change test failures before they happen.",
             },
           },
           {
@@ -582,7 +582,7 @@ export default function VantaDrataIntegrationPage() {
             </div>
 
             <h2 className="text-3xl sm:text-5xl font-bold font-heading text-white max-w-2xl mx-auto leading-tight">
-              Ready to eliminate failing GRC change tests forever?
+              Ready to eliminate failing GRC change tests?
             </h2>
 
             <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">

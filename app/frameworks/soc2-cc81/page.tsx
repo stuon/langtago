@@ -227,7 +227,7 @@ export default function Soc2Cc81FrameworkPage() {
                 </p>
                 <div className="pt-2 border-t border-white/10">
                   <span className="text-[11px] font-mono text-emerald-400">
-                    ✔ 100% Audit Readiness Guaranteed
+                    ✔ Continuous Audit Readiness Built-In
                   </span>
                 </div>
               </div>
@@ -597,11 +597,11 @@ export default function Soc2Cc81FrameworkPage() {
             </div>
 
             <h2 className="text-3xl sm:text-5xl font-bold font-heading text-white max-w-2xl mx-auto leading-tight">
-              Ready to eliminate SOC 2 manual screenshotting forever?
+              Ready to eliminate manual SOC 2 screenshotting?
             </h2>
 
             <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
-              Install EvidenceLog into your Jira Cloud instance today. Free forever for squads up to 10 users with 100% in-tenant Atlassian Forge security.
+              Install EvidenceLog into your Jira Cloud instance today. Free for squads up to 10 users with 100% in-tenant Atlassian Forge security.
             </p>
 
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">

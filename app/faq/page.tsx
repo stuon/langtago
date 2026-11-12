@@ -309,11 +309,11 @@ export default function FAQPage() {
       category: "billing",
       categoryLabel: "Billing & Free Tier",
       q: "How does Atlassian Marketplace billing work? Is there a free tier?",
-      plainAnswer: "Yes, EvidenceLog is Free Forever for squads up to 10 users. For larger engineering organizations, paid plans are billed conveniently through your existing monthly or annual Atlassian subscription invoice in your local currency (USD, AUD, EUR, GBP). Every paid tier includes a standard 30-day free trial.",
+      plainAnswer: "Yes, EvidenceLog is free for squads up to 10 users with no credit card required. For larger engineering organizations, paid plans are billed conveniently through your existing monthly or annual Atlassian subscription invoice in your local currency (USD, AUD, EUR, GBP). Every paid tier includes a standard 30-day free trial.",
       a: (
         <div className="space-y-2.5 text-sm text-[#5c728e] leading-relaxed">
           <p>
-            <strong>Yes, EvidenceLog is Free Forever for squads up to 10 users.</strong>
+            <strong>Yes, EvidenceLog is free for squads up to 10 users with no credit card required.</strong>
           </p>
           <p>
             For larger engineering organizations, paid plans are billed conveniently through your existing monthly or annual Atlassian subscription invoice in your local currency (USD, AUD, EUR, GBP). There are no separate vendor agreements or credit cards needed. Every paid tier includes a standard 30-day free trial.

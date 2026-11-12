@@ -237,7 +237,7 @@ export default function RoiCalculator({ onOpenAuditModal }: RoiCalculatorProps) 
                 </div>
                 <div className="text-xs text-slate-300">
                   {annualEvidenceLogCost === 0
-                    ? "Free forever under 10 users"
+                    ? "Free for squads under 10 users"
                     : `After subtracting $${annualEvidenceLogCost.toLocaleString()} EvidenceLog Pro license`}
                 </div>
               </div>

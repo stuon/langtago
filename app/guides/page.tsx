@@ -234,7 +234,7 @@ export default function GuidesHubPage() {
                 Have an upcoming SOC 2, ISO 27001, or APRA audit?
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 max-w-xl leading-relaxed">
-                Install EvidenceLog free on Jira Cloud. Test with up to 10 users forever. All data stays 100% inside your Jira Cloud tenant.
+                Install EvidenceLog free on Jira Cloud. Free for squads up to 10 users with no credit card required. All data stays 100% inside your Jira Cloud tenant.
               </p>
             </div>
             <a

@@ -16,7 +16,7 @@ export default function Pricing({ onOpenAuditModal }: PricingProps) {
       subtitle: "Perfect for testing & squads up to 10 users",
       priceMonthly: "$0",
       priceAnnual: "$0",
-      period: "Free forever",
+      period: "Free up to 10 users",
       cta: "Install Free on Jira",
       features: [
         "Up to 10 Jira Cloud users",
