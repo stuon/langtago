@@ -307,32 +307,36 @@ export default function DoraComplianceFrameworkPage() {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
               <div className="rounded-xl bg-slate-800/80 border border-slate-700 p-4">
-                <span className="font-bold text-emerald-400 block mb-1 text-sm">
-                  ✓ Frankfurt (eu-central-1) &amp; London (eu-west-2)
+                <span className="font-bold text-emerald-400 mb-1 text-sm flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <span>Frankfurt (eu-central-1) &amp; London (eu-west-2)</span>
                 </span>
                 <p className="text-slate-300">
                   Data remains strictly within your organization&apos;s designated Atlassian Cloud region with zero cross-border transfer.
                 </p>
               </div>
               <div className="rounded-xl bg-slate-800/80 border border-slate-700 p-4">
-                <span className="font-bold text-emerald-400 block mb-1 text-sm">
-                  ✓ Zero External Network Egress
+                <span className="font-bold text-emerald-400 mb-1 text-sm flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <span>Zero External Network Egress</span>
                 </span>
                 <p className="text-slate-300">
                   EvidenceLog manifests enforce zero outbound internet connections. Your source code, PR diffs, and Jira tickets never touch external servers.
                 </p>
               </div>
               <div className="rounded-xl bg-slate-800/80 border border-slate-700 p-4">
-                <span className="font-bold text-emerald-400 block mb-1 text-sm">
-                  ✓ Encrypted Tenant Storage
+                <span className="font-bold text-emerald-400 mb-1 text-sm flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <span>Encrypted Tenant Storage</span>
                 </span>
                 <p className="text-slate-300">
                   Audit logs and cryptographic hashes are persisted in Atlassian Key-Value Storage (@forge/kvs), fully covered under Atlassian&apos;s GDPR DPA.
                 </p>
               </div>
               <div className="rounded-xl bg-slate-800/80 border border-slate-700 p-4">
-                <span className="font-bold text-emerald-400 block mb-1 text-sm">
-                  ✓ Simplified DORA ICT Register
+                <span className="font-bold text-emerald-400 mb-1 text-sm flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <span>Simplified DORA ICT Register</span>
                 </span>
                 <p className="text-slate-300">
                   Classified as a native Atlassian Cloud plugin, drastically simplifying your Article 28 Register of Information for ICT third-party services.

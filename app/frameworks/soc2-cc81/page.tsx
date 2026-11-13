@@ -227,7 +227,7 @@ export default function Soc2Cc81FrameworkPage() {
                 </p>
                 <div className="pt-2 border-t border-white/10">
                   <span className="text-[11px] font-mono text-emerald-400">
-                    ✔ Continuous Audit Readiness Built-In
+                    [AUDIT READY] Continuous Readiness Built-In
                   </span>
                 </div>
               </div>
@@ -428,14 +428,14 @@ export default function Soc2Cc81FrameworkPage() {
                     [EvidenceLog Gatekeeper] Cannot transition to Done:
                   </p>
                   <p className="text-slate-400 pl-2">
-                    ✖ CC8.1.3: Self-approval detected. Author (alex.k) cannot transition ticket without independent peer review.
+                    <span className="text-rose-400 font-bold">[BLOCKED]</span> CC8.1.3: Self-approval detected. Author (alex.k) cannot transition ticket without independent peer review.
                   </p>
                   <p className="text-slate-400 pl-2">
-                    ✖ CC8.1.4: Missing explicit QA sign-off or qa-verified label.
+                    <span className="text-rose-400 font-bold">[BLOCKED]</span> CC8.1.4: Missing explicit QA sign-off or qa-verified label.
                   </p>
                 </div>
                 <div className="pt-2 border-t border-white/10 text-emerald-400 text-[11px]">
-                  💡 Remediation: Click &ldquo;[+ Apply qa-verified]&rdquo; in the EvidenceLog issue panel to unblock.
+                  <span className="font-bold text-amber-300">[REMEDIATION]</span> Click &ldquo;[+ Apply qa-verified]&rdquo; in the EvidenceLog issue panel to unblock.
                 </div>
               </div>
             </div>

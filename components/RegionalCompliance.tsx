@@ -6,7 +6,7 @@ import { MapPin, ArrowRight, Lock, Globe2 } from "lucide-react";
 export default function RegionalCompliance() {
   const regions = [
     {
-      flag: "🇺🇸",
+      code: "US",
       region: "United States & Global",
       standard: "SOC 2 Type II (CC8.1) & HIPAA",
       regulator: "AICPA / HHS",
@@ -16,7 +16,7 @@ export default function RegionalCompliance() {
       linkText: "SOC 2 Guide →",
     },
     {
-      flag: "🇦🇺",
+      code: "AU",
       region: "Australia & APAC",
       standard: "APRA CPS 234 & Essential Eight",
       regulator: "APRA / ACSC",
@@ -26,7 +26,7 @@ export default function RegionalCompliance() {
       linkText: "APRA CPS 234 Guide →",
     },
     {
-      flag: "🇪🇺",
+      code: "EU",
       region: "European Union",
       standard: "DORA (EU 2022/2554) & ISO 27001",
       regulator: "EBA / EIOPA / ESMA (NCAs)",
@@ -36,7 +36,7 @@ export default function RegionalCompliance() {
       linkText: "DORA Guide →",
     },
     {
-      flag: "🇬🇧",
+      code: "UK",
       region: "United Kingdom",
       standard: "FCA / PRA Operational Resilience",
       regulator: "FCA & Bank of England",
@@ -46,7 +46,7 @@ export default function RegionalCompliance() {
       linkText: "UK FCA Guide →",
     },
     {
-      flag: "🇿🇦",
+      code: "ZA",
       region: "South Africa & Africa",
       standard: "POPIA §19 & SARB Cyber Guidelines",
       regulator: "Information Regulator / SARB",
@@ -56,7 +56,7 @@ export default function RegionalCompliance() {
       linkText: "ISO 27001 Guide →",
     },
     {
-      flag: "🌐",
+      code: "GLOBAL",
       region: "International",
       standard: "ISO/IEC 27001:2022 (Control A.8.32)",
       regulator: "ISO / IEC Certification Bodies",
@@ -94,7 +94,9 @@ export default function RegionalCompliance() {
               <div>
                 <div className="flex items-center justify-between gap-2 pb-3 mb-3 border-b border-slate-100">
                   <div className="flex items-center gap-2">
-                    <span className="text-2xl">{item.flag}</span>
+                    <span className="text-[11px] font-extrabold font-mono px-2 py-0.5 rounded bg-slate-900 text-[#dbf1c3] uppercase tracking-wider">
+                      [{item.code}]
+                    </span>
                     <span className="text-xs font-bold text-[#111013] font-heading uppercase tracking-wider">
                       {item.region}
                     </span>

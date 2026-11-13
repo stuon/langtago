@@ -42,7 +42,7 @@ export default function TeamShowcase({ onOpenAuditModal }: TeamShowcaseProps) {
                 <div className="flex items-center justify-between text-xs font-bold text-emerald-900">
                   <span>Independent Peer Reviewer</span>
                   <span className="rounded bg-emerald-100 text-emerald-800 text-[10px] px-1.5 py-0.5">
-                    VERIFIED ✓
+                    VERIFIED
                   </span>
                 </div>
                 <p className="text-xs text-emerald-800 font-medium">

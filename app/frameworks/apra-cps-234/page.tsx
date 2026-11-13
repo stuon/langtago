@@ -307,32 +307,36 @@ export default function ApraCps234FrameworkPage() {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
               <div className="rounded-xl bg-slate-800/80 border border-slate-700 p-4">
-                <span className="font-bold text-emerald-400 block mb-1 text-sm">
-                  ✓ AWS Sydney (ap-southeast-2)
+                <span className="font-bold text-emerald-400 mb-1 text-sm flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <span>AWS Sydney (ap-southeast-2)</span>
                 </span>
                 <p className="text-slate-300">
                   Execution and storage are physically pinned to Atlassian&apos;s Sydney data center. Zero cross-border data transfer.
                 </p>
               </div>
               <div className="rounded-xl bg-slate-800/80 border border-slate-700 p-4">
-                <span className="font-bold text-emerald-400 block mb-1 text-sm">
-                  ✓ Zero External Egress
+                <span className="font-bold text-emerald-400 mb-1 text-sm flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <span>Zero External Egress</span>
                 </span>
                 <p className="text-slate-300">
                   Manifest enforces zero external fetch calls. No external analytics, no third-party logging, zero vendor database risk.
                 </p>
               </div>
               <div className="rounded-xl bg-slate-800/80 border border-slate-700 p-4">
-                <span className="font-bold text-emerald-400 block mb-1 text-sm">
-                  ✓ Encrypted Tenant KVS
+                <span className="font-bold text-emerald-400 mb-1 text-sm flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <span>Encrypted Tenant KVS</span>
                 </span>
                 <p className="text-slate-300">
                   All audit logs and SHA-256 hashes are persisted in Atlassian&apos;s encrypted tenant key-value store (@forge/kvs).
                 </p>
               </div>
               <div className="rounded-xl bg-slate-800/80 border border-slate-700 p-4">
-                <span className="font-bold text-emerald-400 block mb-1 text-sm">
-                  ✓ Fast-Track Vendor Approval
+                <span className="font-bold text-emerald-400 mb-1 text-sm flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <span>Fast-Track Vendor Approval</span>
                 </span>
                 <p className="text-slate-300">
                   Complies directly with Atlassian Cloud Enterprise terms—no lengthy 6-month third-party security assessments needed.

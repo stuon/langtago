@@ -333,12 +333,12 @@ export default function Soc2SampleAuditGuidePage() {
                     </span>
                     <span className="text-[11px] text-[#dbf1c3]">Atlassian Forge Native</span>
                   </div>
-                  <div className="text-slate-300 space-y-1.5 leading-relaxed">
-                    <p className="text-emerald-400">✓ [PASS] Linked Pull Request #42 verified (GitHub)</p>
-                    <p className="text-emerald-400">✓ [PASS] Peer Review Verified: approver &apos;sarah.chen&apos; != author &apos;joe.chen&apos;</p>
-                    <p className="text-emerald-400">✓ [PASS] CI/CD Regression Tests passed (Commit 7f9a2e1)</p>
-                    <p className="text-emerald-400">✓ [PASS] Staging Acceptance Sign-off confirmed</p>
-                    <p className="text-amber-300">🔒 [SEALED] SHA-256 Digest: c4b38d01... sealed in Jira KVS</p>
+                  <div className="text-slate-300 space-y-1.5 leading-relaxed font-mono">
+                    <p className="text-emerald-400">[PASS] Linked Pull Request #42 verified (GitHub)</p>
+                    <p className="text-emerald-400">[PASS] Peer Review Verified: approver &apos;sarah.chen&apos; != author &apos;joe.chen&apos;</p>
+                    <p className="text-emerald-400">[PASS] CI/CD Regression Tests passed (Commit 7f9a2e1)</p>
+                    <p className="text-emerald-400">[PASS] Staging Acceptance Sign-off confirmed</p>
+                    <p className="text-amber-300">[SEALED] SHA-256 Digest: c4b38d01... sealed in Jira KVS</p>
                   </div>
                 </div>
 

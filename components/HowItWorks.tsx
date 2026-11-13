@@ -26,7 +26,7 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
       title: "Move Jira ticket to Done — EvidenceLog locks the proof",
       desc: "When an issue moves to Done or Deployed, EvidenceLog automatically validates that an independent peer reviewed the code (Author ≠ Approver), tests passed, and acceptance criteria exist. If someone forgot a peer review, Jira blocks the release and provides a 1-click button to fix it.",
       badge: "Stage 02: In-Situ Check",
-      detail: "✓ Segregation of Duties: Verified • ✓ QA Sign-off: Verified • Status: Release Approved",
+      detail: "[PASS] Segregation of Duties: Verified • [PASS] QA Sign-off: Verified • Status: Release Approved",
       screenshot: "/images/jira_compliance_checklist_tight.png",
       caption: "Real EvidenceLog In-Situ Verification Checklist & Stage Progress Tracker",
     },

@@ -130,10 +130,10 @@ export default function WhyGithubBranchProtectionFailsPage() {
               </p>
               <div className="rounded-xl border border-slate-200 bg-slate-50 p-5 font-mono text-xs text-slate-800 space-y-1.5">
                 <p className="font-bold text-[#111013]">GitHub Repository Settings &rarr; Branches &rarr; Branch protection rule (main):</p>
-                <p className="text-emerald-700">✓ Require a pull request before merging (1 required approval)</p>
-                <p className="text-emerald-700">✓ Dismiss stale pull request approvals when new commits are pushed</p>
-                <p className="text-emerald-700">✓ Require status checks to pass before merging</p>
-                <p className="text-emerald-700">✓ Require conversation resolution before merging</p>
+                <p className="text-emerald-700 font-mono">[ENABLED] Require a pull request before merging (1 required approval)</p>
+                <p className="text-emerald-700 font-mono">[ENABLED] Dismiss stale pull request approvals when new commits are pushed</p>
+                <p className="text-emerald-700 font-mono">[ENABLED] Require status checks to pass before merging</p>
+                <p className="text-emerald-700 font-mono">[ENABLED] Require conversation resolution before merging</p>
               </div>
               <p>
                 On paper, this looks airtight. If nobody can push directly to <code className="text-xs bg-slate-100 px-1.5 py-0.5 rounded text-slate-800 font-mono">main</code>, and every pull request requires an approval from a teammate, you have enforced segregation of duties. Right?

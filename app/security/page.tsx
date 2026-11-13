@@ -11,6 +11,7 @@ import {
   ArrowLeft,
   ArrowRight,
   CheckCircle2,
+  XCircle,
   Cpu,
   Layers,
 } from "lucide-react";
@@ -149,19 +150,19 @@ export default function SecurityPage() {
                 <h3 className="text-base font-bold text-[#111013]">External Multi-Tenant SaaS</h3>
                 <ul className="space-y-2 text-xs text-rose-950/80 leading-relaxed">
                   <li className="flex items-start gap-2">
-                    <span className="text-rose-600 font-bold">✕</span>
+                    <XCircle className="h-4 w-4 text-rose-600 shrink-0 mt-0.5" />
                     <span>Transmits tickets, issue keys, summaries, and user emails to vendor AWS/GCP servers</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-rose-600 font-bold">✕</span>
+                    <XCircle className="h-4 w-4 text-rose-600 shrink-0 mt-0.5" />
                     <span>Creates a secondary database holding your sensitive proprietary SDLC records</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-rose-600 font-bold">✕</span>
+                    <XCircle className="h-4 w-4 text-rose-600 shrink-0 mt-0.5" />
                     <span>Requires 40+ page vendor security questionnaires and extensive SOC 2 subservice auditor review</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-rose-600 font-bold">✕</span>
+                    <XCircle className="h-4 w-4 text-rose-600 shrink-0 mt-0.5" />
                     <span>Vulnerable to vendor server downtime, DNS outages, or upstream database leaks</span>
                   </li>
                 </ul>

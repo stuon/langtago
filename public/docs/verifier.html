@@ -256,17 +256,17 @@
           const cSummary = parsed.complianceSummary || {};
           const issueKey = parsed.issue?.key || 'Issue Record';
           const riskLevel = parsed.riskProfile?.level || parsed.changeManagement?.riskProfile?.level || 'NORMAL';
-          const rollback = parsed.changeManagement?.rollbackPlan?.passed ? '✅ Documented' : 'ℹ️ Not Required / Standard';
+          const rollback = parsed.changeManagement?.rollbackPlan?.passed ? '[PASS] Documented' : '[STANDARD] Not Required';
 
-          const c1 = cEval.acceptanceCriteria ? (cEval.acceptanceCriteria.passed ? '✅ PASS' : '❌ INCOMPLETE') : 'N/A';
-          const c2 = cEval.codeLinkage ? (cEval.codeLinkage.passed ? '✅ PASS' : '❌ INCOMPLETE') : 'N/A';
-          const c3 = cEval.segregationOfDuties ? (cEval.segregationOfDuties.passed ? '✅ PASS' : '❌ INCOMPLETE') : 'N/A';
-          const c4 = cEval.qaConfirmation ? (cEval.qaConfirmation.passed ? '✅ PASS' : '❌ INCOMPLETE') : 'N/A';
-          const c5 = cEval.securityScan ? (cEval.securityScan.passed ? '✅ PASS' : '❌ INCOMPLETE') : 'N/A';
+          const c1 = cEval.acceptanceCriteria ? (cEval.acceptanceCriteria.passed ? '[PASS]' : '[INCOMPLETE]') : 'N/A';
+          const c2 = cEval.codeLinkage ? (cEval.codeLinkage.passed ? '[PASS]' : '[INCOMPLETE]') : 'N/A';
+          const c3 = cEval.segregationOfDuties ? (cEval.segregationOfDuties.passed ? '[PASS]' : '[INCOMPLETE]') : 'N/A';
+          const c4 = cEval.qaConfirmation ? (cEval.qaConfirmation.passed ? '[PASS]' : '[INCOMPLETE]') : 'N/A';
+          const c5 = cEval.securityScan ? (cEval.securityScan.passed ? '[PASS]' : '[INCOMPLETE]') : 'N/A';
 
           resEl.className = 'result-box success';
           resEl.innerHTML = `
-            <h3>✅ Cryptographic Verification PASSED</h3>
+            <h3>Cryptographic Verification PASSED</h3>
             <p><strong>${issueKey}</strong>: The record is authentic, tamper-free, and unaltered since certification.</p>
             <div class="hash-display">Declared Fingerprint: ${declaredHash}</div>
             <div class="hash-display">Computed Canonical SHA-256: ${computedHash}</div>
@@ -285,7 +285,7 @@
         } else {
           resEl.className = 'result-box error';
           resEl.innerHTML = `
-            <h3>❌ Cryptographic Verification FAILED</h3>
+            <h3>Cryptographic Verification FAILED</h3>
             <p>Hash mismatch! The content of this record has been modified or corrupted.</p>
             <div class="hash-display">Declared Hash: ${declaredHash}</div>
             <div class="hash-display">Computed Hash: ${computedHash}</div>
@@ -334,14 +334,14 @@
       if (expected && computedRoot === expected) {
         resEl.className = 'result-box success';
         resEl.innerHTML = `
-          <h3>✅ Merkle Tree Root Verified</h3>
+          <h3>Merkle Tree Root Verified</h3>
           <p>The entire release batch is intact. All ${lines.length} issues are cryptographically accounted for with zero omissions or additions.</p>
           <div class="hash-display">Computed Merkle Root: ${computedRoot}</div>
         `;
       } else if (expected) {
         resEl.className = 'result-box error';
         resEl.innerHTML = `
-          <h3>❌ Merkle Root Mismatch</h3>
+          <h3>Merkle Root Mismatch</h3>
           <p>The computed root does not match the declared release root. One or more tickets were added, removed, or altered.</p>
           <div class="hash-display">Declared Root: ${expected}</div>
           <div class="hash-display">Computed Root: ${computedRoot}</div>

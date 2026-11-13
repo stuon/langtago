@@ -247,7 +247,7 @@ export default function Iso27001A832FrameworkPage() {
                 </p>
                 <div className="pt-2 border-t border-white/10">
                   <span className="text-[11px] font-mono text-emerald-400">
-                    ✔ 100% Lead Auditor Workpaper Ready
+                    [WORKPAPER READY] Lead Auditor Format
                   </span>
                 </div>
               </div>
@@ -518,14 +518,14 @@ export default function Iso27001A832FrameworkPage() {
                     [EvidenceLog ISO Gatekeeper] Validation Failed:
                   </p>
                   <p className="text-slate-400 pl-2">
-                    ✖ A.8.32(c): Author (sarah.m) cannot approve own PR. Independent peer approval required.
+                    <span className="text-rose-400 font-bold">[BLOCKED]</span> A.8.32(c): Author (sarah.m) cannot approve own PR. Independent peer approval required.
                   </p>
                   <p className="text-slate-400 pl-2">
-                    ✖ A.8.32(e): Missing documented Fallback/Rollback procedure in description.
+                    <span className="text-rose-400 font-bold">[BLOCKED]</span> A.8.32(e): Missing documented Fallback/Rollback procedure in description.
                   </p>
                 </div>
                 <div className="pt-2 border-t border-white/10 text-emerald-400 text-[11px]">
-                  💡 Quick-Fix: Click &ldquo;[+ Append Rollback Plan]&rdquo; in the Jira sidebar to resolve.
+                  <span className="font-bold text-amber-300">[REMEDIATION]</span> Click &ldquo;[+ Append Rollback Plan]&rdquo; in the Jira sidebar to resolve.
                 </div>
               </div>
             </div>

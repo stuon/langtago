@@ -433,25 +433,32 @@
   <!-- Header -->
   <header>
     <a href="/" class="brand">
-      <span style="display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; background:#111013; color:#dbf1c3; border-radius:6px; font-size:14px;">🛡️</span>
+      <span style="display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; background:#111013; color:#dbf1c3; border-radius:6px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+      </span>
       <span>Langtago <span style="color:#cbd5e1; font-weight:300;">/</span> EvidenceLog</span>
       <span class="brand-badge">User Guide</span>
     </a>
     <div class="header-actions">
       <a href="/" class="btn btn-secondary">
-        <span>← Back to Langtago</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+        <span>Back to Langtago</span>
       </a>
       <a href="/faq" class="btn btn-secondary">
-        <span>❓ Auditor FAQ Hub</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+        <span>Auditor FAQ Hub</span>
       </a>
       <a href="verifier.html" class="btn btn-secondary">
-        <span>🔍 Offline Verifier</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <span>Offline Verifier</span>
       </a>
       <button onclick="downloadMarkdown()" class="btn btn-secondary" title="Download Markdown Guide">
-        <span>📥 Markdown</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span>Markdown</span>
       </button>
       <button onclick="window.print()" class="btn btn-primary" title="Print or save as PDF">
-        <span>🖨️ Print / Save as PDF</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
+        <span>Print / Save as PDF</span>
       </button>
     </div>
   </header>
@@ -501,22 +508,30 @@
         </p>
         <div class="card-grid">
           <div class="card">
-            <span class="card-icon">⚡</span>
+            <div style="width:36px; height:36px; border-radius:8px; background:#f0fdf4; color:#15803d; display:flex; align-items:center; justify-content:center; margin-bottom:12px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
             <div class="card-title">In-Situ Evaluation</div>
             <div class="card-desc">Inspects Acceptance Criteria, multi-cloud Git links (GitHub, GitLab, Bitbucket, Azure), changelog transitions, QA sign-offs, and SAST scans continuously.</div>
           </div>
           <div class="card">
-            <span class="card-icon">🛡️</span>
+            <div style="width:36px; height:36px; border-radius:8px; background:#f0fdf4; color:#15803d; display:flex; align-items:center; justify-content:center; margin-bottom:12px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
             <div class="card-title">Preventive Gatekeeper</div>
             <div class="card-desc">Programmatically blocks developers from resolving or closing tickets until all 5 regulatory change controls are satisfied.</div>
           </div>
           <div class="card">
-            <span class="card-icon">🔐</span>
+            <div style="width:36px; height:36px; border-radius:8px; background:#f0fdf4; color:#15803d; display:flex; align-items:center; justify-content:center; margin-bottom:12px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
             <div class="card-title">Cryptographic Immutability</div>
             <div class="card-desc">Computes SHA-256 issue fingerprints and binary release Merkle tree roots stored in Atlassian Forge encrypted storage.</div>
           </div>
           <div class="card">
-            <span class="card-icon">🔒</span>
+            <div style="width:36px; height:36px; border-radius:8px; background:#f0fdf4; color:#15803d; display:flex; align-items:center; justify-content:center; margin-bottom:12px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
             <div class="card-title">Zero Data Egress</div>
             <div class="card-desc">Executes 100% inside the Atlassian Forge Node.js sandbox. No external databases, zero egress, and $0 cloud maintenance.</div>
           </div>
@@ -531,11 +546,11 @@
           <li><strong>Open any Jira Issue:</strong> Navigate to any development issue. Look for the <strong>EvidenceLog Compliance</strong> panel in the right sidebar.</li>
           <li><strong>Review the Compliance Checklist:</strong> The panel shows whether the ticket is <span class="badge green">AUDIT READY (5/5)</span> or <span class="badge orange">ACTION REQUIRED</span>.</li>
           <li><strong>Apply 1-Click Fixes:</strong> If any check is missing, click <code>[+ Append AC Template]</code>, <code>[+ Apply "qa-verified" Label]</code>, or <code>[+ Post QA Sign-off]</code> directly in the panel.</li>
-          <li><strong>Certify & Save Snapshot:</strong> When all 5 checks turn green, click <strong>"⚡ Certify & Save Snapshot"</strong> to permanently lock the immutable SHA-256 record in Forge encrypted storage.</li>
+          <li><strong>Certify & Save Snapshot:</strong> When all 5 checks turn green, click <strong>"Certify & Save Snapshot"</strong> to permanently lock the immutable SHA-256 record in Forge encrypted storage.</li>
         </ol>
 
         <div class="callout tip">
-          <div class="callout-title">💡 Pro Tip for Engineering Leads</div>
+          <div class="callout-title">Pro Tip for Engineering Leads</div>
           When an issue is transitioned to <strong>Done</strong> through the workflow, the Preventive Gatekeeper automatically creates a certified snapshot for you upon passing!
         </div>
       </section>
@@ -595,7 +610,7 @@
         
         <h3>Lifecycle Stage Progress Tracker</h3>
         <p>A 5-step visual progress bar displays the exact progress of the change:</p>
-        <pre><code>[✔ 1. AC Defined] ──▶ [✔ 2. Code Linked] ──▶ [✔ 3. Peer Reviewed] ──▶ [✔ 4. QA Verified] ──▶ [✔ 5. Certified]</code></pre>
+        <pre><code>[1. AC Defined] ──▶ [2. Code Linked] ──▶ [3. Peer Reviewed] ──▶ [4. QA Verified] ──▶ [5. Certified]</code></pre>
 
         <h3>One-Click Interactive Remediation ("Fix It For Me")</h3>
         <p>If an engineer is missing an audit control, 1-click action buttons appear directly below the failing check:</p>
@@ -626,7 +641,7 @@
         </p>
 
         <div class="callout warning">
-          <div class="callout-title">⚠️ Transition Block Example</div>
+          <div class="callout-title">Transition Block Example</div>
           If an engineer tries to drag an issue to <strong>Done</strong> without acceptance criteria or a linked PR, Jira displays:
           <pre><code>[EvidenceLog Gatekeeper] Transition blocked by SOC 2 change control policy:
 - Missing explicit Acceptance Criteria (Given/When/Then or DoD) in issue description
@@ -645,7 +660,7 @@ Please resolve all required evidence before closing.</code></pre>
         </p>
         <ul>
           <li><strong>5 KPI Scorecards:</strong> Overall Readiness (%), Certified Count, Traceability %, SoD %, and QA %.</li>
-          <li><strong>1-Click <code>⚡ Batch Certify</code>:</strong> Certifies and snapshots all compliant issues across the project in one transaction.</li>
+          <li><strong>1-Click <code>Batch Certify</code>:</strong> Certifies and snapshots all compliant issues across the project in one transaction.</li>
           <li><strong>Emergency Hotfix Alerts:</strong> Automatically surfaces Sev-1 and hotfix tickets requiring post-release CAB review within 48 hours.</li>
           <li><strong>Release Audit Dossier:</strong> Generates consolidated Markdown, CSV matrices, Merkle tree proofs, and formal printable <strong>Executive Release Attestations</strong>.</li>
         </ul>
@@ -681,7 +696,7 @@ project = "DEMO" AND issue.property[evidencelog_compliance].certified = "true"</
         </p>
         <pre><code>Parent Hash = SHA-256(Left Child Hash + Right Child Hash)</code></pre>
         <div class="callout tip">
-          <div class="callout-title">🔍 Offline Verification Tool</div>
+          <div class="callout-title">Offline Verification Tool</div>
           Auditors can open <code>docs/verifier.html</code> completely offline in their browser to re-compute and mathematically verify hashes with zero network access.
         </div>
       </section>

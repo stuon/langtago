@@ -76,8 +76,8 @@ Navigate to any development ticket in your project. In the right-hand sidebar (o
 
 ### Step 2: Review Compliance Status
 The panel renders an immediate status:
-* 🟢 **AUDIT READY (5/5 Controls Verified):** The issue satisfies all regulatory change criteria.
-* 🟠 **ACTION REQUIRED (N/5 Controls Missing):** The issue is missing required evidence (e.g. Acceptance Criteria, Git link, QA sign-off, or Security Scan).
+* `[PASS]` **AUDIT READY (5/5 Controls Verified):** The issue satisfies all regulatory change criteria.
+* `[ACTION REQUIRED]` **(N/5 Controls Missing):** The issue is missing required evidence (e.g. Acceptance Criteria, Git link, QA sign-off, or Security Scan).
 
 ### Step 3: Use 1-Click Remediation
 If an item is missing, click any of the **"Fix It For Me"** buttons directly inside the panel:
@@ -86,7 +86,7 @@ If an item is missing, click any of the **"Fix It For Me"** buttons directly ins
 * Click `[+ Post QA Sign-off Comment]` to record a formal test verification note.
 
 ### Step 4: Certify & Export Evidence
-Once all controls turn green, click **"⚡ Certify & Save Snapshot"**. EvidenceLog calculates an immutable SHA-256 hash, commits it to Forge encrypted storage, and marks the issue permanently **CERTIFIED**.
+Once all controls turn green, click **"Certify & Save Snapshot"**. EvidenceLog calculates an immutable SHA-256 hash, commits it to Forge encrypted storage, and marks the issue permanently **CERTIFIED**.
 
 ---
 
@@ -98,11 +98,11 @@ EvidenceLog continuously inspects each ticket against five rigorous compliance p
  ┌───────────────────────────────────────────────────────────────────────┐
  │                  5 COMPLIANCE VERIFICATION PILLARS                    │
  ├───────────────────────────────────────────────────────────────────────┤
- │ [✔] Pillar 1: Acceptance Criteria (BDD / DoD in description or field) │
- │ [✔] Pillar 2: Code Linkage & CI/CD (GitHub, GitLab, Bitbucket, Azure) │
- │ [✔] Pillar 3: Segregation of Duties (Author != Approver; or CAB sign) │
- │ [✔] Pillar 4: QA Verification (qa-verified tag, transition, or note)  │
- │ [✔] Pillar 5: Security Scanning (Snyk, SonarQube, Trivy, Dependabot)  │
+ │ [PASS] Pillar 1: Acceptance Criteria (BDD / DoD in description/field) │
+ │ [PASS] Pillar 2: Code Linkage & CI/CD (GitHub, GitLab, Bitbucket, CI) │
+ │ [PASS] Pillar 3: Segregation of Duties (Author != Approver; or CAB)   │
+ │ [PASS] Pillar 4: QA Verification (qa-verified tag, transition, note)  │
+ │ [PASS] Pillar 5: Security Scanning (Snyk, SonarQube, Trivy, Depend)   │
  └───────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -163,7 +163,7 @@ The EvidenceLog panel sits inside every Jira issue view, giving engineers immedi
 ### Lifecycle Stage Tracker
 A 5-step visual progress bar displays the exact progress of the change:
 ```
-[✔ 1. AC Defined] ──▶ [✔ 2. Code Linked] ──▶ [✔ 3. Peer Reviewed] ──▶ [✔ 4. QA Verified] ──▶ [✔ 5. Certified]
+[1. AC Defined] ──▶ [2. Code Linked] ──▶ [3. Peer Reviewed] ──▶ [4. QA Verified] ──▶ [5. Certified]
 ```
 
 ### One-Click Remediation ("Fix It For Me")
@@ -174,9 +174,9 @@ When an audit control is incomplete, interactive action buttons appear directly 
 
 ### Change Risk Rating Badge
 EvidenceLog automatically classifies every issue according to **ITIL 4 Change Management**:
-* 🟢 **Standard Change (Low Risk):** Low/Minor priority tasks and documentation changes. Standard approval applies.
-* 🟡 **Normal Change (Medium/High Risk):** Production code modifications requiring peer review and QA verification.
-* 🔴 **Emergency Change (Hotfix):** Triggered by labels `hotfix`, `emergency`, `sev1`, `outage` or summaries with hotfix keywords. Expedited approval permitted, but flags mandatory retroactive CAB review within 48 hours under SOC 2 CC8.1.
+* `[STANDARD]` **Standard Change (Low Risk):** Low/Minor priority tasks and documentation changes. Standard approval applies.
+* `[NORMAL]` **Normal Change (Medium/High Risk):** Production code modifications requiring peer review and QA verification.
+* `[EMERGENCY]` **Emergency Change (Hotfix):** Triggered by labels `hotfix`, `emergency`, `sev1`, `outage` or summaries with hotfix keywords. Expedited approval permitted, but flags mandatory retroactive CAB review within 48 hours under SOC 2 CC8.1.
 
 ### 7-Tab Audit Export Drawer
 Clicking **"Export Evidence Snapshot"** opens an interactive drawer with 7 export formats:
@@ -199,7 +199,7 @@ graph TD
     A["Developer Clicks 'Done' or 'Closed'"] --> B{"EvidenceLog Gatekeeper Pre-Flight"}
     B -->|All 5 Controls Pass| C["Allow Transition to Done"]
     C --> D["Auto-Record Immutable Snapshot in Forge KVS"]
-    B -->|Missing Any Control| E["⛔ BLOCK TRANSITION"]
+    B -->|Missing Any Control| E["BLOCK TRANSITION"]
     E --> F["Display Actionable Remediation Error to Developer"]
 ```
 
@@ -228,7 +228,7 @@ Accessed via the left project navigation sidebar (**"EvidenceLog Audit Hub"**), 
 * **QA Verification Rate (%):** Percentage of issues with verified testing sign-offs.
 
 ### One-Click Batch Certification Engine
-Release managers can certify all audit-ready tickets in an upcoming release in seconds. Clicking **`[⚡ Batch Certify ({count})]`** processes every compliant ticket across the project, generates cryptographic fingerprints, and commits them to Forge KVS in one transaction.
+Release managers can certify all audit-ready tickets in an upcoming release in seconds. Clicking **`[Batch Certify ({count})]`** processes every compliant ticket across the project, generates cryptographic fingerprints, and commits them to Forge KVS in one transaction.
 
 ### Emergency Hotfix Alerts & CAB Tracking
 Hotfixes and Sev-1 incidents are automatically pulled into an executive alert banner at the top of the hub, alerting leads to any emergency deployments pending retroactive post-incident CAB review.
