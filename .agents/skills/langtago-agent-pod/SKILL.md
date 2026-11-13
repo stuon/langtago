@@ -24,3 +24,4 @@ This pod manages the **Langtago Web Portal** (`langtago/`), the official home an
 - Professional enterprise tone with verified compliance frameworks.
 - No git push; deploy only after QA APPROVED and explicit automation permission.
 - Never commit secrets or .env files.
+
