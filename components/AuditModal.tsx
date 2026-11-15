@@ -257,12 +257,9 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
           )}
         </div>
 
-        {/* Minimal Footer */}
-        <div className="flex items-center justify-between border-t border-slate-100 bg-white px-6 py-3.5 text-xs">
-          <span className="text-[#5c728e] font-medium hidden sm:inline">
-            100% In-Tenant Forge Architecture
-          </span>
-          <div className="flex items-center gap-2.5 ml-auto">
+        {/* Modal Footer */}
+        <div className="flex items-center justify-end border-t border-slate-100 bg-white px-6 py-3.5 text-xs">
+          <div className="flex items-center gap-2.5">
             <button
               type="button"
               onClick={onClose}
