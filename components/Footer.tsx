@@ -78,19 +78,16 @@ export default function Footer() {
             </p>
             <ul className="space-y-2.5 text-xs text-[#5c728e]">
               <li>
-                <Link
-                  href="/guides"
-                  className="text-[#15803d] font-semibold hover:underline inline-flex items-center gap-1"
-                >
-                  <span>Engineering Guides &amp; Articles ↗</span>
+                <Link href="/guides" className="hover:text-[#111013] transition-colors">
+                  Engineering Guides &amp; Articles
                 </Link>
               </li>
               <li>
                 <Link
                   href="/compare/manual-screenshots-vs-evidencelog"
-                  className="text-[#15803d] font-semibold hover:underline inline-flex items-center gap-1"
+                  className="hover:text-[#111013] transition-colors"
                 >
-                  <span>Manual vs. Automated ↗</span>
+                  Manual vs. Automated Comparison
                 </Link>
               </li>
               <li>
@@ -108,9 +105,10 @@ export default function Footer() {
                   href="/docs/user-guide.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#15803d] font-semibold hover:underline inline-flex items-center gap-1"
+                  className="hover:text-[#111013] transition-colors inline-flex items-center gap-1"
                 >
-                  <span>Production User Guide ↗</span>
+                  <span>Production User Guide</span>
+                  <ExternalLink className="h-3 w-3" />
                 </a>
               </li>
               <li>
@@ -118,9 +116,10 @@ export default function Footer() {
                   href="/docs/verifier.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#15803d] font-semibold hover:underline inline-flex items-center gap-1"
+                  className="hover:text-[#111013] transition-colors inline-flex items-center gap-1"
                 >
-                  <span>Zero-Trust Offline Verifier ↗</span>
+                  <span>Zero-Trust Offline Verifier</span>
+                  <ExternalLink className="h-3 w-3" />
                 </a>
               </li>
               <li>
@@ -147,7 +146,7 @@ export default function Footer() {
                   href="https://marketplace.atlassian.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-[#15803d] font-semibold hover:underline"
+                  className="inline-flex items-center gap-1 hover:text-[#111013] transition-colors"
                 >
                   <span>Atlassian Marketplace</span>
                   <ExternalLink className="h-3 w-3" />
@@ -165,63 +164,46 @@ export default function Footer() {
               <li>
                 <Link
                   href="/frameworks/soc2-cc81"
-                  className="text-[#15803d] font-semibold hover:underline inline-flex items-center gap-1"
-                >
-                  <span>SOC 2 CC8.1 Guide ↗</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/compare/manual-screenshots-vs-evidencelog"
                   className="hover:text-[#111013] transition-colors"
                 >
-                  <span>Screenshots vs. EvidenceLog</span>
+                  SOC 2 CC8.1 Guide
                 </Link>
               </li>
               <li>
                 <Link
                   href="/frameworks/iso-27001-a832"
-                  className="text-[#15803d] font-semibold hover:underline inline-flex items-center gap-1"
+                  className="hover:text-[#111013] transition-colors"
                 >
-                  <span>ISO 27001 A.8.32 Guide ↗</span>
+                  ISO 27001 A.8.32 Guide
                 </Link>
               </li>
               <li>
                 <Link
                   href="/frameworks/apra-cps-234"
-                  className="text-[#15803d] font-semibold hover:underline inline-flex items-center gap-1"
+                  className="hover:text-[#111013] transition-colors"
                 >
-                  <span>APRA CPS 234 Guide (AU) ↗</span>
+                  APRA CPS 234 Guide (AU)
                 </Link>
               </li>
               <li>
                 <Link
                   href="/frameworks/dora-compliance"
-                  className="text-[#15803d] font-semibold hover:underline inline-flex items-center gap-1"
+                  className="hover:text-[#111013] transition-colors"
                 >
-                  <span>DORA &amp; UK FCA Guide (EU/UK) ↗</span>
-                </Link>
-              </li>
-              <li>
-                <span>HIPAA §164.312 &amp; FedRAMP</span>
-              </li>
-              <li>
-                <span>ITIL 4 Risk &amp; CAB Review</span>
-              </li>
-              <li>
-                <span>Binary Merkle Tree Proofs</span>
-              </li>
-              <li>
-                <Link href="/security" className="hover:text-[#111013] transition-colors">
-                  Zero Data Egress (Forge)
+                  DORA &amp; UK FCA Guide (EU/UK)
                 </Link>
               </li>
               <li>
                 <Link
                   href="/integrations/vanta-drata"
-                  className="text-[#15803d] font-semibold hover:underline inline-flex items-center gap-1"
+                  className="hover:text-[#111013] transition-colors"
                 >
-                  <span>Vanta &amp; Drata Ingestion ↗</span>
+                  Vanta &amp; Drata Ingestion
+                </Link>
+              </li>
+              <li>
+                <Link href="/security" className="hover:text-[#111013] transition-colors">
+                  Zero Data Egress Guarantee
                 </Link>
               </li>
             </ul>
