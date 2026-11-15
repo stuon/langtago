@@ -23,21 +23,6 @@ export default function Footer() {
               <p className="text-sm text-slate-300 max-w-xl leading-relaxed">
                 EvidenceLog runs 100% inside your Atlassian Cloud tenant on isolated Forge microVMs. We operate zero external databases, retain no customer code, and enforce strict zero network data egress. Free for squads up to 10 users.
               </p>
-
-              <div className="flex flex-wrap items-center gap-4 text-xs font-medium text-slate-300 pt-2">
-                <span className="flex items-center gap-1.5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#dbf1c3]" />
-                  <span>Free up to 10 users</span>
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#dbf1c3]" />
-                  <span>100% In-Tenant Storage</span>
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#dbf1c3]" />
-                  <span>SOC 2, ISO 27001 &amp; APRA Ready</span>
-                </span>
-              </div>
             </div>
 
             {/* Right Action Button (4 cols) */}

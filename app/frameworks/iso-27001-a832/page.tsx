@@ -746,10 +746,6 @@ export default function Iso27001A832FrameworkPage() {
 
           {/* Bottom Conversion Card */}
           <div className="rounded-3xl bg-[#111013] text-white p-8 sm:p-14 text-center space-y-6 shadow-2xl relative overflow-hidden">
-            <div className="inline-block rounded-md bg-[#dbf1c3] px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#0f5132] font-heading">
-              FREE FOR SQUADS UP TO 10 USERS &bull; 100% FORGE NATIVE
-            </div>
-
             <h2 className="text-3xl sm:text-5xl font-bold font-heading text-white max-w-2xl mx-auto leading-tight">
               Ready to automate ISO 27001 change evidence in Jira?
             </h2>
@@ -768,13 +764,6 @@ export default function Iso27001A832FrameworkPage() {
                 <span>Install Free on Atlassian Marketplace</span>
                 <ArrowRight className="h-4 w-4" />
               </a>
-
-              <Link
-                href="/integrations/vanta-drata"
-                className="inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-transparent hover:bg-white/10 text-white text-sm font-semibold border border-white/20 transition-all cursor-pointer"
-              >
-                <span>Vanta &amp; Drata Sync</span>
-              </Link>
 
               <Link
                 href="/compare/manual-screenshots-vs-evidencelog"

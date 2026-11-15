@@ -170,11 +170,11 @@ export default function ManualVsEvidenceLogComparisonPage() {
               </a>
 
               <Link
-                href="/#roi-calculator"
+                href="/#pricing"
                 className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-white text-[#111013] border border-slate-300 hover:border-[#111013] font-semibold text-sm transition-all shadow-xs cursor-pointer"
               >
                 <TrendingUp className="h-4 w-4 text-[#15803d]" />
-                <span>Calculate Your Team&apos;s Savings</span>
+                <span>View Pricing &amp; Free Tier</span>
               </Link>
             </div>
 
@@ -431,10 +431,6 @@ export default function ManualVsEvidenceLogComparisonPage() {
 
           {/* Bottom Conversion Banner */}
           <div className="rounded-3xl bg-[#111013] text-white p-8 sm:p-14 text-center space-y-6 shadow-2xl relative overflow-hidden">
-            <div className="inline-block rounded-md bg-[#dbf1c3] px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#0f5132] font-heading">
-              FREE FOR SQUADS UP TO 10 USERS &bull; ZERO DATA EGRESS
-            </div>
-
             <h2 className="text-3xl sm:text-5xl font-bold font-heading text-white max-w-2xl mx-auto leading-tight">
               Ready to eliminate the manual screenshot tax for good?
             </h2>
@@ -455,27 +451,11 @@ export default function ManualVsEvidenceLogComparisonPage() {
               </a>
 
               <Link
-                href="/integrations/vanta-drata"
-                className="inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-transparent hover:bg-white/10 text-white text-sm font-semibold border border-white/20 transition-all cursor-pointer"
-              >
-                <FileCheck2 className="h-4 w-4 text-[#dbf1c3]" />
-                <span>Vanta &amp; Drata Sync</span>
-              </Link>
-
-              <Link
                 href="/frameworks/soc2-cc81"
                 className="inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-transparent hover:bg-white/10 text-white text-sm font-semibold border border-white/20 transition-all cursor-pointer"
               >
                 <FileCheck2 className="h-4 w-4 text-[#dbf1c3]" />
                 <span>SOC 2 CC8.1 Guide</span>
-              </Link>
-
-              <Link
-                href="/frameworks/iso-27001-a832"
-                className="inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-transparent hover:bg-white/10 text-white text-sm font-semibold border border-white/20 transition-all cursor-pointer"
-              >
-                <FileCheck2 className="h-4 w-4 text-[#dbf1c3]" />
-                <span>ISO 27001 Guide</span>
               </Link>
             </div>
           </div>

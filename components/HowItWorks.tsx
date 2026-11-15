@@ -61,16 +61,37 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
 
         {/* 2-Column Working Process Layout (Left Clean Screenshot, Right Stepper Accordion) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          {/* Left Column: Clean Jira Cloud Screenshot (col-6) */}
-          <div className="lg:col-span-6 flex items-center justify-center">
-            <Image
-              src={currentStep.screenshot}
-              alt={currentStep.caption}
-              width={515}
-              height={495}
-              className="w-full h-auto object-contain cursor-pointer transition-transform duration-200 hover:scale-[1.01]"
+          {/* Left Column: Clean Jira Cloud Screenshot Mockup Frame (col-6) */}
+          <div className="lg:col-span-6 flex flex-col items-center justify-center">
+            <div
               onClick={onOpenAuditModal}
-            />
+              className="w-full rounded-2xl border border-slate-200/90 bg-white shadow-xl shadow-slate-900/5 overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl hover:border-slate-300"
+            >
+              {/* Jira UI Mockup Titlebar */}
+              <div className="flex items-center justify-between px-4 py-2.5 bg-slate-50 border-b border-slate-100 text-[11px] font-mono text-slate-500">
+                <div className="flex items-center gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-slate-300" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-slate-300" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-slate-300" />
+                  <span className="ml-2 font-sans font-medium text-slate-600 truncate max-w-[220px]">
+                    {currentStep.caption}
+                  </span>
+                </div>
+                <span className="text-[10px] font-bold text-[#15803d] bg-emerald-50 border border-emerald-200 rounded px-1.5 py-0.5">
+                  Jira Cloud Native
+                </span>
+              </div>
+
+              <div className="p-3 sm:p-4 bg-white flex items-center justify-center">
+                <Image
+                  src={currentStep.screenshot}
+                  alt={currentStep.caption}
+                  width={515}
+                  height={495}
+                  className="w-full h-auto object-contain rounded-lg"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Right Column: Contis-Style Vertical Numbered Stepper (col-6) */}
@@ -109,7 +130,7 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
                           <p className="text-sm text-[#5c728e] leading-relaxed">
                             {step.desc}
                           </p>
-                          <div className="flex flex-wrap items-center gap-2 pt-1">
+                          <div className="pt-1">
                             <button
                               type="button"
                               onClick={(e) => {
@@ -118,13 +139,9 @@ export default function HowItWorks({ onOpenAuditModal }: HowItWorksProps) {
                               }}
                               className="text-xs font-bold text-[#15803d] hover:underline inline-flex items-center gap-1.5 cursor-pointer"
                             >
-                              <span>Inspect Real Audit Output</span>
+                              <span>Inspect Sample Audit Report</span>
                               <ArrowRight className="h-3 w-3" />
                             </button>
-                            <span className="text-slate-300">&bull;</span>
-                            <span className="text-xs text-slate-500 font-mono">
-                              Click image to enlarge
-                            </span>
                           </div>
                         </div>
                       )}

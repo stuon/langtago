@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight, FileCheck, Check, ShieldCheck } from "lucide-react";
+import { ArrowRight, FileCheck, ShieldCheck } from "lucide-react";
 
 interface HeroProps {
   onOpenAuditModal: () => void;
@@ -29,7 +29,7 @@ export default function Hero({ onOpenAuditModal }: HeroProps) {
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-8">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
               <a
                 href="https://marketplace.atlassian.com"
                 target="_blank"
@@ -48,22 +48,6 @@ export default function Hero({ onOpenAuditModal }: HeroProps) {
                 <FileCheck className="h-4 w-4 text-[#15803d]" />
                 <span>Inspect Sample SOC 2 Report</span>
               </button>
-            </div>
-
-            {/* Simple Trust Assurance Bar */}
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-medium text-[#5c728e] pt-1">
-              <span className="flex items-center gap-1.5">
-                <Check className="h-4 w-4 text-[#15803d] shrink-0" />
-                <span>Free up to 10 users</span>
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Check className="h-4 w-4 text-[#15803d] shrink-0" />
-                <span>100% In-Tenant (Zero Data Egress)</span>
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Check className="h-4 w-4 text-[#15803d] shrink-0" />
-                <span>SOC 2, ISO 27001 &amp; APRA CPS 234</span>
-              </span>
             </div>
           </div>
 

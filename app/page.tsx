@@ -7,7 +7,6 @@ import BrandStrip from "@/components/BrandStrip";
 import HowItWorks from "@/components/HowItWorks";
 import BentoGrid from "@/components/BentoGrid";
 import RegionalCompliance from "@/components/RegionalCompliance";
-import RoiCalculator from "@/components/RoiCalculator";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
@@ -37,9 +36,6 @@ export default function HomePage() {
 
         {/* Global Compliance & In-Tenant Data Residency by Region (AU, UK, EU, US, ZA) */}
         <RegionalCompliance />
-
-        {/* Interactive Auditor ROI & Time-Savings Calculator */}
-        <RoiCalculator onOpenAuditModal={() => setIsAuditModalOpen(true)} />
 
         {/* Transparent 3-Tier Pricing */}
         <Pricing onOpenAuditModal={() => setIsAuditModalOpen(true)} />

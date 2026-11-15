@@ -341,7 +341,7 @@ project = "PROJ" AND issue.property[evidencelog_compliance].certified = "true"`;
       </div>
 
       {/* Bottom Explanatory Banner */}
-      <div className="border-t border-white/10 bg-[#18171b] px-4 sm:px-6 py-3.5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-300">
+      <div className="border-t border-white/10 bg-[#18171b] px-4 sm:px-6 py-3.5 flex items-center justify-between gap-3 text-xs text-slate-300">
         <div className="flex items-center gap-2">
           <ShieldCheck className="h-4 w-4 text-[#dbf1c3] shrink-0" />
           <span>
@@ -350,11 +350,6 @@ project = "PROJ" AND issue.property[evidencelog_compliance].certified = "true"`;
             {activeTab === "csv" && "Big 4 audit matrix format (PwC, EY, KPMG, Deloitte) with SHA-256 fingerprints."}
             {activeTab === "jql" && "Direct JQL filters backed by native Jira Cloud Issue Entity Properties."}
           </span>
-        </div>
-
-        <div className="flex items-center gap-1.5 text-[11px] text-[#dbf1c3] font-semibold shrink-0">
-          <Sparkles className="h-3.5 w-3.5" />
-          <span>Atlassian Forge Native &bull; Zero Data Egress</span>
         </div>
       </div>
     </div>

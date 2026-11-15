@@ -43,6 +43,9 @@ echo "🌐 Environment: $NEXT_PUBLIC_ENV"
 echo "🧹 Cleaning previous build..."
 rm -rf .next out
 
+echo "🧪 Running full test suite in evidencelog-jira (95/95 tests)..."
+(cd "$(dirname "$0")/../../evidencelog-jira" && npm test)
+
 echo "🏗  Building Next.js app with $ENV_FILE..."
 npx dotenv -e "$ENV_FILE" -- npm run build
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Lock, Download, Check, ArrowRight } from "lucide-react";
 
 interface TeamShowcaseProps {
@@ -108,15 +109,13 @@ export default function TeamShowcase({ onOpenAuditModal }: TeamShowcaseProps) {
             </p>
 
             <div className="pt-3">
-              <a
-                href="https://marketplace.atlassian.com"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/security"
                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white border border-slate-200 text-[#111013] hover:border-[#111013] font-semibold text-xs transition-all shadow-2xs cursor-pointer"
               >
                 <span>Learn About Forge Security</span>
                 <ArrowRight className="h-3 w-3" />
-              </a>
+              </Link>
             </div>
           </div>
 

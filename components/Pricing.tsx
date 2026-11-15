@@ -175,42 +175,9 @@ export default function Pricing({ onOpenAuditModal }: PricingProps) {
                     </ul>
                   </div>
                 </div>
-
-                <div className="pt-6 border-t border-slate-100 mt-6 text-center">
-                  <span className="text-[11px] text-[#5c728e]">
-                    Direct Atlassian Cloud Marketplace checkout
-                  </span>
-                </div>
               </div>
             );
           })}
-        </div>
-
-        {/* Evaluate Sample Output link & ROI link */}
-        <div className="mt-12 text-center space-y-2">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-slate-700 text-xs font-medium mb-3">
-            <span className="h-2 w-2 rounded-full bg-emerald-500" />
-            <span>Global Atlassian Billing: Local currencies (USD, AUD, EUR, GBP) &bull; Automatic Data Residency</span>
-          </div>
-          <p className="text-xs text-[#5c728e]">
-            Want to estimate your squad&apos;s exact dollar savings?{" "}
-            <a
-              href="#roi-calculator"
-              className="text-[#15803d] font-bold hover:underline ml-1"
-            >
-              Use the Interactive ROI Calculator &darr;
-            </a>
-          </p>
-          <p className="text-xs text-[#5c728e]">
-            Want to review the SOC 2 export format before installing?{" "}
-            <button
-              type="button"
-              onClick={onOpenAuditModal}
-              className="text-[#15803d] font-bold hover:underline ml-1 cursor-pointer"
-            >
-              Inspect sample auditor workpaper &rarr;
-            </button>
-          </p>
         </div>
       </div>
     </section>

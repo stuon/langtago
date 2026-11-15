@@ -577,16 +577,12 @@ export default function VantaDrataIntegrationPage() {
 
           {/* Bottom Conversion Banner */}
           <div className="rounded-3xl bg-[#111013] text-white p-8 sm:p-14 text-center space-y-6 shadow-2xl relative overflow-hidden">
-            <div className="inline-block rounded-md bg-[#dbf1c3] px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#0f5132] font-heading">
-              FREE FOR SQUADS UP TO 10 USERS &bull; ZERO DATA EGRESS
-            </div>
-
             <h2 className="text-3xl sm:text-5xl font-bold font-heading text-white max-w-2xl mx-auto leading-tight">
               Ready to eliminate failing GRC change tests?
             </h2>
 
             <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
-              Install EvidenceLog into your Jira Cloud workspace in under 2 minutes. Eliminate manual pre-audit screenshotting and keep Vanta &amp; Drata tests permanently green.
+              Install EvidenceLog into your Jira Cloud workspace in under 2 minutes. Free for squads up to 10 users with zero external data egress.
             </p>
 
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -601,27 +597,11 @@ export default function VantaDrataIntegrationPage() {
               </a>
 
               <Link
-                href="/frameworks/soc2-cc81"
-                className="inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-transparent hover:bg-white/10 text-white text-sm font-semibold border border-white/20 transition-all cursor-pointer"
-              >
-                <FileCheck2 className="h-4 w-4 text-[#dbf1c3]" />
-                <span>SOC 2 CC8.1 Guide</span>
-              </Link>
-
-              <Link
-                href="/frameworks/iso-27001-a832"
-                className="inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-transparent hover:bg-white/10 text-white text-sm font-semibold border border-white/20 transition-all cursor-pointer"
-              >
-                <FileCheck2 className="h-4 w-4 text-[#dbf1c3]" />
-                <span>ISO 27001 Guide</span>
-              </Link>
-
-              <Link
                 href="/compare/manual-screenshots-vs-evidencelog"
                 className="inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-transparent hover:bg-white/10 text-white text-sm font-semibold border border-white/20 transition-all cursor-pointer"
               >
                 <FileCheck2 className="h-4 w-4 text-[#dbf1c3]" />
-                <span>Compare vs. Manual</span>
+                <span>Compare Manual vs. Automated</span>
               </Link>
             </div>
           </div>

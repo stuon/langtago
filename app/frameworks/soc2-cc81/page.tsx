@@ -592,10 +592,6 @@ export default function Soc2Cc81FrameworkPage() {
 
           {/* Bottom Conversion Card */}
           <div className="rounded-3xl bg-[#111013] text-white p-8 sm:p-14 text-center space-y-6 shadow-2xl relative overflow-hidden">
-            <div className="inline-block rounded-md bg-[#dbf1c3] px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#0f5132] font-heading">
-              FREE UP TO 10 USERS &bull; ZERO DATA EGRESS
-            </div>
-
             <h2 className="text-3xl sm:text-5xl font-bold font-heading text-white max-w-2xl mx-auto leading-tight">
               Ready to eliminate manual SOC 2 screenshotting?
             </h2>
@@ -616,24 +612,10 @@ export default function Soc2Cc81FrameworkPage() {
               </a>
 
               <Link
-                href="/integrations/vanta-drata"
+                href="/compare/manual-screenshots-vs-evidencelog"
                 className="inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-transparent hover:bg-white/10 text-white text-sm font-semibold border border-white/20 transition-all cursor-pointer"
               >
-                <span>Vanta &amp; Drata Sync</span>
-              </Link>
-
-              <Link
-                href="/frameworks/iso-27001-a832"
-                className="inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-transparent hover:bg-white/10 text-white text-sm font-semibold border border-white/20 transition-all cursor-pointer"
-              >
-                <span>ISO 27001 Guide</span>
-              </Link>
-
-              <Link
-                href="/#roi-calculator"
-                className="inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-transparent hover:bg-white/10 text-white text-sm font-semibold border border-white/20 transition-all cursor-pointer"
-              >
-                <span>ROI Calculator</span>
+                <span>Compare Manual vs. Automated</span>
               </Link>
             </div>
           </div>

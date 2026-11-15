@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "test": "npm test --prefix ../evidencelog-jira",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",

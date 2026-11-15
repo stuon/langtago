@@ -255,20 +255,6 @@ export default function SecurityPage() {
                 <p className="text-sm text-slate-300 leading-relaxed max-w-2xl">
                   EvidenceLog is designed so that external Big 4 and SOC 2 Type II audit teams do not have to take our word for it. Every certified snapshot produces an idempotent canonical SHA-256 fingerprint. Auditors can open our dependency-free HTML/JS verifier completely offline (air-gapped) on their own laptops to re-compute hashes and verify Merkle root consistency directly against raw Jira JSON exports.
                 </p>
-                <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-300 pt-2">
-                  <span className="flex items-center gap-1.5">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#dbf1c3]" />
-                    <span>Deterministic JSON Serialization</span>
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#dbf1c3]" />
-                    <span>Binary Merkle Tree Root Computation</span>
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#dbf1c3]" />
-                    <span>100% Offline Browser Execution</span>
-                  </span>
-                </div>
               </div>
 
               <div className="lg:col-span-4 flex flex-col gap-3">

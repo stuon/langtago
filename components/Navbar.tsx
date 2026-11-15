@@ -73,9 +73,9 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
             <a href={`${prefix}#features`} className="hover:text-[#111013] transition-colors">
               Features
             </a>
-            <a href={`${prefix}#roi-calculator`} className="hover:text-[#111013] transition-colors">
-              ROI Calculator
-            </a>
+            <Link href="/security" className="hover:text-[#111013] transition-colors">
+              Security
+            </Link>
             <a href={`${prefix}#pricing`} className="hover:text-[#111013] transition-colors">
               Pricing
             </a>
@@ -301,13 +301,13 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
             >
               Features
             </a>
-            <a
-              href={`${prefix}#roi-calculator`}
+            <Link
+              href="/security"
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-[#111013] font-semibold"
             >
-              ROI Calculator
-            </a>
+              Security
+            </Link>
             <Link
               href="/guides"
               onClick={() => setMobileMenuOpen(false)}
