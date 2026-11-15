@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "deploy": "bash ./scripts/deploy.sh production",
     "deploy:staging": "bash ./scripts/deploy.sh staging",
     "deploy:production": "bash ./scripts/deploy.sh production"
   },
