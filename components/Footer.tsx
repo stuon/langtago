@@ -96,14 +96,14 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#how-it-works" className="hover:text-[#111013] transition-colors">
+                <Link href="/#how-it-works" className="hover:text-[#111013] transition-colors">
                   How It Works (5 Pillars)
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#features" className="hover:text-[#111013] transition-colors">
+                <Link href="/#features" className="hover:text-[#111013] transition-colors">
                   Preventive Gatekeeper &amp; Audit Hub
-                </a>
+                </Link>
               </li>
               <li>
                 <a
@@ -137,9 +137,9 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#pricing" className="hover:text-[#111013] transition-colors">
+                <Link href="/#pricing" className="hover:text-[#111013] transition-colors">
                   Transparent Pricing
-                </a>
+                </Link>
               </li>
               <li>
                 <Link href="/faq" className="hover:text-[#111013] transition-colors">
