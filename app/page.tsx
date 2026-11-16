@@ -18,7 +18,7 @@ export default function HomePage() {
   return (
     <div className="relative min-h-screen bg-white font-sans text-[#5c728e] selection:bg-[#dbf1c3] selection:text-[#0f5132]">
       {/* Contis-Style Header & Navigation */}
-      <Navbar onOpenAuditModal={() => setIsAuditModalOpen(true)} isProductPage={true} />
+      <Navbar isProductPage={true} />
 
       {/* Main Flow: Contis Simplified Rhythm */}
       <main className="relative">
