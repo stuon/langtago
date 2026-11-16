@@ -1,33 +1,147 @@
 {
-  "propertyId": "559281732",
-  "site": "Langtago",
-  "generatedAt": "2026-11-10T10:43:03.325Z",
+  "propertyId": "488888857",
+  "site": "DevToLead",
+  "generatedAt": "2026-11-16T05:33:02.477Z",
   "dateRange": "Last 7 Days",
   "summary": {
-    "activeUsers": "12",
-    "sessions": "21",
-    "pageViews": "53",
-    "bounceRate": "61.9%",
-    "avgSessionDuration": "418.0s"
+    "activeUsers": "142",
+    "sessions": "153",
+    "pageViews": "163",
+    "bounceRate": "93.5%",
+    "avgSessionDuration": "30.7s"
   },
   "topPages": [
     {
+      "path": "/live-roleplay/1on1s/career-growth-junior/session",
+      "views": 16,
+      "users": 7,
+      "bounceRate": "61.5%"
+    },
+    {
       "path": "/",
-      "views": 53,
-      "users": 12,
-      "bounceRate": "61.9%"
+      "views": 13,
+      "users": 8,
+      "bounceRate": "63.6%"
+    },
+    {
+      "path": "/guides",
+      "views": 5,
+      "users": 4,
+      "bounceRate": "60.0%"
+    },
+    {
+      "path": "/guides/engineering-leadership/measuring-developer-productivity",
+      "views": 5,
+      "users": 5,
+      "bounceRate": "100.0%"
+    },
+    {
+      "path": "/guides/engineering-leadership/technical-vs-business-tradeoffs",
+      "views": 5,
+      "users": 5,
+      "bounceRate": "100.0%"
+    },
+    {
+      "path": "/guides/technical-skills/stuck-engineering-problems",
+      "views": 5,
+      "users": 5,
+      "bounceRate": "100.0%"
+    },
+    {
+      "path": "/for-interviews/code-design/stakeholder-communication",
+      "views": 3,
+      "users": 3,
+      "bounceRate": "100.0%"
+    },
+    {
+      "path": "/guides/engineering-leadership/kpis-performance-compensation",
+      "views": 3,
+      "users": 3,
+      "bounceRate": "100.0%"
+    },
+    {
+      "path": "/guides/engineering-leadership/product-engineering-loop",
+      "views": 3,
+      "users": 3,
+      "bounceRate": "100.0%"
+    },
+    {
+      "path": "/guides/technical-skills/mental-models-engineers",
+      "views": 3,
+      "users": 3,
+      "bounceRate": "100.0%"
+    },
+    {
+      "path": "/live-roleplay/1on1s/career-growth-junior",
+      "views": 3,
+      "users": 1,
+      "bounceRate": "25.0%"
+    },
+    {
+      "path": "/for-interviews/code-design/leadership-edge",
+      "views": 2,
+      "users": 2,
+      "bounceRate": "100.0%"
+    },
+    {
+      "path": "/for-interviews/code-design/task-scheduler",
+      "views": 2,
+      "users": 2,
+      "bounceRate": "100.0%"
+    },
+    {
+      "path": "/for-interviews/operations",
+      "views": 2,
+      "users": 2,
+      "bounceRate": "100.0%"
+    },
+    {
+      "path": "/guides/career-growth",
+      "views": 2,
+      "users": 2,
+      "bounceRate": "100.0%"
+    },
+    {
+      "path": "/guides/engineering-leadership/dora-metrics-explained",
+      "views": 2,
+      "users": 2,
+      "bounceRate": "100.0%"
+    },
+    {
+      "path": "/guides/engineering-leadership/psychological-safety-toolkit",
+      "views": 2,
+      "users": 2,
+      "bounceRate": "100.0%"
+    },
+    {
+      "path": "/guides/technical-skills/tags/rest-apis",
+      "views": 2,
+      "users": 2,
+      "bounceRate": "100.0%"
+    },
+    {
+      "path": "/guides/technical-skills/understanding-technical-debt",
+      "views": 2,
+      "users": 2,
+      "bounceRate": "100.0%"
+    },
+    {
+      "path": "/library",
+      "views": 2,
+      "users": 2,
+      "bounceRate": "50.0%"
     }
   ],
   "trafficSources": [
     {
       "sourceMedium": "(direct) / (none)",
-      "sessions": 20,
-      "users": 12
+      "sessions": 151,
+      "users": 140
     },
     {
-      "sourceMedium": "console.firebase.google.com / referral",
-      "sessions": 1,
-      "users": 1
+      "sourceMedium": "chatgpt.com / ai-assistant",
+      "sessions": 2,
+      "users": 2
     }
   ]
 }
