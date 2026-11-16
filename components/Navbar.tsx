@@ -65,7 +65,7 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
             </Link>
           </div>
 
-          {/* Desktop Navigation Links (4 core items + Resources dropdown) */}
+          {/* Desktop Navigation Links (5 core items + Resources dropdown) */}
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-medium text-[#5c728e] whitespace-nowrap">
             <a href={`${prefix}#how-it-works`} className="hover:text-[#111013] transition-colors">
               How It Works
@@ -73,6 +73,9 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
             <a href={`${prefix}#features`} className="hover:text-[#111013] transition-colors">
               Features
             </a>
+            <Link href="/docs" className="hover:text-[#111013] transition-colors">
+              Docs
+            </Link>
             <Link href="/security" className="hover:text-[#111013] transition-colors">
               Security
             </Link>
@@ -213,10 +216,8 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
                       </div>
                     </Link>
 
-                    <a
-                      href="/docs/user-guide.html"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      href="/docs"
                       onClick={() => setResourcesOpen(false)}
                       className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group"
                     >
@@ -224,10 +225,10 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
                         <BookOpen className="h-4 w-4" />
                       </div>
                       <div>
-                        <div className="text-xs font-bold text-[#111013]">User Guide &amp; Docs ↗</div>
-                        <div className="text-[11px] text-[#5c728e] font-normal leading-snug">Setup instructions &amp; administrator guide</div>
+                        <div className="text-xs font-bold text-[#111013]">Product Documentation Hub</div>
+                        <div className="text-[11px] text-[#5c728e] font-normal leading-snug">Full feature manuals, gatekeeper rules &amp; support guide</div>
                       </div>
-                    </a>
+                    </Link>
 
                     <Link
                       href="/faq"
@@ -371,15 +372,13 @@ export default function Navbar({ onOpenAuditModal, isProductPage = true }: Navba
             >
               FAQ
             </Link>
-            <a
-              href="/docs/user-guide.html"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/docs"
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-[#15803d] font-bold"
             >
-              User Guide &amp; Docs ↗
-            </a>
+              Product Documentation Hub
+            </Link>
             <div className="pt-3 border-t border-slate-100 flex flex-col gap-2.5">
               {onOpenAuditModal && (
                 <button
