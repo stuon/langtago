@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Copy, Code2, FileSpreadsheet, Terminal, ShieldCheck, Sparkles } from "lucide-react";
+import { Check, Copy, Code2, FileSpreadsheet, Terminal, ShieldCheck } from "lucide-react";
 
 type PayloadTab = "vanta" | "drata" | "csv" | "jql";
 

@@ -4,10 +4,11 @@ import { useState } from "react";
 import { Check, ArrowRight } from "lucide-react";
 
 interface PricingProps {
-  onOpenAuditModal: () => void;
+  onOpenAuditModal?: () => void;
 }
 
-export default function Pricing({ onOpenAuditModal }: PricingProps) {
+export default function Pricing({ onOpenAuditModal }: PricingProps = {}) {
+  void onOpenAuditModal;
   const [annualBilling, setAnnualBilling] = useState(true);
 
   const tiers = [

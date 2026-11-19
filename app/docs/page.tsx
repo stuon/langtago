@@ -6,7 +6,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {
   ShieldCheck,
-  CheckCircle2,
   Lock,
   FileText,
   Copy,
@@ -15,8 +14,6 @@ import {
   Sliders,
   Workflow,
   Search,
-  BookOpen,
-  ArrowRight,
   ShieldAlert,
   Code2,
   Layers,
@@ -637,7 +634,7 @@ export default function DocsPage() {
               </p>
 
               <div className="rounded-2xl bg-[#111013] text-white p-5 font-mono text-xs space-y-3">
-                <div className="text-slate-400 text-[11px]">// Binary Merkle Tree Integrity Root Calculation</div>
+                <div className="text-slate-400 text-[11px]">{'// Binary Merkle Tree Integrity Root Calculation'}</div>
                 <div className="text-[#dbf1c3]">
                   Level 0: [Hash(Issue_1), Hash(Issue_2), Hash(Issue_3), Hash(Issue_4)]
                 </div>

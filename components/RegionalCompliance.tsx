@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { MapPin, ArrowRight, Lock, Globe2 } from "lucide-react";
+import { ArrowRight, Lock, Globe2 } from "lucide-react";
 
 export default function RegionalCompliance() {
   const frameworks = [
