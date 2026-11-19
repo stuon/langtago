@@ -78,7 +78,12 @@ cd /Volumes/Projects/dev/langtago-evidencelog/evidencelog-jira && npm test
      ```bash
      cd /Volumes/Projects/dev/langtago-evidencelog/langtago && ./scripts/deploy.sh production
      ```
-   - Commit all changes to git and push to GitHub `main`.
+   - Commit all changes to git and push to GitHub `main`:
+     ```bash
+     git add .
+     git commit -m "feat(growth-sprint): <descriptive summary of updates>"
+     git push origin main
+     ```
 
 ### Step 6: Log Executive Summary Artifact
 Create a daily progress log entry in `docs/growth/daily_growth_ledger.md` detailing:
