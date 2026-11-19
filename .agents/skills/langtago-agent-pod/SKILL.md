@@ -22,6 +22,7 @@ This pod manages the **Langtago Web Portal** (`langtago/`), the official home an
 
 - Strictly zero emojis across all code, documentation, commit messages, and board posts.
 - Professional enterprise tone with verified compliance frameworks.
+- - Mandatory Pre-Commit Build & Lint Gate: Before committing, run npm run lint, npx tsc --noEmit, and npm run build. Fix any errors or warnings immediately before committing. Never commit or push code with failing builds, type errors, or lint violations.
 - Mandatory Git Commit & Push: Once QA verifies all criteria and marks the sprint APPROVED, automatically stage all changes, commit with a semantic commit message, and push directly to origin main.
 - Never commit secrets or .env files.
 
